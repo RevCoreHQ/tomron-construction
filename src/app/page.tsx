@@ -9,6 +9,7 @@ import { HomeServiceCards } from '@/components/sections/HomeServiceCards';
 import { StatsBar } from '@/components/sections/StatsBar';
 import { MeetOwner } from '@/components/sections/MeetOwner';
 import { Button } from '@/components/ui/Button';
+import Image from 'next/image';
 
 export const metadata: Metadata = generatePageMetadata({
   title: 'Tomron Construction | Siding, Windows & Exterior Contractor — Lower Mainland BC',
@@ -80,10 +81,18 @@ export default function HomePage() {
 
           {/* Bento layout */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 auto-rows-[200px] lg:auto-rows-[240px]">
-            <div className="col-span-2 row-span-2 image-placeholder-premium rounded-lg" />
-            <div className="image-placeholder-premium rounded-lg" />
-            <div className="image-placeholder-premium rounded-lg" />
-            <div className="col-span-2 image-placeholder-premium rounded-lg" />
+            <div className="col-span-2 row-span-2 relative rounded-lg overflow-hidden">
+              <Image src="https://assets.cdn.filesafe.space/oyhdrza3SwoM8YuXOsja/media/69b19ab28cb259736f3d988a.webp" alt="Siding installation project" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
+            </div>
+            <div className="relative rounded-lg overflow-hidden">
+              <Image src="https://assets.cdn.filesafe.space/oyhdrza3SwoM8YuXOsja/media/69b19ab257249b849038a781.webp" alt="Exterior renovation" fill className="object-cover" sizes="(max-width: 1024px) 50vw, 25vw" />
+            </div>
+            <div className="relative rounded-lg overflow-hidden">
+              <Image src="https://assets.cdn.filesafe.space/oyhdrza3SwoM8YuXOsja/media/69b19ab2bfc81fd1318a9dbb.webp" alt="Window replacement" fill className="object-cover" sizes="(max-width: 1024px) 50vw, 25vw" />
+            </div>
+            <div className="col-span-2 relative rounded-lg overflow-hidden">
+              <Image src="https://assets.cdn.filesafe.space/oyhdrza3SwoM8YuXOsja/media/69b19ab278565a8d38405c23.webp" alt="Building envelope work" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
+            </div>
           </div>
 
           <div className="sm:hidden mt-6">
