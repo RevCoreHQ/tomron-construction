@@ -7,6 +7,7 @@ import { CTASection } from '@/components/sections/CTASection';
 import { FAQAccordion } from '@/components/sections/FAQAccordion';
 import { HomeServiceCards } from '@/components/sections/HomeServiceCards';
 import { StatsBar } from '@/components/sections/StatsBar';
+import { MeetOwner } from '@/components/sections/MeetOwner';
 import { Button } from '@/components/ui/Button';
 
 export const metadata: Metadata = generatePageMetadata({
@@ -58,6 +59,8 @@ export default function HomePage() {
       <HomeServiceCards />
 
       <ProcessSteps />
+
+      <MeetOwner />
 
       {/* Projects Preview — Bento grid */}
       <section className="section-padding bg-neutral-50">
