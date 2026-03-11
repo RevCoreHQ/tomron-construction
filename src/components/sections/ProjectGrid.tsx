@@ -63,6 +63,55 @@ const projects = [
     category: 'Siding',
     image: 'https://assets.cdn.filesafe.space/oyhdrza3SwoM8YuXOsja/media/69b19ab2c2389cb1a64f3b17.webp',
   },
+  {
+    id: 9,
+    title: 'New Home Siding',
+    location: 'Maple Ridge, BC',
+    category: 'Siding',
+    image: 'https://assets.cdn.filesafe.space/oyhdrza3SwoM8YuXOsja/media/69b19b2e78565a1fbc407e51.webp',
+  },
+  {
+    id: 10,
+    title: 'Exterior Finishing',
+    location: 'Coquitlam, BC',
+    category: 'Siding',
+    image: 'https://assets.cdn.filesafe.space/oyhdrza3SwoM8YuXOsja/media/69b19b2e7fc07c5e0b9783e7.webp',
+  },
+  {
+    id: 11,
+    title: 'Residential Siding Project',
+    location: 'Pitt Meadows, BC',
+    category: 'Siding',
+    image: 'https://assets.cdn.filesafe.space/oyhdrza3SwoM8YuXOsja/media/69b19b2e8d3eae32c01b588c.webp',
+  },
+  {
+    id: 12,
+    title: 'Home Renovation',
+    location: 'Burnaby, BC',
+    category: 'Renovation',
+    image: 'https://assets.cdn.filesafe.space/oyhdrza3SwoM8YuXOsja/media/69b19b2e584eaaaf433d832c.webp',
+  },
+  {
+    id: 13,
+    title: 'Cladding & Trim',
+    location: 'Maple Ridge, BC',
+    category: 'Siding',
+    image: 'https://assets.cdn.filesafe.space/oyhdrza3SwoM8YuXOsja/media/69b19b2e8d3eae49601b5887.webp',
+  },
+  {
+    id: 14,
+    title: 'Full Exterior Reclad',
+    location: 'Abbotsford, BC',
+    category: 'Siding',
+    image: 'https://assets.cdn.filesafe.space/oyhdrza3SwoM8YuXOsja/media/69b19b2ec2389c823e4f5e04.webp',
+  },
+  {
+    id: 15,
+    title: 'Siding & Envelope Work',
+    location: 'Coquitlam, BC',
+    category: 'Building Envelope',
+    image: 'https://assets.cdn.filesafe.space/oyhdrza3SwoM8YuXOsja/media/69b19b2e8cb259358e3db9a1.webp',
+  },
 ];
 
 export function ProjectGrid() {
