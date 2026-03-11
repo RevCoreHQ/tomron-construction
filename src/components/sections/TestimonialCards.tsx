@@ -1,9 +1,9 @@
 'use client';
 
-import { Star } from 'lucide-react';
+import { useState, useEffect, useCallback } from 'react';
+import { Star, ChevronLeft, ChevronRight } from 'lucide-react';
 import { ScrollReveal } from '@/components/motion/ScrollReveal';
-import { StaggerChildren, staggerItem } from '@/components/motion/StaggerChildren';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const testimonials = [
   {
@@ -33,54 +33,90 @@ const testimonials = [
 ];
 
 export function TestimonialCards() {
-  return (
-    <section className="section-padding bg-gradient-to-b from-sand-50 to-white relative overflow-hidden">
-      <div className="orb w-[300px] h-[300px] bg-brand-100/30 top-[10%] -right-[5%]" />
+  const [current, setCurrent] = useState(0);
+  const [direction, setDirection] = useState(0);
 
-      <div className="container-wide relative z-10">
-        <ScrollReveal className="text-center mb-12 lg:mb-16">
-          <p className="inline-flex items-center gap-2 text-sm font-medium tracking-wider uppercase mb-3">
-            <span className="w-6 h-px bg-accent-gold" />
-            <span className="gradient-text-gold">Client Experiences</span>
-            <span className="w-6 h-px bg-accent-gold" />
-          </p>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-slate-900">
+  const next = useCallback(() => {
+    setDirection(1);
+    setCurrent((prev) => (prev + 1) % testimonials.length);
+  }, []);
+
+  const prev = useCallback(() => {
+    setDirection(-1);
+    setCurrent((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+  }, []);
+
+  useEffect(() => {
+    const timer = setInterval(next, 6000);
+    return () => clearInterval(timer);
+  }, [next]);
+
+  const t = testimonials[current];
+
+  return (
+    <section className="section-padding bg-neutral-50">
+      <div className="container-narrow">
+        <ScrollReveal>
+          <p className="text-sm font-semibold text-brand-600 uppercase tracking-wider mb-2">Testimonials</p>
+          <h2 className="text-3xl sm:text-4xl font-display font-extrabold text-charcoal-900 mb-12">
             What Our Clients Say
           </h2>
         </ScrollReveal>
-        <StaggerChildren className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-          {testimonials.map((t) => (
+
+        <div className="relative min-h-[220px]">
+          <AnimatePresence mode="wait" custom={direction}>
             <motion.div
               key={t.id}
-              variants={staggerItem}
-              className="relative bg-white rounded-2xl p-6 lg:p-8 shadow-soft border border-slate-100 border-l-4 border-l-brand-500 hover:shadow-card transition-all duration-300"
+              custom={direction}
+              initial={{ opacity: 0, x: direction >= 0 ? 40 : -40 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: direction >= 0 ? -40 : 40 }}
+              transition={{ duration: 0.3 }}
             >
-              <span className="absolute top-4 right-5 text-6xl font-display text-brand-100/60 leading-none select-none pointer-events-none">
-                &ldquo;
-              </span>
+              {/* Stars */}
+              <div className="flex gap-1 mb-6">
+                {Array.from({ length: t.rating }).map((_, i) => (
+                  <Star key={i} className="w-5 h-5 fill-brand-500 text-brand-500" />
+                ))}
+              </div>
 
-              <div className="relative z-10">
-                <div className="flex gap-0.5 mb-4">
-                  {Array.from({ length: t.rating }).map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
-                  ))}
-                </div>
-                <p className="text-slate-700 leading-relaxed mb-5 italic">
-                  &ldquo;{t.quote}&rdquo;
-                </p>
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-brand-100 to-brand-200 flex items-center justify-center">
-                    <span className="text-sm font-bold text-brand-700">{t.author[0]}</span>
-                  </div>
-                  <div>
-                    <p className="font-semibold text-slate-900">{t.author}</p>
-                    <p className="text-sm text-slate-500">{t.location} · {t.service}</p>
-                  </div>
+              {/* Quote */}
+              <blockquote className="text-xl sm:text-2xl lg:text-3xl font-display font-bold text-charcoal-900 leading-snug mb-8 max-w-2xl">
+                &ldquo;{t.quote}&rdquo;
+              </blockquote>
+
+              {/* Author */}
+              <div className="flex items-center gap-4">
+                <div className="w-px h-8 bg-brand-600" />
+                <div>
+                  <p className="font-semibold text-charcoal-900">{t.author}</p>
+                  <p className="text-sm text-slate-500">{t.location} &middot; {t.service}</p>
                 </div>
               </div>
             </motion.div>
-          ))}
-        </StaggerChildren>
+          </AnimatePresence>
+        </div>
+
+        {/* Navigation */}
+        <div className="flex items-center gap-4 mt-10">
+          <button
+            onClick={prev}
+            className="w-10 h-10 rounded-lg border border-neutral-300 flex items-center justify-center text-slate-600 hover:border-brand-600 hover:text-brand-600 transition-colors"
+            aria-label="Previous testimonial"
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </button>
+          <button
+            onClick={next}
+            className="w-10 h-10 rounded-lg border border-neutral-300 flex items-center justify-center text-slate-600 hover:border-brand-600 hover:text-brand-600 transition-colors"
+            aria-label="Next testimonial"
+          >
+            <ChevronRight className="w-5 h-5" />
+          </button>
+          <span className="text-sm text-slate-400 ml-2">
+            {current + 1} / {testimonials.length}
+          </span>
+        </div>
       </div>
     </section>
   );

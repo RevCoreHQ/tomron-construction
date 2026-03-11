@@ -24,8 +24,8 @@ export default function GalleryPage() {
         <div className="container-wide">
           <Breadcrumbs items={[{ label: 'Gallery', href: '/gallery' }]} />
           <div className="max-w-3xl mb-4">
-            <p className="text-brand-600 font-medium text-sm tracking-wide uppercase mb-3">Our Work</p>
-            <h1 className="text-4xl sm:text-5xl font-display font-bold text-slate-900 mb-4">
+            <p className="text-sm font-semibold text-brand-600 uppercase tracking-wider mb-2">Our Work</p>
+            <h1 className="text-4xl sm:text-5xl font-display font-extrabold text-charcoal-900 mb-4">
               Craftsmanship That Speaks for Itself
             </h1>
             <p className="text-lg text-slate-600 leading-relaxed">

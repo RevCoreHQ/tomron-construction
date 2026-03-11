@@ -40,7 +40,7 @@ export function ProjectGrid() {
               <motion.div
                 key={project.id}
                 variants={staggerItem}
-                className="group relative rounded-2xl overflow-hidden shadow-soft hover:shadow-card transition-all duration-300 text-left"
+                className="group relative rounded-lg overflow-hidden shadow-card hover:shadow-lg transition-all duration-300 text-left"
               >
                 <div className="relative aspect-[4/3] image-placeholder-premium">
                   <div className="absolute inset-0 flex items-center justify-center">

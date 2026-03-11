@@ -12,9 +12,9 @@ interface ButtonProps {
 }
 
 const variants = {
-  primary: 'bg-gradient-to-r from-brand-600 to-brand-700 text-white hover:from-brand-700 hover:to-brand-800 shadow-lg shadow-brand-600/25 hover:shadow-xl hover:shadow-brand-600/30 hover:-translate-y-0.5',
-  secondary: 'bg-gradient-to-r from-slate-800 to-slate-900 text-white hover:from-slate-700 hover:to-slate-800 shadow-lg shadow-slate-900/25 hover:-translate-y-0.5',
-  outline: 'border-2 border-brand-600 text-brand-700 hover:bg-brand-50 hover:shadow-md hover:-translate-y-0.5',
+  primary: 'bg-brand-600 text-white hover:bg-brand-700 shadow-md hover:shadow-lg active:scale-[0.98]',
+  secondary: 'bg-charcoal-900 text-white hover:bg-charcoal-800 shadow-md hover:shadow-lg active:scale-[0.98]',
+  outline: 'border-2 border-brand-600 text-brand-700 hover:bg-brand-50 active:scale-[0.98]',
   ghost: 'text-brand-700 hover:bg-brand-50',
 };
 
@@ -34,7 +34,7 @@ export function Button({
   type = 'button',
 }: ButtonProps) {
   const classes = cn(
-    'inline-flex items-center justify-center font-medium rounded-xl transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2',
+    'inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2',
     variants[variant],
     sizes[size],
     className

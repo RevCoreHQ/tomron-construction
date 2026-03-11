@@ -6,37 +6,34 @@ const config: Config = {
     extend: {
       colors: {
         brand: {
-          50: '#fdf4ef',
-          100: '#f9e4d4',
-          200: '#f2c5a3',
-          300: '#e9a06d',
-          400: '#d98142',
-          500: '#c96b2e',
-          600: '#b87333',
-          700: '#a05a22',
-          800: '#844a1e',
-          900: '#6c3d1b',
-          950: '#3a1e0c',
+          50: '#eff6ff',
+          100: '#dbeafe',
+          200: '#bfdbfe',
+          300: '#93c5fd',
+          400: '#60a5fa',
+          500: '#3b82f6',
+          600: '#2563eb',
+          700: '#1d4ed8',
+          800: '#1e40af',
+          900: '#1e3a8a',
+          950: '#172554',
         },
-        slate: {
-          850: '#1a1a2e',
-          925: '#12121f',
-          950: '#0a0a14',
+        charcoal: {
+          800: '#27272a',
+          900: '#1c1c1e',
+          950: '#111113',
         },
-        sand: {
-          50: '#faf8f5',
-          100: '#f3f0ea',
-          200: '#e8e2d8',
-          300: '#d4cabb',
-          400: '#bfae98',
-        },
-        accent: {
-          gold: '#c5a55a',
-          copper: '#b87333',
+        neutral: {
+          50: '#fafafa',
+          100: '#f5f5f5',
+          150: '#ededed',
+          200: '#e5e5e5',
+          300: '#d4d4d4',
+          400: '#a3a3a3',
         },
       },
       fontFamily: {
-        display: ['var(--font-display)', 'Georgia', 'serif'],
+        display: ['var(--font-display)', 'system-ui', 'sans-serif'],
         body: ['var(--font-body)', 'system-ui', 'sans-serif'],
       },
       fontSize: {
@@ -50,8 +47,7 @@ const config: Config = {
         30: '7.5rem',
       },
       borderRadius: {
-        '2xl': '1rem',
-        '3xl': '1.5rem',
+        lg: '0.5rem',
       },
       boxShadow: {
         soft: '0 2px 15px -3px rgba(0, 0, 0, 0.07), 0 10px 20px -2px rgba(0, 0, 0, 0.04)',
@@ -59,8 +55,9 @@ const config: Config = {
         elevated: '0 20px 50px -12px rgba(0, 0, 0, 0.15)',
       },
       animation: {
-        'fade-in': 'fadeIn 0.5s ease-out',
-        'slide-up': 'slideUp 0.6s ease-out',
+        'fade-in': 'fadeIn 0.4s ease-out',
+        'slide-up': 'slideUp 0.5s ease-out',
+        'slide-in-left': 'slideInLeft 0.5s ease-out',
         'slide-in-right': 'slideInRight 0.5s ease-out',
       },
       keyframes: {
@@ -71,6 +68,10 @@ const config: Config = {
         slideUp: {
           '0%': { opacity: '0', transform: 'translateY(20px)' },
           '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        slideInLeft: {
+          '0%': { opacity: '0', transform: 'translateX(-20px)' },
+          '100%': { opacity: '1', transform: 'translateX(0)' },
         },
         slideInRight: {
           '0%': { opacity: '0', transform: 'translateX(20px)' },

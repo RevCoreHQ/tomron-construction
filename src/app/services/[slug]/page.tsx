@@ -54,7 +54,7 @@ export default async function ServicePage({ params }: Props) {
       />
 
       {/* Hero */}
-      <section className="relative py-16 lg:py-24 bg-gradient-to-br from-slate-900 via-brand-950 to-slate-900 overflow-hidden">
+      <section className="relative py-16 lg:py-24 bg-charcoal-900 overflow-hidden">
         {service.heroImage && (
           <>
             <Image
@@ -66,7 +66,7 @@ export default async function ServicePage({ params }: Props) {
               quality={70}
               className="object-cover object-center"
             />
-            <div className="absolute inset-0 bg-slate-950/75" />
+            <div className="absolute inset-0 bg-charcoal-950/75" />
           </>
         )}
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -78,18 +78,21 @@ export default async function ServicePage({ params }: Props) {
             variant="dark"
           />
           <div className="max-w-3xl mt-4">
-            <span className="inline-block px-3 py-1 text-xs font-medium bg-brand-600/20 text-brand-300 rounded-full mb-4 capitalize">
+            <span className="inline-block px-3 py-1 text-xs font-semibold bg-brand-600/20 text-brand-400 rounded-md mb-4 capitalize">
               {service.category}
             </span>
-            <h1 className="text-4xl sm:text-5xl font-display font-bold text-white mb-6">
+            <h1 className="text-4xl sm:text-5xl font-display font-extrabold text-white mb-6">
               {service.h1}
             </h1>
-            <p className="text-xl text-slate-300 leading-relaxed mb-8">{service.intro}</p>
+            <p className="text-xl text-white/60 leading-relaxed mb-8">{service.intro}</p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button href="/contact" size="lg">Get Your Free {service.shortTitle} Quote</Button>
-              <Button href={`tel:${siteConfig.phoneRaw}`} variant="outline" size="lg" className="border-white/30 text-white hover:bg-white/10">
+              <a
+                href={`tel:${siteConfig.phoneRaw}`}
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 text-lg font-medium text-white/70 border border-white/20 rounded-lg hover:text-white hover:border-white/40 transition-all"
+              >
                 Call {siteConfig.phone}
-              </Button>
+              </a>
             </div>
           </div>
         </div>
@@ -98,10 +101,10 @@ export default async function ServicePage({ params }: Props) {
       {/* Features */}
       <section className="section-padding">
         <div className="container-wide">
-          <h2 className="text-3xl font-display font-bold text-slate-900 mb-8">What&apos;s Included</h2>
+          <h2 className="text-3xl font-display font-extrabold text-charcoal-900 mb-8">What&apos;s Included</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {service.features.map((feature, i) => (
-              <div key={i} className="flex items-start gap-3 p-4 bg-sand-50 rounded-xl">
+              <div key={i} className="flex items-start gap-3 p-4 bg-neutral-50 rounded-lg">
                 <div className="w-6 h-6 rounded-full bg-brand-100 flex items-center justify-center shrink-0 mt-0.5">
                   <span className="text-brand-700 text-xs font-bold">{i + 1}</span>
                 </div>
@@ -114,12 +117,12 @@ export default async function ServicePage({ params }: Props) {
 
       {/* Body content sections */}
       {service.body.length > 0 && (
-        <section className="section-padding bg-gradient-to-b from-sand-50 to-white">
+        <section className="section-padding bg-neutral-50">
           <div className="container-narrow">
             <div className="space-y-12">
               {service.body.map((section, i) => (
                 <div key={i}>
-                  <h2 className="text-2xl sm:text-3xl font-display font-bold text-slate-900 mb-4">
+                  <h2 className="text-2xl sm:text-3xl font-display font-extrabold text-charcoal-900 mb-4">
                     {section.heading}
                   </h2>
                   <p className="text-slate-600 leading-relaxed text-base lg:text-lg">
@@ -139,15 +142,15 @@ export default async function ServicePage({ params }: Props) {
       {related.length > 0 && (
         <section className="section-padding">
           <div className="container-wide">
-            <h2 className="text-3xl font-display font-bold text-slate-900 mb-8">Related Services</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <h2 className="text-3xl font-display font-extrabold text-charcoal-900 mb-8">Related Services</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
               {related.map((r) => (
                 <Link
                   key={r.slug}
                   href={`/services/${r.slug}`}
-                  className="group p-5 bg-white rounded-xl border border-slate-100 shadow-soft hover:shadow-card hover:-translate-y-0.5 transition-all"
+                  className="group p-5 bg-white rounded-lg border border-neutral-200 hover:border-brand-300 hover:-translate-y-0.5 transition-all"
                 >
-                  <h3 className="font-display font-semibold text-slate-900 mb-2 group-hover:text-brand-600 transition-colors">
+                  <h3 className="font-display font-semibold text-charcoal-900 mb-2 group-hover:text-brand-600 transition-colors">
                     {r.title}
                   </h3>
                   <span className="inline-flex items-center gap-1 text-sm text-brand-600 font-medium">

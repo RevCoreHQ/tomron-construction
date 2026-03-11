@@ -1,46 +1,23 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
 import { Phone, Menu, X, ChevronDown } from 'lucide-react';
 import { siteConfig } from '@/data/site-config';
 import { mainNav } from '@/data/navigation';
 import { Button } from '@/components/ui/Button';
-import { cn } from '@/lib/utils';
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 60);
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
 
   return (
-    <header
-      className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-500',
-        scrolled || mobileOpen
-          ? 'bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-sm'
-          : 'bg-transparent border-b border-transparent'
-      )}
-    >
+    <header className="fixed top-0 left-0 right-0 z-50 bg-charcoal-900 border-b border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="flex items-center justify-between h-16 lg:h-20">
+        <div className="flex items-center justify-between h-16 lg:h-18">
           {/* Logo */}
-          <Link href="/" className="shrink-0 flex items-center gap-2">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-600 to-brand-800 flex items-center justify-center shadow-sm">
-              <span className="text-white font-display font-bold text-lg">T</span>
-            </div>
-            <span
-              className={cn(
-                'font-display text-xl font-bold transition-colors',
-                scrolled || mobileOpen ? 'text-slate-900' : 'text-white'
-              )}
-            >
+          <Link href="/" className="shrink-0">
+            <span className="font-display text-xl font-extrabold tracking-tight text-white uppercase">
               Tomron
             </span>
           </Link>
@@ -56,12 +33,7 @@ export function Header() {
               >
                 <Link
                   href={item.href}
-                  className={cn(
-                    'flex items-center gap-1 px-3 py-2 text-sm font-medium transition-colors rounded-lg whitespace-nowrap',
-                    scrolled || mobileOpen
-                      ? 'text-slate-700 hover:text-brand-600 hover:bg-brand-50/50'
-                      : 'text-white/90 hover:text-white hover:bg-white/10'
-                  )}
+                  className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-white/70 hover:text-white transition-colors whitespace-nowrap"
                 >
                   {item.label}
                   {item.children && <ChevronDown className="w-3.5 h-3.5" />}
@@ -69,12 +41,12 @@ export function Header() {
 
                 {item.children && openDropdown === item.label && (
                   <div className="absolute top-full left-0 pt-2 z-50">
-                    <div className="w-64 bg-white rounded-xl shadow-elevated border border-slate-100 py-2 animate-fade-in">
+                    <div className="w-56 bg-charcoal-950 rounded-lg border border-white/10 py-2 animate-fade-in">
                       {item.children.map((child) => (
                         <Link
                           key={child.href}
                           href={child.href}
-                          className="block px-4 py-2.5 text-sm text-slate-700 hover:text-brand-600 hover:bg-brand-50/50 transition-colors"
+                          className="block px-4 py-2.5 text-sm text-white/60 hover:text-white hover:bg-white/5 transition-colors"
                         >
                           {child.label}
                         </Link>
@@ -87,29 +59,23 @@ export function Header() {
           </nav>
 
           {/* Desktop CTA */}
-          <div className="hidden lg:flex items-center gap-3">
+          <div className="hidden lg:flex items-center gap-4">
             <a
               href={`tel:${siteConfig.phoneRaw}`}
-              className={cn(
-                'flex items-center gap-2 text-sm font-medium transition-colors whitespace-nowrap',
-                scrolled ? 'text-slate-700 hover:text-brand-600' : 'text-white/90 hover:text-white'
-              )}
+              className="flex items-center gap-2 text-sm font-medium text-white/70 hover:text-white transition-colors whitespace-nowrap"
             >
               <Phone className="w-4 h-4" />
               {siteConfig.phone}
             </a>
             <Button href="/contact" size="sm">
-              Free Quote
+              Get a Quote
             </Button>
           </div>
 
           {/* Mobile menu button */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className={cn(
-              'lg:hidden p-2 transition-colors',
-              scrolled || mobileOpen ? 'text-slate-700 hover:text-brand-600' : 'text-white hover:text-white/80'
-            )}
+            className="lg:hidden p-2 text-white/80 hover:text-white transition-colors"
             aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
           >
             {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -117,49 +83,68 @@ export function Header() {
         </div>
       </div>
 
-      {/* Mobile menu */}
-      {mobileOpen && (
-        <div className="lg:hidden border-t border-slate-100 bg-white animate-fade-in">
-          <nav className="px-4 py-4 space-y-1" aria-label="Mobile navigation">
-            {mainNav.map((item) => (
-              <div key={item.href}>
-                <Link
-                  href={item.href}
-                  className="block px-3 py-2.5 text-base font-medium text-slate-700 hover:text-brand-600 hover:bg-brand-50 rounded-lg transition-colors"
-                  onClick={() => !item.children && setMobileOpen(false)}
-                >
-                  {item.label}
-                </Link>
-                {item.children && (
-                  <div className="pl-6 space-y-0.5">
-                    {item.children.map((child) => (
-                      <Link
-                        key={child.href}
-                        href={child.href}
-                        className="block px-3 py-2 text-sm text-slate-600 hover:text-brand-600 hover:bg-brand-50 rounded-lg transition-colors"
-                        onClick={() => setMobileOpen(false)}
-                      >
-                        {child.label}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ))}
-          </nav>
-          <div className="px-4 pb-4 pt-2 flex gap-3">
-            <Button href="/contact" className="flex-1" size="sm">
-              Free Quote
-            </Button>
-            <a
-              href={`tel:${siteConfig.phoneRaw}`}
-              className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2 text-sm font-medium rounded-xl border-2 border-brand-600 text-brand-700 hover:bg-brand-50 transition-colors"
-            >
-              <Phone className="w-4 h-4" />
-              Call Now
-            </a>
-          </div>
+      {/* Mobile menu — slides in from right */}
+      <div
+        className={`lg:hidden fixed inset-y-0 right-0 w-80 max-w-[85vw] bg-charcoal-950 z-50 transform transition-transform duration-300 ease-in-out ${
+          mobileOpen ? 'translate-x-0' : 'translate-x-full'
+        }`}
+      >
+        <div className="flex items-center justify-between p-4 border-b border-white/10">
+          <span className="font-display text-lg font-bold text-white uppercase">Menu</span>
+          <button
+            onClick={() => setMobileOpen(false)}
+            className="p-2 text-white/60 hover:text-white transition-colors"
+          >
+            <X className="w-5 h-5" />
+          </button>
         </div>
+        <nav className="px-4 py-6 space-y-1 overflow-y-auto max-h-[calc(100vh-140px)]" aria-label="Mobile navigation">
+          {mainNav.map((item) => (
+            <div key={item.href}>
+              <Link
+                href={item.href}
+                className="block px-3 py-3 text-base font-medium text-white/80 hover:text-white hover:bg-white/5 rounded-lg transition-colors"
+                onClick={() => !item.children && setMobileOpen(false)}
+              >
+                {item.label}
+              </Link>
+              {item.children && (
+                <div className="pl-4 space-y-0.5">
+                  {item.children.map((child) => (
+                    <Link
+                      key={child.href}
+                      href={child.href}
+                      className="block px-3 py-2 text-sm text-white/50 hover:text-white hover:bg-white/5 rounded-lg transition-colors"
+                      onClick={() => setMobileOpen(false)}
+                    >
+                      {child.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
+        </nav>
+        <div className="absolute bottom-0 left-0 right-0 p-4 border-t border-white/10 space-y-3">
+          <Button href="/contact" className="w-full" size="sm" onClick={() => setMobileOpen(false)}>
+            Get a Quote
+          </Button>
+          <a
+            href={`tel:${siteConfig.phoneRaw}`}
+            className="flex items-center justify-center gap-2 w-full px-4 py-2.5 text-sm font-medium rounded-lg border border-white/20 text-white/80 hover:text-white hover:border-white/40 transition-colors"
+          >
+            <Phone className="w-4 h-4" />
+            Call Now
+          </a>
+        </div>
+      </div>
+
+      {/* Backdrop */}
+      {mobileOpen && (
+        <div
+          className="lg:hidden fixed inset-0 bg-black/50 z-40"
+          onClick={() => setMobileOpen(false)}
+        />
       )}
     </header>
   );

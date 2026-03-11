@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Playfair_Display, DM_Sans } from 'next/font/google';
+import { Outfit, Inter } from 'next/font/google';
 import { siteConfig } from '@/data/site-config';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
@@ -8,15 +8,14 @@ import { JsonLd } from '@/components/seo/JsonLd';
 import { localBusinessSchema } from '@/lib/schema';
 import '@/styles/globals.css';
 
-const playfairDisplay = Playfair_Display({
+const outfit = Outfit({
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
-  style: ['normal', 'italic'],
+  weight: ['400', '500', '600', '700', '800', '900'],
   variable: '--font-display',
   display: 'swap',
 });
 
-const dmSans = DM_Sans({
+const inter = Inter({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600', '700'],
   variable: '--font-body',
@@ -56,7 +55,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${playfairDisplay.variable} ${dmSans.variable}`}>
+    <html lang="en" className={`${outfit.variable} ${inter.variable}`}>
       <head>
         <JsonLd data={localBusinessSchema()} />
       </head>

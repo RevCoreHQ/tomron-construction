@@ -17,8 +17,8 @@ export default function ProcessPage() {
         <div className="container-wide">
           <Breadcrumbs items={[{ label: 'Our Process', href: '/process' }]} />
           <div className="max-w-3xl mb-4">
-            <p className="text-brand-600 font-medium text-sm tracking-wide uppercase mb-3">How We Work</p>
-            <h1 className="text-4xl sm:text-5xl font-display font-bold text-slate-900 mb-4">
+            <p className="text-sm font-semibold text-brand-600 uppercase tracking-wider mb-2">How We Work</p>
+            <h1 className="text-4xl sm:text-5xl font-display font-extrabold text-charcoal-900 mb-4">
               A Clear, Proven Process From Start to Finish
             </h1>
             <p className="text-lg text-slate-600 leading-relaxed">
@@ -29,11 +29,11 @@ export default function ProcessPage() {
       </div>
       <ProcessSteps />
 
-      <section className="section-padding bg-gradient-to-b from-white to-sand-50">
+      <section className="section-padding bg-gradient-to-b from-white to-neutral-50">
         <div className="container-narrow">
           <div className="space-y-12">
             <div>
-              <h2 className="text-2xl sm:text-3xl font-display font-bold text-slate-900 mb-4">
+              <h2 className="text-2xl sm:text-3xl font-display font-extrabold text-charcoal-900 mb-4">
                 Step 1: Free Consultation
               </h2>
               <p className="text-slate-600 leading-relaxed text-base lg:text-lg">
@@ -41,7 +41,7 @@ export default function ProcessPage() {
               </p>
             </div>
             <div>
-              <h2 className="text-2xl sm:text-3xl font-display font-bold text-slate-900 mb-4">
+              <h2 className="text-2xl sm:text-3xl font-display font-extrabold text-charcoal-900 mb-4">
                 Step 2: Detailed Proposal
               </h2>
               <p className="text-slate-600 leading-relaxed text-base lg:text-lg">
@@ -49,7 +49,7 @@ export default function ProcessPage() {
               </p>
             </div>
             <div>
-              <h2 className="text-2xl sm:text-3xl font-display font-bold text-slate-900 mb-4">
+              <h2 className="text-2xl sm:text-3xl font-display font-extrabold text-charcoal-900 mb-4">
                 Step 3: Expert Construction
               </h2>
               <p className="text-slate-600 leading-relaxed text-base lg:text-lg">
@@ -57,7 +57,7 @@ export default function ProcessPage() {
               </p>
             </div>
             <div>
-              <h2 className="text-2xl sm:text-3xl font-display font-bold text-slate-900 mb-4">
+              <h2 className="text-2xl sm:text-3xl font-display font-extrabold text-charcoal-900 mb-4">
                 Step 4: Final Walkthrough
               </h2>
               <p className="text-slate-600 leading-relaxed text-base lg:text-lg">

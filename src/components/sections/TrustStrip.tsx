@@ -37,24 +37,23 @@ export function TrustStrip() {
   return (
     <section ref={ref} className="relative -mt-8 z-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-5xl mx-auto">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5">
           {siteConfig.trustPoints.map((point, i) => {
             const Icon = iconMap[point.icon];
             return (
               <div
                 key={point.label}
-                className="group flex items-center gap-3 bg-white rounded-2xl p-4 lg:p-5 shadow-card border border-slate-100 hover:-translate-y-0.5 transition-all duration-300"
+                className="group flex items-center gap-3 bg-white rounded-lg p-4 lg:p-5 shadow-card border border-neutral-200 hover:-translate-y-0.5 transition-all duration-300"
                 style={{
-                  borderTop: '2px solid var(--gold)',
                   opacity: visible ? 1 : 0,
                   transform: visible ? 'translateY(0)' : 'translateY(24px)',
                   transition: `opacity 0.5s ease ${i * 0.1}s, transform 0.5s ease ${i * 0.1}s`,
                 }}
               >
-                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-50 to-brand-100 flex items-center justify-center shrink-0 group-hover:from-brand-100 group-hover:to-brand-200 transition-all">
-                  <Icon className="w-5 h-5 text-brand-700" />
+                <div className="w-10 h-10 rounded-lg bg-brand-50 flex items-center justify-center shrink-0 group-hover:bg-brand-100 transition-all">
+                  <Icon className="w-5 h-5 text-brand-600" />
                 </div>
-                <span className="text-sm font-semibold text-slate-800 leading-tight">
+                <span className="text-sm font-semibold text-charcoal-900 leading-tight">
                   {point.label}
                 </span>
               </div>

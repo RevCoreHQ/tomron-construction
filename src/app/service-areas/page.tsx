@@ -33,15 +33,15 @@ export default function ServiceAreasPage() {
       />
 
       {/* Hero */}
-      <section className="relative py-16 lg:py-24 bg-gradient-to-br from-slate-900 via-brand-950 to-slate-900 overflow-hidden">
+      <section className="relative py-16 lg:py-24 bg-charcoal-900 overflow-hidden">
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumbs items={[{ label: 'Service Areas', href: '/service-areas' }]} variant="dark" />
           <div className="max-w-3xl mt-4">
-            <h1 className="text-4xl sm:text-5xl font-display font-bold text-white mb-6">
+            <h1 className="text-4xl sm:text-5xl font-display font-extrabold text-white mb-6">
               Areas We Serve in the Lower Mainland
             </h1>
-            <p className="text-xl text-slate-300 leading-relaxed mb-8">
-              Tomron Construction provides expert siding installation, window and door replacement, building envelope solutions, and home renovations throughout the Lower Mainland. We proudly serve homeowners in Maple Ridge, Coquitlam, Pitt Meadows, Burnaby, Abbotsford, and surrounding BC communities.
+            <p className="text-xl text-white/60 leading-relaxed mb-8">
+              Tomron Construction provides expert siding installation, window and door replacement, building envelope solutions, and home renovations throughout the Lower Mainland.
             </p>
             <Button href="/contact" size="lg">
               Get Your Free Quote
@@ -53,26 +53,27 @@ export default function ServiceAreasPage() {
       {/* Primary Areas */}
       <section className="section-padding">
         <div className="container-wide">
-          <h2 className="text-3xl font-display font-bold text-slate-900 mb-2">Primary Service Areas</h2>
-          <p className="text-slate-600 mb-8">Communities where we are based and serve regularly.</p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <p className="text-sm font-semibold text-brand-600 uppercase tracking-wider mb-2">Core Coverage</p>
+          <h2 className="text-3xl font-display font-extrabold text-charcoal-900 mb-2">Primary Service Areas</h2>
+          <p className="text-slate-500 mb-8">Communities where we are based and serve regularly.</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {primary.map((area) => (
               <Link
                 key={area.slug}
                 href={`/service-areas/${area.slug}`}
-                className="group relative p-8 bg-white rounded-2xl border border-slate-100 shadow-soft hover:shadow-card hover:-translate-y-0.5 transition-all"
+                className="group relative p-6 bg-white rounded-lg border border-neutral-200 hover:border-brand-300 hover:-translate-y-0.5 transition-all"
               >
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-brand-50 flex items-center justify-center shrink-0">
-                    <MapPin className="w-6 h-6 text-brand-600" />
+                  <div className="w-10 h-10 rounded-lg bg-brand-50 flex items-center justify-center shrink-0">
+                    <MapPin className="w-5 h-5 text-brand-600" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-display font-bold text-slate-900 group-hover:text-brand-600 transition-colors mb-2">
+                    <h3 className="text-lg font-display font-bold text-charcoal-900 group-hover:text-brand-600 transition-colors mb-2">
                       {area.city}, {area.state}
                     </h3>
-                    <p className="text-slate-600 text-sm leading-relaxed mb-4">{area.intro.slice(0, 140)}&hellip;</p>
-                    <span className="inline-flex items-center gap-1 text-sm font-medium text-brand-600">
-                      View services in {area.city} <ArrowRight className="w-3.5 h-3.5" />
+                    <p className="text-slate-500 text-sm leading-relaxed mb-3">{area.intro.slice(0, 140)}&hellip;</p>
+                    <span className="inline-flex items-center gap-1 text-sm font-semibold text-brand-600">
+                      View services <ArrowRight className="w-3.5 h-3.5" />
                     </span>
                   </div>
                 </div>
@@ -84,27 +85,27 @@ export default function ServiceAreasPage() {
 
       {/* Nearby Areas */}
       {nearby.length > 0 && (
-        <section className="section-padding bg-sand-50">
+        <section className="section-padding bg-neutral-50">
           <div className="container-wide">
-            <h2 className="text-3xl font-display font-bold text-slate-900 mb-2">Extended Service Areas</h2>
-            <p className="text-slate-600 mb-8">
+            <h2 className="text-3xl font-display font-extrabold text-charcoal-900 mb-2">Extended Service Areas</h2>
+            <p className="text-slate-500 mb-8">
               We regularly serve these communities. Call to confirm availability for your address.
             </p>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
               {nearby.map((area) => (
                 <Link
                   key={area.slug}
                   href={`/service-areas/${area.slug}`}
-                  className="group p-6 bg-white rounded-2xl border border-slate-100 shadow-soft hover:shadow-card hover:-translate-y-0.5 transition-all"
+                  className="group p-6 bg-white rounded-lg border border-neutral-200 hover:border-brand-300 hover:-translate-y-0.5 transition-all"
                 >
                   <div className="flex items-center gap-3 mb-3">
-                    <MapPin className="w-5 h-5 text-brand-500" />
-                    <h3 className="text-lg font-display font-bold text-slate-900 group-hover:text-brand-600 transition-colors">
+                    <MapPin className="w-5 h-5 text-brand-600" />
+                    <h3 className="text-lg font-display font-bold text-charcoal-900 group-hover:text-brand-600 transition-colors">
                       {area.city}, {area.state}
                     </h3>
                   </div>
-                  <p className="text-slate-600 text-sm leading-relaxed mb-3">{area.intro.slice(0, 100)}&hellip;</p>
-                  <span className="inline-flex items-center gap-1 text-sm font-medium text-brand-600">
+                  <p className="text-slate-500 text-sm leading-relaxed mb-3">{area.intro.slice(0, 100)}&hellip;</p>
+                  <span className="inline-flex items-center gap-1 text-sm font-semibold text-brand-600">
                     Learn more <ArrowRight className="w-3.5 h-3.5" />
                   </span>
                 </Link>
@@ -116,11 +117,11 @@ export default function ServiceAreasPage() {
 
       {/* Don't see your area? */}
       <section className="section-padding">
-        <div className="container-wide text-center max-w-2xl mx-auto">
-          <h2 className="text-3xl font-display font-bold text-slate-900 mb-4">
+        <div className="container-wide max-w-2xl">
+          <h2 className="text-3xl font-display font-extrabold text-charcoal-900 mb-4">
             Don&apos;t See Your Community?
           </h2>
-          <p className="text-slate-600 leading-relaxed mb-8">
+          <p className="text-slate-500 leading-relaxed mb-8">
             We serve many communities across the Lower Mainland and Fraser Valley. Give us a call to see if we can help with your project.
           </p>
           <Button href={`tel:${siteConfig.phoneRaw}`} size="lg" variant="outline">

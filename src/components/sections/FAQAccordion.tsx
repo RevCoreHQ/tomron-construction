@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { ScrollReveal } from '@/components/motion/ScrollReveal';
 import type { FAQ } from '@/data/services';
 
 interface FAQAccordionProps {
@@ -15,63 +16,65 @@ export function FAQAccordion({ faqs, title, subtitle }: FAQAccordionProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="section-padding bg-gradient-to-b from-sand-50 to-white">
-      <div className="container-narrow">
-        {title && (
-          <div className="text-center mb-12">
-            {subtitle && (
-              <p className="inline-flex items-center gap-2 text-sm font-medium tracking-wider uppercase mb-3 mx-auto">
-                <span className="w-6 h-px bg-accent-gold" />
-                <span className="gradient-text-gold">{subtitle}</span>
-                <span className="w-6 h-px bg-accent-gold" />
-              </p>
-            )}
-            <h2 className="text-3xl sm:text-4xl font-display font-bold text-slate-900">
-              {title}
-            </h2>
-          </div>
-        )}
-        <div className="space-y-3">
-          {faqs.map((faq, i) => (
-            <div
-              key={i}
-              className={cn(
-                'bg-white rounded-xl border overflow-hidden shadow-soft transition-all duration-300',
-                openIndex === i ? 'border-brand-200 shadow-card border-l-4 border-l-brand-500' : 'border-slate-100'
+    <section className="section-padding">
+      <div className="container-wide">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-16">
+          {/* Left — Header */}
+          {title && (
+            <ScrollReveal className="lg:col-span-2">
+              {subtitle && (
+                <p className="text-sm font-semibold text-brand-600 uppercase tracking-wider mb-2">
+                  {subtitle}
+                </p>
               )}
-            >
-              <button
-                onClick={() => setOpenIndex(openIndex === i ? null : i)}
-                className="w-full flex items-center justify-between p-5 lg:p-6 text-left hover:bg-slate-50/50 transition-colors"
-                aria-expanded={openIndex === i}
-              >
-                <span className={cn(
-                  'text-base lg:text-lg font-semibold pr-4 transition-colors',
-                  openIndex === i ? 'text-brand-700' : 'text-slate-800'
-                )}>
-                  {faq.question}
-                </span>
-                <ChevronDown
-                  className={cn(
-                    'w-5 h-5 text-brand-600 shrink-0 transition-transform duration-300',
-                    openIndex === i && 'rotate-180'
-                  )}
-                />
-              </button>
-              <div
-                className={cn(
-                  'grid transition-all duration-300 ease-in-out',
-                  openIndex === i ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
-                )}
-              >
-                <div className="overflow-hidden">
-                  <div className="px-5 pb-5 lg:px-6 lg:pb-6">
-                    <p className="text-slate-600 leading-relaxed">{faq.answer}</p>
+              <h2 className="text-3xl sm:text-4xl font-display font-extrabold text-charcoal-900 mb-4">
+                {title}
+              </h2>
+              <p className="text-slate-500 leading-relaxed">
+                Can&apos;t find what you&apos;re looking for? Contact us and we&apos;ll be happy to answer your questions.
+              </p>
+            </ScrollReveal>
+          )}
+
+          {/* Right — Accordion */}
+          <div className={cn(title ? 'lg:col-span-3' : 'lg:col-span-5')}>
+            <div className="divide-y divide-neutral-200">
+              {faqs.map((faq, i) => (
+                <div key={i}>
+                  <button
+                    onClick={() => setOpenIndex(openIndex === i ? null : i)}
+                    className="w-full flex items-center justify-between py-5 text-left group"
+                    aria-expanded={openIndex === i}
+                  >
+                    <span className={cn(
+                      'text-base font-semibold pr-4 transition-colors',
+                      openIndex === i ? 'text-brand-600' : 'text-charcoal-900 group-hover:text-brand-600'
+                    )}>
+                      {faq.question}
+                    </span>
+                    <ChevronDown
+                      className={cn(
+                        'w-5 h-5 text-slate-400 shrink-0 transition-transform duration-200',
+                        openIndex === i && 'rotate-180 text-brand-600'
+                      )}
+                    />
+                  </button>
+                  <div
+                    className={cn(
+                      'grid transition-all duration-200 ease-in-out',
+                      openIndex === i ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
+                    )}
+                  >
+                    <div className="overflow-hidden">
+                      <div className="pb-5 pr-12">
+                        <p className="text-slate-500 leading-relaxed">{faq.answer}</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
       </div>
     </section>

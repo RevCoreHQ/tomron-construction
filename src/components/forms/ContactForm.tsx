@@ -71,7 +71,7 @@ export function ContactForm() {
         <div className="w-16 h-16 rounded-full bg-green-50 flex items-center justify-center mx-auto mb-4">
           <CheckCircle className="w-8 h-8 text-green-600" />
         </div>
-        <h3 className="text-2xl font-display font-bold text-slate-900 mb-2">Message Sent!</h3>
+        <h3 className="text-2xl font-display font-extrabold text-charcoal-900 mb-2">Message Sent!</h3>
         <p className="text-slate-600">
           Thank you for reaching out. We will get back to you within one business day.
         </p>
@@ -93,7 +93,7 @@ export function ContactForm() {
             required
             value={form.firstName}
             onChange={handleChange}
-            className="w-full px-4 py-3 rounded-xl border border-slate-200 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500 transition-all"
+            className="w-full px-4 py-3 rounded-lg border border-slate-200 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-600/20 focus:border-brand-600 transition-all"
             placeholder="Brendan"
           />
         </div>
@@ -108,7 +108,7 @@ export function ContactForm() {
             required
             value={form.lastName}
             onChange={handleChange}
-            className="w-full px-4 py-3 rounded-xl border border-slate-200 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500 transition-all"
+            className="w-full px-4 py-3 rounded-lg border border-slate-200 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-600/20 focus:border-brand-600 transition-all"
             placeholder="Smith"
           />
         </div>
@@ -126,7 +126,7 @@ export function ContactForm() {
             required
             value={form.email}
             onChange={handleChange}
-            className="w-full px-4 py-3 rounded-xl border border-slate-200 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500 transition-all"
+            className="w-full px-4 py-3 rounded-lg border border-slate-200 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-600/20 focus:border-brand-600 transition-all"
             placeholder="you@example.com"
           />
         </div>
@@ -141,7 +141,7 @@ export function ContactForm() {
             required
             value={form.phone}
             onChange={handleChange}
-            className="w-full px-4 py-3 rounded-xl border border-slate-200 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500 transition-all"
+            className="w-full px-4 py-3 rounded-lg border border-slate-200 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-600/20 focus:border-brand-600 transition-all"
             placeholder="(604) 555-0123"
           />
         </div>
@@ -156,7 +156,7 @@ export function ContactForm() {
           name="service"
           value={form.service}
           onChange={handleChange}
-          className="w-full px-4 py-3 rounded-xl border border-slate-200 text-slate-900 focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500 transition-all appearance-none bg-white"
+          className="w-full px-4 py-3 rounded-lg border border-slate-200 text-slate-900 focus:outline-none focus:ring-2 focus:ring-brand-600/20 focus:border-brand-600 transition-all appearance-none bg-white"
         >
           <option value="">Select a service...</option>
           {services.map((s) => (
@@ -175,13 +175,13 @@ export function ContactForm() {
           rows={4}
           value={form.message}
           onChange={handleChange}
-          className="w-full px-4 py-3 rounded-xl border border-slate-200 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500 transition-all resize-none"
+          className="w-full px-4 py-3 rounded-lg border border-slate-200 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-600/20 focus:border-brand-600 transition-all resize-none"
           placeholder="Describe your project, timeline, and any questions you have..."
         />
       </div>
 
       {status === 'error' && (
-        <div className="flex items-center gap-2 text-red-600 text-sm bg-red-50 px-4 py-3 rounded-xl">
+        <div className="flex items-center gap-2 text-red-600 text-sm bg-red-50 px-4 py-3 rounded-lg">
           <AlertCircle className="w-4 h-4 shrink-0" />
           {errorMsg}
         </div>
@@ -190,7 +190,7 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={status === 'submitting'}
-        className="w-full inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-semibold text-white bg-gradient-to-r from-brand-600 to-brand-700 rounded-xl shadow-soft hover:shadow-card hover:-translate-y-0.5 transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:translate-y-0"
+        className="w-full inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-semibold text-white bg-gradient-to-r from-brand-600 to-brand-700 rounded-lg shadow-card hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:translate-y-0"
       >
         {status === 'submitting' ? (
           <>

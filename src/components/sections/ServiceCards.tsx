@@ -20,11 +20,11 @@ export function ServiceCards({ category, limit, title, subtitle }: ServiceCardsP
         {title && (
           <div className="text-center mb-12 lg:mb-16">
             {subtitle && (
-              <p className="text-brand-600 font-medium text-sm tracking-wide uppercase mb-3">
+              <p className="text-sm font-semibold text-brand-600 uppercase tracking-wider mb-2">
                 {subtitle}
               </p>
             )}
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-slate-900">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-charcoal-900">
               {title}
             </h2>
           </div>
@@ -34,9 +34,9 @@ export function ServiceCards({ category, limit, title, subtitle }: ServiceCardsP
             <Link
               key={service.slug}
               href={`/services/${service.slug}`}
-              className="group relative bg-white rounded-2xl border border-slate-100 p-6 lg:p-8 shadow-soft hover:shadow-card transition-all duration-300 hover:-translate-y-1"
+              className="group relative bg-white rounded-lg border border-slate-100 p-6 lg:p-8 shadow-card hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
             >
-              <div className="relative h-48 mb-6 rounded-xl overflow-hidden bg-slate-200">
+              <div className="relative h-48 mb-6 rounded-lg overflow-hidden bg-slate-200">
                 {service.heroImage && (
                   <Image
                     src={service.heroImage}

@@ -35,8 +35,8 @@ export default function FAQPage() {
         <div className="container-narrow">
           <Breadcrumbs items={[{ label: 'FAQ', href: '/faq' }]} />
           <div className="text-center mb-4">
-            <p className="text-brand-600 font-medium text-sm tracking-wide uppercase mb-3">Questions & Answers</p>
-            <h1 className="text-4xl sm:text-5xl font-display font-bold text-slate-900 mb-4">
+            <p className="text-sm font-semibold text-brand-600 uppercase tracking-wider mb-2">Questions & Answers</p>
+            <h1 className="text-4xl sm:text-5xl font-display font-extrabold text-charcoal-900 mb-4">
               Frequently Asked Questions
             </h1>
             <p className="text-lg text-slate-600">

@@ -24,8 +24,8 @@ export default function ServicesPage() {
         <div className="container-wide">
           <Breadcrumbs items={[{ label: 'Services', href: '/services' }]} />
           <div className="max-w-3xl mb-4">
-            <p className="text-brand-600 font-medium text-sm tracking-wide uppercase mb-3">What We Do</p>
-            <h1 className="text-4xl sm:text-5xl font-display font-bold text-slate-900 mb-4">
+            <p className="text-sm font-semibold text-brand-600 uppercase tracking-wider mb-2">What We Do</p>
+            <h1 className="text-4xl sm:text-5xl font-display font-extrabold text-charcoal-900 mb-4">
               Complete Exterior & Renovation Services
             </h1>
             <p className="text-lg text-slate-600 leading-relaxed">

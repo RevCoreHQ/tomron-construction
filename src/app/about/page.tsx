@@ -34,8 +34,8 @@ export default function AboutPage() {
           <Breadcrumbs items={[{ label: 'About', href: '/about' }]} />
 
           <div className="max-w-3xl">
-            <p className="text-brand-600 font-medium text-sm tracking-wide uppercase mb-3">About Us</p>
-            <h1 className="text-4xl sm:text-5xl font-display font-bold text-slate-900 mb-6">
+            <p className="text-sm font-semibold text-brand-600 uppercase tracking-wider mb-2">About Us</p>
+            <h1 className="text-4xl sm:text-5xl font-display font-extrabold text-charcoal-900 mb-6">
               Family-Run Exterior Specialists Protecting Lower Mainland Homes
             </h1>
             <div className="prose prose-lg text-slate-600 space-y-4">
@@ -53,11 +53,11 @@ export default function AboutPage() {
         </div>
       </div>
 
-      <section className="section-padding bg-gradient-to-b from-sand-50 to-white">
+      <section className="section-padding bg-gradient-to-b from-neutral-50 to-white">
         <div className="container-narrow">
           <div className="space-y-12">
             <div>
-              <h2 className="text-2xl sm:text-3xl font-display font-bold text-slate-900 mb-4">
+              <h2 className="text-2xl sm:text-3xl font-display font-extrabold text-charcoal-900 mb-4">
                 Our Story
               </h2>
               <p className="text-slate-600 leading-relaxed text-base lg:text-lg">
@@ -65,7 +65,7 @@ export default function AboutPage() {
               </p>
             </div>
             <div>
-              <h2 className="text-2xl sm:text-3xl font-display font-bold text-slate-900 mb-4">
+              <h2 className="text-2xl sm:text-3xl font-display font-extrabold text-charcoal-900 mb-4">
                 Experience That Shows in Every Detail
               </h2>
               <p className="text-slate-600 leading-relaxed text-base lg:text-lg">
@@ -73,7 +73,7 @@ export default function AboutPage() {
               </p>
             </div>
             <div>
-              <h2 className="text-2xl sm:text-3xl font-display font-bold text-slate-900 mb-4">
+              <h2 className="text-2xl sm:text-3xl font-display font-extrabold text-charcoal-900 mb-4">
                 Complete Exterior Services Under One Roof
               </h2>
               <p className="text-slate-600 leading-relaxed text-base lg:text-lg">
@@ -81,7 +81,7 @@ export default function AboutPage() {
               </p>
             </div>
             <div>
-              <h2 className="text-2xl sm:text-3xl font-display font-bold text-slate-900 mb-4">
+              <h2 className="text-2xl sm:text-3xl font-display font-extrabold text-charcoal-900 mb-4">
                 Our Commitment After the Build
               </h2>
               <p className="text-slate-600 leading-relaxed text-base lg:text-lg">
@@ -94,9 +94,9 @@ export default function AboutPage() {
 
       <TrustStrip />
 
-      <section className="section-padding bg-sand-50">
+      <section className="section-padding bg-neutral-50">
         <div className="container-wide">
-          <h2 className="text-3xl sm:text-4xl font-display font-bold text-slate-900 text-center mb-12">
+          <h2 className="text-3xl sm:text-4xl font-display font-extrabold text-charcoal-900 text-center mb-12">
             What We Stand For
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -104,7 +104,7 @@ export default function AboutPage() {
               const Icon = v.icon;
               return (
                 <div key={v.title} className="text-center">
-                  <div className="w-14 h-14 rounded-2xl bg-brand-50 flex items-center justify-center mx-auto mb-4">
+                  <div className="w-14 h-14 rounded-lg bg-brand-50 flex items-center justify-center mx-auto mb-4">
                     <Icon className="w-7 h-7 text-brand-600" />
                   </div>
                   <h3 className="text-lg font-display font-semibold text-slate-900 mb-2">{v.title}</h3>

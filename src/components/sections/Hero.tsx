@@ -1,7 +1,9 @@
-import Image from 'next/image';
+'use client';
+
 import { Button } from '@/components/ui/Button';
 import { siteConfig } from '@/data/site-config';
-import { Phone } from 'lucide-react';
+import { Phone, Shield, BadgeCheck, Award } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 interface HeroProps {
   headline: string;
@@ -14,96 +16,91 @@ interface HeroProps {
   overlay?: boolean;
 }
 
+const trustBadges = [
+  { icon: Shield, label: '10+ Years' },
+  { icon: BadgeCheck, label: 'Licensed & Insured' },
+  { icon: Award, label: 'Free Quotes' },
+];
+
 export function Hero({
   headline,
   subheadline,
   description,
-  primaryCta = { label: 'Get Your Free Estimate', href: '/contact' },
-  secondaryCta,
-  backgroundImage,
-  backgroundVideo,
-  overlay = true,
+  primaryCta = { label: 'Get a Free Quote', href: '/contact' },
 }: HeroProps) {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Background video */}
-      {backgroundVideo ? (
-        <>
-          {backgroundImage && (
-            <Image
-              src={backgroundImage}
-              alt=""
-              fill
-              priority
-              sizes="100vw"
-              quality={70}
-              className="object-cover object-center"
-            />
-          )}
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            className="absolute inset-0 w-full h-full object-cover object-center"
-          >
-            <source src={backgroundVideo} type="video/mp4" />
-          </video>
-        </>
-      ) : backgroundImage ? (
-        <Image
-          src={backgroundImage}
-          alt=""
-          fill
-          priority
-          sizes="100vw"
-          quality={70}
-          className="object-cover object-center"
-        />
-      ) : (
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-brand-950 to-slate-900" />
-      )}
-      {overlay && (
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-950/80 via-slate-950/65 to-slate-950/40" />
-      )}
-
-      {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
-        <div className="max-w-2xl">
+    <section className="relative min-h-[90vh] lg:min-h-screen grid grid-cols-1 lg:grid-cols-2">
+      {/* Left — Content */}
+      <div className="bg-charcoal-900 flex items-center px-6 sm:px-10 lg:px-16 py-32 lg:py-24 order-2 lg:order-1">
+        <div className="max-w-xl">
           {subheadline && (
-            <div className="animate-fade-in mb-6">
-              <p className="inline-flex items-center gap-2 text-sm sm:text-base font-medium tracking-wider uppercase">
-                <span className="w-8 h-px bg-accent-gold" />
-                <span className="gradient-text-gold">{subheadline}</span>
-                <span className="w-8 h-px bg-accent-gold" />
-              </p>
-            </div>
+            <motion.p
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.4, delay: 0.1 }}
+              className="text-brand-400 text-sm font-semibold tracking-wider uppercase mb-4"
+            >
+              {subheadline}
+            </motion.p>
           )}
-          <h1 className="text-4xl sm:text-5xl lg:text-7xl font-display font-bold text-white leading-[1.05] mb-8 animate-slide-up" style={{ textShadow: '0 2px 40px rgba(0,0,0,0.3)' }}>
+          <motion.h1
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="text-4xl sm:text-5xl lg:text-6xl font-display font-extrabold text-white leading-[1.05] mb-6"
+          >
             {headline}
-          </h1>
-          <p className="text-lg sm:text-xl text-slate-300/90 leading-relaxed mb-10 max-w-xl animate-slide-up" style={{ animationDelay: '0.1s' }}>
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.4, delay: 0.3 }}
+            className="text-lg text-white/60 leading-relaxed mb-8 max-w-md"
+          >
             {description}
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 animate-slide-up" style={{ animationDelay: '0.2s' }}>
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.4, delay: 0.4 }}
+            className="flex flex-col sm:flex-row gap-4 mb-10"
+          >
             <Button href={primaryCta.href} size="lg">
               {primaryCta.label}
             </Button>
-            {secondaryCta ? (
-              <Button href={secondaryCta.href} variant="outline" size="lg" className="border-white/30 text-white hover:bg-white/10">
-                {secondaryCta.label}
-              </Button>
-            ) : (
-              <a
-                href={`tel:${siteConfig.phoneRaw}`}
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 text-lg font-medium text-white border-2 border-white/20 rounded-xl hover:bg-white/10 hover:border-white/40 transition-all duration-300"
-              >
-                <Phone className="w-5 h-5" />
-                Call {siteConfig.phone}
-              </a>
-            )}
-          </div>
+            <a
+              href={`tel:${siteConfig.phoneRaw}`}
+              className="inline-flex items-center justify-center gap-2 px-6 py-4 text-base font-medium text-white/80 border border-white/20 rounded-lg hover:bg-white/5 hover:border-white/40 transition-all"
+            >
+              <Phone className="w-5 h-5" />
+              {siteConfig.phone}
+            </a>
+          </motion.div>
+
+          {/* Trust badges inline */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+            className="flex flex-wrap gap-5"
+          >
+            {trustBadges.map((badge) => {
+              const Icon = badge.icon;
+              return (
+                <div key={badge.label} className="flex items-center gap-2">
+                  <Icon className="w-4 h-4 text-brand-400" />
+                  <span className="text-sm text-white/50 font-medium">{badge.label}</span>
+                </div>
+              );
+            })}
+          </motion.div>
         </div>
+      </div>
+
+      {/* Right — Image */}
+      <div className="relative bg-charcoal-950 order-1 lg:order-2 min-h-[40vh] lg:min-h-0">
+        <div className="absolute inset-0 image-placeholder-premium" />
+        <div className="absolute bottom-0 left-0 w-1 h-32 bg-brand-600 hidden lg:block" />
       </div>
     </section>
   );
