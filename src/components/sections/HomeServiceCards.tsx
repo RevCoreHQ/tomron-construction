@@ -3,6 +3,8 @@
 import Link from 'next/link';
 import { ArrowRight, ArrowUpRight } from 'lucide-react';
 import { ScrollReveal } from '@/components/motion/ScrollReveal';
+import { TextReveal } from '@/components/motion/TextReveal';
+import { MouseTrackCard } from '@/components/motion/MouseTrackCard';
 import { motion } from 'framer-motion';
 
 const services = [
@@ -52,9 +54,9 @@ export function HomeServiceCards() {
           <div className="flex items-end justify-between mb-10">
             <div>
               <p className="text-sm font-semibold text-brand-600 uppercase tracking-wider mb-2">What We Do</p>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-charcoal-900">
+              <TextReveal className="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-charcoal-900">
                 Our Services
-              </h2>
+              </TextReveal>
             </div>
             <Link
               href="/services"
@@ -79,28 +81,30 @@ export function HomeServiceCards() {
               className="shrink-0 w-[280px] sm:w-[320px]"
             >
               <Link href={service.href} className="group block h-full">
-                <div className="relative bg-charcoal-900 rounded-lg aspect-[3/4] p-6 flex flex-col justify-between overflow-hidden hover:bg-charcoal-800 transition-colors duration-300">
-                  {/* Number */}
-                  <span className="text-sm font-bold text-brand-500 font-display">{service.number}</span>
+                <MouseTrackCard intensity={6}>
+                  <div className="relative bg-charcoal-900 rounded-lg aspect-[3/4] p-6 flex flex-col justify-between overflow-hidden hover:bg-charcoal-800 transition-colors duration-300">
+                    {/* Number */}
+                    <span className="text-sm font-bold text-brand-500 font-display">{service.number}</span>
 
-                  {/* Bottom content */}
-                  <div>
-                    <h3 className="text-xl font-display font-bold text-white mb-2 group-hover:text-brand-300 transition-colors">
-                      {service.title}
-                    </h3>
-                    <p className="text-sm text-white/40 leading-relaxed mb-4 line-clamp-2">
-                      {service.description}
-                    </p>
-                    <div className="flex items-center gap-2 text-sm font-semibold text-brand-400 group-hover:text-brand-300 transition-colors">
-                      Learn More <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                    {/* Bottom content */}
+                    <div>
+                      <h3 className="text-xl font-display font-bold text-white mb-2 group-hover:text-brand-300 transition-colors">
+                        {service.title}
+                      </h3>
+                      <p className="text-sm text-white/40 leading-relaxed mb-4 line-clamp-2">
+                        {service.description}
+                      </p>
+                      <div className="flex items-center gap-2 text-sm font-semibold text-brand-400 group-hover:text-brand-300 transition-colors">
+                        Learn More <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                      </div>
+                    </div>
+
+                    {/* Blue accent corner */}
+                    <div className="absolute top-0 right-0 w-16 h-16 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-bl from-brand-600/20 to-transparent" />
                     </div>
                   </div>
-
-                  {/* Blue accent corner */}
-                  <div className="absolute top-0 right-0 w-16 h-16 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-bl from-brand-600/20 to-transparent" />
-                  </div>
-                </div>
+                </MouseTrackCard>
               </Link>
             </motion.div>
           ))}

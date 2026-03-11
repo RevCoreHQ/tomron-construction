@@ -1,6 +1,7 @@
 'use client';
 
 import { ScrollReveal } from '@/components/motion/ScrollReveal';
+import { TextReveal } from '@/components/motion/TextReveal';
 import { motion } from 'framer-motion';
 
 const steps = [
@@ -34,9 +35,9 @@ export function ProcessSteps() {
           {/* Left — Header */}
           <ScrollReveal>
             <p className="text-sm font-semibold text-brand-600 uppercase tracking-wider mb-2">Our Process</p>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-charcoal-900 mb-4">
+            <TextReveal className="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-charcoal-900 mb-4">
               From Consultation to Completion
-            </h2>
+            </TextReveal>
             <p className="text-lg text-slate-500 leading-relaxed max-w-md">
               A straightforward, four-step process that keeps you informed and your project on track from day one.
             </p>

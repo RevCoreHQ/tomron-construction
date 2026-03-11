@@ -6,11 +6,12 @@ import { Footer } from '@/components/layout/Footer';
 import { MobileBottomBar } from '@/components/layout/MobileBottomBar';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { localBusinessSchema } from '@/lib/schema';
+import { ScrollProgress } from '@/components/motion/ScrollProgress';
 import '@/styles/globals.css';
 
 const outfit = Outfit({
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700', '800', '900'],
+  weight: ['200', '300', '400', '500', '600', '700', '800', '900'],
   variable: '--font-display',
   display: 'swap',
 });
@@ -60,6 +61,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <JsonLd data={localBusinessSchema()} />
       </head>
       <body className="min-h-screen flex flex-col">
+        <ScrollProgress />
         <Header />
         <main className="flex-1 pb-16 lg:pb-0">{children}</main>
         <Footer />

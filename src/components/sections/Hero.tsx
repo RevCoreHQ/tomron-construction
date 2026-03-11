@@ -4,7 +4,9 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/Button';
 import { siteConfig } from '@/data/site-config';
 import { Phone, Shield, BadgeCheck, Award, ChevronDown } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform, useReducedMotion } from 'framer-motion';
+import { MagneticWrap } from '@/components/motion/MagneticWrap';
+import { useRef } from 'react';
 
 interface HeroProps {
   headline: string;
@@ -27,28 +29,49 @@ export function Hero({
   primaryCta = { label: 'Get a Free Quote', href: '/contact' },
   backgroundImage,
 }: HeroProps) {
+  const sectionRef = useRef<HTMLElement>(null);
+  const prefersReduced = useReducedMotion();
+
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ['start start', 'end start'],
+  });
+
+  // Parallax: image moves slower, text moves faster + fades out
+  const imageY = useTransform(scrollYProgress, [0, 1], ['0%', '20%']);
+  const textY = useTransform(scrollYProgress, [0, 1], ['0%', '-10%']);
+  const textOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background image — full bleed, behind nav */}
+    <section ref={sectionRef} className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Background image — parallax layer */}
       {backgroundImage ? (
-        <Image
-          src={backgroundImage}
-          alt="Tomron Construction — siding and exterior work"
-          fill
-          priority
-          sizes="100vw"
-          quality={80}
-          className="object-cover object-center"
-        />
+        <motion.div
+          className="absolute inset-0"
+          style={prefersReduced ? undefined : { y: imageY }}
+        >
+          <Image
+            src={backgroundImage}
+            alt="Tomron Construction — siding and exterior work"
+            fill
+            priority
+            sizes="100vw"
+            quality={80}
+            className="object-cover object-center"
+          />
+        </motion.div>
       ) : (
         <div className="absolute inset-0 bg-charcoal-900" />
       )}
 
-      {/* Gradient overlay — centered vignette for text legibility */}
+      {/* Gradient overlay */}
       <div className="absolute inset-0 bg-black/40" />
 
-      {/* Content — centered */}
-      <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8 py-32 text-center">
+      {/* Content — parallax layer (moves faster, fades out) */}
+      <motion.div
+        className="relative z-10 w-full px-4 sm:px-6 lg:px-8 py-32 text-center"
+        style={prefersReduced ? undefined : { y: textY, opacity: textOpacity }}
+      >
         <div className="max-w-3xl mx-auto">
           {subheadline && (
             <motion.p
@@ -83,9 +106,11 @@ export function Hero({
             transition={{ duration: 0.4, delay: 0.4 }}
             className="flex flex-col sm:flex-row justify-center gap-4 mb-10"
           >
-            <Button href={primaryCta.href} size="lg">
-              {primaryCta.label}
-            </Button>
+            <MagneticWrap>
+              <Button href={primaryCta.href} size="lg">
+                {primaryCta.label}
+              </Button>
+            </MagneticWrap>
             <a
               href={`tel:${siteConfig.phoneRaw}`}
               className="inline-flex items-center justify-center gap-2 px-6 py-4 text-base font-medium text-white/80 border border-white/25 rounded-lg hover:bg-white/10 hover:border-white/40 transition-all backdrop-blur-sm"
@@ -113,7 +138,7 @@ export function Hero({
             })}
           </motion.div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Scroll indicator */}
       <motion.div

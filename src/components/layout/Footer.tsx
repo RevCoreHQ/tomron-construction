@@ -16,7 +16,7 @@ export function Footer() {
             <Link href="/" className="inline-block mb-4">
               <span className="font-display text-2xl tracking-tight text-charcoal-900 uppercase">
                 <span className="font-bold">Tomron</span>{' '}
-                <span className="font-light">Construction</span>
+                <span className="font-extralight">Construction</span>
               </span>
             </Link>
             <p className="text-sm text-slate-500 mb-6 leading-relaxed max-w-xs">

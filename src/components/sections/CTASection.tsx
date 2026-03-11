@@ -4,6 +4,8 @@ import { Button } from '@/components/ui/Button';
 import { siteConfig } from '@/data/site-config';
 import { Phone } from 'lucide-react';
 import { ScrollReveal } from '@/components/motion/ScrollReveal';
+import { TextReveal } from '@/components/motion/TextReveal';
+import { MagneticWrap } from '@/components/motion/MagneticWrap';
 
 interface CTASectionProps {
   headline?: string;
@@ -23,16 +25,18 @@ export function CTASection({
             <div className="absolute top-0 right-0 w-32 h-32 bg-brand-600/10 rounded-bl-[80px]" />
 
             <div className="relative z-10 max-w-xl">
-              <h2 className="text-3xl sm:text-4xl font-display font-extrabold text-white mb-4">
+              <TextReveal className="text-3xl sm:text-4xl font-display font-extrabold text-white mb-4">
                 {headline}
-              </h2>
+              </TextReveal>
               <p className="text-lg text-white/50 leading-relaxed mb-8">
                 {description}
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button href="/contact" size="lg">
-                  Get Your Free Quote
-                </Button>
+                <MagneticWrap>
+                  <Button href="/contact" size="lg">
+                    Get Your Free Quote
+                  </Button>
+                </MagneticWrap>
                 <a
                   href={`tel:${siteConfig.phoneRaw}`}
                   className="inline-flex items-center justify-center gap-2 px-6 py-4 text-base font-medium text-white/70 border border-white/20 rounded-lg hover:text-white hover:border-white/40 transition-all"

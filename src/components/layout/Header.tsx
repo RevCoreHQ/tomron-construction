@@ -42,7 +42,7 @@ export function Header() {
           <Link href="/" className="shrink-0">
             <span className="font-display text-xl tracking-tight text-white uppercase">
               <span className="font-bold">Tomron</span>{' '}
-              <span className="font-light">Construction</span>
+              <span className="font-extralight">Construction</span>
             </span>
           </Link>
 

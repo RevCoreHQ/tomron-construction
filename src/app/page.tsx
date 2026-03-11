@@ -9,6 +9,8 @@ import { HomeServiceCards } from '@/components/sections/HomeServiceCards';
 import { StatsBar } from '@/components/sections/StatsBar';
 import { MeetOwner } from '@/components/sections/MeetOwner';
 import { Button } from '@/components/ui/Button';
+import { TextReveal } from '@/components/motion/TextReveal';
+import { ImageReveal } from '@/components/motion/ImageReveal';
 import Image from 'next/image';
 
 export const metadata: Metadata = generatePageMetadata({
@@ -70,9 +72,9 @@ export default function HomePage() {
           <div className="flex items-end justify-between mb-10">
             <div>
               <p className="text-sm font-semibold text-brand-600 uppercase tracking-wider mb-2">Our Work</p>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-charcoal-900">
+              <TextReveal className="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-charcoal-900">
                 Recent Projects
-              </h2>
+              </TextReveal>
             </div>
             <Button href="/gallery" variant="outline" size="sm" className="hidden sm:inline-flex">
               View Gallery
@@ -81,18 +83,26 @@ export default function HomePage() {
 
           {/* Bento layout */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 auto-rows-[200px] lg:auto-rows-[240px]">
-            <div className="col-span-2 row-span-2 relative rounded-lg overflow-hidden">
-              <Image src="https://assets.cdn.filesafe.space/oyhdrza3SwoM8YuXOsja/media/69b19ab28cb259736f3d988a.webp" alt="Siding installation project" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
-            </div>
-            <div className="relative rounded-lg overflow-hidden">
-              <Image src="https://assets.cdn.filesafe.space/oyhdrza3SwoM8YuXOsja/media/69b19ab257249b849038a781.webp" alt="Exterior renovation" fill className="object-cover" sizes="(max-width: 1024px) 50vw, 25vw" />
-            </div>
-            <div className="relative rounded-lg overflow-hidden">
-              <Image src="https://assets.cdn.filesafe.space/oyhdrza3SwoM8YuXOsja/media/69b19ab2bfc81fd1318a9dbb.webp" alt="Window replacement" fill className="object-cover" sizes="(max-width: 1024px) 50vw, 25vw" />
-            </div>
-            <div className="col-span-2 relative rounded-lg overflow-hidden">
-              <Image src="https://assets.cdn.filesafe.space/oyhdrza3SwoM8YuXOsja/media/69b19ab278565a8d38405c23.webp" alt="Building envelope work" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
-            </div>
+            <ImageReveal className="col-span-2 row-span-2 rounded-lg" delay={0}>
+              <div className="relative w-full h-full">
+                <Image src="https://assets.cdn.filesafe.space/oyhdrza3SwoM8YuXOsja/media/69b19ab28cb259736f3d988a.webp" alt="Siding installation project" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
+              </div>
+            </ImageReveal>
+            <ImageReveal className="rounded-lg" delay={0.1}>
+              <div className="relative w-full h-full">
+                <Image src="https://assets.cdn.filesafe.space/oyhdrza3SwoM8YuXOsja/media/69b19ab257249b849038a781.webp" alt="Exterior renovation" fill className="object-cover" sizes="(max-width: 1024px) 50vw, 25vw" />
+              </div>
+            </ImageReveal>
+            <ImageReveal className="rounded-lg" delay={0.15} direction="right">
+              <div className="relative w-full h-full">
+                <Image src="https://assets.cdn.filesafe.space/oyhdrza3SwoM8YuXOsja/media/69b19ab2bfc81fd1318a9dbb.webp" alt="Window replacement" fill className="object-cover" sizes="(max-width: 1024px) 50vw, 25vw" />
+              </div>
+            </ImageReveal>
+            <ImageReveal className="col-span-2 rounded-lg" delay={0.2} direction="up">
+              <div className="relative w-full h-full">
+                <Image src="https://assets.cdn.filesafe.space/oyhdrza3SwoM8YuXOsja/media/69b19ab278565a8d38405c23.webp" alt="Building envelope work" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
+              </div>
+            </ImageReveal>
           </div>
 
           <div className="sm:hidden mt-6">
