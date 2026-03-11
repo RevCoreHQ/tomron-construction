@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run build:*)",
+      "Bash(npm run dev:*)",
+      "Bash(npx vercel:*)",
+      "Bash(npm install:*)",
+      "Bash(find /Users/haydenmitchell/Downloads/timberline-falls/public/images -type f -exec ls -lh {} ;)",
+      "Bash(vercel --version)",
+      "Bash(vercel --prod)",
+      "Bash(xargs ls)"
+    ]
+  }
+}
