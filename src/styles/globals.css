@@ -5,9 +5,9 @@
 :root {
   --font-display: 'Playfair Display', Georgia, serif;
   --font-body: 'DM Sans', system-ui, sans-serif;
-  --gold: #c5a55a;
-  --gold-light: #d4b96a;
-  --gold-dark: #a68b3e;
+  --gold: #b87333;
+  --gold-light: #d08c4a;
+  --gold-dark: #955d28;
 }
 
 @layer base {
@@ -73,7 +73,7 @@
   /* Premium image placeholder with animated shimmer */
   .image-placeholder-premium {
     @apply relative overflow-hidden rounded-2xl;
-    background: linear-gradient(135deg, #172554 0%, #1e3a8a 25%, #1e40af 50%, #2563eb 75%, #172554 100%);
+    background: linear-gradient(135deg, #1a1a2e 0%, #2a2a3e 25%, #3a1e0c 50%, #2a2a3e 75%, #1a1a2e 100%);
   }
 
   .image-placeholder-premium::before {

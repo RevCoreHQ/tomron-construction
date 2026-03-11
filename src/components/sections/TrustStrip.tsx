@@ -1,10 +1,10 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { Shield, BadgeCheck, Monitor, FileText } from 'lucide-react';
+import { Shield, BadgeCheck, Award, FileText } from 'lucide-react';
 import { siteConfig } from '@/data/site-config';
 
-const iconMap = { Shield, BadgeCheck, Monitor, FileText } as const;
+const iconMap = { Shield, BadgeCheck, Award, FileText } as const;
 
 export function TrustStrip() {
   const [visible, setVisible] = useState(false);
@@ -15,7 +15,6 @@ export function TrustStrip() {
     if (!el) return;
     const observer = new IntersectionObserver(
       ([entry]) => {
-        // Only animate in after user has scrolled (not on initial page load)
         if (entry.isIntersecting && window.scrollY > 80) {
           setVisible(true);
           observer.disconnect();
@@ -24,7 +23,6 @@ export function TrustStrip() {
       { threshold: 0.2, rootMargin: '0px 0px -60px 0px' }
     );
     observer.observe(el);
-    // Re-check on scroll in case observer already fired before scroll
     const onScroll = () => {
       if (window.scrollY > 80 && el.getBoundingClientRect().top < window.innerHeight - 60) {
         setVisible(true);

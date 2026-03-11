@@ -19,7 +19,7 @@ export function MobileBottomBar() {
           className="flex items-center justify-center gap-2 py-3.5 text-sm font-semibold text-white bg-brand-600 hover:bg-brand-700 active:bg-brand-800 transition-colors"
         >
           <FileText className="w-4.5 h-4.5" />
-          Free Estimate
+          Free Quote
         </a>
       </div>
     </div>

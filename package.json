@@ -1,5 +1,5 @@
 {
-  "name": "timberline-falls",
+  "name": "tomron-construction",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "clsx": "^2.1.0",
+    "framer-motion": "^12.35.2",
     "lucide-react": "^0.400.0",
     "next": "^16.1.6",
     "react": "^18.3.0",

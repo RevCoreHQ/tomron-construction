@@ -6,7 +6,6 @@ interface ContactPayload {
   email: string;
   phone: string;
   service?: string;
-  cityZip: string;
   message?: string;
 }
 
@@ -34,7 +33,6 @@ function validateEmail(email: string): boolean {
 }
 
 function validatePhone(phone: string): boolean {
-  // Accept various US phone formats
   return /^[\d\s()+.-]{7,20}$/.test(phone);
 }
 
@@ -44,7 +42,6 @@ function sanitize(str: string): string {
 
 export async function POST(request: NextRequest) {
   try {
-    // Rate limiting
     const ip = request.headers.get('x-forwarded-for')?.split(',')[0] || 'unknown';
     if (isRateLimited(ip)) {
       return NextResponse.json(
@@ -55,26 +52,22 @@ export async function POST(request: NextRequest) {
 
     const body: ContactPayload = await request.json();
 
-    // Validate required fields
-    if (!body.firstName || !body.lastName || !body.email || !body.phone || !body.cityZip) {
+    if (!body.firstName || !body.lastName || !body.email || !body.phone) {
       return NextResponse.json(
         { error: 'Please fill in all required fields.' },
         { status: 400 }
       );
     }
 
-    // Sanitize
     const data = {
       firstName: sanitize(body.firstName),
       lastName: sanitize(body.lastName),
       email: sanitize(body.email),
       phone: sanitize(body.phone),
       service: body.service ? sanitize(body.service) : 'Not specified',
-      cityZip: sanitize(body.cityZip),
       message: body.message ? sanitize(body.message) : '',
     };
 
-    // Validate formats
     if (!validateEmail(data.email)) {
       return NextResponse.json({ error: 'Please enter a valid email address.' }, { status: 400 });
     }
@@ -83,11 +76,10 @@ export async function POST(request: NextRequest) {
     }
 
     // ─── Send Email ───────────────────────────────────────────────
-    // Option 1: Resend (recommended — sign up at resend.com)
-    // Uncomment below and set RESEND_API_KEY + CONTACT_EMAIL_TO in .env.local
+    // Uncomment and set RESEND_API_KEY + CONTACT_EMAIL_TO in .env.local
     //
     // const resendKey = process.env.RESEND_API_KEY;
-    // const emailTo = process.env.CONTACT_EMAIL_TO || 'info@timberlinefallsut.com';
+    // const emailTo = process.env.CONTACT_EMAIL_TO || 'brendan@tomron.ca';
     //
     // if (resendKey) {
     //   const emailRes = await fetch('https://api.resend.com/emails', {
@@ -97,16 +89,15 @@ export async function POST(request: NextRequest) {
     //       Authorization: `Bearer ${resendKey}`,
     //     },
     //     body: JSON.stringify({
-    //       from: 'Timberline Falls Website <noreply@timberlinefallsut.com>',
+    //       from: 'Tomron Construction Website <noreply@tomron.ca>',
     //       to: [emailTo],
-    //       subject: `New Estimate Request from ${data.firstName} ${data.lastName}`,
+    //       subject: `New Quote Request from ${data.firstName} ${data.lastName}`,
     //       html: `
-    //         <h2>New Estimate Request</h2>
+    //         <h2>New Quote Request</h2>
     //         <p><strong>Name:</strong> ${data.firstName} ${data.lastName}</p>
     //         <p><strong>Email:</strong> ${data.email}</p>
     //         <p><strong>Phone:</strong> ${data.phone}</p>
     //         <p><strong>Service:</strong> ${data.service}</p>
-    //         <p><strong>City/ZIP:</strong> ${data.cityZip}</p>
     //         <p><strong>Message:</strong></p>
     //         <p>${data.message || '(No message provided)'}</p>
     //       `,
@@ -120,13 +111,11 @@ export async function POST(request: NextRequest) {
     // }
     // ──────────────────────────────────────────────────────────────
 
-    // Log submission (always, for debugging)
-    console.log('📬 New contact form submission:', {
+    console.log('New contact form submission:', {
       name: `${data.firstName} ${data.lastName}`,
       email: data.email,
       phone: data.phone,
       service: data.service,
-      cityZip: data.cityZip,
       message: data.message.slice(0, 100),
       timestamp: new Date().toISOString(),
     });
@@ -137,7 +126,7 @@ export async function POST(request: NextRequest) {
   } catch (error) {
     console.error('Contact form error:', error);
     return NextResponse.json(
-      { error: 'Something went wrong. Please call us directly at (801) 502-0306.' },
+      { error: 'Something went wrong. Please call us directly at (604) 754-9392.' },
       { status: 500 }
     );
   }

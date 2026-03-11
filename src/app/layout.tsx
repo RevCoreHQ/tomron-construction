@@ -26,29 +26,29 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.name} | Pool, Landscape & Concrete Construction in Utah`,
+    default: `${siteConfig.name} | Siding, Windows & Exterior Contractor — Lower Mainland BC`,
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
   keywords: [
-    'pool construction Utah',
-    'swimming pool builders Utah',
-    'custom pool builder Saratoga Springs',
-    'pool installation Utah County',
-    'landscape construction Utah',
-    'concrete services Utah',
-    'outdoor living contractor Utah',
-    'pool builders Bountiful UT',
-    'inground pool Utah',
-    'Timberline Falls',
+    'siding installation Lower Mainland',
+    'siding contractor Maple Ridge',
+    'window replacement Coquitlam',
+    'door replacement Burnaby',
+    'building envelope BC',
+    'exterior renovation Lower Mainland',
+    'home renovation Maple Ridge',
+    'siding contractor BC',
+    'fiber cement siding Vancouver',
+    'Tomron Construction',
   ],
   alternates: { canonical: siteConfig.url },
   openGraph: {
     type: 'website',
-    locale: 'en_US',
+    locale: 'en_CA',
     url: siteConfig.url,
     siteName: siteConfig.name,
-    images: [{ url: siteConfig.ogImage, width: 1200, height: 630, alt: `${siteConfig.name} — Pool, Landscape & Concrete Construction in Utah` }],
+    images: [{ url: siteConfig.ogImage, width: 1200, height: 630, alt: `${siteConfig.name} — Siding, Windows & Exterior Contractor in the Lower Mainland` }],
   },
   twitter: { card: 'summary_large_image' },
   robots: { index: true, follow: true, googleBot: { index: true, follow: true, 'max-image-preview': 'large' } },
@@ -58,9 +58,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${playfairDisplay.variable} ${dmSans.variable}`}>
       <head>
-        <link rel="preconnect" href="https://assets.cdn.filesafe.space" />
-        <link rel="preconnect" href="https://storage.googleapis.com" />
-        <link rel="dns-prefetch" href="https://lirp.cdn-website.com" />
         <JsonLd data={localBusinessSchema()} />
       </head>
       <body className="min-h-screen flex flex-col">

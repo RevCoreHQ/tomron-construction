@@ -1,126 +1,24 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import Image from 'next/image';
 import { X } from 'lucide-react';
+import { StaggerChildren, staggerItem } from '@/components/motion/StaggerChildren';
+import { motion } from 'framer-motion';
 
 const projects = [
-  {
-    id: 1,
-    title: 'Custom Pool Build',
-    location: 'Saratoga Springs, UT',
-    category: 'Pool Construction',
-    image: 'https://assets.cdn.filesafe.space/VpxNeZuIvxjzZljfxNjd/media/699da56fe9512da1bdaad21f.jpg',
-  },
-  {
-    id: 2,
-    title: 'Luxury Inground Pool',
-    location: 'Bountiful, UT',
-    category: 'Pool Construction',
-    image: 'https://assets.cdn.filesafe.space/VpxNeZuIvxjzZljfxNjd/media/699da56f2837e84064252853.jpg',
-  },
-  {
-    id: 3,
-    title: 'Resort-Style Pool',
-    location: 'Lehi, UT',
-    category: 'Pool Construction',
-    image: 'https://assets.cdn.filesafe.space/VpxNeZuIvxjzZljfxNjd/media/699da56fe9512d2930aad21e.jpg',
-  },
-  {
-    id: 4,
-    title: 'Pool with Water Features',
-    location: 'Eagle Mountain, UT',
-    category: 'Pool Construction',
-    image: 'https://assets.cdn.filesafe.space/VpxNeZuIvxjzZljfxNjd/media/699da7c52d8479b3ef5ed66a.jpg',
-  },
-  {
-    id: 5,
-    title: 'Retaining Wall & Stonework',
-    location: 'Draper, UT',
-    category: 'Concrete',
-    image: 'https://assets.cdn.filesafe.space/VpxNeZuIvxjzZljfxNjd/media/699f51fef074ea4879d2208c.jpg',
-  },
-  {
-    id: 6,
-    title: 'Outdoor Kitchen & Patio',
-    location: 'Saratoga Springs, UT',
-    category: 'Landscaping',
-    image: 'https://assets.cdn.filesafe.space/VpxNeZuIvxjzZljfxNjd/media/699f50235dbbe8b1c857bf2b.jpg',
-  },
-  {
-    id: 7,
-    title: 'Custom Stone Landscape',
-    location: 'Bountiful, UT',
-    category: 'Concrete',
-    image: 'https://assets.cdn.filesafe.space/VpxNeZuIvxjzZljfxNjd/media/699f51fee3be14e39084df38.jpg',
-  },
-  {
-    id: 8,
-    title: 'Stone Patio & Steps',
-    location: 'Eagle Mountain, UT',
-    category: 'Concrete',
-    image: 'https://assets.cdn.filesafe.space/VpxNeZuIvxjzZljfxNjd/media/699f51fe2837e84ab7a33e55.jpg',
-  },
-  {
-    id: 9,
-    title: 'Stone Walkway & Borders',
-    location: 'Lehi, UT',
-    category: 'Concrete',
-    image: 'https://assets.cdn.filesafe.space/VpxNeZuIvxjzZljfxNjd/media/699f51fef074ea0321d2208d.jpg',
-  },
-  {
-    id: 10,
-    title: 'Decorative Stonework',
-    location: 'Saratoga Springs, UT',
-    category: 'Concrete',
-    image: 'https://assets.cdn.filesafe.space/VpxNeZuIvxjzZljfxNjd/media/699f51fee3be1427f784df45.jpg',
-  },
-  {
-    id: 11,
-    title: 'Stamped Concrete Driveway',
-    location: 'Lehi, UT',
-    category: 'Concrete',
-    image: 'https://assets.cdn.filesafe.space/VpxNeZuIvxjzZljfxNjd/media/699f4f728a039eccc1bca32e.jpg',
-  },
-  {
-    id: 12,
-    title: 'Decorative Concrete Patio',
-    location: 'Bountiful, UT',
-    category: 'Concrete',
-    image: 'https://assets.cdn.filesafe.space/VpxNeZuIvxjzZljfxNjd/media/699f4f725dbbe846c65789df.jpg',
-  },
-  {
-    id: 13,
-    title: 'Concrete Pool Deck',
-    location: 'Eagle Mountain, UT',
-    category: 'Concrete',
-    image: 'https://assets.cdn.filesafe.space/VpxNeZuIvxjzZljfxNjd/media/699f4f725dbbe85cf45789e0.jpg',
-  },
-  {
-    id: 14,
-    title: 'Custom Concrete Finish',
-    location: 'Draper, UT',
-    category: 'Concrete',
-    image: 'https://assets.cdn.filesafe.space/VpxNeZuIvxjzZljfxNjd/media/699f4f72753f15299cf47d21.jpg',
-  },
-  {
-    id: 15,
-    title: 'Modern Pool Design',
-    location: 'Saratoga Springs, UT',
-    category: 'Pool Construction',
-    image: 'https://assets.cdn.filesafe.space/VpxNeZuIvxjzZljfxNjd/media/699f502395735c151ac48c31.jpg',
-  },
-  {
-    id: 16,
-    title: 'Custom Inground Pool',
-    location: 'Lehi, UT',
-    category: 'Pool Construction',
-    image: 'https://assets.cdn.filesafe.space/VpxNeZuIvxjzZljfxNjd/media/699f50239a0c1801d793bc5c.jpg',
-  },
+  { id: 1, title: 'Complete Siding Replacement', location: 'Maple Ridge, BC', category: 'Siding' },
+  { id: 2, title: 'Fiber Cement Siding Install', location: 'Coquitlam, BC', category: 'Siding' },
+  { id: 3, title: 'Window & Door Package', location: 'Pitt Meadows, BC', category: 'Windows & Doors' },
+  { id: 4, title: 'Exterior Envelope Repair', location: 'Burnaby, BC', category: 'Building Envelope' },
+  { id: 5, title: 'Full Home Renovation', location: 'Maple Ridge, BC', category: 'Renovation' },
+  { id: 6, title: 'Custom Metal Flashing', location: 'Coquitlam, BC', category: 'Flashing' },
+  { id: 7, title: 'Vinyl Siding Upgrade', location: 'Abbotsford, BC', category: 'Siding' },
+  { id: 8, title: 'Triple-Pane Window Install', location: 'Burnaby, BC', category: 'Windows & Doors' },
+  { id: 9, title: 'Entry Door Replacement', location: 'Pitt Meadows, BC', category: 'Windows & Doors' },
 ];
 
 export function ProjectGrid() {
-  const [lightbox, setLightbox] = useState<{ image: string; category: string } | null>(null);
+  const [lightbox, setLightbox] = useState<{ category: string } | null>(null);
 
   useEffect(() => {
     if (!lightbox) return;
@@ -137,33 +35,30 @@ export function ProjectGrid() {
     <>
       <section className="section-padding">
         <div className="container-wide">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-            {projects.map((project, index) => (
-              <button
+          <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+            {projects.map((project) => (
+              <motion.div
                 key={project.id}
-                onClick={() => setLightbox({ image: project.image, category: project.category })}
-                className="group relative rounded-2xl overflow-hidden shadow-soft hover:shadow-card transition-all duration-300 cursor-zoom-in text-left"
+                variants={staggerItem}
+                className="group relative rounded-2xl overflow-hidden shadow-soft hover:shadow-card transition-all duration-300 text-left"
               >
-                <div className="relative aspect-[4/3] bg-slate-200">
-                  <Image
-                    src={project.image}
-                    alt={`${project.category} by Timberline Falls`}
-                    fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    quality={70}
-                    priority={index < 6}
-                    className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
-                  />
+                <div className="relative aspect-[4/3] image-placeholder-premium">
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="text-center">
+                      <p className="text-white/40 text-sm font-medium tracking-widest uppercase">{project.category}</p>
+                    </div>
+                  </div>
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-2 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                  <p className="text-white font-semibold text-sm mb-1">{project.title}</p>
                   <span className="inline-block px-2.5 py-1 text-xs font-medium bg-brand-600 text-white rounded-full">
-                    {project.category}
+                    {project.location}
                   </span>
                 </div>
-              </button>
+              </motion.div>
             ))}
-          </div>
+          </StaggerChildren>
         </div>
       </section>
 
@@ -179,18 +74,6 @@ export function ProjectGrid() {
           >
             <X className="w-8 h-8" />
           </button>
-          <div className="absolute bottom-4 left-1/2 -translate-x-1/2">
-            <span className="px-3 py-1 text-xs font-medium bg-brand-600 text-white rounded-full">
-              {lightbox.category}
-            </span>
-          </div>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={lightbox.image}
-            alt={lightbox.category}
-            onClick={(e) => e.stopPropagation()}
-            className="max-w-[90vw] max-h-[90vh] object-contain rounded-lg shadow-2xl"
-          />
         </div>
       )}
     </>

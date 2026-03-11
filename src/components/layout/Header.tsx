@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { Phone, Menu, X, ChevronDown } from 'lucide-react';
 import { siteConfig } from '@/data/site-config';
 import { mainNav } from '@/data/navigation';
@@ -32,15 +31,18 @@ export function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <Link href="/" className="shrink-0">
-            <Image
-              src="https://storage.googleapis.com/msgsndr/VpxNeZuIvxjzZljfxNjd/media/6991e27365ad362154b97372.png"
-              alt="Timberline Falls"
-              width={200}
-              height={48}
-              className="h-16 lg:h-20 w-auto"
-              priority
-            />
+          <Link href="/" className="shrink-0 flex items-center gap-2">
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-600 to-brand-800 flex items-center justify-center shadow-sm">
+              <span className="text-white font-display font-bold text-lg">T</span>
+            </div>
+            <span
+              className={cn(
+                'font-display text-xl font-bold transition-colors',
+                scrolled || mobileOpen ? 'text-slate-900' : 'text-white'
+              )}
+            >
+              Tomron
+            </span>
           </Link>
 
           {/* Desktop nav */}
@@ -97,7 +99,7 @@ export function Header() {
               {siteConfig.phone}
             </a>
             <Button href="/contact" size="sm">
-              Free Estimate
+              Free Quote
             </Button>
           </div>
 
@@ -147,7 +149,7 @@ export function Header() {
           </nav>
           <div className="px-4 pb-4 pt-2 flex gap-3">
             <Button href="/contact" className="flex-1" size="sm">
-              Free Estimate
+              Free Quote
             </Button>
             <a
               href={`tel:${siteConfig.phoneRaw}`}

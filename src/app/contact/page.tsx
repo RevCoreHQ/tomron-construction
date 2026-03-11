@@ -8,8 +8,8 @@ import { JsonLd } from '@/components/seo/JsonLd';
 import { breadcrumbSchema } from '@/lib/schema';
 
 export const metadata: Metadata = generatePageMetadata({
-  title: 'Contact Timberline Falls — Free Estimate | Pool & Landscape Builder UT',
-  description: 'Get a free estimate for pool construction, landscaping, or concrete services. Call (801) 502-0306 or fill out our form. Saratoga Springs & Bountiful, UT.',
+  title: 'Contact Tomron Construction — Free Quote | Siding & Exterior Contractor BC',
+  description: 'Get a free quote for siding installation, window replacement, door installation, or home renovation. Call (604) 754-9392 or fill out our form. Maple Ridge & Lower Mainland, BC.',
   path: '/contact',
 });
 
@@ -29,10 +29,10 @@ export default function ContactPage() {
           <div className="lg:col-span-2">
             <p className="text-brand-600 font-medium text-sm tracking-wide uppercase mb-3">Get In Touch</p>
             <h1 className="text-4xl sm:text-5xl font-display font-bold text-slate-900 mb-6">
-              Request Your Free Estimate
+              Request Your Free Quote
             </h1>
             <p className="text-lg text-slate-600 leading-relaxed mb-8">
-              Tell us about your project and we will be in touch within one business day with a consultation plan. Or call us directly, we are happy to talk.
+              Tell us about your project and we will be in touch within one business day. Or call us directly — we are always happy to talk.
             </p>
 
             <div className="space-y-5">

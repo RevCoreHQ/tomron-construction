@@ -1,29 +1,33 @@
-import { Star } from 'lucide-react';
+'use client';
 
-/* TODO: Replace with real testimonials from verified customers. */
+import { Star } from 'lucide-react';
+import { ScrollReveal } from '@/components/motion/ScrollReveal';
+import { StaggerChildren, staggerItem } from '@/components/motion/StaggerChildren';
+import { motion } from 'framer-motion';
+
 const testimonials = [
   {
-    id: 'placeholder-1',
-    quote: "We got quotes from three different pool companies and Timberline Falls was the only one that actually walked the whole yard with us before giving a number. The 3D design they did before breaking ground was incredible, my wife cried when she saw it. Pool was done by August and we used it every single weekend. Couldn't be happier.",
-    author: 'Jason R.',
-    location: 'Saratoga Springs, UT',
-    service: 'Pool Construction',
+    id: 'testimonial-1',
+    quote: "Brendan is very confident, competent and personable. He takes great pride in his work and it really shows in the quality of the finished product. We could not be happier with the results.",
+    author: 'Paula A.',
+    location: 'Coquitlam, BC',
+    service: 'Siding & Cladding',
     rating: 5,
   },
   {
-    id: 'placeholder-2',
-    quote: "Our backyard was basically a dirt pit for two years after we moved in. Timberline Falls turned it into something we actually want to spend time in. They handled the grading, the sod, a small retaining wall, and even ran the irrigation. The crew was respectful of our property and cleaned up every day before they left. Genuinely impressed.",
-    author: 'Amber T.',
-    location: 'Bountiful, UT',
-    service: 'Landscape Construction',
+    id: 'testimonial-2',
+    quote: "Outstanding work with excellent workmanship. Brendan listens to your concerns and delivers exactly what was discussed. Very professional from start to finish. Highly recommend Tomron Construction.",
+    author: 'Anne C.',
+    location: 'Pitt Meadows, BC',
+    service: 'Exterior Renovation',
     rating: 5,
   },
   {
-    id: 'placeholder-3',
-    quote: "Had them pour a new driveway and an RV pad on the side of the house. Straightforward job but they showed up when they said they would, did clean work, and the finish has held up perfectly through two winters now. Already recommended them to my brother-in-law in Eagle Mountain.",
-    author: 'Derek M.',
-    location: 'Lehi, UT',
-    service: 'Concrete & RV Pad',
+    id: 'testimonial-3',
+    quote: "Very professional team. We are thrilled with the excellent workmanship. On time and on budget — they did an extraordinary job on our home. Already recommended them to our neighbours.",
+    author: 'Sharon D.',
+    location: 'Burnaby, BC',
+    service: 'Window Replacement',
     rating: 5,
   },
 ];
@@ -31,11 +35,10 @@ const testimonials = [
 export function TestimonialCards() {
   return (
     <section className="section-padding bg-gradient-to-b from-sand-50 to-white relative overflow-hidden">
-      {/* Decorative background elements */}
       <div className="orb w-[300px] h-[300px] bg-brand-100/30 top-[10%] -right-[5%]" />
 
       <div className="container-wide relative z-10">
-        <div className="text-center mb-12 lg:mb-16">
+        <ScrollReveal className="text-center mb-12 lg:mb-16">
           <p className="inline-flex items-center gap-2 text-sm font-medium tracking-wider uppercase mb-3">
             <span className="w-6 h-px bg-accent-gold" />
             <span className="gradient-text-gold">Client Experiences</span>
@@ -44,14 +47,14 @@ export function TestimonialCards() {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-slate-900">
             What Our Clients Say
           </h2>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+        </ScrollReveal>
+        <StaggerChildren className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
           {testimonials.map((t) => (
-            <div
+            <motion.div
               key={t.id}
+              variants={staggerItem}
               className="relative bg-white rounded-2xl p-6 lg:p-8 shadow-soft border border-slate-100 border-l-4 border-l-brand-500 hover:shadow-card transition-all duration-300"
             >
-              {/* Large decorative quote mark */}
               <span className="absolute top-4 right-5 text-6xl font-display text-brand-100/60 leading-none select-none pointer-events-none">
                 &ldquo;
               </span>
@@ -67,7 +70,7 @@ export function TestimonialCards() {
                 </p>
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full bg-gradient-to-br from-brand-100 to-brand-200 flex items-center justify-center">
-                    <span className="text-sm font-bold text-brand-700">{t.author[1]}</span>
+                    <span className="text-sm font-bold text-brand-700">{t.author[0]}</span>
                   </div>
                   <div>
                     <p className="font-semibold text-slate-900">{t.author}</p>
@@ -75,9 +78,9 @@ export function TestimonialCards() {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </StaggerChildren>
       </div>
     </section>
   );
