@@ -1,18 +1,41 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Phone, Menu, X, ChevronDown } from 'lucide-react';
 import { siteConfig } from '@/data/site-config';
 import { mainNav } from '@/data/navigation';
 import { Button } from '@/components/ui/Button';
+import { cn } from '@/lib/utils';
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
+  const isHome = pathname === '/';
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 80);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  // On homepage: hidden until scroll, then slides down
+  // On other pages: always visible
+  const visible = !isHome || scrolled || mobileOpen;
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-charcoal-900 border-b border-white/10">
+    <header
+      className={cn(
+        'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
+        visible
+          ? 'translate-y-0 bg-charcoal-900/95 backdrop-blur-md border-b border-white/10'
+          : '-translate-y-full'
+      )}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-16 lg:h-18">
           {/* Logo */}

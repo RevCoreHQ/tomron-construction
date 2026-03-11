@@ -52,6 +52,7 @@ export default function HomePage() {
         headline="We Build What Lasts."
         subheadline="Built on Family Values"
         description="Expert siding, window & door replacement, building envelope, and home renovations — delivered by a family-run team with 10+ years of craftsmanship across the Lower Mainland."
+        backgroundImage="https://assets.cdn.filesafe.space/oyhdrza3SwoM8YuXOsja/media/69b1977c8cb25943dc3ccc5c.png"
       />
 
       <StatsBar />
