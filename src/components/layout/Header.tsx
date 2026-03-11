@@ -40,8 +40,9 @@ export function Header() {
         <div className="flex items-center justify-between h-16 lg:h-18">
           {/* Logo */}
           <Link href="/" className="shrink-0">
-            <span className="font-display text-xl font-extrabold tracking-tight text-white uppercase">
-              Tomron
+            <span className="font-display text-xl tracking-tight text-white uppercase">
+              <span className="font-bold">Tomron</span>{' '}
+              <span className="font-light">Construction</span>
             </span>
           </Link>
 

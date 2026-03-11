@@ -14,8 +14,9 @@ export function Footer() {
           {/* Brand column */}
           <div className="lg:col-span-4">
             <Link href="/" className="inline-block mb-4">
-              <span className="font-display text-2xl font-extrabold tracking-tight text-charcoal-900 uppercase">
-                Tomron
+              <span className="font-display text-2xl tracking-tight text-charcoal-900 uppercase">
+                <span className="font-bold">Tomron</span>{' '}
+                <span className="font-light">Construction</span>
               </span>
             </Link>
             <p className="text-sm text-slate-500 mb-6 leading-relaxed max-w-xs">
