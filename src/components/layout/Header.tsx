@@ -23,17 +23,17 @@ export function Header() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  // On homepage: hidden until scroll, then slides down
-  // On other pages: always visible
-  const visible = !isHome || scrolled || mobileOpen;
+  // On homepage: always visible but transparent, gets bg on scroll
+  // On other pages: always visible with bg
+  const showBg = !isHome || scrolled || mobileOpen;
 
   return (
     <header
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
-        visible
-          ? 'translate-y-0 bg-charcoal-900/95 backdrop-blur-md border-b border-white/10'
-          : '-translate-y-full'
+        showBg
+          ? 'bg-charcoal-900/95 backdrop-blur-md border-b border-white/10'
+          : 'bg-transparent border-b border-transparent'
       )}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
