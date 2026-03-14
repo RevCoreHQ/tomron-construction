@@ -13,13 +13,13 @@ import { CTASection } from '@/components/sections/CTASection';
 export const metadata: Metadata = generatePageMetadata({
   title: 'Service Areas in the Lower Mainland | Tomron Construction',
   description:
-    'Tomron Construction serves Maple Ridge, Coquitlam, Pitt Meadows, Burnaby, Abbotsford, and communities throughout the Lower Mainland with siding, window, door, building envelope, and renovation services.',
+    'Tomron Construction serves Maple Ridge, Coquitlam, Surrey, Langley, Burnaby, Vancouver, Richmond, and communities throughout the Lower Mainland with siding, window, door, building envelope, and renovation services.',
   path: '/service-areas',
 });
 
 export default function ServiceAreasPage() {
   const primary = serviceAreas.filter((a) => a.isPrimary);
-  const nearby = serviceAreas.filter((a) => !a.isPrimary);
+  const extended = serviceAreas.filter((a) => !a.isPrimary);
 
   return (
     <>
@@ -41,7 +41,7 @@ export default function ServiceAreasPage() {
               Areas We Serve in the Lower Mainland
             </h1>
             <p className="text-xl text-white/60 leading-relaxed mb-8">
-              Tomron Construction provides expert siding installation, window and door replacement, building envelope solutions, and home renovations throughout the Lower Mainland.
+              Tomron Construction provides expert siding installation, window and door replacement, building envelope solutions, and home renovations to 16 communities throughout the Lower Mainland and Fraser Valley.
             </p>
             <Button href="/contact" size="lg">
               Get Your Free Quote
@@ -50,13 +50,13 @@ export default function ServiceAreasPage() {
         </div>
       </section>
 
-      {/* Primary Areas */}
+      {/* All Service Areas */}
       <section className="section-padding">
         <div className="container-wide">
-          <p className="text-sm font-semibold text-brand-600 uppercase tracking-wider mb-2">Core Coverage</p>
-          <h2 className="text-3xl font-display font-extrabold text-charcoal-900 mb-2">Primary Service Areas</h2>
-          <p className="text-slate-500 mb-8">Communities where we are based and serve regularly.</p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <p className="text-sm font-semibold text-brand-600 uppercase tracking-wider mb-2">Our Coverage</p>
+          <h2 className="text-3xl font-display font-extrabold text-charcoal-900 mb-2">Service Areas</h2>
+          <p className="text-slate-500 mb-8">Communities we serve across the Lower Mainland and Fraser Valley.</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {primary.map((area) => (
               <Link
                 key={area.slug}
@@ -71,7 +71,7 @@ export default function ServiceAreasPage() {
                     <h3 className="text-lg font-display font-bold text-charcoal-900 group-hover:text-brand-600 transition-colors mb-2">
                       {area.city}, {area.state}
                     </h3>
-                    <p className="text-slate-500 text-sm leading-relaxed mb-3">{area.intro.slice(0, 140)}&hellip;</p>
+                    <p className="text-slate-500 text-sm leading-relaxed mb-3">{area.intro.slice(0, 120)}&hellip;</p>
                     <span className="inline-flex items-center gap-1 text-sm font-semibold text-brand-600">
                       View services <ArrowRight className="w-3.5 h-3.5" />
                     </span>
@@ -83,8 +83,8 @@ export default function ServiceAreasPage() {
         </div>
       </section>
 
-      {/* Nearby Areas */}
-      {nearby.length > 0 && (
+      {/* Extended Areas */}
+      {extended.length > 0 && (
         <section className="section-padding bg-neutral-50">
           <div className="container-wide">
             <h2 className="text-3xl font-display font-extrabold text-charcoal-900 mb-2">Extended Service Areas</h2>
@@ -92,7 +92,7 @@ export default function ServiceAreasPage() {
               We regularly serve these communities. Call to confirm availability for your address.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
-              {nearby.map((area) => (
+              {extended.map((area) => (
                 <Link
                   key={area.slug}
                   href={`/service-areas/${area.slug}`}
