@@ -5,7 +5,6 @@ import { Button } from '@/components/ui/Button';
 import { siteConfig } from '@/data/site-config';
 import { Phone, Shield, BadgeCheck, Award, ChevronDown } from 'lucide-react';
 import { motion, useScroll, useTransform, useReducedMotion } from 'framer-motion';
-import { MagneticWrap } from '@/components/motion/MagneticWrap';
 import { useRef } from 'react';
 
 interface HeroProps {
@@ -106,11 +105,9 @@ export function Hero({
             transition={{ duration: 0.4, delay: 0.4 }}
             className="flex flex-col sm:flex-row justify-center gap-4 mb-10"
           >
-            <MagneticWrap>
-              <Button href={primaryCta.href} size="lg">
-                {primaryCta.label}
-              </Button>
-            </MagneticWrap>
+            <Button href={primaryCta.href} size="lg" className="hover:scale-105 hover:shadow-lg hover:shadow-brand-600/25 transition-all duration-300">
+              {primaryCta.label}
+            </Button>
             <a
               href={`tel:${siteConfig.phoneRaw}`}
               className="inline-flex items-center justify-center gap-2 px-6 py-4 text-base font-medium text-white/80 border border-white/25 rounded-lg hover:bg-white/10 hover:border-white/40 transition-all backdrop-blur-sm"

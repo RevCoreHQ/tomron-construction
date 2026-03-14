@@ -5,7 +5,8 @@ import { ArrowRight, ArrowUpRight } from 'lucide-react';
 import { ScrollReveal } from '@/components/motion/ScrollReveal';
 import { TextReveal } from '@/components/motion/TextReveal';
 import { MouseTrackCard } from '@/components/motion/MouseTrackCard';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { useRef } from 'react';
 
 const services = [
   {
@@ -47,30 +48,50 @@ const services = [
 ];
 
 export function HomeServiceCards() {
-  return (
-    <section className="section-padding">
-      <div className="container-wide">
-        <ScrollReveal>
-          <div className="flex items-end justify-between mb-10">
-            <div>
-              <p className="text-sm font-semibold text-brand-600 uppercase tracking-wider mb-2">What We Do</p>
-              <TextReveal className="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-charcoal-900">
-                Our Services
-              </TextReveal>
-            </div>
-            <Link
-              href="/services"
-              className="hidden sm:flex items-center gap-2 text-sm font-semibold text-brand-600 hover:text-brand-700 transition-colors"
-            >
-              View All <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-        </ScrollReveal>
-      </div>
+  const sectionRef = useRef<HTMLElement>(null);
 
-      {/* Horizontal scroll */}
-      <div className="overflow-x-auto scrollbar-hide">
-        <div className="flex gap-5 px-4 sm:px-6 lg:px-[max(1.5rem,calc((100vw-80rem)/2+1.5rem))] pb-4">
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ['start start', 'end end'],
+  });
+
+  // Map vertical scroll to horizontal translation
+  // Cards are ~340px wide (320 + 20 gap) x 6 = ~2040px total, minus viewport width
+  // We translate from 0% to -100% of the overflow
+  const x = useTransform(scrollYProgress, [0, 1], ['1%', '-95%']);
+
+  return (
+    <section
+      ref={sectionRef}
+      className="relative"
+      // Height creates the scroll runway: 100vh for the sticky frame + extra for scrolling through cards
+      style={{ height: '300vh' }}
+    >
+      <div className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden">
+        <div className="container-wide mb-8">
+          <ScrollReveal>
+            <div className="flex items-end justify-between">
+              <div>
+                <p className="text-sm font-semibold text-brand-600 uppercase tracking-wider mb-2">What We Do</p>
+                <TextReveal className="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-charcoal-900">
+                  Our Services
+                </TextReveal>
+              </div>
+              <Link
+                href="/services"
+                className="hidden sm:flex items-center gap-2 text-sm font-semibold text-brand-600 hover:text-brand-700 transition-colors"
+              >
+                View All <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+          </ScrollReveal>
+        </div>
+
+        {/* Horizontal scroll driven by vertical scroll */}
+        <motion.div
+          className="flex gap-5 px-4 sm:px-6 lg:px-[max(1.5rem,calc((100vw-80rem)/2+1.5rem))]"
+          style={{ x }}
+        >
           {services.map((service, i) => (
             <motion.div
               key={service.href}
@@ -108,16 +129,16 @@ export function HomeServiceCards() {
               </Link>
             </motion.div>
           ))}
-        </div>
-      </div>
+        </motion.div>
 
-      <div className="sm:hidden px-4 mt-4">
-        <Link
-          href="/services"
-          className="flex items-center gap-2 text-sm font-semibold text-brand-600"
-        >
-          View All Services <ArrowRight className="w-4 h-4" />
-        </Link>
+        <div className="sm:hidden px-4 mt-6">
+          <Link
+            href="/services"
+            className="flex items-center gap-2 text-sm font-semibold text-brand-600"
+          >
+            View All Services <ArrowRight className="w-4 h-4" />
+          </Link>
+        </div>
       </div>
     </section>
   );
