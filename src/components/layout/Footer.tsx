@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { Phone, Mail, MapPin } from 'lucide-react';
 import { siteConfig } from '@/data/site-config';
 import { footerNav } from '@/data/navigation';
@@ -93,12 +94,17 @@ export function Footer() {
           <p className="text-xs text-slate-400">
             &copy; {currentYear} {siteConfig.name}. All rights reserved.
           </p>
-          <p className="text-xs text-slate-400">
-            Powered by{' '}
-            <a href="https://revcorehq.com" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-brand-600 transition-colors font-medium">
-              RevCore
-            </a>
-          </p>
+          <a href="https://revcorehq.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 text-xs text-slate-400 hover:text-brand-600 transition-colors">
+            Powered by
+            <Image
+              src="https://assets.cdn.filesafe.space/NYlSya2nYSkSnnXEbY2l/media/69a9af9fb003fa7bb8bb92ee.png"
+              alt="RevCore"
+              width={16}
+              height={16}
+              className="opacity-60"
+            />
+            <span className="font-medium text-slate-500">RevCore</span>
+          </a>
         </div>
       </div>
     </footer>
