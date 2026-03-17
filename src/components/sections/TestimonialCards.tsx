@@ -84,15 +84,17 @@ export function TestimonialCards() {
               <blockquote className="text-xl sm:text-2xl lg:text-3xl font-display font-bold text-charcoal-900 leading-snug mb-8 max-w-2xl">
                 &ldquo;
                 {t.quote.split(' ').map((word, i) => (
-                  <motion.span
-                    key={`${t.id}-${i}`}
-                    className="inline-block"
-                    initial={{ opacity: 0, y: 8, filter: 'blur(4px)' }}
-                    animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-                    transition={{ duration: 0.3, delay: 0.15 + i * 0.03, ease: [0.25, 0.1, 0.25, 1] }}
-                  >
-                    {word}{' '}
-                  </motion.span>
+                  <span key={`${t.id}-${i}`} className="inline-block overflow-hidden">
+                    <motion.span
+                      className="inline-block"
+                      initial={{ opacity: 0, y: 8 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.3, delay: 0.15 + i * 0.03, ease: [0.25, 0.1, 0.25, 1] }}
+                    >
+                      {word}
+                    </motion.span>
+                    {i < t.quote.split(' ').length - 1 && <span className="inline-block">&nbsp;</span>}
+                  </span>
                 ))}
                 &rdquo;
               </blockquote>
