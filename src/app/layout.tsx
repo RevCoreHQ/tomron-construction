@@ -7,7 +7,6 @@ import { MobileBottomBar } from '@/components/layout/MobileBottomBar';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { localBusinessSchema, webSiteSchema, organizationSchema } from '@/lib/schema';
 import { ScrollProgress } from '@/components/motion/ScrollProgress';
-import { SmoothScrollProvider } from '@/components/providers/SmoothScrollProvider';
 import '@/styles/globals.css';
 
 const outfit = Outfit({
@@ -57,18 +56,16 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en-CA" className={`${outfit.variable} ${inter.variable} lenis lenis-smooth`}>
+    <html lang="en-CA" className={`${outfit.variable} ${inter.variable}`}>
       <head>
         <JsonLd data={[localBusinessSchema(), webSiteSchema(), organizationSchema()]} />
       </head>
       <body className="min-h-screen flex flex-col">
-        <SmoothScrollProvider>
-          <ScrollProgress />
-          <Header />
-          <main className="flex-1 pb-16 lg:pb-0">{children}</main>
-          <Footer />
-          <MobileBottomBar />
-        </SmoothScrollProvider>
+        <ScrollProgress />
+        <Header />
+        <main className="flex-1 pb-16 lg:pb-0">{children}</main>
+        <Footer />
+        <MobileBottomBar />
       </body>
     </html>
   );

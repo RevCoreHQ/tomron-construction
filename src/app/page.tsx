@@ -69,65 +69,92 @@ export default function HomePage() {
 
       <TestimonialCards />
 
-      {/* Server-rendered content for SEO crawlers */}
-      <section className="section-padding bg-white">
-        <div className="container-narrow">
-          <h2 className="text-3xl sm:text-4xl font-display font-extrabold text-charcoal-900 mb-6">
-            Trusted Siding & Exterior Contractor in the Lower Mainland
-          </h2>
-          <div className="prose prose-lg prose-slate max-w-none space-y-6">
-            <p>
-              Tomron Construction is a family-owned siding and exterior contractor based in Maple Ridge, BC. Founded by Brendan Prendergast in 2014, we have spent over a decade building a reputation for quality craftsmanship, honest pricing, and reliable service across the Lower Mainland. Every project we take on, whether it is a complete siding replacement, a set of new windows, or a full home renovation, is treated with the same level of care and attention to detail.
-            </p>
-            <p>
-              We specialize in protecting and improving Lower Mainland homes through six core services. Our{' '}
-              <Link href="/services/exterior-siding-cladding" className="text-brand-600 font-semibold hover:text-brand-700">siding and cladding installation</Link>{' '}
-              covers vinyl, fiber cement, engineered wood, and composite materials. We handle{' '}
-              <Link href="/services/window-replacement" className="text-brand-600 font-semibold hover:text-brand-700">window replacement</Link>{' '}
-              for casement, sliding, picture, and European tilt-and-turn styles, along with{' '}
-              <Link href="/services/door-replacement" className="text-brand-600 font-semibold hover:text-brand-700">door replacement</Link>{' '}
-              for entry, patio, and sliding doors. Our{' '}
-              <Link href="/services/building-envelope" className="text-brand-600 font-semibold hover:text-brand-700">building envelope</Link>{' '}
-              services address air barriers, moisture management, and insulation, while our{' '}
-              <Link href="/services/metal-flashing" className="text-brand-600 font-semibold hover:text-brand-700">metal flashing</Link>{' '}
-              work provides custom-fabricated protection at every vulnerable junction on your home. For larger projects, our{' '}
-              <Link href="/services/home-renovation" className="text-brand-600 font-semibold hover:text-brand-700">home renovation</Link>{' '}
-              services cover everything from single-room updates to complete transformations.
-            </p>
+      {/* Server-rendered SEO content */}
+      <section className="section-padding bg-gradient-to-b from-neutral-50 to-white">
+        <div className="container-wide">
+          <div className="text-center mb-12">
+            <p className="text-sm font-semibold text-brand-600 uppercase tracking-wider mb-2">Why Tomron</p>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-charcoal-900">
+              Trusted Exterior Contractor in the Lower Mainland
+            </h2>
+          </div>
 
-            <h3 className="text-2xl font-display font-bold text-charcoal-900">Why Lower Mainland Homes Need Expert Exterior Work</h3>
-            <p>
-              The Lower Mainland receives over 1,200 millimetres of rainfall annually, making it one of the wettest regions in Canada. This constant moisture exposure puts enormous stress on your home&apos;s exterior. Aging or improperly installed siding allows water to penetrate the building envelope, leading to rot, mould, structural damage, and higher energy bills. Proper siding installation, precision flashing, sealed windows and doors, and a functioning building envelope are not upgrades but necessities for any home in this climate.
-            </p>
-            <p>
-              Tomron Construction installs exterior systems specifically engineered for BC&apos;s rain-heavy conditions. We use premium moisture barriers, custom-bent flashing at every transition point, and materials rated for decades of performance in the Pacific Northwest. Our work is backed by manufacturer warranties and our own commitment to standing behind every project we complete.
-            </p>
+          <div className="grid md:grid-cols-2 gap-8 lg:gap-12 mb-16">
+            <div className="bg-white rounded-lg p-6 lg:p-8 shadow-card">
+              <h3 className="text-xl font-display font-bold text-charcoal-900 mb-3">Family-Owned Since 2014</h3>
+              <p className="text-slate-600 leading-relaxed">
+                Tomron Construction is a family-owned siding and exterior contractor based in Maple Ridge, BC. Founded by Brendan Prendergast, we have spent over a decade building a reputation for quality craftsmanship, honest pricing, and reliable service. Every project, whether it is a complete siding replacement, new windows, or a full renovation, is treated with the same care and attention to detail.
+              </p>
+            </div>
+            <div className="bg-white rounded-lg p-6 lg:p-8 shadow-card">
+              <h3 className="text-xl font-display font-bold text-charcoal-900 mb-3">Built for BC Weather</h3>
+              <p className="text-slate-600 leading-relaxed">
+                The Lower Mainland receives over 1,200 millimetres of rainfall annually. This constant moisture puts enormous stress on your home&apos;s exterior. Aging or improperly installed siding allows water into the building envelope, leading to rot, mould, and structural damage. We install exterior systems specifically engineered for BC&apos;s rain-heavy conditions with premium moisture barriers and materials rated for decades of performance.
+              </p>
+            </div>
+          </div>
 
-            <h3 className="text-2xl font-display font-bold text-charcoal-900">Serving 16 Communities Across the Lower Mainland</h3>
-            <p>
-              Based in{' '}
-              <Link href="/service-areas/maple-ridge" className="text-brand-600 font-semibold hover:text-brand-700">Maple Ridge</Link>, we serve homeowners across{' '}
-              <Link href="/service-areas/coquitlam" className="text-brand-600 font-semibold hover:text-brand-700">Coquitlam</Link>,{' '}
-              <Link href="/service-areas/burnaby" className="text-brand-600 font-semibold hover:text-brand-700">Burnaby</Link>,{' '}
-              <Link href="/service-areas/surrey" className="text-brand-600 font-semibold hover:text-brand-700">Surrey</Link>,{' '}
-              <Link href="/service-areas/vancouver" className="text-brand-600 font-semibold hover:text-brand-700">Vancouver</Link>,{' '}
-              <Link href="/service-areas/langley" className="text-brand-600 font-semibold hover:text-brand-700">Langley</Link>,{' '}
-              <Link href="/service-areas/richmond" className="text-brand-600 font-semibold hover:text-brand-700">Richmond</Link>,{' '}
-              <Link href="/service-areas/abbotsford" className="text-brand-600 font-semibold hover:text-brand-700">Abbotsford</Link>,{' '}
-              <Link href="/service-areas/delta" className="text-brand-600 font-semibold hover:text-brand-700">Delta</Link>,{' '}
-              <Link href="/service-areas/white-rock" className="text-brand-600 font-semibold hover:text-brand-700">White Rock</Link>,{' '}
-              <Link href="/service-areas/new-westminster" className="text-brand-600 font-semibold hover:text-brand-700">New Westminster</Link>,{' '}
-              <Link href="/service-areas/pitt-meadows" className="text-brand-600 font-semibold hover:text-brand-700">Pitt Meadows</Link>,{' '}
-              <Link href="/service-areas/port-coquitlam" className="text-brand-600 font-semibold hover:text-brand-700">Port Coquitlam</Link>,{' '}
-              <Link href="/service-areas/tsawwassen" className="text-brand-600 font-semibold hover:text-brand-700">Tsawwassen</Link>,{' '}
-              <Link href="/service-areas/mission" className="text-brand-600 font-semibold hover:text-brand-700">Mission</Link>, and{' '}
-              <Link href="/service-areas/chilliwack" className="text-brand-600 font-semibold hover:text-brand-700">Chilliwack</Link>.
-              Whether your home is a heritage property in Vancouver, a family home in Coquitlam, or a newer build in Langley, we have the experience and expertise to deliver results that last.
+          <div className="mb-12">
+            <h3 className="text-2xl font-display font-bold text-charcoal-900 mb-4 text-center">Our Services</h3>
+            <p className="text-slate-600 leading-relaxed text-center max-w-3xl mx-auto mb-6">
+              We specialize in protecting Lower Mainland homes through six core services, each backed by manufacturer warranties and our commitment to standing behind every project.
             </p>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {[
+                { href: '/services/exterior-siding-cladding', title: 'Siding & Cladding', desc: 'Vinyl, fiber cement, engineered wood, and composite siding installations.' },
+                { href: '/services/window-replacement', title: 'Window Replacement', desc: 'Casement, sliding, picture, and tilt-and-turn window installations.' },
+                { href: '/services/door-replacement', title: 'Door Replacement', desc: 'Entry, patio, and sliding door replacement with expert weathersealing.' },
+                { href: '/services/building-envelope', title: 'Building Envelope', desc: 'Air barriers, moisture management, and insulation solutions.' },
+                { href: '/services/metal-flashing', title: 'Metal Flashing', desc: 'Custom-fabricated flashing for long-term water management.' },
+                { href: '/services/home-renovation', title: 'Home Renovation', desc: 'Single-room updates to complete home transformations.' },
+              ].map((service) => (
+                <Link
+                  key={service.href}
+                  href={service.href}
+                  className="group block bg-white rounded-lg p-5 shadow-card hover:shadow-lg transition-shadow duration-300"
+                >
+                  <h4 className="font-display font-bold text-charcoal-900 group-hover:text-brand-600 transition-colors mb-1">{service.title}</h4>
+                  <p className="text-sm text-slate-500">{service.desc}</p>
+                </Link>
+              ))}
+            </div>
+          </div>
 
-            <h3 className="text-2xl font-display font-bold text-charcoal-900">Our Approach to Every Project</h3>
-            <p>
-              Every project starts with a free on-site consultation where we inspect your home, discuss your goals, and identify any underlying issues that need to be addressed. You receive a detailed written proposal with transparent pricing before any work begins. During construction, our experienced crew manages every phase with clear communication, clean jobsites, and disciplined execution. We finish with a walkthrough to ensure every detail meets our standards and yours. Call{' '}
+          <div>
+            <h3 className="text-2xl font-display font-bold text-charcoal-900 mb-4 text-center">Areas We Serve</h3>
+            <p className="text-slate-600 leading-relaxed text-center max-w-2xl mx-auto mb-6">
+              Based in Maple Ridge, we serve homeowners across 16 Lower Mainland communities.
+            </p>
+            <div className="flex flex-wrap justify-center gap-2">
+              {[
+                { href: '/service-areas/maple-ridge', name: 'Maple Ridge' },
+                { href: '/service-areas/coquitlam', name: 'Coquitlam' },
+                { href: '/service-areas/burnaby', name: 'Burnaby' },
+                { href: '/service-areas/surrey', name: 'Surrey' },
+                { href: '/service-areas/vancouver', name: 'Vancouver' },
+                { href: '/service-areas/langley', name: 'Langley' },
+                { href: '/service-areas/richmond', name: 'Richmond' },
+                { href: '/service-areas/abbotsford', name: 'Abbotsford' },
+                { href: '/service-areas/delta', name: 'Delta' },
+                { href: '/service-areas/white-rock', name: 'White Rock' },
+                { href: '/service-areas/new-westminster', name: 'New Westminster' },
+                { href: '/service-areas/pitt-meadows', name: 'Pitt Meadows' },
+                { href: '/service-areas/port-coquitlam', name: 'Port Coquitlam' },
+                { href: '/service-areas/tsawwassen', name: 'Tsawwassen' },
+                { href: '/service-areas/mission', name: 'Mission' },
+                { href: '/service-areas/chilliwack', name: 'Chilliwack' },
+              ].map((area) => (
+                <Link
+                  key={area.href}
+                  href={area.href}
+                  className="px-4 py-2 text-sm font-medium rounded-full bg-neutral-100 text-slate-600 hover:bg-brand-600 hover:text-white transition-all duration-300"
+                >
+                  {area.name}
+                </Link>
+              ))}
+            </div>
+            <p className="text-center mt-6 text-slate-500 text-sm">
+              Call{' '}
               <a href="tel:+16047549392" className="text-brand-600 font-semibold hover:text-brand-700">(604) 754-9392</a>{' '}
               or{' '}
               <Link href="/contact" className="text-brand-600 font-semibold hover:text-brand-700">request your free quote online</Link>.

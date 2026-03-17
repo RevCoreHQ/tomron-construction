@@ -4,7 +4,6 @@ import { useState, useEffect, useMemo } from 'react';
 import Image from 'next/image';
 import { X } from 'lucide-react';
 import { motion, AnimatePresence, LayoutGroup } from 'framer-motion';
-import { useSmoothScroll } from '@/components/providers/SmoothScrollProvider';
 
 export const projects = [
   {
@@ -500,7 +499,6 @@ export const projects = [
 export function ProjectGrid() {
   const [lightbox, setLightbox] = useState<string | null>(null);
   const [activeCategory, setActiveCategory] = useState<string>('All');
-  const { stop, start } = useSmoothScroll();
 
   const categories = useMemo(() => {
     const cats = Array.from(new Set(projects.map((p) => p.category)));
@@ -512,11 +510,7 @@ export function ProjectGrid() {
     : projects.filter((p) => p.category === activeCategory);
 
   useEffect(() => {
-    if (!lightbox) {
-      start();
-      return;
-    }
-    stop();
+    if (!lightbox) return;
     const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') setLightbox(null); };
     document.addEventListener('keydown', onKey);
     document.body.style.overflow = 'hidden';
@@ -524,7 +518,7 @@ export function ProjectGrid() {
       document.removeEventListener('keydown', onKey);
       document.body.style.overflow = '';
     };
-  }, [lightbox, stop, start]);
+  }, [lightbox]);
 
   return (
     <>
