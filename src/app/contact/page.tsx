@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
+import Script from 'next/script';
 import { generatePageMetadata } from '@/lib/metadata';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
-import { ContactForm } from '@/components/forms/ContactForm';
 import { siteConfig } from '@/data/site-config';
 import { Phone, Mail, MapPin, Clock } from 'lucide-react';
 import { JsonLd } from '@/components/seo/JsonLd';
@@ -78,9 +78,26 @@ export default function ContactPage() {
 
           {/* Right - Form */}
           <div className="lg:col-span-3">
-            <div className="bg-white rounded-lg border border-slate-100 shadow-card p-6 lg:p-8">
-              <ContactForm />
+            <div className="bg-white rounded-lg border border-slate-100 shadow-card overflow-hidden" style={{ minHeight: '673px' }}>
+              <iframe
+                src="https://api.leadconnectorhq.com/widget/form/eAlelJLQv1ucn16rsfqu"
+                style={{ width: '100%', height: '673px', border: 'none', borderRadius: '3px' }}
+                id="inline-eAlelJLQv1ucn16rsfqu"
+                data-layout="{'id':'INLINE'}"
+                data-trigger-type="alwaysShow"
+                data-trigger-value=""
+                data-activation-type="alwaysActivated"
+                data-activation-value=""
+                data-deactivation-type="neverDeactivate"
+                data-deactivation-value=""
+                data-form-name="Website Quote Form"
+                data-height="673"
+                data-layout-iframe-id="inline-eAlelJLQv1ucn16rsfqu"
+                data-form-id="eAlelJLQv1ucn16rsfqu"
+                title="Website Quote Form"
+              />
             </div>
+            <Script src="https://link.msgsndr.com/js/form_embed.js" strategy="lazyOnload" />
           </div>
         </div>
       </div>
