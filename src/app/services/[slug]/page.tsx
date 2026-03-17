@@ -64,7 +64,7 @@ export default async function ServicePage({ params }: Props) {
               priority
               sizes="100vw"
               quality={70}
-              className="object-cover object-[45%_50%]"
+              className="object-cover object-[40%_50%] scale-110"
             />
             <div className="absolute inset-0 bg-charcoal-950/75" />
           </>

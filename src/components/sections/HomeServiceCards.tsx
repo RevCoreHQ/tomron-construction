@@ -117,7 +117,7 @@ export function HomeServiceCards() {
                       alt={service.title}
                       fill
                       sizes="320px"
-                      className="object-cover object-[45%_50%] group-hover:scale-105 transition-transform duration-500"
+                      className="object-cover object-[40%_50%] scale-110 group-hover:scale-[1.15] transition-transform duration-500"
                     />
                     {/* Gradient overlay for text readability */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/10" />
