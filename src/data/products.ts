@@ -188,6 +188,7 @@ export const productBrands: ProductBrand[] = [
       'Family-owned metal flashing specialists based in Port Coquitlam, BC since 1998. TCF handles both supply and installation of custom flashings for residential and commercial projects, with extensive experience in condo restoration, rain screen systems, and new construction. All flashings formed on computerized brake systems for 100% accuracy.',
     website: 'https://tricityflashing.com/',
     logoDomain: 'tricityflashing.com',
+    logoUrl: 'https://assets.cdn.filesafe.space/oyhdrza3SwoM8YuXOsja/media/69b8b5b3c625853542d8ff6d.png',
     features: [
       'Family-owned, established in Port Coquitlam since 1998',
       'Supply-only or supply-and-install with competitive pricing',
