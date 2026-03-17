@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowRight, ArrowUpRight } from 'lucide-react';
 import { ScrollReveal } from '@/components/motion/ScrollReveal';
 import { TextReveal } from '@/components/motion/TextReveal';
@@ -14,36 +15,42 @@ const services = [
     title: 'Siding & Cladding',
     description: "Durable, beautiful siding installations engineered for BC's rain and weather.",
     href: '/services/exterior-siding-cladding',
+    image: 'https://assets.cdn.filesafe.space/oyhdrza3SwoM8YuXOsja/media/69b8bfe2c625856283dacbae.png',
   },
   {
     number: '02',
     title: 'Building Envelope',
     description: 'Comprehensive air, moisture, and heat barriers that protect your home.',
     href: '/services/building-envelope',
+    image: 'https://assets.cdn.filesafe.space/oyhdrza3SwoM8YuXOsja/media/69b8bfe287f0f26bbd4cf0b4.png',
   },
   {
     number: '03',
     title: 'Window Replacement',
     description: 'Energy-efficient windows with expert installation. Casement, sliding, tilt-n-turn.',
     href: '/services/window-replacement',
+    image: 'https://assets.cdn.filesafe.space/oyhdrza3SwoM8YuXOsja/media/69b8bfe2269d65f1d2bda1da.png',
   },
   {
     number: '04',
     title: 'Door Replacement',
     description: 'Entry, patio, and sliding doors installed with precision weatherproofing.',
     href: '/services/door-replacement',
+    image: 'https://assets.cdn.filesafe.space/oyhdrza3SwoM8YuXOsja/media/69b8bfe2269d65be89bda1d9.png',
   },
   {
     number: '05',
     title: 'Metal Flashing',
     description: 'Custom fabricated flashing for long-term water management and protection.',
     href: '/services/metal-flashing',
+    image: 'https://assets.cdn.filesafe.space/oyhdrza3SwoM8YuXOsja/media/69b8bfe287f0f272914cf0af.png',
   },
   {
     number: '06',
     title: 'Home Renovation',
     description: 'Full-scope renovation projects from concept to completion.',
     href: '/services/home-renovation',
+    image: 'https://assets.cdn.filesafe.space/oyhdrza3SwoM8YuXOsja/media/69b8bfe2269d65f1d2bda1da.png',
   },
 ];
 
@@ -103,26 +110,32 @@ export function HomeServiceCards() {
             >
               <Link href={service.href} className="group block h-full">
                 <MouseTrackCard intensity={6}>
-                  <div className="relative bg-charcoal-900 rounded-lg aspect-[3/4] p-6 flex flex-col justify-between overflow-hidden hover:bg-charcoal-800 transition-colors duration-300">
+                  <div className="relative bg-charcoal-900 rounded-lg aspect-[3/4] p-6 flex flex-col justify-between overflow-hidden transition-colors duration-300">
+                    {/* Background image */}
+                    <Image
+                      src={service.image}
+                      alt={service.title}
+                      fill
+                      sizes="320px"
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    {/* Gradient overlay for text readability */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/10" />
+
                     {/* Number */}
-                    <span className="text-sm font-bold text-brand-500 font-display">{service.number}</span>
+                    <span className="relative z-10 text-sm font-bold text-brand-400 font-display" style={{ textShadow: '0 1px 6px rgba(0,0,0,0.5)' }}>{service.number}</span>
 
                     {/* Bottom content */}
-                    <div>
-                      <h3 className="text-xl font-display font-bold text-white mb-2 group-hover:text-brand-300 transition-colors">
+                    <div className="relative z-10">
+                      <h3 className="text-xl font-display font-bold text-white mb-2 group-hover:text-brand-300 transition-colors" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.5)' }}>
                         {service.title}
                       </h3>
-                      <p className="text-sm text-white/40 leading-relaxed mb-4 line-clamp-2">
+                      <p className="text-sm text-white/70 leading-relaxed mb-4 line-clamp-2" style={{ textShadow: '0 1px 4px rgba(0,0,0,0.5)' }}>
                         {service.description}
                       </p>
                       <div className="flex items-center gap-2 text-sm font-semibold text-brand-400 group-hover:text-brand-300 transition-colors">
                         Learn More <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                       </div>
-                    </div>
-
-                    {/* Blue accent corner */}
-                    <div className="absolute top-0 right-0 w-16 h-16 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-bl from-brand-600/20 to-transparent" />
                     </div>
                   </div>
                 </MouseTrackCard>
