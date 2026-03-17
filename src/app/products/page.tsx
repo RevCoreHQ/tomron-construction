@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { ExternalLink, CheckCircle, ArrowRight, BadgeCheck } from 'lucide-react';
+import { BrandLogo } from '@/components/ui/BrandLogo';
 import { productBrands, brandCategories } from '@/data/products';
 import { siteConfig } from '@/data/site-config';
 import { generatePageMetadata } from '@/lib/metadata';
@@ -80,7 +81,8 @@ export default function ProductsPage() {
                     key={brand.slug}
                     className="bg-white rounded-lg border border-neutral-200 p-6 lg:p-8 hover:border-brand-300 transition-colors"
                   >
-                    <div className="flex items-start justify-between mb-4">
+                    <div className="flex items-start gap-4 mb-4">
+                      <BrandLogo domain={brand.logoDomain} name={brand.name} />
                       <div>
                         <div className="flex items-center gap-2 mb-1">
                           <h3 className="text-xl font-display font-bold text-charcoal-900">{brand.name}</h3>

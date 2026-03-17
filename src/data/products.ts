@@ -8,6 +8,7 @@ export interface ProductBrand {
   catalogueUrl?: string;
   features: string[];
   isAuthorizedVendor?: boolean;
+  logoDomain: string;
 }
 
 export const productBrands: ProductBrand[] = [
@@ -21,6 +22,7 @@ export const productBrands: ProductBrand[] = [
       'The world leader in fiber cement siding. James Hardie products are Engineered for Climate with the HZ5 formulation — specifically designed to resist moisture and freeze damage in Canadian conditions. Offering HardiePlank lap siding, HardieShingle, HardiePanel vertical siding, and the premium Artisan Collection, all backed by ColorPlus Technology for lasting colour.',
     website: 'https://www.jameshardie.ca/products',
     catalogueUrl: 'https://www.jameshardie.ca/forms/product-catalog-download',
+    logoDomain: 'jameshardie.ca',
     features: [
       'Engineered for Climate — HZ5 formulation for Canadian weather',
       'ColorPlus Technology — factory-applied, baked-on colour',
@@ -36,6 +38,7 @@ export const productBrands: ProductBrand[] = [
     description:
       'Canada\'s original vinyl siding manufacturer with over 60 years of experience. Mitten offers the industry\'s largest and boldest colour palette, including the Sentry line with the first-ever true Black vinyl siding. All products are Canadian-made and backed by a lifetime warranty with No Fade Promise on Rustic colours.',
     website: 'https://www.mittensiding.com/',
+    logoDomain: 'mittensiding.com',
     features: [
       'Canadian-made — over 60 years of manufacturing experience',
       'Sentry line — industry\'s first true Black vinyl siding',
@@ -51,6 +54,7 @@ export const productBrands: ProductBrand[] = [
     description:
       'Premium composite siding and cladding made from 95% recycled materials. NewTechWood features UltraShield technology — a co-extruded cap protecting all sides from rot, fade, stains, and mould. Available in Norwegian Fluted, Belgian Fluted, Gap, and Shiplap profiles with natural brushed-wood finishes.',
     website: 'https://www.newtechwood.ca/products/composite-wall-siding/',
+    logoDomain: 'newtechwood.ca',
     features: [
       'UltraShield technology — impenetrable protective cap on all sides',
       '95% recycled materials — wood fibers and reclaimed plastic',
@@ -67,6 +71,7 @@ export const productBrands: ProductBrand[] = [
       'Over 30 years of premium pre-painted steel siding and roofing, designed and manufactured entirely in Canada. MAC offers contemporary profiles including Board & Batten, Reverse Board & Batten, and the Wood Collection that recreates the beauty of real wood without maintenance. Made from 100% recyclable materials.',
     website: 'https://macmetalarchitectural.com/en/',
     catalogueUrl: 'https://macmetalarchitectural.com/wp-content/uploads/2022/05/SIDING-CATALOG_ENG_2023_W.pdf',
+    logoDomain: 'macmetalarchitectural.com',
     features: [
       'Made in Canada — over 30 years of premium steel fabrication',
       'Wood Collection — six distinct wood-grain finishes per colour',
@@ -84,6 +89,7 @@ export const productBrands: ProductBrand[] = [
     description:
       'BC\'s #1 window manufacturer — 100% employee-owned and based in Langley, BC. Centra has 40 years of experience manufacturing custom vinyl windows and exterior doors designed for BC\'s climate. Every window is built to order at their Langley plant, backed by an industry-leading 30-year warranty.',
     website: 'https://www.centrawindows.com/',
+    logoDomain: 'centrawindows.com',
     features: [
       '100% employee-owned — every team member is an owner',
       'Custom manufactured in Langley, BC — built for local climate',
@@ -99,6 +105,7 @@ export const productBrands: ProductBrand[] = [
     description:
       'Family-owned and operated vinyl window manufacturer based in Abbotsford, BC since 1991. Tyee manufactures 100% of their products in-house with strict quality inspections at every stage. All products meet Energy Star standards and feature low-e glass that reduces UV rays by up to 75%.',
     website: 'https://www.tyeewindows.com/',
+    logoDomain: 'tyeewindows.com',
     features: [
       'Family-owned — manufacturing in Abbotsford since 1991',
       '100% in-house manufacturing with strict quality inspections',
@@ -115,6 +122,7 @@ export const productBrands: ProductBrand[] = [
       'North America\'s #1 exterior building products manufacturer. Ply Gem offers vinyl, aluminum-clad vinyl (Design Series), and aluminum-clad wood (Signature Series) windows — all manufactured in Canada. Part of the Cornerstone Building Brands family alongside Mitten Siding, with over 75 years of experience.',
     website: 'https://www.plygem.ca/windows/',
     catalogueUrl: 'https://www.plygem.ca/wp-content/uploads/2023/09/Ply-Gem-Window-Brochure.pdf',
+    logoDomain: 'plygem.ca',
     features: [
       'Made in Canada — part of the Well-Made Here Program',
       'Three material options — vinyl, aluminum-clad vinyl, aluminum-clad wood',
@@ -132,6 +140,7 @@ export const productBrands: ProductBrand[] = [
     description:
       'Western Canada\'s largest glass fabricator, manufacturing from a 200,000 sq ft facility in Langley, BC. Every window manufacturer in the Lower Mainland uses Vitrum\'s insulated glass units. As a certified fabricator for Vitro, Guardian, and Saint-Gobain, Vitrum provides exclusive access to the highest-performance low-e glass products available.',
     website: 'https://www.vitrum.ca/',
+    logoDomain: 'vitrum.ca',
     features: [
       'Largest glass fabricator in the Pacific Northwest',
       'Certified fabricator for Vitro, Guardian, and Saint-Gobain',
@@ -150,6 +159,7 @@ export const productBrands: ProductBrand[] = [
       'Authorized vendor and trusted supplier based in Surrey, BC. Inter-Globe specializes in building supplies and custom metal forming services, offering James Hardie fiber cement, vinyl siding, soffits, gutters, building papers, and custom-fabricated metal flashings made to specification on computerized brake systems.',
     website: 'https://www.inter-globe.ca/',
     isAuthorizedVendor: true,
+    logoDomain: 'inter-globe.ca',
     features: [
       'Authorized Tomron Construction vendor',
       'Custom metal flashing fabrication — cost efficient and precise',
@@ -167,6 +177,7 @@ export const productBrands: ProductBrand[] = [
     description:
       'Family-owned metal flashing specialists based in Port Coquitlam, BC since 1998. TCF handles both supply and installation of custom flashings for residential and commercial projects, with extensive experience in condo restoration, rain screen systems, and new construction. All flashings formed on computerized brake systems for 100% accuracy.',
     website: 'https://tricityflashing.com/',
+    logoDomain: 'tricityflashing.com',
     features: [
       'Family-owned — established in Port Coquitlam since 1998',
       'Supply-only or supply-and-install with competitive pricing',
