@@ -1,10 +1,10 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import Image from 'next/image';
 import { X } from 'lucide-react';
-import { StaggerChildren, staggerItem } from '@/components/motion/StaggerChildren';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence, LayoutGroup } from 'framer-motion';
+import { useSmoothScroll } from '@/components/providers/SmoothScrollProvider';
 
 export const projects = [
   {
@@ -438,9 +438,24 @@ export const projects = [
 
 export function ProjectGrid() {
   const [lightbox, setLightbox] = useState<string | null>(null);
+  const [activeCategory, setActiveCategory] = useState<string>('All');
+  const { stop, start } = useSmoothScroll();
+
+  const categories = useMemo(() => {
+    const cats = Array.from(new Set(projects.map((p) => p.category)));
+    return ['All', ...cats];
+  }, []);
+
+  const filtered = activeCategory === 'All'
+    ? projects
+    : projects.filter((p) => p.category === activeCategory);
 
   useEffect(() => {
-    if (!lightbox) return;
+    if (!lightbox) {
+      start();
+      return;
+    }
+    stop();
     const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') setLightbox(null); };
     document.addEventListener('keydown', onKey);
     document.body.style.overflow = 'hidden';
@@ -448,66 +463,103 @@ export function ProjectGrid() {
       document.removeEventListener('keydown', onKey);
       document.body.style.overflow = '';
     };
-  }, [lightbox]);
+  }, [lightbox, stop, start]);
 
   return (
     <>
       <section className="section-padding">
         <div className="container-wide">
-          <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {projects.map((project) => (
-              <motion.div
-                key={project.id}
-                variants={staggerItem}
-                className="group relative rounded-lg overflow-hidden shadow-card hover:shadow-lg transition-all duration-300 cursor-pointer"
-                onClick={() => setLightbox(project.image)}
+          {/* Category Filter Bar */}
+          <div className="flex flex-wrap gap-2 mb-8">
+            {categories.map((cat) => (
+              <button
+                key={cat}
+                onClick={() => setActiveCategory(cat)}
+                className={`px-4 py-2 text-sm font-medium rounded-full transition-all duration-300 ${
+                  activeCategory === cat
+                    ? 'bg-brand-600 text-white shadow-sm'
+                    : 'bg-neutral-100 text-slate-600 hover:bg-neutral-200'
+                }`}
               >
-                <div className="relative aspect-[4/3]">
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-charcoal-950/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-2 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
-                  <p className="text-white font-semibold text-sm mb-1">{project.title}</p>
-                  <span className="inline-block px-2.5 py-1 text-xs font-medium bg-brand-600 text-white rounded-md">
-                    {project.location}
-                  </span>
-                </div>
-              </motion.div>
+                {cat}
+              </button>
             ))}
-          </StaggerChildren>
+          </div>
+
+          <LayoutGroup>
+            <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              <AnimatePresence mode="popLayout">
+                {filtered.map((project) => (
+                  <motion.div
+                    key={project.id}
+                    layout
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.9 }}
+                    transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
+                    className="group relative rounded-lg overflow-hidden shadow-card hover:shadow-lg transition-shadow duration-300 cursor-pointer"
+                    onClick={() => setLightbox(project.image)}
+                  >
+                    <div className="relative aspect-[4/3]">
+                      <Image
+                        src={project.image}
+                        alt={project.title}
+                        fill
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                    </div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-charcoal-950/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-2 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                      <p className="text-white font-semibold text-sm mb-1">{project.title}</p>
+                      <span className="inline-block px-2.5 py-1 text-xs font-medium bg-brand-600 text-white rounded-md">
+                        {project.category}
+                      </span>
+                    </div>
+                  </motion.div>
+                ))}
+              </AnimatePresence>
+            </motion.div>
+          </LayoutGroup>
         </div>
       </section>
 
-      {lightbox && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4"
-          onClick={() => setLightbox(null)}
-        >
-          <button
+      <AnimatePresence>
+        {lightbox && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4"
             onClick={() => setLightbox(null)}
-            className="absolute top-4 right-4 text-white/80 hover:text-white transition-colors z-10"
-            aria-label="Close"
           >
-            <X className="w-8 h-8" />
-          </button>
-          <div className="relative max-w-5xl w-full max-h-[85vh]">
-            <Image
-              src={lightbox}
-              alt="Project photo"
-              width={1600}
-              height={1200}
-              className="w-full h-auto max-h-[85vh] object-contain rounded-lg"
-              onClick={(e) => e.stopPropagation()}
-            />
-          </div>
-        </div>
-      )}
+            <button
+              onClick={() => setLightbox(null)}
+              className="absolute top-4 right-4 text-white/80 hover:text-white transition-colors z-10"
+              aria-label="Close"
+            >
+              <X className="w-8 h-8" />
+            </button>
+            <motion.div
+              initial={{ scale: 0.9 }}
+              animate={{ scale: 1 }}
+              exit={{ scale: 0.9 }}
+              transition={{ duration: 0.2 }}
+              className="relative max-w-5xl w-full max-h-[85vh]"
+            >
+              <Image
+                src={lightbox}
+                alt="Project photo"
+                width={1600}
+                height={1200}
+                className="w-full h-auto max-h-[85vh] object-contain rounded-lg"
+                onClick={(e) => e.stopPropagation()}
+              />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 }

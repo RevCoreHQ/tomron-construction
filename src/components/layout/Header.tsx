@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Phone, Menu, X, ChevronDown } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { siteConfig } from '@/data/site-config';
 import { mainNav } from '@/data/navigation';
 import { Button } from '@/components/ui/Button';
@@ -30,9 +31,9 @@ export function Header() {
   return (
     <header
       className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
+        'fixed top-0 left-0 right-0 z-50 transition-all duration-500',
         showBg
-          ? 'bg-charcoal-900/95 backdrop-blur-md border-b border-white/10'
+          ? 'bg-charcoal-900/95 backdrop-blur-xl backdrop-saturate-150 border-b border-white/10 shadow-lg'
           : 'bg-transparent border-b border-transparent'
       )}
     >
@@ -48,19 +49,28 @@ export function Header() {
 
           {/* Desktop nav */}
           <nav className="hidden lg:flex items-center gap-1" aria-label="Main navigation">
-            {mainNav.map((item) => (
+            {mainNav.map((item) => {
+              const isActive = pathname === item.href || (item.href !== '/' && pathname.startsWith(item.href));
+              return (
               <div
                 key={item.href}
-                className="relative"
+                className="relative group"
                 onMouseEnter={() => item.children && setOpenDropdown(item.label)}
                 onMouseLeave={() => setOpenDropdown(null)}
               >
                 <Link
                   href={item.href}
-                  className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-white/70 hover:text-white transition-colors whitespace-nowrap"
+                  className={cn(
+                    'flex items-center gap-1 px-3 py-2 text-sm font-medium transition-colors whitespace-nowrap relative',
+                    isActive ? 'text-white' : 'text-white/70 hover:text-white'
+                  )}
                 >
                   {item.label}
                   {item.children && <ChevronDown className="w-3.5 h-3.5" />}
+                  <span className={cn(
+                    'absolute bottom-0 left-3 right-3 h-0.5 bg-brand-500 transition-transform duration-300 origin-left',
+                    isActive ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
+                  )} />
                 </Link>
 
                 {item.children && openDropdown === item.label && (
@@ -79,7 +89,8 @@ export function Header() {
                   </div>
                 )}
               </div>
-            ))}
+              );
+            })}
           </nav>
 
           {/* Desktop CTA */}
@@ -123,8 +134,13 @@ export function Header() {
           </button>
         </div>
         <nav className="px-4 py-6 space-y-1 overflow-y-auto max-h-[calc(100vh-140px)]" aria-label="Mobile navigation">
-          {mainNav.map((item) => (
-            <div key={item.href}>
+          {mainNav.map((item, i) => (
+            <motion.div
+              key={item.href}
+              initial={{ opacity: 0, x: 20 }}
+              animate={mobileOpen ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }}
+              transition={{ duration: 0.3, delay: 0.1 + i * 0.05, ease: [0.25, 0.1, 0.25, 1] }}
+            >
               <Link
                 href={item.href}
                 className="block px-3 py-3 text-base font-medium text-white/80 hover:text-white hover:bg-white/5 rounded-lg transition-colors"
@@ -146,7 +162,7 @@ export function Header() {
                   ))}
                 </div>
               )}
-            </div>
+            </motion.div>
           ))}
         </nav>
         <div className="absolute bottom-0 left-0 right-0 p-4 border-t border-white/10 space-y-3">

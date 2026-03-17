@@ -4,6 +4,7 @@ import { Phone, Mail, MapPin } from 'lucide-react';
 import { siteConfig } from '@/data/site-config';
 import { footerNav } from '@/data/navigation';
 import { Button } from '@/components/ui/Button';
+import { ScrollReveal } from '@/components/motion/ScrollReveal';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -13,7 +14,7 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8">
           {/* Brand column */}
-          <div className="lg:col-span-4">
+          <ScrollReveal direction="up" className="lg:col-span-4">
             <Link href="/" className="inline-block mb-4">
               <span className="font-display text-2xl tracking-tight text-charcoal-900 uppercase">
                 <span className="font-bold">Tomron</span>{' '}
@@ -43,10 +44,10 @@ export function Footer() {
                 {siteConfig.address.full}
               </div>
             </div>
-          </div>
+          </ScrollReveal>
 
           {/* Services */}
-          <div className="lg:col-span-2">
+          <ScrollReveal direction="up" delay={0.08} className="lg:col-span-2">
             <h3 className="text-sm font-semibold text-charcoal-900 uppercase tracking-wider mb-4">Services</h3>
             <ul className="space-y-2.5">
               {footerNav.services.map((link) => (
@@ -57,10 +58,10 @@ export function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
+          </ScrollReveal>
 
           {/* Company */}
-          <div className="lg:col-span-2">
+          <ScrollReveal direction="up" delay={0.16} className="lg:col-span-2">
             <h3 className="text-sm font-semibold text-charcoal-900 uppercase tracking-wider mb-4">Company</h3>
             <ul className="space-y-2.5">
               {footerNav.company.map((link) => (
@@ -71,10 +72,10 @@ export function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
+          </ScrollReveal>
 
           {/* CTA Card */}
-          <div className="lg:col-span-4">
+          <ScrollReveal direction="up" delay={0.24} className="lg:col-span-4">
             <div className="bg-charcoal-900 rounded-lg p-6">
               <h3 className="font-display text-lg font-bold text-white mb-2">Start Your Project</h3>
               <p className="text-sm text-white/60 mb-5 leading-relaxed">
@@ -84,7 +85,7 @@ export function Footer() {
                 Get a Free Quote
               </Button>
             </div>
-          </div>
+          </ScrollReveal>
         </div>
       </div>
 

@@ -1,8 +1,9 @@
 'use client';
 
+import { useRef } from 'react';
 import { ScrollReveal } from '@/components/motion/ScrollReveal';
 import { TextReveal } from '@/components/motion/TextReveal';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 
 const steps = [
   {
@@ -28,8 +29,15 @@ const steps = [
 ];
 
 export function ProcessSteps() {
+  const timelineRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: timelineRef,
+    offset: ['start 0.8', 'end 0.6'],
+  });
+  const scaleY = useTransform(scrollYProgress, [0, 1], [0, 1]);
+
   return (
-    <section className="section-padding">
+    <section className="section-padding grain">
       <div className="container-wide">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
           {/* Left, Header */}
@@ -44,9 +52,14 @@ export function ProcessSteps() {
           </ScrollReveal>
 
           {/* Right, Timeline */}
-          <div className="relative">
-            {/* Vertical line */}
+          <div className="relative" ref={timelineRef}>
+            {/* Vertical line — background track */}
             <div className="absolute left-4 top-2 bottom-2 w-px bg-neutral-200" />
+            {/* Vertical line — animated fill */}
+            <motion.div
+              className="absolute left-4 top-2 bottom-2 w-px bg-brand-600 origin-top"
+              style={{ scaleY }}
+            />
 
             <div className="space-y-8">
               {steps.map((step, i) => (

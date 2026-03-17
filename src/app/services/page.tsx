@@ -4,6 +4,8 @@ import { siteConfig } from '@/data/site-config';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { ServiceCards } from '@/components/sections/ServiceCards';
 import { CTASection } from '@/components/sections/CTASection';
+import { ScrollReveal } from '@/components/motion/ScrollReveal';
+import { TextReveal } from '@/components/motion/TextReveal';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { breadcrumbSchema } from '@/lib/schema';
 
@@ -24,13 +26,17 @@ export default function ServicesPage() {
         <div className="container-wide">
           <Breadcrumbs items={[{ label: 'Services', href: '/services' }]} />
           <div className="max-w-3xl mb-4">
-            <p className="text-sm font-semibold text-brand-600 uppercase tracking-wider mb-2">What We Do</p>
-            <h1 className="text-4xl sm:text-5xl font-display font-extrabold text-charcoal-900 mb-4">
+            <ScrollReveal direction="up">
+              <p className="text-sm font-semibold text-brand-600 uppercase tracking-wider mb-2">What We Do</p>
+            </ScrollReveal>
+            <TextReveal as="h1" className="text-4xl sm:text-5xl font-display font-extrabold text-charcoal-900 mb-4">
               Complete Exterior & Renovation Services
-            </h1>
-            <p className="text-lg text-slate-600 leading-relaxed">
-              From expert siding installation and building envelope protection to window and door replacement and full home renovations, Tomron Construction delivers every aspect of exterior and interior construction with over a decade of craftsmanship.
-            </p>
+            </TextReveal>
+            <ScrollReveal direction="up" delay={0.1}>
+              <p className="text-lg text-slate-600 leading-relaxed">
+                From expert siding installation and building envelope protection to window and door replacement and full home renovations, Tomron Construction delivers every aspect of exterior and interior construction with over a decade of craftsmanship.
+              </p>
+            </ScrollReveal>
           </div>
         </div>
       </div>

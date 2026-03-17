@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { services, ServiceData } from '@/data/services';
+import { ScrollReveal } from '@/components/motion/ScrollReveal';
 
 interface ServiceCardsProps {
   category?: ServiceData['category'];
@@ -31,10 +32,10 @@ export function ServiceCards({ category, limit, title, subtitle }: ServiceCardsP
         )}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {items.map((service, index) => (
+            <ScrollReveal key={service.slug} direction="up" delay={index * 0.08}>
             <Link
-              key={service.slug}
               href={`/services/${service.slug}`}
-              className="group relative bg-white rounded-lg border border-slate-100 p-6 lg:p-8 shadow-card hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+              className="group relative block h-full bg-white rounded-lg border border-slate-100 p-6 lg:p-8 shadow-card hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
             >
               <div className="relative h-48 mb-6 rounded-lg overflow-hidden bg-slate-200">
                 {service.heroImage && (
@@ -62,6 +63,7 @@ export function ServiceCards({ category, limit, title, subtitle }: ServiceCardsP
                 Learn More <ArrowRight className="w-4 h-4" />
               </span>
             </Link>
+            </ScrollReveal>
           ))}
         </div>
       </div>

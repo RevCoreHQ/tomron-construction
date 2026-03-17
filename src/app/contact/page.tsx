@@ -6,6 +6,8 @@ import { siteConfig } from '@/data/site-config';
 import { Phone, Mail, MapPin, Clock } from 'lucide-react';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { breadcrumbSchema } from '@/lib/schema';
+import { ScrollReveal } from '@/components/motion/ScrollReveal';
+import { TextReveal } from '@/components/motion/TextReveal';
 
 export const metadata: Metadata = generatePageMetadata({
   title: 'Contact Tomron Construction, Free Quote | Siding & Exterior Contractor BC',
@@ -27,14 +29,17 @@ export default function ContactPage() {
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16">
           {/* Left - Info */}
           <div className="lg:col-span-2">
-            <p className="text-sm font-semibold text-brand-600 uppercase tracking-wider mb-2">Get In Touch</p>
-            <h1 className="text-4xl sm:text-5xl font-display font-extrabold text-charcoal-900 mb-6">
-              Request Your Free Quote
-            </h1>
-            <p className="text-lg text-slate-600 leading-relaxed mb-8">
-              Tell us about your project and we will be in touch within one business day. Or call us directly, we are always happy to talk.
-            </p>
+            <ScrollReveal direction="left">
+              <p className="text-sm font-semibold text-brand-600 uppercase tracking-wider mb-2">Get In Touch</p>
+              <h1 className="text-4xl sm:text-5xl font-display font-extrabold text-charcoal-900 mb-6">
+                Request Your Free Quote
+              </h1>
+              <p className="text-lg text-slate-600 leading-relaxed mb-8">
+                Tell us about your project and we will be in touch within one business day. Or call us directly, we are always happy to talk.
+              </p>
+            </ScrollReveal>
 
+            <ScrollReveal direction="left" delay={0.1}>
             <div className="space-y-5">
               <a href={`tel:${siteConfig.phoneRaw}`} className="flex items-center gap-4 group">
                 <div className="w-12 h-12 rounded-lg bg-brand-50 flex items-center justify-center shrink-0 group-hover:bg-brand-100 transition-colors">
@@ -74,10 +79,11 @@ export default function ContactPage() {
                 </div>
               </div>
             </div>
+            </ScrollReveal>
           </div>
 
           {/* Right - Form */}
-          <div className="lg:col-span-3">
+          <ScrollReveal direction="right" delay={0.15} className="lg:col-span-3">
             <div className="bg-white rounded-lg border border-slate-100 shadow-card overflow-hidden" style={{ minHeight: '673px' }}>
               <iframe
                 src="https://api.leadconnectorhq.com/widget/form/eAlelJLQv1ucn16rsfqu"
@@ -98,7 +104,7 @@ export default function ContactPage() {
               />
             </div>
             <Script src="https://link.msgsndr.com/js/form_embed.js" strategy="lazyOnload" />
-          </div>
+          </ScrollReveal>
         </div>
       </div>
     </div>

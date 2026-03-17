@@ -31,9 +31,8 @@ export function MeetOwner() {
                 Our small, dedicated team delivers the kind of craftsmanship and attention that larger companies simply can&apos;t match.
               </p>
             </div>
-            <div className="mt-8 flex flex-col sm:flex-row gap-4">
-              <Button href="/about">Learn Our Story</Button>
-              <Button href="/contact" variant="outline">Get in Touch</Button>
+            <div className="mt-8">
+              <Button href="/contact">Get in Touch</Button>
             </div>
           </ScrollReveal>
 
