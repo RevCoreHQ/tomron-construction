@@ -18,6 +18,14 @@ export const mainNav: NavItem[] = [
       { label: 'Door Replacement', href: '/services/door-replacement' },
     ],
   },
+  {
+    label: 'Products',
+    href: '/products',
+    children: [
+      { label: 'All Products & Partners', href: '/products' },
+      { label: 'Glass Performance Guide', href: '/products/glass-performance' },
+    ],
+  },
   { label: 'Gallery', href: '/gallery' },
   { label: 'Process', href: '/process' },
   {
@@ -26,10 +34,13 @@ export const mainNav: NavItem[] = [
     children: [
       { label: 'Maple Ridge', href: '/service-areas/maple-ridge' },
       { label: 'Coquitlam', href: '/service-areas/coquitlam' },
+      { label: 'Port Coquitlam', href: '/service-areas/port-coquitlam' },
       { label: 'Pitt Meadows', href: '/service-areas/pitt-meadows' },
       { label: 'Burnaby', href: '/service-areas/burnaby' },
-      { label: 'Abbotsford', href: '/service-areas/abbotsford' },
-      { label: 'Lower Mainland', href: '/service-areas/lower-mainland' },
+      { label: 'Vancouver', href: '/service-areas/vancouver' },
+      { label: 'Surrey', href: '/service-areas/surrey' },
+      { label: 'Langley', href: '/service-areas/langley' },
+      { label: 'View All Areas', href: '/service-areas' },
     ],
   },
   { label: 'About', href: '/about' },
@@ -49,6 +60,7 @@ export const footerNav = {
   company: [
     { label: 'About Us', href: '/about' },
     { label: 'Our Process', href: '/process' },
+    { label: 'Products & Partners', href: '/products' },
     { label: 'Gallery', href: '/gallery' },
     { label: 'FAQ', href: '/faq' },
     { label: 'Contact', href: '/contact' },
@@ -56,9 +68,9 @@ export const footerNav = {
   areas: [
     { label: 'Maple Ridge', href: '/service-areas/maple-ridge' },
     { label: 'Coquitlam', href: '/service-areas/coquitlam' },
-    { label: 'Pitt Meadows', href: '/service-areas/pitt-meadows' },
     { label: 'Burnaby', href: '/service-areas/burnaby' },
-    { label: 'Abbotsford', href: '/service-areas/abbotsford' },
-    { label: 'Lower Mainland', href: '/service-areas/lower-mainland' },
+    { label: 'Vancouver', href: '/service-areas/vancouver' },
+    { label: 'Surrey', href: '/service-areas/surrey' },
+    { label: 'All Service Areas', href: '/service-areas' },
   ],
 };
