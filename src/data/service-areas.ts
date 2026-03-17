@@ -24,7 +24,7 @@ export const serviceAreas: ServiceAreaData[] = [
     state: 'BC',
     metaTitle: 'Siding & Exterior Contractor in Maple Ridge | Tomron Construction',
     metaDescription:
-      'Professional siding installation, window replacement, building envelope, and home renovation services in Maple Ridge, BC. Locally owned. 10+ years experience. Free quotes.',
+      'Siding, window, building envelope & renovation services in Maple Ridge, BC. Locally owned, 10+ years experience. Free quotes.',
     h1: 'Siding & Exterior Construction in Maple Ridge',
     intro:
       'Tomron Construction is proudly based in Maple Ridge and has served this community for over a decade. As your neighbours, we understand the unique challenges that Maple Ridge homes face, from heavy rainfall and moisture exposure to the specific building styles and materials common in the area. Whether you need new siding, window replacements, building envelope repairs, or a complete renovation, our family-run team delivers the quality craftsmanship your home deserves.',
@@ -116,7 +116,7 @@ export const serviceAreas: ServiceAreaData[] = [
     state: 'BC',
     metaTitle: 'Siding & Exterior Contractor in Coquitlam | Tomron Construction',
     metaDescription:
-      'Siding installation, window replacement, building envelope, and renovation services in Coquitlam, BC. Locally owned, 10+ years experience. Free quotes from Tomron Construction.',
+      'Siding, window, building envelope & renovation services in Coquitlam, BC. 10+ years experience. Free quotes.',
     h1: 'Siding & Exterior Construction in Coquitlam',
     intro:
       'Coquitlam homeowners trust Tomron Construction for expert siding installation, window and door replacement, building envelope solutions, and home renovations. From the established neighbourhoods of Maillardville and Ranch Park to the newer developments in Burke Mountain and Westwood Plateau, our team delivers the same high standard of craftsmanship across every Coquitlam community.',
@@ -138,7 +138,7 @@ export const serviceAreas: ServiceAreaData[] = [
     state: 'BC',
     metaTitle: 'Siding & Exterior Contractor in Burnaby | Tomron Construction',
     metaDescription:
-      'Expert siding installation, window replacement, and home renovation services in Burnaby, BC. 10+ years experience, industry-leading warranty. Free quotes from Tomron Construction.',
+      'Siding, window replacement & renovation services in Burnaby, BC. 10+ years experience, family-owned. Free quotes.',
     h1: 'Siding & Exterior Construction in Burnaby',
     intro:
       'Burnaby homeowners choose Tomron Construction for reliable, high-quality exterior work and home renovations. From older character homes in the Heights and Capitol Hill to modern properties in Brentwood and Metrotown, we bring expert craftsmanship and personalized service to every project.',
@@ -204,7 +204,7 @@ export const serviceAreas: ServiceAreaData[] = [
     state: 'BC',
     metaTitle: 'Siding & Exterior Contractor in Vancouver | Tomron Construction',
     metaDescription:
-      'Siding installation, window replacement, building envelope, and home renovation in Vancouver, BC. 10+ years experience. Free quotes from Tomron Construction.',
+      'Siding, window, building envelope & renovation services in Vancouver, BC. 10+ years experience. Free quotes.',
     h1: 'Siding & Exterior Construction in Vancouver',
     intro:
       'Vancouver homeowners rely on Tomron Construction for professional siding installation, window and door replacement, building envelope repairs, and home renovations. From East Vancouver character homes to West Side properties, our experienced team delivers premium exterior craftsmanship across the city.',
@@ -248,7 +248,7 @@ export const serviceAreas: ServiceAreaData[] = [
     state: 'BC',
     metaTitle: 'Siding & Exterior Contractor in Abbotsford | Tomron Construction',
     metaDescription:
-      'Siding installation, window replacement, and home renovation services in Abbotsford, BC. Family-owned, 10+ years experience. Free quotes from Tomron Construction.',
+      'Siding, window & renovation services in Abbotsford, BC. Family-owned, 10+ years experience. Free quotes.',
     h1: 'Siding & Exterior Construction in Abbotsford',
     intro:
       'Tomron Construction provides expert siding, window, door, and renovation services to Abbotsford homeowners. Whether your home is in the established neighbourhoods near downtown or the newer developments in east Abbotsford, our team delivers the same quality craftsmanship and personal service that has built our reputation across the Lower Mainland.',

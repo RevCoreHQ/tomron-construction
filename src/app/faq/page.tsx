@@ -23,7 +23,7 @@ const allFaqs = [
 
 export const metadata: Metadata = generatePageMetadata({
   title: 'FAQ | Tomron Construction',
-  description: 'Answers about siding costs, window replacement timelines, building envelope repair, permits, and more. Serving Maple Ridge, Coquitlam & the Lower Mainland, BC.',
+  description: 'Answers about siding costs, window replacement timelines, building envelope repair, permits, and more. Lower Mainland, BC.',
   path: '/faq',
 });
 

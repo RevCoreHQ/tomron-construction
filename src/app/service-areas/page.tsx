@@ -13,7 +13,7 @@ import { CTASection } from '@/components/sections/CTASection';
 export const metadata: Metadata = generatePageMetadata({
   title: 'Service Areas in the Lower Mainland | Tomron Construction',
   description:
-    'Tomron Construction serves Maple Ridge, Coquitlam, Surrey, Langley, Burnaby, Vancouver, Richmond, and communities throughout the Lower Mainland with siding, window, door, building envelope, and renovation services.',
+    'Tomron Construction serves Maple Ridge, Coquitlam, Surrey, Burnaby, Vancouver & 16 Lower Mainland communities. Siding, windows & renovations.',
   path: '/service-areas',
 });
 

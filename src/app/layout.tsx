@@ -57,7 +57,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${outfit.variable} ${inter.variable} lenis lenis-smooth`}>
+    <html lang="en-CA" className={`${outfit.variable} ${inter.variable} lenis lenis-smooth`}>
       <head>
         <JsonLd data={[localBusinessSchema(), webSiteSchema(), organizationSchema()]} />
       </head>

@@ -14,7 +14,7 @@ import { CTASection } from '@/components/sections/CTASection';
 export const metadata: Metadata = generatePageMetadata({
   title: 'Products & Trusted Partners | Tomron Construction',
   description:
-    'Explore the premium siding, window, glass, and building products Tomron Construction installs. Authorized dealer for James Hardie, Mitten Siding, Centra Windows, Vitrum Glass, and more across the Lower Mainland.',
+    'Premium siding, window, and glass products we install. Authorized dealer for James Hardie, Centra Windows, Vitrum Glass & more.',
   path: '/products',
 });
 
