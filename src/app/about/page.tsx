@@ -4,6 +4,7 @@ import { JsonLd } from '@/components/seo/JsonLd';
 import { breadcrumbSchema } from '@/lib/schema';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { TrustStrip } from '@/components/sections/TrustStrip';
+import { MeetOwner } from '@/components/sections/MeetOwner';
 import { CTASection } from '@/components/sections/CTASection';
 import { siteConfig } from '@/data/site-config';
 import { Shield, Users, Eye, Award } from 'lucide-react';
@@ -91,6 +92,8 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      <MeetOwner />
 
       <TrustStrip />
 
