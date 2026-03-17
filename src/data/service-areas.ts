@@ -158,7 +158,7 @@ export const serviceAreas: ServiceAreaData[] = [
     slug: 'tsawwassen',
     city: 'Tsawwassen',
     state: 'BC',
-    metaTitle: 'Siding & Exterior Contractor in Tsawwassen | Tomron Construction',
+    metaTitle: 'Siding Contractor in Tsawwassen | Tomron',
     metaDescription:
       'Professional siding, window, and exterior services in Tsawwassen, BC. Family-owned with 10+ years experience. Free quotes from Tomron Construction.',
     h1: 'Siding & Exterior Construction in Tsawwassen',
@@ -224,7 +224,7 @@ export const serviceAreas: ServiceAreaData[] = [
     slug: 'new-westminster',
     city: 'New Westminster',
     state: 'BC',
-    metaTitle: 'Siding & Exterior Contractor in New Westminster | Tomron Construction',
+    metaTitle: 'Siding Contractor in New Westminster | Tomron',
     metaDescription:
       'Professional siding, window, and exterior services in New Westminster, BC. Family-owned, 10+ years experience. Free quotes from Tomron Construction.',
     h1: 'Siding & Exterior Construction in New Westminster',
@@ -335,7 +335,7 @@ export const serviceAreas: ServiceAreaData[] = [
     slug: 'port-coquitlam',
     city: 'Port Coquitlam',
     state: 'BC',
-    metaTitle: 'Siding & Exterior Contractor in Port Coquitlam | Tomron Construction',
+    metaTitle: 'Siding Contractor in Port Coquitlam | Tomron',
     metaDescription:
       'Professional siding, window, and renovation services in Port Coquitlam, BC. Family-owned, 10+ years experience. Free quotes from Tomron Construction.',
     h1: 'Siding & Exterior Construction in Port Coquitlam',
@@ -357,7 +357,7 @@ export const serviceAreas: ServiceAreaData[] = [
     slug: 'pitt-meadows',
     city: 'Pitt Meadows',
     state: 'BC',
-    metaTitle: 'Siding & Exterior Contractor in Pitt Meadows | Tomron Construction',
+    metaTitle: 'Siding Contractor in Pitt Meadows | Tomron',
     metaDescription:
       'Professional siding, window, door, and renovation services in Pitt Meadows, BC. Family-owned contractor with 10+ years experience. Free quotes.',
     h1: 'Siding & Exterior Construction in Pitt Meadows',

@@ -22,8 +22,8 @@ const allFaqs = [
 ];
 
 export const metadata: Metadata = generatePageMetadata({
-  title: 'FAQ, Siding, Windows, Doors & Renovation Questions | Tomron Construction',
-  description: 'Get answers about siding installation costs, window replacement timelines, building envelope repair, permits, and more. Tomron Construction serves Maple Ridge, Coquitlam & the Lower Mainland, BC.',
+  title: 'FAQ | Tomron Construction',
+  description: 'Answers about siding costs, window replacement timelines, building envelope repair, permits, and more. Serving Maple Ridge, Coquitlam & the Lower Mainland, BC.',
   path: '/faq',
 });
 

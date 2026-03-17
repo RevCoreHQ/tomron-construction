@@ -10,8 +10,8 @@ import { JsonLd } from '@/components/seo/JsonLd';
 import { breadcrumbSchema } from '@/lib/schema';
 
 export const metadata: Metadata = generatePageMetadata({
-  title: 'Our Services, Siding, Windows, Doors & Renovation | Tomron Construction',
-  description: 'Explore our full range of services: siding installation, metal flashing, building envelope, home renovation, window replacement, and door installation. Serving the Lower Mainland, BC.',
+  title: 'Siding, Windows & Renovation Services | Tomron',
+  description: 'Siding installation, window & door replacement, building envelope, metal flashing, and renovation services in the Lower Mainland, BC.',
   path: '/services',
 });
 

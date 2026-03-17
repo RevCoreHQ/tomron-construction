@@ -10,8 +10,8 @@ import { ScrollReveal } from '@/components/motion/ScrollReveal';
 import { TextReveal } from '@/components/motion/TextReveal';
 
 export const metadata: Metadata = generatePageMetadata({
-  title: 'Gallery, Siding, Windows & Renovation Projects | Tomron Construction',
-  description: 'Browse 60+ completed siding, window, door, metal flashing, and renovation projects by Tomron Construction across Maple Ridge and the Lower Mainland, BC. See our craftsmanship firsthand.',
+  title: 'Project Gallery | Tomron Construction',
+  description: 'Browse 60+ completed siding, window, door, flashing, and renovation projects across Maple Ridge & the Lower Mainland, BC. See our work firsthand.',
   path: '/gallery',
 });
 

@@ -10,7 +10,7 @@ import { Button } from '@/components/ui/Button';
 import { CTASection } from '@/components/sections/CTASection';
 
 export const metadata: Metadata = generatePageMetadata({
-  title: 'Glass Performance & Vitrum Sealed Units | Tomron Construction',
+  title: 'Glass Performance & Vitrum | Tomron Construction',
   description:
     'Learn about insulated glass units (IGUs), R-values, and Low-E coating technology. Tomron Construction installs windows with Vitrum Glass sealed units, the standard for every major window manufacturer in Western Canada.',
   path: '/products/glass-performance',
