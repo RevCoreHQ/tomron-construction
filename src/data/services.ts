@@ -36,7 +36,7 @@ export const services: ServiceData[] = [
     metaDescription: 'Professional siding and cladding installation in Maple Ridge, Coquitlam, Burnaby & the Lower Mainland. Custom solutions, industry-leading warranty. Free quotes from Tomron Construction.',
     h1: 'Expert Siding & Cladding Installation in the Lower Mainland',
     intro: "Your home's exterior is its first line of defence against BC's rain, wind, and seasonal extremes — and its first impression on everyone who passes by. Tomron Construction installs durable, beautiful siding and cladding systems tailored to your home's architecture and your personal style. From vinyl and fiber cement to wood and composite panels, we work with you to choose the right material for your budget, aesthetic, and long-term performance goals.",
-    heroImage: '',
+    heroImage: 'https://assets.cdn.filesafe.space/oyhdrza3SwoM8YuXOsja/media/69b8bfe287f0f26bbd4cf0b4.png',
     heroAlt: 'Professional siding installation on Lower Mainland home by Tomron Construction',
     features: [
       'Custom siding solutions tailored to your home and budget',
@@ -90,7 +90,7 @@ export const services: ServiceData[] = [
     metaDescription: 'Professional metal flashing installation around windows, doors, and rooflines. Protect your home from water damage. Serving Maple Ridge, Coquitlam & the Lower Mainland.',
     h1: 'Professional Metal Flashing for Lower Mainland Homes',
     intro: "Metal flashing is one of the most critical yet overlooked components of your home's weather protection system. Installed at every vulnerable junction — around windows, doors, rooflines, and wall transitions — proper flashing directs water away from the building structure and prevents costly damage. Tomron Construction provides expert flashing installation and repair as both a standalone service and an integral part of every siding and envelope project we complete.",
-    heroImage: '',
+    heroImage: 'https://assets.cdn.filesafe.space/oyhdrza3SwoM8YuXOsja/media/69b8bfe2269d65be89bda1d9.png',
     heroAlt: 'Metal flashing installation around window by Tomron Construction',
     features: [
       'Custom-bent flashing for perfect fit at every junction',
@@ -132,7 +132,7 @@ export const services: ServiceData[] = [
     metaDescription: 'Comprehensive building envelope services: air barriers, moisture management, and insulation. Protect your Lower Mainland home from the elements. Free quotes from Tomron Construction.',
     h1: 'Building Envelope Solutions for Lower Mainland Homes',
     intro: "The building envelope is the complete system of materials that separates your conditioned interior from the outside environment — controlling air, moisture, and heat flow through your walls, roof, and foundation. In the Lower Mainland's demanding climate, a properly designed and installed building envelope is the difference between a comfortable, energy-efficient home and one plagued by moisture problems, drafts, and high energy costs. Tomron Construction specializes in building envelope assessment, repair, and new installation.",
-    heroImage: '',
+    heroImage: 'https://assets.cdn.filesafe.space/oyhdrza3SwoM8YuXOsja/media/69b8bfe2c625856283dacbae.png',
     heroAlt: 'Building envelope moisture barrier installation by Tomron Construction',
     features: [
       'Complete building envelope assessment and diagnostics',
@@ -174,7 +174,7 @@ export const services: ServiceData[] = [
     metaDescription: 'Full-scale home renovations in Maple Ridge, Coquitlam, Burnaby & the Lower Mainland. Single-room updates to complete transformations. Free quotes from Tomron Construction.',
     h1: 'Home Renovation Services Across the Lower Mainland',
     intro: "Whether you are updating a single room or transforming your entire home, Tomron Construction brings the same precision, communication, and craftsmanship to every renovation project. As a family-run business, we understand that a renovation disrupts your daily life — so we work efficiently, communicate clearly, and treat your home with the same care and respect we would give our own. From structural modifications to finishing details, our experienced crew handles every aspect of the build.",
-    heroImage: '',
+    heroImage: 'https://assets.cdn.filesafe.space/oyhdrza3SwoM8YuXOsja/media/69b8bfe2269d65f1d2bda1da.png',
     heroAlt: 'Home renovation project in the Lower Mainland by Tomron Construction',
     features: [
       'Single-room updates to whole-house transformations',
@@ -220,7 +220,7 @@ export const services: ServiceData[] = [
     metaDescription: 'Professional window replacement and installation in Maple Ridge, Coquitlam, Burnaby & the Lower Mainland. Casement, sliding, picture, European tilt-n-turn & more. Free quotes.',
     h1: 'Professional Window Replacement Across the Lower Mainland',
     intro: "Old, drafty, or damaged windows cost you money every month in wasted energy and make your home less comfortable year-round. Tomron Construction replaces windows of every style, from casement and awning to sliding, picture, arch, and European tilt-and-turn designs. We handle full-frame replacements and retrofit installations, ensuring every window is properly sealed, flashed, and integrated with your home's exterior for maximum performance and lasting beauty.",
-    heroImage: '',
+    heroImage: 'https://assets.cdn.filesafe.space/oyhdrza3SwoM8YuXOsja/media/69b8bfe2269d65f1d2bda1da.png',
     heroAlt: 'Window replacement project in the Lower Mainland by Tomron Construction',
     features: [
       'Casement, awning, picture, arch, sliding, and tilt-n-turn styles',
@@ -270,7 +270,7 @@ export const services: ServiceData[] = [
     metaDescription: 'Entry door and sliding patio door replacement in Maple Ridge, Coquitlam, Burnaby & the Lower Mainland. Energy-efficient options, expert installation. Free quotes from Tomron Construction.',
     h1: 'Door Replacement & Installation in the Lower Mainland',
     intro: "Your entry door is the focal point of your home's exterior, and your patio doors connect your indoor and outdoor living spaces. Tomron Construction replaces and installs entry doors and sliding patio doors with expert precision, ensuring every door is properly weathersealed, flashed, and finished for lasting performance and curb appeal. We work with a range of materials including fiberglass, steel, and wood to match your home's style and your performance requirements.",
-    heroImage: '',
+    heroImage: 'https://assets.cdn.filesafe.space/oyhdrza3SwoM8YuXOsja/media/69b8bfe287f0f272914cf0af.png',
     heroAlt: 'Entry door replacement by Tomron Construction in the Lower Mainland',
     features: [
       'Entry doors in fiberglass, steel, and wood options',
