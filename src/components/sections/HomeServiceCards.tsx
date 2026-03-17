@@ -63,16 +63,16 @@ export function HomeServiceCards() {
   });
 
   // Map vertical scroll to horizontal translation
-  // Cards are ~340px wide (320 + 20 gap) x 6 = ~2040px total, minus viewport width
-  // We translate from 0% to -100% of the overflow
-  const x = useTransform(scrollYProgress, [0, 1], ['1%', '-95%']);
+  // 6 cards × 320px + 5 gaps × 20px ≈ 2020px total; ~3-4 cards visible at once
+  // Translate just enough to reveal the last card at the right edge
+  const x = useTransform(scrollYProgress, [0, 1], ['0%', '-38%']);
 
   return (
     <section
       ref={sectionRef}
       className="relative"
       // Height creates the scroll runway: 100vh for the sticky frame + extra for scrolling through cards
-      style={{ height: '300vh' }}
+      style={{ height: '180vh' }}
     >
       <div className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden">
         <div className="container-wide mb-8">
