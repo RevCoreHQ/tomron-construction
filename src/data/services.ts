@@ -174,7 +174,7 @@ export const services: ServiceData[] = [
     metaDescription: 'Full-scale home renovations in Maple Ridge, Coquitlam, Burnaby & the Lower Mainland. Single-room updates to complete transformations. Free quotes from Tomron Construction.',
     h1: 'Home Renovation Services Across the Lower Mainland',
     intro: "Whether you are updating a single room or transforming your entire home, Tomron Construction brings the same precision, communication, and craftsmanship to every renovation project. As a family-run business, we understand that a renovation disrupts your daily life — so we work efficiently, communicate clearly, and treat your home with the same care and respect we would give our own. From structural modifications to finishing details, our experienced crew handles every aspect of the build.",
-    heroImage: 'https://assets.cdn.filesafe.space/oyhdrza3SwoM8YuXOsja/media/69b8bfe2269d65f1d2bda1da.png',
+    heroImage: 'https://assets.cdn.filesafe.space/oyhdrza3SwoM8YuXOsja/media/69b8c4b4aee1f817b9b6f4f6.png',
     heroAlt: 'Home renovation project in the Lower Mainland by Tomron Construction',
     features: [
       'Single-room updates to whole-house transformations',

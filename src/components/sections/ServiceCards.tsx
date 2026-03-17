@@ -45,7 +45,7 @@ export function ServiceCards({ category, limit, title, subtitle }: ServiceCardsP
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     quality={75}
                     priority={index < 3}
-                    className="object-cover object-center"
+                    className="object-cover object-left"
                   />
                 )}
               </div>
