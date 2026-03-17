@@ -6,7 +6,7 @@ import { X } from 'lucide-react';
 import { StaggerChildren, staggerItem } from '@/components/motion/StaggerChildren';
 import { motion } from 'framer-motion';
 
-const projects = [
+export const projects = [
   {
     id: 1,
     title: 'Complete Siding Replacement',
