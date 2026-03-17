@@ -114,7 +114,7 @@ export function HomeServiceCards() {
                     {/* Background image */}
                     <Image
                       src={service.image}
-                      alt={service.title}
+                      alt={`${service.title} services by Tomron Construction in the Lower Mainland, BC`}
                       fill
                       sizes="320px"
                       className="object-cover object-[40%_50%] scale-110 group-hover:scale-[1.15] transition-transform duration-500"

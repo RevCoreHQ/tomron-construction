@@ -73,7 +73,8 @@ export default async function ServiceAreaPage({ params }: Props) {
           serviceSchema(
             `Siding & Exterior Contractor in ${area.city}`,
             area.metaDescription,
-            `${siteConfig.url}/service-areas/${area.slug}`
+            `${siteConfig.url}/service-areas/${area.slug}`,
+            { areaName: area.city }
           ),
         ]}
       />

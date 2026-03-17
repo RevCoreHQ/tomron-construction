@@ -6,7 +6,7 @@ import { CTASection } from '@/components/sections/CTASection';
 
 export const metadata: Metadata = generatePageMetadata({
   title: 'Our Process, Consultation to Completion | Tomron Construction',
-  description: 'From free consultation to detailed proposal to expert construction. Learn how Tomron Construction delivers siding, window, door, and renovation projects in the Lower Mainland, BC.',
+  description: 'See how Tomron Construction works: free consultation, detailed proposal, expert construction, and final walkthrough. Siding, window, door, and renovation projects in Maple Ridge & the Lower Mainland, BC.',
   path: '/process',
 });
 

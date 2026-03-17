@@ -23,7 +23,6 @@ export const siteConfig = {
   },
   social: {
     google: 'https://maps.app.goo.gl/XDWvBqMVHix6ZySi9',
-    facebook: '',
     instagram: 'https://instagram.com/tomronconstruction',
   },
   trustPoints: [

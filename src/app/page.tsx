@@ -13,8 +13,9 @@ import { RecentProjects } from '@/components/sections/RecentProjects';
 export const metadata: Metadata = generatePageMetadata({
   title: 'Tomron Construction | Siding, Windows & Exterior Contractor, Lower Mainland BC',
   description:
-    'Professional siding installation, window & door replacement, building envelope, and home renovation services in Maple Ridge, Coquitlam, Burnaby & the Lower Mainland. 10+ years experience. Free quotes.',
+    'Professional siding installation, window & door replacement, building envelope, and home renovation services in Maple Ridge, Coquitlam, Burnaby & the Lower Mainland. 10+ years experience. Call (604) 754-9392 for a free quote.',
   path: '/',
+  keywords: ['siding contractor', 'siding installation', 'window replacement', 'door replacement', 'building envelope', 'home renovation', 'Maple Ridge', 'Coquitlam', 'Lower Mainland', 'BC', 'exterior contractor'],
 });
 
 const homeFaqs = [

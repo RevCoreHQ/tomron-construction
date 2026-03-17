@@ -71,7 +71,7 @@ export function RecentProjects() {
                     <div className="relative aspect-[4/3] overflow-hidden">
                       <Image
                         src={project.image}
-                        alt={project.title}
+                        alt={project.alt}
                         fill
                         sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
                         className="object-cover"
@@ -119,7 +119,7 @@ export function RecentProjects() {
             >
               <Image
                 src={lightbox}
-                alt="Project photo"
+                alt="Project photo by Tomron Construction"
                 width={1600}
                 height={1200}
                 className="w-full h-auto max-h-[85vh] object-contain rounded-lg"

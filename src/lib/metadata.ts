@@ -6,6 +6,7 @@ interface PageMetadataProps {
   description: string;
   path: string;
   ogImage?: string;
+  keywords?: string[];
 }
 
 export function generatePageMetadata({
@@ -13,6 +14,7 @@ export function generatePageMetadata({
   description,
   path,
   ogImage,
+  keywords,
 }: PageMetadataProps): Metadata {
   const url = `${siteConfig.url}${path}`;
   const image = ogImage || siteConfig.ogImage;
@@ -20,6 +22,7 @@ export function generatePageMetadata({
   return {
     title,
     description,
+    ...(keywords && { keywords }),
     alternates: { canonical: url },
     openGraph: {
       title,
@@ -27,7 +30,7 @@ export function generatePageMetadata({
       url,
       siteName: siteConfig.name,
       images: [{ url: image, width: 1200, height: 630, alt: title }],
-      locale: 'en_US',
+      locale: 'en_CA',
       type: 'website',
     },
     twitter: {

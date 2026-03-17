@@ -13,7 +13,7 @@ import { TextReveal } from '@/components/motion/TextReveal';
 
 export const metadata: Metadata = generatePageMetadata({
   title: 'About Tomron Construction, Siding & Exterior Contractor, Lower Mainland BC',
-  description: 'Family-owned siding and exterior contractor with 10+ years experience. Siding, windows, doors, building envelope, and renovation services in Maple Ridge and the Lower Mainland, BC.',
+  description: 'Meet Brendan Prendergast and the Tomron Construction team. Family-owned siding and exterior contractor with 10+ years experience serving Maple Ridge, Coquitlam, Burnaby & the Lower Mainland, BC.',
   path: '/about',
 });
 

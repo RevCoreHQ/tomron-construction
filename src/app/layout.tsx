@@ -5,7 +5,7 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { MobileBottomBar } from '@/components/layout/MobileBottomBar';
 import { JsonLd } from '@/components/seo/JsonLd';
-import { localBusinessSchema } from '@/lib/schema';
+import { localBusinessSchema, webSiteSchema, organizationSchema } from '@/lib/schema';
 import { ScrollProgress } from '@/components/motion/ScrollProgress';
 import { SmoothScrollProvider } from '@/components/providers/SmoothScrollProvider';
 import '@/styles/globals.css';
@@ -59,7 +59,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${outfit.variable} ${inter.variable} lenis lenis-smooth`}>
       <head>
-        <JsonLd data={localBusinessSchema()} />
+        <JsonLd data={[localBusinessSchema(), webSiteSchema(), organizationSchema()]} />
       </head>
       <body className="min-h-screen flex flex-col">
         <SmoothScrollProvider>

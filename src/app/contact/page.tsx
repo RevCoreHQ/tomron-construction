@@ -11,7 +11,7 @@ import { TextReveal } from '@/components/motion/TextReveal';
 
 export const metadata: Metadata = generatePageMetadata({
   title: 'Contact Tomron Construction, Free Quote | Siding & Exterior Contractor BC',
-  description: 'Get a free quote for siding installation, window replacement, door installation, or home renovation. Call (604) 754-9392 or fill out our form. Maple Ridge & Lower Mainland, BC.',
+  description: 'Contact Tomron Construction for a free siding, window, or renovation quote. Call (604) 754-9392 or fill out our form. Serving Maple Ridge, Coquitlam, Burnaby, Surrey & the Lower Mainland, BC.',
   path: '/contact',
 });
 

@@ -48,7 +48,10 @@ export default async function ServicePage({ params }: Props) {
             { name: 'Services', url: `${siteConfig.url}/services` },
             { name: service.title, url: `${siteConfig.url}/services/${service.slug}` },
           ]),
-          serviceSchema(service.title, service.metaDescription, `${siteConfig.url}/services/${service.slug}`),
+          serviceSchema(service.title, service.metaDescription, `${siteConfig.url}/services/${service.slug}`, {
+            image: service.heroImage,
+            category: service.category,
+          }),
           faqSchema(service.faqs),
         ]}
       />

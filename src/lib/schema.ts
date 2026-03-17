@@ -2,9 +2,7 @@ import { siteConfig } from '@/data/site-config';
 
 export function localBusinessSchema() {
   const sameAs = [
-    siteConfig.url,
     siteConfig.social.google,
-    siteConfig.social.facebook,
     siteConfig.social.instagram,
   ].filter(Boolean);
 
@@ -17,7 +15,8 @@ export function localBusinessSchema() {
     url: siteConfig.url,
     telephone: siteConfig.phone,
     email: siteConfig.email,
-    image: siteConfig.ogImage,
+    image: `${siteConfig.url}${siteConfig.ogImage}`,
+    logo: `${siteConfig.url}/logo.png`,
     address: {
       '@type': 'PostalAddress',
       streetAddress: siteConfig.address.street || undefined,
@@ -50,10 +49,30 @@ export function localBusinessSchema() {
     areaServed: [
       { '@type': 'City', name: 'Maple Ridge', addressRegion: 'BC' },
       { '@type': 'City', name: 'Coquitlam', addressRegion: 'BC' },
+      { '@type': 'City', name: 'Port Coquitlam', addressRegion: 'BC' },
       { '@type': 'City', name: 'Pitt Meadows', addressRegion: 'BC' },
       { '@type': 'City', name: 'Burnaby', addressRegion: 'BC' },
+      { '@type': 'City', name: 'Vancouver', addressRegion: 'BC' },
+      { '@type': 'City', name: 'Surrey', addressRegion: 'BC' },
+      { '@type': 'City', name: 'Langley', addressRegion: 'BC' },
+      { '@type': 'City', name: 'Delta', addressRegion: 'BC' },
+      { '@type': 'City', name: 'White Rock', addressRegion: 'BC' },
+      { '@type': 'City', name: 'New Westminster', addressRegion: 'BC' },
+      { '@type': 'City', name: 'Richmond', addressRegion: 'BC' },
       { '@type': 'City', name: 'Abbotsford', addressRegion: 'BC' },
+      { '@type': 'City', name: 'Tsawwassen', addressRegion: 'BC' },
+      { '@type': 'City', name: 'Mission', addressRegion: 'BC' },
+      { '@type': 'City', name: 'Chilliwack', addressRegion: 'BC' },
       { '@type': 'AdministrativeArea', name: 'Lower Mainland', addressRegion: 'BC' },
+      {
+        '@type': 'GeoCircle',
+        geoMidpoint: {
+          '@type': 'GeoCoordinates',
+          latitude: 49.2193,
+          longitude: -122.5984,
+        },
+        geoRadius: '80000',
+      },
     ],
     sameAs,
     priceRange: '$$$',
@@ -66,6 +85,97 @@ export function localBusinessSchema() {
       'Door Replacement',
       'Home Renovation',
     ],
+    founder: {
+      '@type': 'Person',
+      name: 'Brendan Prendergast',
+      jobTitle: 'Owner',
+    },
+    foundingDate: '2014',
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: 5,
+      bestRating: 5,
+      reviewCount: 3,
+    },
+    review: [
+      {
+        '@type': 'Review',
+        author: { '@type': 'Person', name: 'Paula A.' },
+        reviewRating: { '@type': 'Rating', ratingValue: 5, bestRating: 5 },
+        reviewBody: 'Brendan is very confident, competent and personable. He takes great pride in his work and it really shows in the quality of the finished product. We could not be happier with the results.',
+      },
+      {
+        '@type': 'Review',
+        author: { '@type': 'Person', name: 'Anne C.' },
+        reviewRating: { '@type': 'Rating', ratingValue: 5, bestRating: 5 },
+        reviewBody: 'Outstanding work with excellent workmanship. Brendan listens to your concerns and delivers exactly what was discussed. Very professional from start to finish. Highly recommend Tomron Construction.',
+      },
+      {
+        '@type': 'Review',
+        author: { '@type': 'Person', name: 'Sharon D.' },
+        reviewRating: { '@type': 'Rating', ratingValue: 5, bestRating: 5 },
+        reviewBody: 'Very professional team. We are thrilled with the excellent workmanship. On time and on budget, they did an extraordinary job on our home. Already recommended them to our neighbours.',
+      },
+    ],
+  };
+}
+
+export function webSiteSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    '@id': `${siteConfig.url}/#website`,
+    name: siteConfig.name,
+    url: siteConfig.url,
+    publisher: {
+      '@type': 'Organization',
+      '@id': `${siteConfig.url}/#organization`,
+    },
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate: `${siteConfig.url}/services?q={search_term_string}`,
+      },
+      'query-input': 'required name=search_term_string',
+    },
+  };
+}
+
+export function organizationSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    '@id': `${siteConfig.url}/#organization`,
+    name: siteConfig.name,
+    url: siteConfig.url,
+    logo: `${siteConfig.url}/logo.png`,
+    image: `${siteConfig.url}${siteConfig.ogImage}`,
+    telephone: siteConfig.phone,
+    email: siteConfig.email,
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: siteConfig.address.street,
+      addressLocality: siteConfig.address.city,
+      addressRegion: siteConfig.address.state,
+      postalCode: siteConfig.address.zip,
+      addressCountry: 'CA',
+    },
+    sameAs: [
+      siteConfig.social.google,
+      siteConfig.social.instagram,
+    ].filter(Boolean),
+    founder: {
+      '@type': 'Person',
+      name: 'Brendan Prendergast',
+      jobTitle: 'Owner',
+    },
+    foundingDate: '2014',
+    numberOfEmployees: {
+      '@type': 'QuantitativeValue',
+      minValue: 2,
+      maxValue: 10,
+    },
   };
 }
 
@@ -82,23 +192,78 @@ export function breadcrumbSchema(items: { name: string; url: string }[]) {
   };
 }
 
-export function serviceSchema(name: string, description: string, url: string) {
+export function serviceSchema(
+  name: string,
+  description: string,
+  url: string,
+  options?: { image?: string; category?: string; areaName?: string }
+) {
   return {
     '@context': 'https://schema.org',
     '@type': 'Service',
     name,
     description,
     url,
+    ...(options?.image && { image: options.image }),
+    serviceType: options?.category || name,
     provider: {
       '@type': 'LocalBusiness',
       '@id': `${siteConfig.url}/#business`,
       name: siteConfig.name,
       telephone: siteConfig.phone,
+      aggregateRating: {
+        '@type': 'AggregateRating',
+        ratingValue: 5,
+        bestRating: 5,
+        reviewCount: 3,
+      },
     },
-    areaServed: {
-      '@type': 'AdministrativeArea',
-      name: 'Lower Mainland',
-      addressRegion: 'BC',
+    areaServed: options?.areaName
+      ? { '@type': 'City', name: options.areaName, addressRegion: 'BC' }
+      : { '@type': 'AdministrativeArea', name: 'Lower Mainland', addressRegion: 'BC' },
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: `${name} Services`,
+      itemListElement: [
+        {
+          '@type': 'Offer',
+          itemOffered: { '@type': 'Service', name },
+        },
+      ],
+    },
+  };
+}
+
+export function productSchema(brand: {
+  name: string;
+  description: string;
+  category: string;
+  website: string;
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: brand.name,
+    description: brand.description,
+    category: brand.category,
+    url: brand.website,
+    brand: {
+      '@type': 'Brand',
+      name: brand.name,
+    },
+    offers: {
+      '@type': 'Offer',
+      availability: 'https://schema.org/InStock',
+      areaServed: {
+        '@type': 'AdministrativeArea',
+        name: 'Lower Mainland',
+        addressRegion: 'BC',
+      },
+      seller: {
+        '@type': 'LocalBusiness',
+        '@id': `${siteConfig.url}/#business`,
+        name: siteConfig.name,
+      },
     },
   };
 }

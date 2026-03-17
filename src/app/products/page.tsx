@@ -6,7 +6,7 @@ import { productBrands, brandCategories } from '@/data/products';
 import { siteConfig } from '@/data/site-config';
 import { generatePageMetadata } from '@/lib/metadata';
 import { JsonLd } from '@/components/seo/JsonLd';
-import { breadcrumbSchema } from '@/lib/schema';
+import { breadcrumbSchema, productSchema } from '@/lib/schema';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { Button } from '@/components/ui/Button';
 import { CTASection } from '@/components/sections/CTASection';
@@ -27,6 +27,14 @@ export default function ProductsPage() {
             { name: 'Home', url: siteConfig.url },
             { name: 'Products & Partners', url: `${siteConfig.url}/products` },
           ]),
+          ...productBrands.map((brand) =>
+            productSchema({
+              name: brand.name,
+              description: brand.description,
+              category: brand.categoryLabel,
+              website: brand.website,
+            })
+          ),
         ]}
       />
 
