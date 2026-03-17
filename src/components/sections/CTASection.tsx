@@ -14,7 +14,7 @@ interface CTASectionProps {
 
 export function CTASection({
   headline = 'Ready to Transform Your Home?',
-  description = 'Get a free quote from our team. We will inspect your property, discuss your goals, and provide a detailed proposal — no obligation.',
+  description = 'Get a free quote from our team. We will inspect your property, discuss your goals, and provide a detailed proposal, no obligation.',
 }: CTASectionProps) {
   return (
     <section className="section-padding">

@@ -43,7 +43,7 @@ export function Hero({
 
   return (
     <section ref={sectionRef} className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background image — parallax layer */}
+      {/* Background image, parallax layer */}
       {backgroundImage ? (
         <motion.div
           className="absolute inset-0"
@@ -51,7 +51,7 @@ export function Hero({
         >
           <Image
             src={backgroundImage}
-            alt="Tomron Construction — siding and exterior work"
+            alt="Tomron Construction, siding and exterior work"
             fill
             priority
             sizes="100vw"
@@ -66,7 +66,7 @@ export function Hero({
       {/* Gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/50 to-black/40" />
 
-      {/* Content — parallax layer (moves faster, fades out) */}
+      {/* Content, parallax layer (moves faster, fades out) */}
       <motion.div
         className="relative z-10 w-full px-4 sm:px-6 lg:px-8 py-32 text-center"
         style={prefersReduced ? undefined : { y: textY, opacity: textOpacity }}

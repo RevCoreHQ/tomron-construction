@@ -27,16 +27,16 @@ export const serviceAreas: ServiceAreaData[] = [
       'Professional siding installation, window replacement, building envelope, and home renovation services in Maple Ridge, BC. Locally owned. 10+ years experience. Free quotes.',
     h1: 'Siding & Exterior Construction in Maple Ridge',
     intro:
-      'Tomron Construction is proudly based in Maple Ridge and has served this community for over a decade. As your neighbours, we understand the unique challenges that Maple Ridge homes face — from heavy rainfall and moisture exposure to the specific building styles and materials common in the area. Whether you need new siding, window replacements, building envelope repairs, or a complete renovation, our family-run team delivers the quality craftsmanship your home deserves.',
+      'Tomron Construction is proudly based in Maple Ridge and has served this community for over a decade. As your neighbours, we understand the unique challenges that Maple Ridge homes face, from heavy rainfall and moisture exposure to the specific building styles and materials common in the area. Whether you need new siding, window replacements, building envelope repairs, or a complete renovation, our family-run team delivers the quality craftsmanship your home deserves.',
     isPrimary: true,
     body: [
       {
         heading: 'Your Local Maple Ridge Contractor',
-        text: "Being based in Maple Ridge means we are not just contractors who drive in from across the Lower Mainland — we are part of this community. Our crew lives and works here, our family is rooted here, and our reputation is built on the quality of work visible on homes throughout Maple Ridge neighbourhoods from Albion and Thornhill to Silver Valley and the town centre. When you hire Tomron Construction, you are hiring a neighbour who takes personal pride in every project and stands behind the work long after the job is complete.",
+        text: "Being based in Maple Ridge means we are not just contractors who drive in from across the Lower Mainland, we are part of this community. Our crew lives and works here, our family is rooted here, and our reputation is built on the quality of work visible on homes throughout Maple Ridge neighbourhoods from Albion and Thornhill to Silver Valley and the town centre. When you hire Tomron Construction, you are hiring a neighbour who takes personal pride in every project and stands behind the work long after the job is complete.",
       },
       {
         heading: 'Protecting Maple Ridge Homes From the Elements',
-        text: "Maple Ridge receives substantial annual rainfall, and many homes in the area were built during periods when building envelope standards were less rigorous than they are today. This combination means siding failures, flashing deterioration, and moisture intrusion are common issues for local homeowners. Tomron Construction specializes in diagnosing and resolving these problems with comprehensive exterior solutions — new siding with proper moisture barriers, replacement of failed flashing, window and door upgrades that seal out the weather, and building envelope improvements that protect your home for decades to come.",
+        text: "Maple Ridge receives substantial annual rainfall, and many homes in the area were built during periods when building envelope standards were less rigorous than they are today. This combination means siding failures, flashing deterioration, and moisture intrusion are common issues for local homeowners. Tomron Construction specializes in diagnosing and resolving these problems with comprehensive exterior solutions, new siding with proper moisture barriers, replacement of failed flashing, window and door upgrades that seal out the weather, and building envelope improvements that protect your home for decades to come.",
       },
       {
         heading: 'Full-Service Exterior and Renovation Work',
@@ -75,7 +75,7 @@ export const serviceAreas: ServiceAreaData[] = [
       'Professional siding, window, door, and building envelope services in Surrey, BC. 10+ years experience, family-owned. Free quotes from Tomron Construction.',
     h1: 'Siding & Exterior Construction in Surrey',
     intro:
-      'Surrey is the Lower Mainland\'s largest city and one of our busiest service areas. Tomron Construction provides siding installation, window and door replacement, building envelope solutions, and home renovations to homeowners across every Surrey neighbourhood — from Cloverdale and South Surrey to Newton, Fleetwood, and Guildford.',
+      'Surrey is the Lower Mainland\'s largest city and one of our busiest service areas. Tomron Construction provides siding installation, window and door replacement, building envelope solutions, and home renovations to homeowners across every Surrey neighbourhood, from Cloverdale and South Surrey to Newton, Fleetwood, and Guildford.',
     isPrimary: true,
     body: [
       {
@@ -102,7 +102,7 @@ export const serviceAreas: ServiceAreaData[] = [
     body: [
       {
         heading: 'Serving Ladner, Tsawwassen & North Delta',
-        text: "Delta's unique geography — bordered by the ocean, river, and farmland — creates specific challenges for home exteriors. Coastal moisture, wind exposure, and salt air can accelerate siding deterioration and compromise building envelopes. Tomron Construction understands these conditions and selects materials and installation methods that protect Delta homes for the long term, whether your property is in the heritage heart of Ladner or the residential neighbourhoods of North Delta.",
+        text: "Delta's unique geography, bordered by the ocean, river, and farmland, creates specific challenges for home exteriors. Coastal moisture, wind exposure, and salt air can accelerate siding deterioration and compromise building envelopes. Tomron Construction understands these conditions and selects materials and installation methods that protect Delta homes for the long term, whether your property is in the heritage heart of Ladner or the residential neighbourhoods of North Delta.",
       },
       {
         heading: 'Protecting Your Investment',
@@ -124,7 +124,7 @@ export const serviceAreas: ServiceAreaData[] = [
     body: [
       {
         heading: 'Serving All Coquitlam Neighbourhoods',
-        text: "Coquitlam's diverse housing stock ranges from mid-century ranchers and split-levels in established neighbourhoods to modern custom homes on Burke Mountain and luxury properties in Westwood Plateau. Each type of home presents different exterior challenges and opportunities. Tomron Construction has worked on properties across the full spectrum — from complete siding replacements on older homes that need updated moisture protection to precision window installations on newer builds where aesthetics and energy efficiency are the priority. We tailor our approach to your specific home, neighbourhood, and goals.",
+        text: "Coquitlam's diverse housing stock ranges from mid-century ranchers and split-levels in established neighbourhoods to modern custom homes on Burke Mountain and luxury properties in Westwood Plateau. Each type of home presents different exterior challenges and opportunities. Tomron Construction has worked on properties across the full spectrum, from complete siding replacements on older homes that need updated moisture protection to precision window installations on newer builds where aesthetics and energy efficiency are the priority. We tailor our approach to your specific home, neighbourhood, and goals.",
       },
       {
         heading: 'Coquitlam Climate Considerations',
@@ -146,11 +146,11 @@ export const serviceAreas: ServiceAreaData[] = [
     body: [
       {
         heading: 'Working With Burnaby\'s Diverse Housing Stock',
-        text: "Burnaby is one of the most architecturally diverse cities in the Lower Mainland, with housing ranging from 1950s bungalows and wartime homes to contemporary townhouses and custom-built estates. Older Burnaby homes often need comprehensive exterior upgrades — new siding to replace aging wood or vinyl, window replacements to improve energy efficiency, and building envelope improvements to bring moisture protection up to modern standards. Tomron Construction has extensive experience working with older homes, including navigating the specific considerations around heritage-style properties, asbestos abatement coordination, and structural assessments.",
+        text: "Burnaby is one of the most architecturally diverse cities in the Lower Mainland, with housing ranging from 1950s bungalows and wartime homes to contemporary townhouses and custom-built estates. Older Burnaby homes often need comprehensive exterior upgrades, new siding to replace aging wood or vinyl, window replacements to improve energy efficiency, and building envelope improvements to bring moisture protection up to modern standards. Tomron Construction has extensive experience working with older homes, including navigating the specific considerations around heritage-style properties, asbestos abatement coordination, and structural assessments.",
       },
       {
         heading: 'Quality That Burnaby Homeowners Expect',
-        text: "Burnaby's strong real estate market means exterior improvements need to deliver both performance and curb appeal. Tomron Construction works with premium materials and pays meticulous attention to finishing details — clean lines, precise trim work, and colour coordination that enhances your home's architectural character. Whether you are investing in your forever home or preparing a property for sale, our work adds measurable value and lasting protection.",
+        text: "Burnaby's strong real estate market means exterior improvements need to deliver both performance and curb appeal. Tomron Construction works with premium materials and pays meticulous attention to finishing details, clean lines, precise trim work, and colour coordination that enhances your home's architectural character. Whether you are investing in your forever home or preparing a property for sale, our work adds measurable value and lasting protection.",
       },
     ],
   },
@@ -168,7 +168,7 @@ export const serviceAreas: ServiceAreaData[] = [
     body: [
       {
         heading: 'Coastal Expertise for Tsawwassen Homes',
-        text: "Tsawwassen's peninsula location means homes are exposed to salt air, coastal winds, and persistent moisture — conditions that can accelerate siding deterioration and compromise building envelopes more quickly than in inland communities. Tomron Construction selects materials and installation methods specifically suited to coastal environments, ensuring your exterior stands up to Tsawwassen's unique weather patterns year after year.",
+        text: "Tsawwassen's peninsula location means homes are exposed to salt air, coastal winds, and persistent moisture, conditions that can accelerate siding deterioration and compromise building envelopes more quickly than in inland communities. Tomron Construction selects materials and installation methods specifically suited to coastal environments, ensuring your exterior stands up to Tsawwassen's unique weather patterns year after year.",
       },
       {
         heading: 'Premium Exterior Work in a Premium Community',
@@ -190,7 +190,7 @@ export const serviceAreas: ServiceAreaData[] = [
     body: [
       {
         heading: 'Built for White Rock\'s Oceanside Conditions',
-        text: "White Rock's stunning ocean views come with exterior challenges — salt spray, coastal winds, and persistent humidity put extra demands on siding, windows, and building envelopes. Tomron Construction understands these conditions and uses materials and techniques proven to perform in coastal environments. Whether your home overlooks the promenade or sits in the hillside neighbourhoods above, we ensure your exterior is protected against the elements.",
+        text: "White Rock's stunning ocean views come with exterior challenges, salt spray, coastal winds, and persistent humidity put extra demands on siding, windows, and building envelopes. Tomron Construction understands these conditions and uses materials and techniques proven to perform in coastal environments. Whether your home overlooks the promenade or sits in the hillside neighbourhoods above, we ensure your exterior is protected against the elements.",
       },
       {
         heading: 'Enhancing White Rock\'s Character Homes',
@@ -282,7 +282,7 @@ export const serviceAreas: ServiceAreaData[] = [
       },
       {
         heading: 'Built for Fraser Valley Weather',
-        text: "Mission's location at the eastern edge of the Lower Mainland means heavy rainfall and significant moisture exposure throughout much of the year. Tomron Construction installs exterior systems designed for these conditions — quality siding with proper moisture barriers, precision window installations, and building envelope solutions that keep your home dry and protected regardless of what the weather brings.",
+        text: "Mission's location at the eastern edge of the Lower Mainland means heavy rainfall and significant moisture exposure throughout much of the year. Tomron Construction installs exterior systems designed for these conditions, quality siding with proper moisture barriers, precision window installations, and building envelope solutions that keep your home dry and protected regardless of what the weather brings.",
       },
     ],
   },
@@ -323,7 +323,7 @@ export const serviceAreas: ServiceAreaData[] = [
     body: [
       {
         heading: 'Fraser Valley Expertise',
-        text: "Chilliwack's location in the upper Fraser Valley means homes face heavy rainfall, mountain runoff, and significant moisture exposure. Tomron Construction understands these conditions and installs exterior systems built to handle them — from quality siding with proper moisture management to sealed windows and doors that keep your home comfortable and dry year-round.",
+        text: "Chilliwack's location in the upper Fraser Valley means homes face heavy rainfall, mountain runoff, and significant moisture exposure. Tomron Construction understands these conditions and installs exterior systems built to handle them, from quality siding with proper moisture management to sealed windows and doors that keep your home comfortable and dry year-round.",
       },
       {
         heading: 'Quality Work, Fair Pricing',
@@ -367,11 +367,11 @@ export const serviceAreas: ServiceAreaData[] = [
     body: [
       {
         heading: 'A Community We Know Well',
-        text: "As a Maple Ridge-based company, Pitt Meadows is right next door and one of the communities we serve most frequently. We know the housing styles, the common exterior issues, and the municipal requirements that apply to renovation and exterior work in Pitt Meadows. Many of our Pitt Meadows clients have come to us through referrals from neighbours who saw our work on nearby homes — that word-of-mouth reputation is something we work hard to maintain with every project we complete.",
+        text: "As a Maple Ridge-based company, Pitt Meadows is right next door and one of the communities we serve most frequently. We know the housing styles, the common exterior issues, and the municipal requirements that apply to renovation and exterior work in Pitt Meadows. Many of our Pitt Meadows clients have come to us through referrals from neighbours who saw our work on nearby homes, that word-of-mouth reputation is something we work hard to maintain with every project we complete.",
       },
       {
         heading: 'Exterior Protection for Pitt Meadows Homes',
-        text: "Pitt Meadows' location in the Fraser Valley lowlands means homes here face persistent moisture from rainfall, morning fog, and seasonal flooding risks. Maintaining a solid building envelope — quality siding, proper flashing, sealed windows and doors, and effective moisture barriers — is not just about aesthetics; it is essential protection for your home's structure and your family's health. Tomron Construction provides comprehensive exterior solutions that address every layer of your home's weather protection system.",
+        text: "Pitt Meadows' location in the Fraser Valley lowlands means homes here face persistent moisture from rainfall, morning fog, and seasonal flooding risks. Maintaining a solid building envelope, quality siding, proper flashing, sealed windows and doors, and effective moisture barriers, is not just about aesthetics; it is essential protection for your home's structure and your family's health. Tomron Construction provides comprehensive exterior solutions that address every layer of your home's weather protection system.",
       },
     ],
   },

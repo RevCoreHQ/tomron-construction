@@ -24,7 +24,7 @@ const testimonials = [
   },
   {
     id: 'testimonial-3',
-    quote: "Very professional team. We are thrilled with the excellent workmanship. On time and on budget — they did an extraordinary job on our home. Already recommended them to our neighbours.",
+    quote: "Very professional team. We are thrilled with the excellent workmanship. On time and on budget, they did an extraordinary job on our home. Already recommended them to our neighbours.",
     author: 'Sharon D.',
     location: 'Burnaby, BC',
     service: 'Window Replacement',

@@ -9,7 +9,7 @@ import { siteConfig } from '@/data/site-config';
 import { Shield, Users, Eye, Award } from 'lucide-react';
 
 export const metadata: Metadata = generatePageMetadata({
-  title: 'About Tomron Construction — Siding & Exterior Contractor, Lower Mainland BC',
+  title: 'About Tomron Construction, Siding & Exterior Contractor, Lower Mainland BC',
   description: 'Family-owned siding and exterior contractor with 10+ years experience. Siding, windows, doors, building envelope, and renovation services in Maple Ridge and the Lower Mainland, BC.',
   path: '/about',
 });

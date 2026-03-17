@@ -107,7 +107,7 @@ export function Header() {
         </div>
       </div>
 
-      {/* Mobile menu — slides in from right */}
+      {/* Mobile menu, slides in from right */}
       <div
         className={`lg:hidden fixed inset-y-0 right-0 w-80 max-w-[85vw] bg-charcoal-950 z-50 transform transition-transform duration-300 ease-in-out ${
           mobileOpen ? 'translate-x-0' : 'translate-x-full'

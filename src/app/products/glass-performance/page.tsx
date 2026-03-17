@@ -12,7 +12,7 @@ import { CTASection } from '@/components/sections/CTASection';
 export const metadata: Metadata = generatePageMetadata({
   title: 'Glass Performance & Vitrum Sealed Units | Tomron Construction',
   description:
-    'Learn about insulated glass units (IGUs), R-values, and Low-E coating technology. Tomron Construction installs windows with Vitrum Glass sealed units — the standard for every major window manufacturer in Western Canada.',
+    'Learn about insulated glass units (IGUs), R-values, and Low-E coating technology. Tomron Construction installs windows with Vitrum Glass sealed units, the standard for every major window manufacturer in Western Canada.',
   path: '/products/glass-performance',
 });
 
@@ -44,7 +44,7 @@ const lowEBenefits = [
   {
     icon: ThermometerSun,
     title: 'Reduces Heat Transfer',
-    text: 'Low-E coatings reflect radiant heat back to its source — keeping heat inside during winter and outside during summer.',
+    text: 'Low-E coatings reflect radiant heat back to its source, keeping heat inside during winter and outside during summer.',
   },
   {
     icon: Zap,
@@ -59,7 +59,7 @@ const lowEBenefits = [
   {
     icon: Eye,
     title: 'Maintains Visibility',
-    text: 'Unlike tinted glass, Low-E coatings are virtually invisible — high performance with a clear, neutral appearance.',
+    text: 'Unlike tinted glass, Low-E coatings are virtually invisible, high performance with a clear, neutral appearance.',
   },
   {
     icon: Shield,
@@ -69,7 +69,7 @@ const lowEBenefits = [
   {
     icon: Layers,
     title: 'Sound Reduction',
-    text: 'Multi-pane insulated units with gas fills provide measurable noise reduction — especially valuable in urban and roadside locations.',
+    text: 'Multi-pane insulated units with gas fills provide measurable noise reduction, especially valuable in urban and roadside locations.',
   },
 ];
 
@@ -123,17 +123,17 @@ export default function GlassPerformancePage() {
           </h2>
           <div className="prose prose-lg text-slate-600 max-w-none">
             <p>
-              An insulated glass unit (IGU) — also called a sealed unit — consists of two or three panes of glass separated by a spacer bar and hermetically sealed together. The space between the panes is filled with an inert gas (typically argon) that acts as an insulating barrier, dramatically reducing heat transfer compared to single-pane glass.
+              An insulated glass unit (IGU), also called a sealed unit, consists of two or three panes of glass separated by a spacer bar and hermetically sealed together. The space between the panes is filled with an inert gas (typically argon) that acts as an insulating barrier, dramatically reducing heat transfer compared to single-pane glass.
             </p>
             <p>
-              The quality of the sealed unit determines how well your windows perform. A primary seal of polyisobutylene creates an airtight barrier to prevent moisture from entering the airspace, while a secondary structural seal holds the unit together for long-term durability. The glass itself may be clear, tinted, coated with low-emissivity films, or tempered for safety — depending on the application.
+              The quality of the sealed unit determines how well your windows perform. A primary seal of polyisobutylene creates an airtight barrier to prevent moisture from entering the airspace, while a secondary structural seal holds the unit together for long-term durability. The glass itself may be clear, tinted, coated with low-emissivity films, or tempered for safety, depending on the application.
             </p>
             <p>
               Every major window manufacturer in the Lower Mainland uses sealed glass units from{' '}
               <a href="https://www.vitrum.ca/" target="_blank" rel="noopener noreferrer" className="text-brand-600 hover:text-brand-700 font-semibold">
                 Vitrum Glass Group
               </a>{' '}
-              — Western Canada&apos;s largest glass fabricator, manufacturing from their 200,000 sq ft facility in Langley, BC. As a certified fabricator for Vitro, Guardian, and Saint-Gobain, Vitrum provides exclusive access to the highest-performance glass coatings available.
+             , Western Canada&apos;s largest glass fabricator, manufacturing from their 200,000 sq ft facility in Langley, BC. As a certified fabricator for Vitro, Guardian, and Saint-Gobain, Vitrum provides exclusive access to the highest-performance glass coatings available.
             </p>
           </div>
         </div>
@@ -148,7 +148,7 @@ export default function GlassPerformancePage() {
               R-Values: Understanding Glass Performance
             </h2>
             <p className="text-slate-500 leading-relaxed">
-              R-value measures thermal resistance — the higher the R-value, the better the insulation. U-value is the inverse (lower is better). Here&apos;s how different glass configurations compare.
+              R-value measures thermal resistance, the higher the R-value, the better the insulation. U-value is the inverse (lower is better). Here&apos;s how different glass configurations compare.
             </p>
           </div>
 
@@ -238,18 +238,18 @@ export default function GlassPerformancePage() {
               <a href="https://www.vitrum.ca/" target="_blank" rel="noopener noreferrer" className="text-brand-600 hover:text-brand-700 font-semibold">
                 Vitrum Glass Group
               </a>
-              . This is not unusual — virtually every window manufacturer in Western Canada uses Vitrum glass. There is a reason for that.
+              . This is not unusual, virtually every window manufacturer in Western Canada uses Vitrum glass. There is a reason for that.
             </p>
             <p>
-              Operating from a 200,000 square foot facility in Langley, BC, Vitrum fabricates more glass products than any other manufacturer in the Pacific Northwest. As a certified fabricator for all three major primary float glass manufacturers — <strong>Vitro</strong>, <strong>Guardian</strong>, and <strong>Saint-Gobain</strong> — Vitrum provides exclusive access to the highest-performance coatings available:
+              Operating from a 200,000 square foot facility in Langley, BC, Vitrum fabricates more glass products than any other manufacturer in the Pacific Northwest. As a certified fabricator for all three major primary float glass manufacturers, <strong>Vitro</strong>, <strong>Guardian</strong>, and <strong>Saint-Gobain</strong>, Vitrum provides exclusive access to the highest-performance coatings available:
             </p>
             <ul>
-              <li><strong>Vitro Solarban</strong> — Industry-leading solar control Low-E glass with exceptional clarity</li>
-              <li><strong>Guardian SunGuard</strong> — Advanced low-e coatings for optimal solar control and thermal performance</li>
-              <li><strong>Saint-Gobain Cool-Lite &amp; Planitherm</strong> — Premium European glass technology for superior insulation</li>
+              <li><strong>Vitro Solarban</strong>, Industry-leading solar control Low-E glass with exceptional clarity</li>
+              <li><strong>Guardian SunGuard</strong>, Advanced low-e coatings for optimal solar control and thermal performance</li>
+              <li><strong>Saint-Gobain Cool-Lite &amp; Planitherm</strong>, Premium European glass technology for superior insulation</li>
             </ul>
             <p>
-              Vitrum&apos;s IGMAC certification ensures every sealed insulating glass unit meets the highest standards for design, manufacture, and long-term performance. When you choose Tomron Construction for your window replacement, you are getting glass technology from the best fabricator in Western Canada — regardless of which window brand you select.
+              Vitrum&apos;s IGMAC certification ensures every sealed insulating glass unit meets the highest standards for design, manufacture, and long-term performance. When you choose Tomron Construction for your window replacement, you are getting glass technology from the best fabricator in Western Canada, regardless of which window brand you select.
             </p>
           </div>
 
@@ -290,13 +290,13 @@ export default function GlassPerformancePage() {
           </h2>
           <div className="prose prose-lg text-slate-600 max-w-none">
             <p>
-              When you work with Tomron Construction on a window replacement project, the glass performance is consistent and excellent across all the window brands we carry — <Link href="/products" className="text-brand-600 hover:text-brand-700 font-semibold">Centra, Tyee, and Ply Gem</Link>. The R-values and Low-E coating performance remain the same because they all source their sealed glass units from Vitrum.
+              When you work with Tomron Construction on a window replacement project, the glass performance is consistent and excellent across all the window brands we carry, <Link href="/products" className="text-brand-600 hover:text-brand-700 font-semibold">Centra, Tyee, and Ply Gem</Link>. The R-values and Low-E coating performance remain the same because they all source their sealed glass units from Vitrum.
             </p>
             <p>
-              This means your decision comes down to frame material preferences, hardware quality, aesthetics, and budget — not glass quality. Every option we offer delivers the same high-performance sealed units, ensuring your home is protected against BC&apos;s rain, cold winters, and warm summers.
+              This means your decision comes down to frame material preferences, hardware quality, aesthetics, and budget, not glass quality. Every option we offer delivers the same high-performance sealed units, ensuring your home is protected against BC&apos;s rain, cold winters, and warm summers.
             </p>
             <p>
-              Our team will help you select the right glass configuration — double or triple glazed, with the appropriate Low-E coating — based on your home&apos;s orientation, your energy goals, and your budget. The result is a home that is more comfortable, more energy efficient, and protected for decades.
+              Our team will help you select the right glass configuration, double or triple glazed, with the appropriate Low-E coating, based on your home&apos;s orientation, your energy goals, and your budget. The result is a home that is more comfortable, more energy efficient, and protected for decades.
             </p>
           </div>
         </div>

@@ -19,7 +19,7 @@ export function FAQAccordion({ faqs, title, subtitle }: FAQAccordionProps) {
     <section className="section-padding">
       <div className="container-wide">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-16">
-          {/* Left — Header */}
+          {/* Left, Header */}
           {title && (
             <ScrollReveal className="lg:col-span-2">
               {subtitle && (
@@ -36,7 +36,7 @@ export function FAQAccordion({ faqs, title, subtitle }: FAQAccordionProps) {
             </ScrollReveal>
           )}
 
-          {/* Right — Accordion */}
+          {/* Right, Accordion */}
           <div className={cn(title ? 'lg:col-span-3' : 'lg:col-span-5')}>
             <div className="divide-y divide-neutral-200">
               {faqs.map((faq, i) => (

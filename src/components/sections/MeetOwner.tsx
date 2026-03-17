@@ -25,7 +25,7 @@ export function MeetOwner() {
                 At Tomron Construction, we deliver a personalized experience for our siding and construction customers that only a family-run business can provide. Having served customers in the Lower Mainland for over a decade, we know what it takes to get the job done right.
               </p>
               <p>
-                As a family man, I understand what your home means to you. That&apos;s why I&apos;m personally involved in every project we take on — from the initial consultation to the final walkthrough. When you hire Tomron, you&apos;re not getting a faceless company. You&apos;re getting a neighbour who treats your home like it&apos;s our own.
+                As a family man, I understand what your home means to you. That&apos;s why I&apos;m personally involved in every project we take on, from the initial consultation to the final walkthrough. When you hire Tomron, you&apos;re not getting a faceless company. You&apos;re getting a neighbour who treats your home like it&apos;s our own.
               </p>
               <p>
                 Our small, dedicated team delivers the kind of craftsmanship and attention that larger companies simply can&apos;t match.
@@ -37,12 +37,12 @@ export function MeetOwner() {
             </div>
           </ScrollReveal>
 
-          {/* Image — full, no crop */}
+          {/* Image, full, no crop */}
           <ScrollReveal direction="right">
             <div className="relative rounded-lg overflow-hidden">
               <Image
                 src="https://assets.cdn.filesafe.space/oyhdrza3SwoM8YuXOsja/media/69b189788d3eae057317a4cc.webp"
-                alt="Brendan Prendergast and family — Owner of Tomron Construction"
+                alt="Brendan Prendergast and family, Owner of Tomron Construction"
                 width={3450}
                 height={1996}
                 sizes="(max-width: 1024px) 100vw, 50vw"

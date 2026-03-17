@@ -26,7 +26,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.name} | Siding, Windows & Exterior Contractor — Lower Mainland BC`,
+    default: `${siteConfig.name} | Siding, Windows & Exterior Contractor, Lower Mainland BC`,
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     locale: 'en_CA',
     url: siteConfig.url,
     siteName: siteConfig.name,
-    images: [{ url: siteConfig.ogImage, width: 1200, height: 630, alt: `${siteConfig.name} — Siding, Windows & Exterior Contractor in the Lower Mainland` }],
+    images: [{ url: siteConfig.ogImage, width: 1200, height: 630, alt: `${siteConfig.name}, Siding, Windows & Exterior Contractor in the Lower Mainland` }],
   },
   twitter: { card: 'summary_large_image' },
   robots: { index: true, follow: true, googleBot: { index: true, follow: true, 'max-image-preview': 'large' } },

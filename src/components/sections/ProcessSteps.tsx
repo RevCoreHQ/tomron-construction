@@ -8,7 +8,7 @@ const steps = [
   {
     number: '01',
     title: 'Free Consultation',
-    description: 'We visit your property, inspect the exterior, listen to your goals, and discuss your options and budget — no obligation.',
+    description: 'We visit your property, inspect the exterior, listen to your goals, and discuss your options and budget, no obligation.',
   },
   {
     number: '02',
@@ -32,7 +32,7 @@ export function ProcessSteps() {
     <section className="section-padding">
       <div className="container-wide">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
-          {/* Left — Header */}
+          {/* Left, Header */}
           <ScrollReveal>
             <p className="text-sm font-semibold text-brand-600 uppercase tracking-wider mb-2">Our Process</p>
             <TextReveal className="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-charcoal-900 mb-4">
@@ -43,7 +43,7 @@ export function ProcessSteps() {
             </p>
           </ScrollReveal>
 
-          {/* Right — Timeline */}
+          {/* Right, Timeline */}
           <div className="relative">
             {/* Vertical line */}
             <div className="absolute left-4 top-2 bottom-2 w-px bg-neutral-200" />

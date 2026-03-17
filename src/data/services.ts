@@ -35,7 +35,7 @@ export const services: ServiceData[] = [
     metaTitle: 'Exterior Siding & Cladding Installation in the Lower Mainland | Tomron Construction',
     metaDescription: 'Professional siding and cladding installation in Maple Ridge, Coquitlam, Burnaby & the Lower Mainland. Custom solutions, industry-leading warranty. Free quotes from Tomron Construction.',
     h1: 'Expert Siding & Cladding Installation in the Lower Mainland',
-    intro: "Your home's exterior is its first line of defence against BC's rain, wind, and seasonal extremes — and its first impression on everyone who passes by. Tomron Construction installs durable, beautiful siding and cladding systems tailored to your home's architecture and your personal style. From vinyl and fiber cement to wood and composite panels, we work with you to choose the right material for your budget, aesthetic, and long-term performance goals.",
+    intro: "Your home's exterior is its first line of defence against BC's rain, wind, and seasonal extremes, and its first impression on everyone who passes by. Tomron Construction installs durable, beautiful siding and cladding systems tailored to your home's architecture and your personal style. From vinyl and fiber cement to wood and composite panels, we work with you to choose the right material for your budget, aesthetic, and long-term performance goals.",
     heroImage: 'https://assets.cdn.filesafe.space/oyhdrza3SwoM8YuXOsja/media/69b8bfe2c625856283dacbae.png',
     heroAlt: 'Professional siding installation on Lower Mainland home by Tomron Construction',
     features: [
@@ -86,10 +86,10 @@ export const services: ServiceData[] = [
     title: 'Metal Flashing',
     shortTitle: 'Metal Flashing',
     category: 'exterior',
-    metaTitle: 'Metal Flashing Installation & Repair | Tomron Construction — Lower Mainland BC',
+    metaTitle: 'Metal Flashing Installation & Repair | Tomron Construction, Lower Mainland BC',
     metaDescription: 'Professional metal flashing installation around windows, doors, and rooflines. Protect your home from water damage. Serving Maple Ridge, Coquitlam & the Lower Mainland.',
     h1: 'Professional Metal Flashing for Lower Mainland Homes',
-    intro: "Metal flashing is one of the most critical yet overlooked components of your home's weather protection system. Installed at every vulnerable junction — around windows, doors, rooflines, and wall transitions — proper flashing directs water away from the building structure and prevents costly damage. Tomron Construction provides expert flashing installation and repair as both a standalone service and an integral part of every siding and envelope project we complete.",
+    intro: "Metal flashing is one of the most critical yet overlooked components of your home's weather protection system. Installed at every vulnerable junction, around windows, doors, rooflines, and wall transitions, proper flashing directs water away from the building structure and prevents costly damage. Tomron Construction provides expert flashing installation and repair as both a standalone service and an integral part of every siding and envelope project we complete.",
     heroImage: 'https://assets.cdn.filesafe.space/oyhdrza3SwoM8YuXOsja/media/69b8bfe287f0f272914cf0af.png',
     heroAlt: 'Metal flashing installation around window by Tomron Construction',
     features: [
@@ -103,7 +103,7 @@ export const services: ServiceData[] = [
     body: [
       {
         heading: 'Why Flashing Is Critical in BC',
-        text: "The Lower Mainland's extended rainy seasons mean your home faces months of sustained moisture exposure every year. Water is persistent — it finds every gap, seam, and joint in your exterior. Flashing acts as a physical barrier at these vulnerable points, redirecting water outward and away from the building structure. Without proper flashing, or with deteriorated flashing that has failed over time, water enters the wall cavity and causes rot, mould, structural damage, and insulation failure that can cost thousands to remediate.",
+        text: "The Lower Mainland's extended rainy seasons mean your home faces months of sustained moisture exposure every year. Water is persistent, it finds every gap, seam, and joint in your exterior. Flashing acts as a physical barrier at these vulnerable points, redirecting water outward and away from the building structure. Without proper flashing, or with deteriorated flashing that has failed over time, water enters the wall cavity and causes rot, mould, structural damage, and insulation failure that can cost thousands to remediate.",
       },
       {
         heading: 'Our Approach to Flashing',
@@ -131,7 +131,7 @@ export const services: ServiceData[] = [
     metaTitle: 'Building Envelope Solutions in the Lower Mainland | Tomron Construction',
     metaDescription: 'Comprehensive building envelope services: air barriers, moisture management, and insulation. Protect your Lower Mainland home from the elements. Free quotes from Tomron Construction.',
     h1: 'Building Envelope Solutions for Lower Mainland Homes',
-    intro: "The building envelope is the complete system of materials that separates your conditioned interior from the outside environment — controlling air, moisture, and heat flow through your walls, roof, and foundation. In the Lower Mainland's demanding climate, a properly designed and installed building envelope is the difference between a comfortable, energy-efficient home and one plagued by moisture problems, drafts, and high energy costs. Tomron Construction specializes in building envelope assessment, repair, and new installation.",
+    intro: "The building envelope is the complete system of materials that separates your conditioned interior from the outside environment, controlling air, moisture, and heat flow through your walls, roof, and foundation. In the Lower Mainland's demanding climate, a properly designed and installed building envelope is the difference between a comfortable, energy-efficient home and one plagued by moisture problems, drafts, and high energy costs. Tomron Construction specializes in building envelope assessment, repair, and new installation.",
     heroImage: 'https://assets.cdn.filesafe.space/oyhdrza3SwoM8YuXOsja/media/69b8bfe287f0f26bbd4cf0b4.png',
     heroAlt: 'Building envelope moisture barrier installation by Tomron Construction',
     features: [
@@ -145,11 +145,11 @@ export const services: ServiceData[] = [
     body: [
       {
         heading: 'Why the Building Envelope Matters',
-        text: "Your building envelope is your home's immune system. It controls three critical flows: air movement, moisture transfer, and heat exchange. When any of these controls fail, problems cascade — condensation forms in wall cavities, insulation becomes waterlogged and loses effectiveness, mould colonies establish in hidden spaces, and structural wood components begin to rot. In the Lower Mainland, where homes can face over 1,200 mm of annual rainfall and significant humidity year-round, the stakes are higher than in most Canadian markets. A compromised building envelope does not just affect comfort — it threatens the structural integrity and long-term value of your home.",
+        text: "Your building envelope is your home's immune system. It controls three critical flows: air movement, moisture transfer, and heat exchange. When any of these controls fail, problems cascade, condensation forms in wall cavities, insulation becomes waterlogged and loses effectiveness, mould colonies establish in hidden spaces, and structural wood components begin to rot. In the Lower Mainland, where homes can face over 1,200 mm of annual rainfall and significant humidity year-round, the stakes are higher than in most Canadian markets. A compromised building envelope does not just affect comfort, it threatens the structural integrity and long-term value of your home.",
       },
       {
         heading: 'Our Envelope Services',
-        text: "Tomron Construction provides a full range of building envelope services. For existing homes, we start with a thorough assessment of your current envelope performance — identifying failures in air barriers, vapour barriers, insulation, and drainage planes. For new construction and major renovations, we design and install complete envelope systems that meet or exceed BC Building Code requirements and perform reliably for decades. Our work integrates seamlessly with our siding, flashing, and window services, allowing us to deliver a unified, properly sequenced installation that eliminates the coordination gaps that cause failures when multiple trades work independently.",
+        text: "Tomron Construction provides a full range of building envelope services. For existing homes, we start with a thorough assessment of your current envelope performance, identifying failures in air barriers, vapour barriers, insulation, and drainage planes. For new construction and major renovations, we design and install complete envelope systems that meet or exceed BC Building Code requirements and perform reliably for decades. Our work integrates seamlessly with our siding, flashing, and window services, allowing us to deliver a unified, properly sequenced installation that eliminates the coordination gaps that cause failures when multiple trades work independently.",
       },
     ],
     faqs: [
@@ -173,7 +173,7 @@ export const services: ServiceData[] = [
     metaTitle: 'Home Renovation Contractor in the Lower Mainland | Tomron Construction',
     metaDescription: 'Full-scale home renovations in Maple Ridge, Coquitlam, Burnaby & the Lower Mainland. Single-room updates to complete transformations. Free quotes from Tomron Construction.',
     h1: 'Home Renovation Services Across the Lower Mainland',
-    intro: "Whether you are updating a single room or transforming your entire home, Tomron Construction brings the same precision, communication, and craftsmanship to every renovation project. As a family-run business, we understand that a renovation disrupts your daily life — so we work efficiently, communicate clearly, and treat your home with the same care and respect we would give our own. From structural modifications to finishing details, our experienced crew handles every aspect of the build.",
+    intro: "Whether you are updating a single room or transforming your entire home, Tomron Construction brings the same precision, communication, and craftsmanship to every renovation project. As a family-run business, we understand that a renovation disrupts your daily life, so we work efficiently, communicate clearly, and treat your home with the same care and respect we would give our own. From structural modifications to finishing details, our experienced crew handles every aspect of the build.",
     heroImage: 'https://assets.cdn.filesafe.space/oyhdrza3SwoM8YuXOsja/media/69b8c4b4aee1f817b9b6f4f6.png',
     heroAlt: 'Home renovation project in the Lower Mainland by Tomron Construction',
     features: [
@@ -191,7 +191,7 @@ export const services: ServiceData[] = [
       },
       {
         heading: 'From Small Updates to Major Transformations',
-        text: "Not every renovation needs to be a full gut job. We handle projects of every scale — from refreshing a bathroom or updating a kitchen to opening up floor plans, adding living space, and modernizing older homes that need structural and cosmetic attention. Many of our renovation clients are homeowners who love their neighbourhood and their property but need their home to work better for how they live today. We specialize in finding smart solutions that maximize the value and functionality of your existing space without unnecessary scope creep.",
+        text: "Not every renovation needs to be a full gut job. We handle projects of every scale, from refreshing a bathroom or updating a kitchen to opening up floor plans, adding living space, and modernizing older homes that need structural and cosmetic attention. Many of our renovation clients are homeowners who love their neighbourhood and their property but need their home to work better for how they live today. We specialize in finding smart solutions that maximize the value and functionality of your existing space without unnecessary scope creep.",
       },
     ],
     faqs: [
@@ -233,7 +233,7 @@ export const services: ServiceData[] = [
     body: [
       {
         heading: 'When to Replace Your Windows',
-        text: "Windows typically last 20-30 years, but performance declines well before total failure. Signs that replacement is overdue include visible condensation between glass panes (indicating seal failure), drafts near closed windows, difficulty opening or closing windows, visible rot in wood frames, and rising energy bills. In the Lower Mainland, failed window seals also create moisture pathways into the wall cavity, compounding the damage beyond the window itself. Tomron Construction provides honest assessments — we will tell you which windows need immediate replacement and which can wait.",
+        text: "Windows typically last 20-30 years, but performance declines well before total failure. Signs that replacement is overdue include visible condensation between glass panes (indicating seal failure), drafts near closed windows, difficulty opening or closing windows, visible rot in wood frames, and rising energy bills. In the Lower Mainland, failed window seals also create moisture pathways into the wall cavity, compounding the damage beyond the window itself. Tomron Construction provides honest assessments, we will tell you which windows need immediate replacement and which can wait.",
       },
       {
         heading: 'Our Window Installation Approach',

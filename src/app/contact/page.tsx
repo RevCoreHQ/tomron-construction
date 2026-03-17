@@ -8,7 +8,7 @@ import { JsonLd } from '@/components/seo/JsonLd';
 import { breadcrumbSchema } from '@/lib/schema';
 
 export const metadata: Metadata = generatePageMetadata({
-  title: 'Contact Tomron Construction — Free Quote | Siding & Exterior Contractor BC',
+  title: 'Contact Tomron Construction, Free Quote | Siding & Exterior Contractor BC',
   description: 'Get a free quote for siding installation, window replacement, door installation, or home renovation. Call (604) 754-9392 or fill out our form. Maple Ridge & Lower Mainland, BC.',
   path: '/contact',
 });
@@ -32,7 +32,7 @@ export default function ContactPage() {
               Request Your Free Quote
             </h1>
             <p className="text-lg text-slate-600 leading-relaxed mb-8">
-              Tell us about your project and we will be in touch within one business day. Or call us directly — we are always happy to talk.
+              Tell us about your project and we will be in touch within one business day. Or call us directly, we are always happy to talk.
             </p>
 
             <div className="space-y-5">

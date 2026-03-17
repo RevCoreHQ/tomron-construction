@@ -11,7 +11,7 @@ import { MeetOwner } from '@/components/sections/MeetOwner';
 import { RecentProjects } from '@/components/sections/RecentProjects';
 
 export const metadata: Metadata = generatePageMetadata({
-  title: 'Tomron Construction | Siding, Windows & Exterior Contractor — Lower Mainland BC',
+  title: 'Tomron Construction | Siding, Windows & Exterior Contractor, Lower Mainland BC',
   description:
     'Professional siding installation, window & door replacement, building envelope, and home renovation services in Maple Ridge, Coquitlam, Burnaby & the Lower Mainland. 10+ years experience. Free quotes.',
   path: '/',
@@ -51,7 +51,7 @@ export default function HomePage() {
       <Hero
         headline="We Build What Lasts."
         subheadline="Built on Family Values"
-        description="Expert siding, window & door replacement, building envelope, and home renovations — delivered by a family-run team with 10+ years of craftsmanship across the Lower Mainland."
+        description="Expert siding, window & door replacement, building envelope, and home renovations, delivered by a family-run team with 10+ years of craftsmanship across the Lower Mainland."
         backgroundImage="https://assets.cdn.filesafe.space/oyhdrza3SwoM8YuXOsja/media/69b1977c8cb25943dc3ccc5c.png"
       />
 

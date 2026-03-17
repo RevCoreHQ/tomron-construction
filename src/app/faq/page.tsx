@@ -22,8 +22,8 @@ const allFaqs = [
 ];
 
 export const metadata: Metadata = generatePageMetadata({
-  title: 'FAQ — Siding, Windows, Doors & Renovation Questions | Tomron Construction',
-  description: 'Answers to common questions about siding installation, window and door replacement, building envelope repair, and renovation services. Tomron Construction — Maple Ridge & Lower Mainland, BC.',
+  title: 'FAQ, Siding, Windows, Doors & Renovation Questions | Tomron Construction',
+  description: 'Answers to common questions about siding installation, window and door replacement, building envelope repair, and renovation services. Tomron Construction, Maple Ridge & Lower Mainland, BC.',
   path: '/faq',
 });
 

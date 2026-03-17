@@ -8,7 +8,7 @@ import { JsonLd } from '@/components/seo/JsonLd';
 import { breadcrumbSchema } from '@/lib/schema';
 
 export const metadata: Metadata = generatePageMetadata({
-  title: 'Gallery — Siding, Windows & Renovation Projects | Tomron Construction',
+  title: 'Gallery, Siding, Windows & Renovation Projects | Tomron Construction',
   description: 'Browse our gallery of siding installations, window and door replacements, building envelope repairs, and renovation projects across Maple Ridge and the Lower Mainland, BC.',
   path: '/gallery',
 });
