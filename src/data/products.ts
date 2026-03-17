@@ -9,6 +9,7 @@ export interface ProductBrand {
   features: string[];
   isAuthorizedVendor?: boolean;
   logoDomain: string;
+  logoUrl?: string;
 }
 
 export const productBrands: ProductBrand[] = [
@@ -23,6 +24,7 @@ export const productBrands: ProductBrand[] = [
     website: 'https://www.jameshardie.ca/products',
     catalogueUrl: 'https://www.jameshardie.ca/forms/product-catalog-download',
     logoDomain: 'jameshardie.ca',
+    logoUrl: 'https://assets.cdn.filesafe.space/oyhdrza3SwoM8YuXOsja/media/69b8b2e091305324f22ae738.png',
     features: [
       'Engineered for Climate — HZ5 formulation for Canadian weather',
       'ColorPlus Technology — factory-applied, baked-on colour',
@@ -39,6 +41,7 @@ export const productBrands: ProductBrand[] = [
       'Canada\'s original vinyl siding manufacturer with over 60 years of experience. Mitten offers the industry\'s largest and boldest colour palette, including the Sentry line with the first-ever true Black vinyl siding. All products are Canadian-made and backed by a lifetime warranty with No Fade Promise on Rustic colours.',
     website: 'https://www.mittensiding.com/',
     logoDomain: 'mittensiding.com',
+    logoUrl: 'https://assets.cdn.filesafe.space/oyhdrza3SwoM8YuXOsja/media/69b8b2e0c625850467d8bbfe.png',
     features: [
       'Canadian-made — over 60 years of manufacturing experience',
       'Sentry line — industry\'s first true Black vinyl siding',
@@ -55,6 +58,7 @@ export const productBrands: ProductBrand[] = [
       'Premium composite siding and cladding made from 95% recycled materials. NewTechWood features UltraShield technology — a co-extruded cap protecting all sides from rot, fade, stains, and mould. Available in Norwegian Fluted, Belgian Fluted, Gap, and Shiplap profiles with natural brushed-wood finishes.',
     website: 'https://www.newtechwood.ca/products/composite-wall-siding/',
     logoDomain: 'newtechwood.ca',
+    logoUrl: 'https://assets.cdn.filesafe.space/oyhdrza3SwoM8YuXOsja/media/69b8b2e087f0f227fe4ae8c9.jpeg',
     features: [
       'UltraShield technology — impenetrable protective cap on all sides',
       '95% recycled materials — wood fibers and reclaimed plastic',
@@ -72,6 +76,7 @@ export const productBrands: ProductBrand[] = [
     website: 'https://macmetalarchitectural.com/en/',
     catalogueUrl: 'https://macmetalarchitectural.com/wp-content/uploads/2022/05/SIDING-CATALOG_ENG_2023_W.pdf',
     logoDomain: 'macmetalarchitectural.com',
+    logoUrl: 'https://assets.cdn.filesafe.space/oyhdrza3SwoM8YuXOsja/media/69b8b2e087f2fb08b0b9b2fd.png',
     features: [
       'Made in Canada — over 30 years of premium steel fabrication',
       'Wood Collection — six distinct wood-grain finishes per colour',
@@ -90,6 +95,7 @@ export const productBrands: ProductBrand[] = [
       'BC\'s #1 window manufacturer — 100% employee-owned and based in Langley, BC. Centra has 40 years of experience manufacturing custom vinyl windows and exterior doors designed for BC\'s climate. Every window is built to order at their Langley plant, backed by an industry-leading 30-year warranty.',
     website: 'https://www.centrawindows.com/',
     logoDomain: 'centrawindows.com',
+    logoUrl: 'https://assets.cdn.filesafe.space/oyhdrza3SwoM8YuXOsja/media/69b8b2e04e7590106d7ea6dd.jpeg',
     features: [
       '100% employee-owned — every team member is an owner',
       'Custom manufactured in Langley, BC — built for local climate',
@@ -106,6 +112,7 @@ export const productBrands: ProductBrand[] = [
       'Family-owned and operated vinyl window manufacturer based in Abbotsford, BC since 1991. Tyee manufactures 100% of their products in-house with strict quality inspections at every stage. All products meet Energy Star standards and feature low-e glass that reduces UV rays by up to 75%.',
     website: 'https://www.tyeewindows.com/',
     logoDomain: 'tyeewindows.com',
+    logoUrl: 'https://assets.cdn.filesafe.space/oyhdrza3SwoM8YuXOsja/media/69b8b2e091305321602ae739.png',
     features: [
       'Family-owned — manufacturing in Abbotsford since 1991',
       '100% in-house manufacturing with strict quality inspections',
@@ -123,6 +130,7 @@ export const productBrands: ProductBrand[] = [
     website: 'https://www.plygem.ca/windows/',
     catalogueUrl: 'https://www.plygem.ca/wp-content/uploads/2023/09/Ply-Gem-Window-Brochure.pdf',
     logoDomain: 'plygem.ca',
+    logoUrl: 'https://assets.cdn.filesafe.space/oyhdrza3SwoM8YuXOsja/media/69b8b2e087f2fba71bb9b302.jpeg',
     features: [
       'Made in Canada — part of the Well-Made Here Program',
       'Three material options — vinyl, aluminum-clad vinyl, aluminum-clad wood',
@@ -141,6 +149,7 @@ export const productBrands: ProductBrand[] = [
       'Western Canada\'s largest glass fabricator, manufacturing from a 200,000 sq ft facility in Langley, BC. Every window manufacturer in the Lower Mainland uses Vitrum\'s insulated glass units. As a certified fabricator for Vitro, Guardian, and Saint-Gobain, Vitrum provides exclusive access to the highest-performance low-e glass products available.',
     website: 'https://www.vitrum.ca/',
     logoDomain: 'vitrum.ca',
+    logoUrl: 'https://assets.cdn.filesafe.space/oyhdrza3SwoM8YuXOsja/media/69b8b2e0ad02764cf536f30f.jpeg',
     features: [
       'Largest glass fabricator in the Pacific Northwest',
       'Certified fabricator for Vitro, Guardian, and Saint-Gobain',
@@ -160,6 +169,7 @@ export const productBrands: ProductBrand[] = [
     website: 'https://www.inter-globe.ca/',
     isAuthorizedVendor: true,
     logoDomain: 'inter-globe.ca',
+    logoUrl: 'https://assets.cdn.filesafe.space/oyhdrza3SwoM8YuXOsja/media/69b8b2e0ad0276dafc36f313.png',
     features: [
       'Authorized Tomron Construction vendor',
       'Custom metal flashing fabrication — cost efficient and precise',
