@@ -93,11 +93,12 @@ export function Footer() {
           <p className="text-xs text-slate-400">
             &copy; {currentYear} {siteConfig.name}. All rights reserved.
           </p>
-          <div className="flex items-center gap-4 text-xs text-slate-400">
-            <Link href="/sitemap.xml" className="hover:text-slate-600 transition-colors">
-              Sitemap
-            </Link>
-          </div>
+          <p className="text-xs text-slate-400">
+            Powered by{' '}
+            <a href="https://revcorehq.com" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-brand-600 transition-colors font-medium">
+              RevCore
+            </a>
+          </p>
         </div>
       </div>
     </footer>
