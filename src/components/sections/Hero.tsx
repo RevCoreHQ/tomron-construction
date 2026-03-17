@@ -64,7 +64,7 @@ export function Hero({
       )}
 
       {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-black/40" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/50 to-black/40" />
 
       {/* Content — parallax layer (moves faster, fades out) */}
       <motion.div
@@ -77,7 +77,8 @@ export function Hero({
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 0.1 }}
-              className="text-brand-400 text-sm font-semibold tracking-wider uppercase mb-4"
+              className="text-brand-300 text-sm font-semibold tracking-wider uppercase mb-4"
+              style={{ textShadow: '0 2px 12px rgba(0,0,0,0.6)' }}
             >
               {subheadline}
             </motion.p>
@@ -95,7 +96,8 @@ export function Hero({
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.3 }}
-            className="text-lg sm:text-xl text-white/80 leading-relaxed mb-10 max-w-xl mx-auto"
+            className="text-lg sm:text-xl text-white/90 leading-relaxed mb-10 max-w-xl mx-auto"
+            style={{ textShadow: '0 2px 12px rgba(0,0,0,0.5)' }}
           >
             {description}
           </motion.p>
@@ -128,8 +130,8 @@ export function Hero({
               const Icon = badge.icon;
               return (
                 <div key={badge.label} className="flex items-center gap-2">
-                  <Icon className="w-4 h-4 text-brand-400" />
-                  <span className="text-sm text-white/60 font-medium">{badge.label}</span>
+                  <Icon className="w-4 h-4 text-brand-300" />
+                  <span className="text-sm text-white/70 font-medium" style={{ textShadow: '0 1px 8px rgba(0,0,0,0.5)' }}>{badge.label}</span>
                 </div>
               );
             })}
