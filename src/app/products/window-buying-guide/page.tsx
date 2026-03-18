@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { ArrowRight, CheckCircle, ThermometerSun, Shield, Zap, Eye, Layers, Frame } from 'lucide-react';
+import { ArrowRight, CheckCircle, ThermometerSun, Shield, Zap, Eye, Layers } from 'lucide-react';
 import { siteConfig } from '@/data/site-config';
 import { generatePageMetadata } from '@/lib/metadata';
 import { JsonLd } from '@/components/seo/JsonLd';
@@ -273,11 +273,11 @@ export default function WindowBuyingGuidePage() {
       </section>
 
       {/* What to Look For */}
-      <section className="section-padding bg-neutral-50">
+      <section className="section-padding bg-charcoal-900">
         <div className="container-wide">
           <div className="max-w-2xl mb-10">
-            <p className="text-sm font-semibold text-brand-600 uppercase tracking-wider mb-2">What Matters</p>
-            <h2 className="text-3xl sm:text-4xl font-display font-extrabold text-charcoal-900 mb-4">
+            <p className="text-sm font-semibold text-brand-400 uppercase tracking-wider mb-2">What Matters</p>
+            <h2 className="text-3xl sm:text-4xl font-display font-extrabold text-white mb-4">
               5 Things to Look For in New Windows
             </h2>
           </div>
@@ -286,23 +286,23 @@ export default function WindowBuyingGuidePage() {
             {whatToLookFor.map((item) => {
               const Icon = item.icon;
               return (
-                <div key={item.title} className="bg-white rounded-lg border border-neutral-200 p-6">
-                  <Icon className="w-7 h-7 text-brand-600 mb-3" />
-                  <h3 className="font-display font-bold text-charcoal-900 mb-2">{item.title}</h3>
-                  <p className="text-sm text-slate-500 leading-relaxed">{item.text}</p>
+                <div key={item.title} className="bg-white/5 rounded-lg border border-white/10 p-6">
+                  <Icon className="w-7 h-7 text-brand-400 mb-3" />
+                  <h3 className="font-display font-bold text-white mb-2">{item.title}</h3>
+                  <p className="text-sm text-white/50 leading-relaxed">{item.text}</p>
                 </div>
               );
             })}
             <Link
               href="/products/glass-performance"
-              className="bg-charcoal-900 rounded-lg p-6 flex flex-col justify-between hover:bg-charcoal-800 transition-colors group"
+              className="bg-brand-600 rounded-lg p-6 flex flex-col justify-between hover:bg-brand-700 transition-colors group"
             >
               <div>
-                <Layers className="w-7 h-7 text-brand-400 mb-3" />
+                <Layers className="w-7 h-7 text-white mb-3" />
                 <h3 className="font-display font-bold text-white mb-2">Glass Performance Guide</h3>
-                <p className="text-sm text-white/60 leading-relaxed">Learn about R-values, Low-E coatings, and sealed unit technology in our detailed guide.</p>
+                <p className="text-sm text-white/70 leading-relaxed">Learn about R-values, Low-E coatings, and sealed unit technology in our detailed guide.</p>
               </div>
-              <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-400 mt-4 group-hover:gap-2.5 transition-all">
+              <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-white mt-4 group-hover:gap-2.5 transition-all">
                 Read Guide <ArrowRight className="w-3.5 h-3.5" />
               </span>
             </Link>
@@ -311,7 +311,7 @@ export default function WindowBuyingGuidePage() {
       </section>
 
       {/* Common Mistakes */}
-      <section className="section-padding">
+      <section className="section-padding bg-gradient-to-br from-brand-50 via-white to-neutral-50">
         <div className="container-wide">
           <div className="max-w-2xl mb-10">
             <p className="text-sm font-semibold text-brand-600 uppercase tracking-wider mb-2">Avoid These</p>
@@ -325,9 +325,9 @@ export default function WindowBuyingGuidePage() {
 
           <div className="space-y-4">
             {commonMistakes.map((item, i) => (
-              <div key={item.mistake} className="bg-neutral-50 rounded-lg border border-neutral-200 p-6">
+              <div key={item.mistake} className="bg-white rounded-lg border border-neutral-200 shadow-sm p-6">
                 <div className="flex items-start gap-4">
-                  <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-charcoal-900 text-white text-sm font-bold shrink-0">
+                  <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-brand-600 text-white text-sm font-bold shrink-0">
                     {i + 1}
                   </span>
                   <div>

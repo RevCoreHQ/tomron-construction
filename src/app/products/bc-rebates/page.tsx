@@ -245,39 +245,39 @@ export default function BCRebatesPage() {
       </section>
 
       {/* Stacking Rebates */}
-      <section className="section-padding bg-neutral-50">
+      <section className="section-padding bg-charcoal-900">
         <div className="container-wide">
           <div className="max-w-2xl mb-10">
-            <p className="text-sm font-semibold text-brand-600 uppercase tracking-wider mb-2">Maximize Savings</p>
-            <h2 className="text-3xl sm:text-4xl font-display font-extrabold text-charcoal-900 mb-4">
+            <p className="text-sm font-semibold text-brand-400 uppercase tracking-wider mb-2">Maximize Savings</p>
+            <h2 className="text-3xl sm:text-4xl font-display font-extrabold text-white mb-4">
               Stacking Rebates for Maximum Savings
             </h2>
-            <p className="text-slate-500 leading-relaxed">
+            <p className="text-white/50 leading-relaxed">
               Many BC rebate programs can be combined. For a typical window replacement project, you may be eligible for rebates from multiple programs simultaneously.
             </p>
           </div>
 
-          <div className="bg-white rounded-lg border border-neutral-200 p-6 lg:p-8">
-            <h3 className="font-display font-bold text-charcoal-900 mb-4">Example: Window Replacement Rebate Stack</h3>
+          <div className="bg-white/5 rounded-xl border border-white/10 p-6 lg:p-8">
+            <h3 className="font-display font-bold text-white mb-4">Example: Window Replacement Rebate Stack</h3>
             <div className="space-y-3 mb-6">
-              <div className="flex items-center justify-between py-2 border-b border-neutral-100">
-                <span className="text-sm text-slate-600">CleanBC Better Homes window rebate</span>
-                <span className="text-sm font-bold text-charcoal-900">Up to $2,000</span>
+              <div className="flex items-center justify-between py-2 border-b border-white/10">
+                <span className="text-sm text-white/60">CleanBC Better Homes window rebate</span>
+                <span className="text-sm font-bold text-white">Up to $2,000</span>
               </div>
-              <div className="flex items-center justify-between py-2 border-b border-neutral-100">
-                <span className="text-sm text-slate-600">Canada Greener Homes Grant</span>
-                <span className="text-sm font-bold text-charcoal-900">Up to $5,000</span>
+              <div className="flex items-center justify-between py-2 border-b border-white/10">
+                <span className="text-sm text-white/60">Canada Greener Homes Grant</span>
+                <span className="text-sm font-bold text-white">Up to $5,000</span>
               </div>
-              <div className="flex items-center justify-between py-2 border-b border-neutral-100">
-                <span className="text-sm text-slate-600">FortisBC or BC Hydro utility rebate</span>
-                <span className="text-sm font-bold text-charcoal-900">Varies</span>
+              <div className="flex items-center justify-between py-2 border-b border-white/10">
+                <span className="text-sm text-white/60">FortisBC or BC Hydro utility rebate</span>
+                <span className="text-sm font-bold text-white">Varies</span>
               </div>
-              <div className="flex items-center justify-between py-3 border-t-2 border-charcoal-900">
-                <span className="text-sm font-bold text-charcoal-900">Potential Total Savings</span>
-                <span className="text-lg font-display font-extrabold text-brand-600">Up to $7,000+</span>
+              <div className="flex items-center justify-between py-3 border-t-2 border-brand-500">
+                <span className="text-sm font-bold text-white">Potential Total Savings</span>
+                <span className="text-2xl font-display font-extrabold text-brand-400">Up to $7,000+</span>
               </div>
             </div>
-            <p className="text-xs text-slate-400">
+            <p className="text-xs text-white/30">
               Actual rebate amounts vary based on project scope, products installed, and energy improvement achieved. Not all programs may be available simultaneously. Verify current availability before starting your project.
             </p>
           </div>
@@ -285,7 +285,7 @@ export default function BCRebatesPage() {
       </section>
 
       {/* How to Get Rebates */}
-      <section className="section-padding">
+      <section className="section-padding bg-gradient-to-br from-brand-50 via-white to-neutral-50">
         <div className="container-wide">
           <div className="max-w-2xl mb-10">
             <p className="text-sm font-semibold text-brand-600 uppercase tracking-wider mb-2">Step by Step</p>

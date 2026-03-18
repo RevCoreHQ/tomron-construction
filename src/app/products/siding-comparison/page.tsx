@@ -194,7 +194,7 @@ export default function SidingComparisonPage() {
       </section>
 
       {/* Quick Comparison Table */}
-      <section className="section-padding">
+      <section className="section-padding bg-gradient-to-br from-brand-50 via-white to-neutral-50">
         <div className="container-wide">
           <div className="max-w-2xl mb-10">
             <p className="text-sm font-semibold text-brand-600 uppercase tracking-wider mb-2">At a Glance</p>
@@ -206,21 +206,21 @@ export default function SidingComparisonPage() {
             </p>
           </div>
 
-          <div className="overflow-x-auto">
+          <div className="overflow-x-auto bg-white rounded-xl border border-neutral-200 shadow-sm p-1">
             <table className="w-full text-sm text-left">
               <thead>
-                <tr className="border-b-2 border-charcoal-900">
-                  <th className="py-3 pr-4 font-display font-bold text-charcoal-900">Material</th>
-                  <th className="py-3 px-4 font-display font-bold text-charcoal-900">Cost / sq ft</th>
-                  <th className="py-3 px-4 font-display font-bold text-charcoal-900">Lifespan</th>
-                  <th className="py-3 px-4 font-display font-bold text-charcoal-900">Maintenance</th>
-                  <th className="py-3 pl-4 font-display font-bold text-charcoal-900">Fire Rating</th>
+                <tr className="bg-charcoal-900 text-white">
+                  <th className="py-3 px-4 font-display font-bold rounded-tl-lg">Material</th>
+                  <th className="py-3 px-4 font-display font-bold">Cost / sq ft</th>
+                  <th className="py-3 px-4 font-display font-bold">Lifespan</th>
+                  <th className="py-3 px-4 font-display font-bold">Maintenance</th>
+                  <th className="py-3 px-4 font-display font-bold rounded-tr-lg">Fire Rating</th>
                 </tr>
               </thead>
               <tbody>
                 {sidingTypes.map((s) => (
-                  <tr key={s.name} className={`border-b border-neutral-200 ${s.highlight ? 'bg-brand-50/50' : ''}`}>
-                    <td className="py-3 pr-4 font-semibold text-charcoal-900">
+                  <tr key={s.name} className={`border-b border-neutral-100 ${s.highlight ? 'bg-brand-50/50' : 'hover:bg-neutral-50'}`}>
+                    <td className="py-3.5 px-4 font-semibold text-charcoal-900">
                       {s.name}
                       {s.highlight && (
                         <span className="ml-2 text-xs font-semibold text-brand-600 bg-brand-100 px-1.5 py-0.5 rounded">
@@ -228,10 +228,10 @@ export default function SidingComparisonPage() {
                         </span>
                       )}
                     </td>
-                    <td className="py-3 px-4 text-slate-600">{s.costRange}</td>
-                    <td className="py-3 px-4 text-slate-600">{s.lifespan}</td>
-                    <td className="py-3 px-4 text-slate-600">{s.maintenance}</td>
-                    <td className="py-3 pl-4 text-slate-600">{s.fireRating}</td>
+                    <td className="py-3.5 px-4 text-slate-600">{s.costRange}</td>
+                    <td className="py-3.5 px-4 text-slate-600">{s.lifespan}</td>
+                    <td className="py-3.5 px-4 text-slate-600">{s.maintenance}</td>
+                    <td className="py-3.5 px-4 text-slate-600">{s.fireRating}</td>
                   </tr>
                 ))}
               </tbody>
@@ -241,84 +241,88 @@ export default function SidingComparisonPage() {
       </section>
 
       {/* Detailed Breakdowns */}
-      {sidingTypes.map((siding, i) => (
-        <section
-          key={siding.name}
-          className={`section-padding ${i % 2 === 1 ? 'bg-neutral-50' : ''}`}
-        >
-          <div className="container-wide">
-            <div className="max-w-4xl">
-              <div className="flex items-start justify-between gap-4 mb-6">
-                <div>
-                  <p className="text-sm font-semibold text-brand-600 uppercase tracking-wider mb-2">{siding.brand}</p>
-                  <h2 className="text-3xl sm:text-4xl font-display font-extrabold text-charcoal-900">
-                    {siding.name} Siding
-                  </h2>
-                </div>
-                <Link
-                  href={siding.brandHref}
-                  className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-600 hover:text-brand-700 transition-colors shrink-0 mt-2"
-                >
-                  View Brand <ArrowRight className="w-3.5 h-3.5" />
-                </Link>
-              </div>
+      {sidingTypes.map((siding, i) => {
+        const isDark = siding.highlight;
+        const bgClass = isDark
+          ? 'bg-charcoal-900'
+          : i % 2 === 0
+            ? 'bg-white'
+            : 'bg-gradient-to-br from-neutral-50 to-brand-50/30';
 
-              <p className="text-slate-600 leading-relaxed mb-6">{siding.description}</p>
+        return (
+          <section
+            key={siding.name}
+            className={`section-padding ${bgClass}`}
+          >
+            <div className="container-wide">
+              <div className="max-w-4xl">
+                <div className="flex items-start justify-between gap-4 mb-6">
+                  <div>
+                    <p className={`text-sm font-semibold uppercase tracking-wider mb-2 ${isDark ? 'text-brand-400' : 'text-brand-600'}`}>{siding.brand}</p>
+                    <h2 className={`text-3xl sm:text-4xl font-display font-extrabold ${isDark ? 'text-white' : 'text-charcoal-900'}`}>
+                      {siding.name} Siding
+                    </h2>
+                  </div>
+                  <Link
+                    href={siding.brandHref}
+                    className={`inline-flex items-center gap-1.5 text-sm font-semibold transition-colors shrink-0 mt-2 ${isDark ? 'text-brand-400 hover:text-brand-300' : 'text-brand-600 hover:text-brand-700'}`}
+                  >
+                    View Brand <ArrowRight className="w-3.5 h-3.5" />
+                  </Link>
+                </div>
 
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
-                <div className="bg-white rounded-lg border border-neutral-200 p-4">
-                  <p className="text-xs font-medium text-slate-400 mb-1">Installed Cost</p>
-                  <p className="text-sm font-bold text-charcoal-900">{siding.costRange}</p>
-                </div>
-                <div className="bg-white rounded-lg border border-neutral-200 p-4">
-                  <p className="text-xs font-medium text-slate-400 mb-1">Lifespan</p>
-                  <p className="text-sm font-bold text-charcoal-900">{siding.lifespan}</p>
-                </div>
-                <div className="bg-white rounded-lg border border-neutral-200 p-4">
-                  <p className="text-xs font-medium text-slate-400 mb-1">Maintenance</p>
-                  <p className="text-sm font-bold text-charcoal-900">{siding.maintenance}</p>
-                </div>
-                <div className="bg-white rounded-lg border border-neutral-200 p-4">
-                  <p className="text-xs font-medium text-slate-400 mb-1">Fire Rating</p>
-                  <p className="text-sm font-bold text-charcoal-900">{siding.fireRating}</p>
-                </div>
-              </div>
+                <p className={`leading-relaxed mb-6 ${isDark ? 'text-white/60' : 'text-slate-600'}`}>{siding.description}</p>
 
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
-                <div>
-                  <h3 className="font-display font-bold text-charcoal-900 mb-3">Advantages</h3>
-                  <ul className="space-y-2">
-                    {siding.pros.map((pro) => (
-                      <li key={pro} className="flex items-start gap-2 text-sm text-slate-700">
-                        <CheckCircle className="w-4 h-4 text-green-600 shrink-0 mt-0.5" />
-                        {pro}
-                      </li>
-                    ))}
-                  </ul>
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
+                  {[
+                    { label: 'Installed Cost', value: siding.costRange },
+                    { label: 'Lifespan', value: siding.lifespan },
+                    { label: 'Maintenance', value: siding.maintenance },
+                    { label: 'Fire Rating', value: siding.fireRating },
+                  ].map((stat) => (
+                    <div key={stat.label} className={`rounded-lg border p-4 ${isDark ? 'bg-white/5 border-white/10' : 'bg-white border-neutral-200'}`}>
+                      <p className={`text-xs font-medium mb-1 ${isDark ? 'text-white/40' : 'text-slate-400'}`}>{stat.label}</p>
+                      <p className={`text-sm font-bold ${isDark ? 'text-white' : 'text-charcoal-900'}`}>{stat.value}</p>
+                    </div>
+                  ))}
                 </div>
-                <div>
-                  <h3 className="font-display font-bold text-charcoal-900 mb-3">Considerations</h3>
-                  <ul className="space-y-2">
-                    {siding.cons.map((con) => (
-                      <li key={con} className="flex items-start gap-2 text-sm text-slate-700">
-                        <XCircle className="w-4 h-4 text-amber-500 shrink-0 mt-0.5" />
-                        {con}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
 
-              <div className="bg-brand-50 rounded-lg border border-brand-200 p-5">
-                <p className="text-sm font-semibold text-brand-800">
-                  <span className="font-bold">Best for:</span>{' '}
-                  <span className="font-normal text-brand-700">{siding.bestFor}</span>
-                </p>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+                  <div>
+                    <h3 className={`font-display font-bold mb-3 ${isDark ? 'text-white' : 'text-charcoal-900'}`}>Advantages</h3>
+                    <ul className="space-y-2">
+                      {siding.pros.map((pro) => (
+                        <li key={pro} className={`flex items-start gap-2 text-sm ${isDark ? 'text-white/70' : 'text-slate-700'}`}>
+                          <CheckCircle className={`w-4 h-4 shrink-0 mt-0.5 ${isDark ? 'text-brand-400' : 'text-green-600'}`} />
+                          {pro}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div>
+                    <h3 className={`font-display font-bold mb-3 ${isDark ? 'text-white' : 'text-charcoal-900'}`}>Considerations</h3>
+                    <ul className="space-y-2">
+                      {siding.cons.map((con) => (
+                        <li key={con} className={`flex items-start gap-2 text-sm ${isDark ? 'text-white/70' : 'text-slate-700'}`}>
+                          <XCircle className={`w-4 h-4 shrink-0 mt-0.5 ${isDark ? 'text-amber-400' : 'text-amber-500'}`} />
+                          {con}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+
+                <div className={`rounded-lg border p-5 ${isDark ? 'bg-brand-600/15 border-brand-500/30' : 'bg-brand-50 border-brand-200'}`}>
+                  <p className={`text-sm font-semibold ${isDark ? 'text-brand-300' : 'text-brand-800'}`}>
+                    <span className="font-bold">Best for:</span>{' '}
+                    <span className={`font-normal ${isDark ? 'text-brand-200/80' : 'text-brand-700'}`}>{siding.bestFor}</span>
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-        </section>
-      ))}
+          </section>
+        );
+      })}
 
       {/* Bottom Line */}
       <section className="section-padding bg-charcoal-900">

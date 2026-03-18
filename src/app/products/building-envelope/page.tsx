@@ -142,12 +142,14 @@ export default function BuildingEnvelopePage() {
       </section>
 
       {/* The Leaky Condo Crisis */}
-      <section className="section-padding">
+      <section className="section-padding bg-gradient-to-br from-amber-50 via-orange-50/30 to-white">
         <div className="container-narrow">
           <div className="flex items-start gap-4 mb-6">
-            <AlertTriangle className="w-8 h-8 text-amber-500 shrink-0 mt-1" />
+            <div className="p-2 bg-amber-100 rounded-lg">
+              <AlertTriangle className="w-6 h-6 text-amber-600 shrink-0" />
+            </div>
             <div>
-              <p className="text-sm font-semibold text-brand-600 uppercase tracking-wider mb-2">Why This Matters</p>
+              <p className="text-sm font-semibold text-amber-700 uppercase tracking-wider mb-2">Why This Matters</p>
               <h2 className="text-3xl sm:text-4xl font-display font-extrabold text-charcoal-900">
                 Lessons from BC&apos;s Leaky Condo Crisis
               </h2>
@@ -193,7 +195,7 @@ export default function BuildingEnvelopePage() {
       </section>
 
       {/* How a Rain Screen Works */}
-      <section className="section-padding">
+      <section className="section-padding bg-gradient-to-br from-brand-50/50 via-white to-white">
         <div className="container-wide">
           <div className="max-w-2xl mb-10">
             <p className="text-sm font-semibold text-brand-600 uppercase tracking-wider mb-2">The System</p>
@@ -268,14 +270,14 @@ export default function BuildingEnvelopePage() {
       </section>
 
       {/* Signs of Envelope Failure */}
-      <section className="section-padding">
+      <section className="section-padding bg-gradient-to-br from-red-950 to-charcoal-900">
         <div className="container-wide">
           <div className="max-w-2xl mb-10">
-            <p className="text-sm font-semibold text-brand-600 uppercase tracking-wider mb-2">Warning Signs</p>
-            <h2 className="text-3xl sm:text-4xl font-display font-extrabold text-charcoal-900 mb-4">
+            <p className="text-sm font-semibold text-amber-400 uppercase tracking-wider mb-2">Warning Signs</p>
+            <h2 className="text-3xl sm:text-4xl font-display font-extrabold text-white mb-4">
               Signs Your Building Envelope May Be Failing
             </h2>
-            <p className="text-slate-500 leading-relaxed">
+            <p className="text-white/50 leading-relaxed">
               Catching envelope problems early can save tens of thousands in repair costs. Watch for these warning signs.
             </p>
           </div>
@@ -292,9 +294,9 @@ export default function BuildingEnvelopePage() {
               'Siding that is warped, buckled, or has visible gaps',
               'Efflorescence (white mineral deposits) on masonry or concrete',
             ].map((sign) => (
-              <div key={sign} className="flex items-start gap-3 bg-neutral-50 rounded-lg border border-neutral-200 p-4">
-                <AlertTriangle className="w-4 h-4 text-amber-500 shrink-0 mt-0.5" />
-                <p className="text-sm text-slate-700">{sign}</p>
+              <div key={sign} className="flex items-start gap-3 bg-white/5 rounded-lg border border-white/10 p-4">
+                <AlertTriangle className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+                <p className="text-sm text-white/70">{sign}</p>
               </div>
             ))}
           </div>
