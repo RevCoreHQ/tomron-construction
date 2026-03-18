@@ -3,7 +3,6 @@ import Link from 'next/link';
 import { generatePageMetadata } from '@/lib/metadata';
 import { Hero } from '@/components/sections/Hero';
 import { ProcessSteps } from '@/components/sections/ProcessSteps';
-import { TestimonialCards } from '@/components/sections/TestimonialCards';
 import { CTASection } from '@/components/sections/CTASection';
 import { FAQAccordion } from '@/components/sections/FAQAccordion';
 import { HomeServiceCards } from '@/components/sections/HomeServiceCards';
@@ -70,8 +69,6 @@ export default function HomePage() {
       <RecentProjects />
 
       <BeforeAfterSlider />
-
-      <TestimonialCards />
 
       <ReviewWall />
 

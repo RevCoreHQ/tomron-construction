@@ -1,98 +1,90 @@
 'use client';
 
-import { useState } from 'react';
-import { Star, ChevronDown, ExternalLink } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { StaggerChildren, staggerItem } from '@/components/motion/StaggerChildren';
+import { Star, ExternalLink, Quote } from 'lucide-react';
 import { ScrollReveal } from '@/components/motion/ScrollReveal';
 import { reviews } from '@/data/reviews';
 
-const INITIAL_COUNT = 9;
-
 export function ReviewWall() {
-  const [showAll, setShowAll] = useState(false);
-  const visible = showAll ? reviews : reviews.slice(0, INITIAL_COUNT);
+  const avgRating = 5;
+  const totalReviews = reviews.length;
 
   return (
     <section className="section-padding bg-charcoal-900">
       <div className="container-wide">
         <ScrollReveal>
-          <div className="text-center mb-12">
-            <p className="text-sm font-semibold text-brand-400 uppercase tracking-wider mb-2">
-              Real Reviews
-            </p>
+          <div className="text-center mb-16">
+            {/* Google Rating Badge */}
+            <div className="inline-flex items-center gap-3 px-5 py-2.5 bg-white/5 border border-white/10 rounded-full mb-6">
+              <div className="flex gap-0.5">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <Star key={i} className="w-4 h-4 fill-brand-500 text-brand-500" />
+                ))}
+              </div>
+              <span className="text-sm font-semibold text-white">{avgRating}.0</span>
+              <span className="w-px h-4 bg-white/20" />
+              <span className="text-sm text-white/50">Google Reviews</span>
+            </div>
+
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-white mb-4">
-              What Homeowners Are Saying
+              Hear It from Our Clients
             </h2>
-            <p className="text-white/50 max-w-2xl mx-auto">
-              Real feedback from homeowners across the Lower Mainland. Every review is from a verified Google Business listing.
+            <p className="text-white/40 max-w-xl mx-auto">
+              Every review is from a verified Google Business listing. We let our work speak for itself.
             </p>
           </div>
         </ScrollReveal>
 
-        <StaggerChildren
-          className="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4"
-          staggerDelay={0.06}
-        >
-          {visible.map((review) => (
-            <motion.div
-              key={review.id}
-              variants={staggerItem}
-              className="break-inside-avoid bg-white/5 backdrop-blur-sm rounded-lg border border-white/10 p-5 hover:bg-white/[0.08] transition-colors"
-            >
-              {/* Stars */}
-              <div className="flex gap-0.5 mb-3">
-                {Array.from({ length: review.rating }).map((_, i) => (
-                  <Star key={i} className="w-3.5 h-3.5 fill-brand-500 text-brand-500" />
-                ))}
-              </div>
+        {/* Reviews — large, premium cards */}
+        <div className="space-y-6 max-w-4xl mx-auto">
+          {reviews.map((review, i) => (
+            <ScrollReveal key={review.id} delay={i * 0.15}>
+              <div className="relative bg-white/[0.03] border border-white/10 rounded-2xl p-8 sm:p-10 hover:bg-white/[0.06] transition-colors">
+                {/* Decorative quote mark */}
+                <Quote className="absolute top-6 right-6 w-10 h-10 text-brand-600/20" />
 
-              {/* Quote */}
-              <p className="text-sm text-white/70 leading-relaxed mb-4">
-                &ldquo;{review.quote}&rdquo;
-              </p>
-
-              {/* Author + Meta */}
-              <div className="flex items-center justify-between gap-2">
-                <div>
-                  <p className="text-sm font-semibold text-white">{review.author}</p>
-                  <p className="text-xs text-white/40">{review.location}</p>
+                {/* Stars */}
+                <div className="flex gap-1 mb-6">
+                  {Array.from({ length: review.rating }).map((_, i) => (
+                    <Star key={i} className="w-5 h-5 fill-brand-500 text-brand-500" />
+                  ))}
                 </div>
-                <span className="inline-flex items-center px-2 py-0.5 text-[10px] font-semibold text-brand-400 bg-brand-600/20 rounded">
-                  {review.service}
-                </span>
-              </div>
-            </motion.div>
-          ))}
-        </StaggerChildren>
 
-        <AnimatePresence>
-          {!showAll && reviews.length > INITIAL_COUNT && (
-            <motion.div
-              initial={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="text-center mt-8"
-            >
-              <button
-                onClick={() => setShowAll(true)}
-                className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold text-white border border-white/20 rounded-lg hover:bg-white/10 hover:border-white/40 transition-all"
-              >
-                Show All {reviews.length} Reviews
-                <ChevronDown className="w-4 h-4" />
-              </button>
-            </motion.div>
-          )}
-        </AnimatePresence>
+                {/* Quote — large, prominent */}
+                <blockquote className="text-lg sm:text-xl lg:text-2xl font-display font-semibold text-white leading-relaxed mb-8">
+                  &ldquo;{review.quote}&rdquo;
+                </blockquote>
+
+                {/* Author */}
+                <div className="flex items-center justify-between gap-4 pt-6 border-t border-white/10">
+                  <div className="flex items-center gap-4">
+                    {/* Avatar initial */}
+                    <div className="w-11 h-11 rounded-full bg-brand-600/20 border border-brand-600/30 flex items-center justify-center">
+                      <span className="text-sm font-bold text-brand-400">{review.author.charAt(0)}</span>
+                    </div>
+                    <div>
+                      <p className="font-semibold text-white">{review.author}</p>
+                      <p className="text-sm text-white/40">{review.location}</p>
+                    </div>
+                  </div>
+                  <span className="hidden sm:inline-flex items-center px-3 py-1 text-xs font-semibold text-brand-400 bg-brand-600/15 rounded-full border border-brand-600/20">
+                    {review.service}
+                  </span>
+                </div>
+              </div>
+            </ScrollReveal>
+          ))}
+        </div>
 
         {/* Google link */}
-        <div className="text-center mt-8">
+        <div className="text-center mt-10">
           <a
             href="https://www.google.com/maps/place/Tomron+Construction"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 text-sm text-white/40 hover:text-white/70 transition-colors"
+            className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-medium text-white/50 border border-white/10 rounded-lg hover:text-white/80 hover:border-white/25 transition-all"
           >
-            View all reviews on Google <ExternalLink className="w-3 h-3" />
+            Read all reviews on Google
+            <ExternalLink className="w-3.5 h-3.5" />
           </a>
         </div>
       </div>
