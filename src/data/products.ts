@@ -94,6 +94,7 @@ export const productBrands: ProductBrand[] = [
       'LP SmartSide siding and trim is engineered wood treated to the core through the proprietary LP SmartGuard process, providing superior protection against moisture, fungal decay, and termites. Available in lap siding, panel, shake, nickel gap, and soffit profiles with 16 prefinished ExpertFinish colours plus a Naturals Collection of wood-tone finishes.',
     website: 'https://www.lpcorp.com/products/siding-trim',
     logoDomain: 'lpcorp.com',
+    logoUrl: 'https://assets.cdn.filesafe.space/oyhdrza3SwoM8YuXOsja/media/69ba2c83dac58450deb8a304.png',
     features: [
       'SmartGuard treated to the core, resists moisture, decay, and termites',
       'ExpertFinish, 16 prefinished colours plus Naturals wood-tone collection',
@@ -182,9 +183,9 @@ export const productBrands: ProductBrand[] = [
     description:
       'Authorized vendor and trusted supplier based in Surrey, BC. Inter-Globe specializes in building supplies and custom metal forming services, offering James Hardie fiber cement, vinyl siding, soffits, gutters, building papers, and custom-fabricated metal flashings made to specification on computerized brake systems.',
     website: 'https://www.inter-globe.ca/',
+    logoUrl: 'https://assets.cdn.filesafe.space/oyhdrza3SwoM8YuXOsja/media/69ba2c83ad02767181662789.png',
     isAuthorizedVendor: true,
     logoDomain: 'inter-globe.ca',
-    logoUrl: 'https://assets.cdn.filesafe.space/oyhdrza3SwoM8YuXOsja/media/69b8b2e0ad0276dafc36f313.png',
     features: [
       'Authorized Tomron Construction vendor',
       'Custom metal flashing fabrication, cost efficient and precise',
