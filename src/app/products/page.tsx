@@ -47,7 +47,7 @@ export default function ProductsPage() {
           const repeated = [...logoBrands, ...logoBrands, ...logoBrands];
           return (
             <div className="absolute inset-0 z-0" aria-hidden="true">
-              <div className="absolute inset-0 grid grid-cols-4 sm:grid-cols-5 lg:grid-cols-7 gap-8 p-8 opacity-[0.04]">
+              <div className="absolute inset-0 grid grid-cols-4 sm:grid-cols-5 lg:grid-cols-7 gap-8 p-8 opacity-[0.12]">
                 {repeated.map((brand, i) => (
                   <div
                     key={`${brand.slug}-${i}`}
@@ -64,7 +64,7 @@ export default function ProductsPage() {
                 ))}
               </div>
               {/* Gradient overlay for text readability */}
-              <div className="absolute inset-0 bg-gradient-to-r from-charcoal-900 via-charcoal-900/90 to-charcoal-900/70" />
+              <div className="absolute inset-0 bg-gradient-to-r from-charcoal-900/80 via-charcoal-900/50 to-charcoal-900/30" />
             </div>
           );
         })()}
