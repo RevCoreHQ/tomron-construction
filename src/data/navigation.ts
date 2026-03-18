@@ -27,6 +27,7 @@ export const mainNav: NavItem[] = [
       { label: 'Glass Performance Guide', href: '/products/glass-performance' },
       { label: 'Building Envelope Guide', href: '/products/building-envelope' },
       { label: 'BC Rebates & Incentives', href: '/products/bc-rebates' },
+      { label: 'Cost Estimator', href: '/products/cost-estimator' },
     ],
   },
   { label: 'Gallery', href: '/gallery' },

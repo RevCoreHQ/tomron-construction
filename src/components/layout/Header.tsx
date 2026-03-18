@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Phone, Menu, X, ChevronDown } from 'lucide-react';
+import { Phone, Menu, X, ChevronDown, MapPin } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { siteConfig } from '@/data/site-config';
 import { mainNav } from '@/data/navigation';
@@ -95,6 +95,17 @@ export function Header() {
 
           {/* Desktop CTA */}
           <div className="hidden lg:flex items-center gap-4">
+            <Link
+              href="/service-areas"
+              className="flex items-center gap-1.5 text-xs font-medium text-white/50 hover:text-white/80 transition-colors whitespace-nowrap"
+            >
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500" />
+              </span>
+              Serving 16 areas
+            </Link>
+            <span className="w-px h-4 bg-white/20" />
             <a
               href={`tel:${siteConfig.phoneRaw}`}
               className="flex items-center gap-2 text-sm font-medium text-white/70 hover:text-white transition-colors whitespace-nowrap"

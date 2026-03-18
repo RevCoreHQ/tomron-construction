@@ -20,6 +20,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/products/window-buying-guide`, lastModified: now, changeFrequency: 'monthly', priority: 0.65 },
     { url: `${base}/products/building-envelope`, lastModified: now, changeFrequency: 'monthly', priority: 0.65 },
     { url: `${base}/products/bc-rebates`, lastModified: now, changeFrequency: 'monthly', priority: 0.65 },
+    { url: `${base}/products/cost-estimator`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${base}/process`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${base}/faq`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
   ];

@@ -10,6 +10,8 @@ import { HomeServiceCards } from '@/components/sections/HomeServiceCards';
 import { StatsBar } from '@/components/sections/StatsBar';
 import { MeetOwner } from '@/components/sections/MeetOwner';
 import { RecentProjects } from '@/components/sections/RecentProjects';
+import { ReviewWall } from '@/components/sections/ReviewWall';
+import { BeforeAfterSlider } from '@/components/sections/BeforeAfterSlider';
 
 export const metadata: Metadata = generatePageMetadata({
   title: 'Tomron Construction | Siding & Exterior Contractor BC',
@@ -67,7 +69,11 @@ export default function HomePage() {
 
       <RecentProjects />
 
+      <BeforeAfterSlider />
+
       <TestimonialCards />
+
+      <ReviewWall />
 
       {/* Server-rendered SEO content */}
       <section className="section-padding bg-gradient-to-b from-neutral-50 to-white">
