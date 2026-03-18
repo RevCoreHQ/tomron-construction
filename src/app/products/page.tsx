@@ -92,6 +92,27 @@ export default function ProductsPage() {
         </div>
       </section>
 
+      {/* Category Jump Nav */}
+      <nav className="sticky top-0 z-30 bg-white/90 backdrop-blur-md border-b border-neutral-200 shadow-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex gap-2 py-3 overflow-x-auto scrollbar-hide">
+            {brandCategories.map((cat) => {
+              const hasBrands = productBrands.some((b) => b.category === cat.key);
+              if (!hasBrands) return null;
+              return (
+                <a
+                  key={cat.key}
+                  href={`#${cat.key}`}
+                  className="inline-flex items-center whitespace-nowrap px-4 py-2 text-sm font-semibold text-charcoal-700 bg-neutral-100 rounded-full hover:bg-brand-600 hover:text-white transition-all shrink-0"
+                >
+                  {cat.label}
+                </a>
+              );
+            })}
+          </div>
+        </div>
+      </nav>
+
       {/* Brand Categories */}
       {brandCategories.map((cat) => {
         const brands = productBrands.filter((b) => b.category === cat.key);
@@ -100,7 +121,8 @@ export default function ProductsPage() {
         return (
           <section
             key={cat.key}
-            className={`section-padding ${cat.key === 'windows' || cat.key === 'building-products' ? 'bg-neutral-50' : ''}`}
+            id={cat.key}
+            className={`section-padding scroll-mt-16 ${cat.key === 'windows' || cat.key === 'building-products' ? 'bg-neutral-50' : ''}`}
           >
             <div className="container-wide">
               <div className="mb-8">
