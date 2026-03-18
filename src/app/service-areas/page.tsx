@@ -9,7 +9,6 @@ import { breadcrumbSchema } from '@/lib/schema';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { Button } from '@/components/ui/Button';
 import { CTASection } from '@/components/sections/CTASection';
-import { ServiceAreaMap } from '@/components/sections/ServiceAreaMap';
 
 export const metadata: Metadata = generatePageMetadata({
   title: 'Service Areas in the Lower Mainland | Tomron Construction',
@@ -50,8 +49,6 @@ export default function ServiceAreasPage() {
           </div>
         </div>
       </section>
-
-      <ServiceAreaMap />
 
       {/* Primary Service Areas */}
       <section className="section-padding">
