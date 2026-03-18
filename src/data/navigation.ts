@@ -22,7 +22,11 @@ export const mainNav: NavItem[] = [
     href: '/products',
     children: [
       { label: 'All Products & Partners', href: '/products' },
+      { label: 'Siding Comparison Guide', href: '/products/siding-comparison' },
+      { label: 'Window Buying Guide', href: '/products/window-buying-guide' },
       { label: 'Glass Performance Guide', href: '/products/glass-performance' },
+      { label: 'Building Envelope Guide', href: '/products/building-envelope' },
+      { label: 'BC Rebates & Incentives', href: '/products/bc-rebates' },
     ],
   },
   { label: 'Gallery', href: '/gallery' },

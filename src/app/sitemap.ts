@@ -16,6 +16,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/about`, lastModified: now, changeFrequency: 'monthly', priority: 0.75 },
     { url: `${base}/products`, lastModified: now, changeFrequency: 'monthly', priority: 0.75 },
     { url: `${base}/products/glass-performance`, lastModified: now, changeFrequency: 'monthly', priority: 0.65 },
+    { url: `${base}/products/siding-comparison`, lastModified: now, changeFrequency: 'monthly', priority: 0.65 },
+    { url: `${base}/products/window-buying-guide`, lastModified: now, changeFrequency: 'monthly', priority: 0.65 },
+    { url: `${base}/products/building-envelope`, lastModified: now, changeFrequency: 'monthly', priority: 0.65 },
+    { url: `${base}/products/bc-rebates`, lastModified: now, changeFrequency: 'monthly', priority: 0.65 },
     { url: `${base}/process`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${base}/faq`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
   ];
