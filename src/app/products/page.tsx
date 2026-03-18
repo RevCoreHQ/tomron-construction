@@ -47,7 +47,7 @@ export default function ProductsPage() {
           const repeated = [...logoBrands, ...logoBrands, ...logoBrands];
           return (
             <div className="absolute inset-0 z-0" aria-hidden="true">
-              <div className="absolute inset-0 grid grid-cols-4 sm:grid-cols-5 lg:grid-cols-7 gap-8 p-8 opacity-[0.12]">
+              <div className="absolute inset-0 grid grid-cols-4 sm:grid-cols-5 lg:grid-cols-7 gap-8 p-8 opacity-[0.14]">
                 {repeated.map((brand, i) => (
                   <div
                     key={`${brand.slug}-${i}`}
