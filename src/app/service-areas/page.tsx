@@ -9,7 +9,6 @@ import { breadcrumbSchema } from '@/lib/schema';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { Button } from '@/components/ui/Button';
 import { CTASection } from '@/components/sections/CTASection';
-import { ServiceAreaMap } from '@/components/sections/ServiceAreaMap';
 
 export const metadata: Metadata = generatePageMetadata({
   title: 'Service Areas in the Lower Mainland | Tomron Construction',
@@ -51,14 +50,29 @@ export default function ServiceAreasPage() {
         </div>
       </section>
 
-      <ServiceAreaMap />
+      {/* Map */}
+      <section className="bg-neutral-100">
+        <div className="max-w-7xl mx-auto">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d334474!2d-122.7!3d49.22!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sca"
+            width="100%"
+            height="450"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="Tomron Construction service areas in the Lower Mainland, BC"
+            className="w-full h-[300px] sm:h-[400px] lg:h-[450px]"
+          />
+        </div>
+      </section>
 
-      {/* All Service Areas */}
+      {/* Primary Service Areas */}
       <section className="section-padding">
         <div className="container-wide">
-          <p className="text-sm font-semibold text-brand-600 uppercase tracking-wider mb-2">Our Coverage</p>
-          <h2 className="text-3xl font-display font-extrabold text-charcoal-900 mb-2">Service Areas</h2>
-          <p className="text-slate-500 mb-8">Communities we serve across the Lower Mainland and Fraser Valley.</p>
+          <p className="text-sm font-semibold text-brand-600 uppercase tracking-wider mb-2">Primary Service Areas</p>
+          <h2 className="text-2xl sm:text-3xl font-display font-extrabold text-charcoal-900 mb-2">Communities We Serve</h2>
+          <p className="text-slate-500 mb-8">Click any area to see the services available in your community.</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {primary.map((area) => (
               <Link
