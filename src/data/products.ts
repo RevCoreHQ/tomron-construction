@@ -85,6 +85,23 @@ export const productBrands: ProductBrand[] = [
     ],
   },
 
+  {
+    slug: 'lp-smartside',
+    name: 'LP SmartSide',
+    category: 'siding',
+    categoryLabel: 'Engineered Wood Siding',
+    description:
+      'LP SmartSide siding and trim is engineered wood treated to the core through the proprietary LP SmartGuard process, providing superior protection against moisture, fungal decay, and termites. Available in lap siding, panel, shake, nickel gap, and soffit profiles with 16 prefinished ExpertFinish colours plus a Naturals Collection of wood-tone finishes.',
+    website: 'https://www.lpcorp.com/products/siding-trim',
+    logoDomain: 'lpcorp.com',
+    features: [
+      'SmartGuard treated to the core, resists moisture, decay, and termites',
+      'ExpertFinish, 16 prefinished colours plus Naturals wood-tone collection',
+      'Industry-leading 5/50 warranty, 5-year labour, 50-year substrate',
+      'Multiple profiles, lap, panel, shake, nickel gap, and soffit',
+    ],
+  },
+
   // Windows & Doors
   {
     slug: 'centra-windows',
@@ -95,7 +112,6 @@ export const productBrands: ProductBrand[] = [
       'BC\'s #1 window manufacturer, 100% employee-owned and based in Langley, BC. Centra has 40 years of experience manufacturing custom vinyl windows and exterior doors designed for BC\'s climate. Every window is built to order at their Langley plant, backed by an industry-leading 30-year warranty.',
     website: 'https://www.centrawindows.com/',
     logoDomain: 'centrawindows.com',
-    logoUrl: 'https://assets.cdn.filesafe.space/oyhdrza3SwoM8YuXOsja/media/69b8b2e04e7590106d7ea6dd.jpeg',
     features: [
       '100% employee-owned, every team member is an owner',
       'Custom manufactured in Langley, BC, built for local climate',
@@ -112,7 +128,6 @@ export const productBrands: ProductBrand[] = [
       'Family-owned and operated vinyl window manufacturer based in Abbotsford, BC since 1991. Tyee manufactures 100% of their products in-house with strict quality inspections at every stage. All products meet Energy Star standards and feature low-e glass that reduces UV rays by up to 75%.',
     website: 'https://www.tyeewindows.com/',
     logoDomain: 'tyeewindows.com',
-    logoUrl: 'https://assets.cdn.filesafe.space/oyhdrza3SwoM8YuXOsja/media/69b8b2e091305321602ae739.png',
     features: [
       'Family-owned, manufacturing in Abbotsford since 1991',
       '100% in-house manufacturing with strict quality inspections',
