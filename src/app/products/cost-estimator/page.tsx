@@ -47,7 +47,7 @@ export default function CostEstimatorPage() {
             <h1 className="text-4xl sm:text-5xl font-display font-extrabold text-white mb-6">
               Project Cost Estimator
             </h1>
-            <p className="text-xl text-white/60 leading-relaxed">
+            <p className="text-base sm:text-lg lg:text-xl text-white/60 leading-relaxed">
               Get a ballpark estimate for your window, siding, or full exterior upgrade project. Select your options below and receive an instant cost range to help with budgeting.
             </p>
           </div>

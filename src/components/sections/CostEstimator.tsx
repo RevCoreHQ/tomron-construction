@@ -325,7 +325,7 @@ export function CostEstimator() {
         </div>
 
         {/* Disclaimer */}
-        <p className="text-[11px] text-slate-400 text-center mt-6 max-w-md mx-auto">
+        <p className="text-xs text-slate-400 text-center mt-6 max-w-md mx-auto">
           These estimates are for budgeting purposes only and may vary based on site conditions, building code requirements, product availability, and project complexity. Contact us for an accurate quote specific to your home.
         </p>
       </div>
@@ -350,7 +350,7 @@ export function CostEstimator() {
                 {label}
               </span>
               {i < stepLabels.length - 1 && (
-                <div className={`w-8 lg:w-16 h-0.5 mx-1 ${i < step ? 'bg-brand-600' : 'bg-neutral-200'}`} />
+                <div className={`w-4 sm:w-8 lg:w-16 h-0.5 mx-0.5 sm:mx-1 ${i < step ? 'bg-brand-600' : 'bg-neutral-200'}`} />
               )}
             </div>
           ))}
@@ -378,7 +378,7 @@ export function CostEstimator() {
           <button
             onClick={goBack}
             disabled={step === 0}
-            className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-slate-600 hover:text-charcoal-900 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+            className="inline-flex items-center gap-2 px-4 py-2.5 min-h-[44px] text-sm font-medium text-slate-600 hover:text-charcoal-900 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
             Back
@@ -386,7 +386,7 @@ export function CostEstimator() {
           <button
             onClick={goNext}
             disabled={!canAdvance()}
-            className="inline-flex items-center gap-2 px-6 py-2.5 text-sm font-semibold text-white bg-brand-600 rounded-lg hover:bg-brand-700 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+            className="inline-flex items-center gap-2 px-6 py-2.5 min-h-[44px] text-sm font-semibold text-white bg-brand-600 rounded-lg hover:bg-brand-700 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
           >
             Next
             <ArrowRight className="w-4 h-4" />
@@ -401,7 +401,7 @@ export function CostEstimator() {
               setStep(0);
               setSelections({ projectType: null, windowMaterial: null, sidingMaterial: null, homeSize: null, windowCount: null });
             }}
-            className="text-sm text-brand-600 font-semibold hover:text-brand-700 transition-colors"
+            className="inline-flex items-center justify-center px-4 py-2.5 min-h-[44px] text-sm text-brand-600 font-semibold hover:text-brand-700 transition-colors"
           >
             Start Over
           </button>

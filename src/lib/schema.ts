@@ -1,4 +1,5 @@
 import { siteConfig } from '@/data/site-config';
+import { reviews } from '@/data/reviews';
 
 export function localBusinessSchema() {
   const sameAs = [
@@ -95,28 +96,14 @@ export function localBusinessSchema() {
       '@type': 'AggregateRating',
       ratingValue: 5,
       bestRating: 5,
-      reviewCount: 3,
+      reviewCount: reviews.length,
     },
-    review: [
-      {
-        '@type': 'Review',
-        author: { '@type': 'Person', name: 'Paula A.' },
-        reviewRating: { '@type': 'Rating', ratingValue: 5, bestRating: 5 },
-        reviewBody: 'Brendan is very confident, competent and personable. He takes great pride in his work and it really shows in the quality of the finished product. We could not be happier with the results.',
-      },
-      {
-        '@type': 'Review',
-        author: { '@type': 'Person', name: 'Anne C.' },
-        reviewRating: { '@type': 'Rating', ratingValue: 5, bestRating: 5 },
-        reviewBody: 'Outstanding work with excellent workmanship. Brendan listens to your concerns and delivers exactly what was discussed. Very professional from start to finish. Highly recommend Tomron Construction.',
-      },
-      {
-        '@type': 'Review',
-        author: { '@type': 'Person', name: 'Sharon D.' },
-        reviewRating: { '@type': 'Rating', ratingValue: 5, bestRating: 5 },
-        reviewBody: 'Very professional team. We are thrilled with the excellent workmanship. On time and on budget, they did an extraordinary job on our home. Already recommended them to our neighbours.',
-      },
-    ],
+    review: reviews.map((r) => ({
+      '@type': 'Review',
+      author: { '@type': 'Person', name: r.author },
+      reviewRating: { '@type': 'Rating', ratingValue: r.rating, bestRating: 5 },
+      reviewBody: r.quote,
+    })),
   };
 }
 
@@ -215,7 +202,7 @@ export function serviceSchema(
         '@type': 'AggregateRating',
         ratingValue: 5,
         bestRating: 5,
-        reviewCount: 3,
+        reviewCount: reviews.length,
       },
     },
     areaServed: options?.areaName

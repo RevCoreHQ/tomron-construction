@@ -9,7 +9,7 @@ export function ReviewWall() {
   const totalReviews = reviews.length;
 
   return (
-    <section className="section-padding bg-charcoal-900">
+    <section className="section-padding bg-charcoal-900" aria-label="Client Reviews">
       <div className="container-wide">
         <ScrollReveal>
           <div className="text-center mb-16">
@@ -43,7 +43,7 @@ export function ReviewWall() {
                 <Quote className="absolute top-6 right-6 w-10 h-10 text-brand-600/20" />
 
                 {/* Stars */}
-                <div className="flex gap-1 mb-6">
+                <div className="flex gap-1 mb-6" role="img" aria-label={`${review.rating} out of 5 stars`}>
                   {Array.from({ length: review.rating }).map((_, i) => (
                     <Star key={i} className="w-5 h-5 fill-brand-500 text-brand-500" />
                   ))}

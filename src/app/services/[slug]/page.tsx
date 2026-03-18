@@ -92,7 +92,7 @@ export default async function ServicePage({ params }: Props) {
             <h1 className="text-4xl sm:text-5xl font-display font-extrabold text-white mb-6">
               {service.h1}
             </h1>
-            <p className="text-xl text-white/60 leading-relaxed mb-8">{service.intro}</p>
+            <p className="text-base sm:text-lg lg:text-xl text-white/60 leading-relaxed mb-8">{service.intro}</p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button href="/contact" size="lg">Get Your Free {service.shortTitle} Quote</Button>
               <a
@@ -109,7 +109,7 @@ export default async function ServicePage({ params }: Props) {
       {/* Features */}
       <section className="section-padding">
         <div className="container-wide">
-          <h2 className="text-3xl font-display font-extrabold text-charcoal-900 mb-8">What&apos;s Included</h2>
+          <h2 className="text-2xl sm:text-3xl font-display font-extrabold text-charcoal-900 mb-8">What&apos;s Included</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {service.features.map((feature, i) => (
               <div key={i} className="flex items-start gap-3 p-4 bg-neutral-50 rounded-lg">
@@ -131,7 +131,7 @@ export default async function ServicePage({ params }: Props) {
               <AlertTriangle className="w-5 h-5 text-amber-400" />
               <p className="text-sm font-semibold text-amber-400 uppercase tracking-wider">Warning Signs</p>
             </div>
-            <h2 className="text-3xl font-display font-extrabold text-white mb-8">
+            <h2 className="text-2xl sm:text-3xl font-display font-extrabold text-white mb-8">
               Signs You May Need {service.shortTitle}
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -178,7 +178,7 @@ export default async function ServicePage({ params }: Props) {
         <section className="section-padding">
           <div className="container-wide">
             <p className="text-sm font-semibold text-brand-600 uppercase tracking-wider mb-2">Trusted Partners</p>
-            <h2 className="text-3xl font-display font-extrabold text-charcoal-900 mb-3">
+            <h2 className="text-2xl sm:text-3xl font-display font-extrabold text-charcoal-900 mb-3">
               Products &amp; Brands We Use
             </h2>
             <p className="text-slate-500 mb-8 max-w-2xl">
@@ -213,7 +213,7 @@ export default async function ServicePage({ params }: Props) {
       {related.length > 0 && (
         <section className="section-padding">
           <div className="container-wide">
-            <h2 className="text-3xl font-display font-extrabold text-charcoal-900 mb-8">Related Services</h2>
+            <h2 className="text-2xl sm:text-3xl font-display font-extrabold text-charcoal-900 mb-8">Related Services</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
               {related.map((r) => (
                 <Link

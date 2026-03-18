@@ -95,17 +95,6 @@ export function Header() {
 
           {/* Desktop CTA */}
           <div className="hidden lg:flex items-center gap-4">
-            <Link
-              href="/service-areas"
-              className="flex items-center gap-1.5 text-xs font-medium text-white/50 hover:text-white/80 transition-colors whitespace-nowrap"
-            >
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500" />
-              </span>
-              Serving 16 areas
-            </Link>
-            <span className="w-px h-4 bg-white/20" />
             <a
               href={`tel:${siteConfig.phoneRaw}`}
               className="flex items-center gap-2 text-sm font-medium text-white/70 hover:text-white transition-colors whitespace-nowrap"
@@ -121,7 +110,7 @@ export function Header() {
           {/* Mobile menu button */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="lg:hidden p-2 text-white/80 hover:text-white transition-colors"
+            className="lg:hidden p-2.5 text-white/80 hover:text-white transition-colors"
             aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
           >
             {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}

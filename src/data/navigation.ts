@@ -63,6 +63,7 @@ export const footerNav = {
     { label: 'About Us', href: '/about' },
     { label: 'Our Process', href: '/process' },
     { label: 'Products & Partners', href: '/products' },
+    { label: 'Cost Estimator', href: '/products/cost-estimator' },
     { label: 'Gallery', href: '/gallery' },
     { label: 'FAQ', href: '/faq' },
     { label: 'Contact', href: '/contact' },
