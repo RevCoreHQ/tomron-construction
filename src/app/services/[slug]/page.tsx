@@ -2,8 +2,10 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, AlertTriangle, CheckCircle } from 'lucide-react';
 import { services, getServiceBySlug, getRelatedServices } from '@/data/services';
+import { productBrands } from '@/data/products';
+import { BrandLogo } from '@/components/ui/BrandLogo';
 import { siteConfig } from '@/data/site-config';
 import { generatePageMetadata } from '@/lib/metadata';
 import { JsonLd } from '@/components/seo/JsonLd';
@@ -38,6 +40,9 @@ export default async function ServicePage({ params }: Props) {
   if (!service) notFound();
 
   const related = getRelatedServices(service.relatedSlugs);
+  const brands = service.brandSlugs
+    .map((slug) => productBrands.find((b) => b.slug === slug))
+    .filter(Boolean);
 
   return (
     <>
@@ -118,6 +123,36 @@ export default async function ServicePage({ params }: Props) {
         </div>
       </section>
 
+      {/* Warning Signals */}
+      {service.warningSignals.length > 0 && (
+        <section className="section-padding bg-charcoal-900">
+          <div className="container-wide">
+            <div className="flex items-center gap-3 mb-2">
+              <AlertTriangle className="w-5 h-5 text-amber-400" />
+              <p className="text-sm font-semibold text-amber-400 uppercase tracking-wider">Warning Signs</p>
+            </div>
+            <h2 className="text-3xl font-display font-extrabold text-white mb-8">
+              Signs You May Need {service.shortTitle}
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {service.warningSignals.map((signal, i) => (
+                <div key={i} className="flex items-start gap-3 p-4 bg-white/5 rounded-lg border border-white/10">
+                  <CheckCircle className="w-5 h-5 text-brand-400 shrink-0 mt-0.5" />
+                  <p className="text-sm text-white/70 leading-relaxed">{signal}</p>
+                </div>
+              ))}
+            </div>
+            <p className="text-white/40 text-sm mt-6">
+              Recognise any of these?{' '}
+              <Link href="/contact" className="text-brand-400 font-semibold hover:text-brand-300 transition-colors">
+                Book a free inspection
+              </Link>{' '}
+              and we will assess your home at no cost.
+            </p>
+          </div>
+        </section>
+      )}
+
       {/* Body content sections */}
       {service.body.length > 0 && (
         <section className="section-padding bg-neutral-50">
@@ -132,6 +167,39 @@ export default async function ServicePage({ params }: Props) {
                     {section.text}
                   </p>
                 </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Products & Brands We Use */}
+      {brands.length > 0 && (
+        <section className="section-padding">
+          <div className="container-wide">
+            <p className="text-sm font-semibold text-brand-600 uppercase tracking-wider mb-2">Trusted Partners</p>
+            <h2 className="text-3xl font-display font-extrabold text-charcoal-900 mb-3">
+              Products &amp; Brands We Use
+            </h2>
+            <p className="text-slate-500 mb-8 max-w-2xl">
+              We work with industry-leading manufacturers to ensure every project uses the best materials for the Lower Mainland climate.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {brands.map((brand) => (
+                <Link
+                  key={brand!.slug}
+                  href="/products"
+                  className="group flex items-start gap-4 p-5 bg-white rounded-lg border border-neutral-200 hover:border-brand-300 hover:-translate-y-0.5 transition-all"
+                >
+                  <BrandLogo name={brand!.name} logoUrl={brand!.logoUrl} />
+                  <div className="min-w-0">
+                    <h3 className="font-display font-bold text-charcoal-900 group-hover:text-brand-600 transition-colors text-sm">
+                      {brand!.name}
+                    </h3>
+                    <p className="text-xs text-slate-500 mt-0.5">{brand!.categoryLabel}</p>
+                    <p className="text-xs text-slate-400 mt-1 line-clamp-2">{brand!.features[0]}</p>
+                  </div>
+                </Link>
               ))}
             </div>
           </div>

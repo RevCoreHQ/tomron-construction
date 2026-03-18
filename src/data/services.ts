@@ -20,6 +20,8 @@ export interface ServiceData {
   heroImage: string;
   heroAlt: string;
   features: string[];
+  warningSignals: string[];
+  brandSlugs: string[];
   body: BodySection[];
   faqs: FAQ[];
   relatedSlugs: string[];
@@ -46,6 +48,17 @@ export const services: ServiceData[] = [
       'Industry-leading warranty on products and installation',
       'Spotless cleanup and clear communication throughout',
     ],
+    warningSignals: [
+      'Cracked, warped, or buckled siding panels',
+      'Peeling or bubbling paint on exterior walls',
+      'Mould, mildew, or fungus growing on the surface',
+      'Soft or spongy spots when you press on the wall',
+      'Visible gaps or loose panels letting air and moisture in',
+      'Rising heating or cooling bills with no obvious cause',
+      'Interior paint peeling near exterior walls',
+      'Fading colour that no longer matches your home\'s aesthetic',
+    ],
+    brandSlugs: ['james-hardie', 'mitten-siding', 'newtech-wood', 'mac-metals', 'lp-smartside'],
     body: [
       {
         heading: 'Why Siding Matters in the Lower Mainland',
@@ -58,6 +71,14 @@ export const services: ServiceData[] = [
       {
         heading: 'Material Options We Install',
         text: "We install a full range of siding materials to suit every style and budget. Vinyl siding offers excellent value and virtually zero maintenance. Fiber cement (such as James Hardie) delivers superior durability and a premium look that resists rot, fire, and insects. Natural wood siding provides timeless character for homeowners who want an authentic aesthetic. Engineered wood and composite panels combine the look of real wood with enhanced weather resistance. During your consultation, we will walk you through the pros and cons of each material for your specific property and help you choose the best option.",
+      },
+      {
+        heading: 'Protecting What Is Behind the Siding',
+        text: "New siding is only as good as the system behind it. Before a single panel goes up, our crew inspects and addresses the layers underneath: sheathing condition, house wrap integrity, insulation, and drainage plane. If we find rot, failed moisture barriers, or inadequate insulation, we repair and upgrade before proceeding. This is where many contractors cut corners to save time, and it is exactly where problems start three to five years later. Tomron Construction builds the full wall assembly correctly the first time so your new siding performs for decades, not just until the warranty claim period expires.",
+      },
+      {
+        heading: 'Cost Factors and What to Expect',
+        text: "Siding costs in the Lower Mainland depend on material choice, home size and storey count, architectural complexity (corners, dormers, soffits), the condition of the existing structure, and whether scaffolding is required. Vinyl is the most affordable option, fiber cement and engineered wood sit in the mid-premium range, and metal and composite panels are at the top. We provide fully itemized quotes during your free consultation so there are no surprises. If budget is a consideration, we can discuss phasing the project or material combinations that give you a premium look at a practical price point.",
       },
     ],
     faqs: [
@@ -100,6 +121,16 @@ export const services: ServiceData[] = [
       'Repair and replacement of failed or missing flashing',
       'Prevents water intrusion, rot, and mould growth',
     ],
+    warningSignals: [
+      'Water stains on interior walls near windows or doors',
+      'Visible rust, gaps, or lifted edges on existing flashing',
+      'Peeling paint or bubbling around window and door frames',
+      'Musty odours in rooms along exterior walls',
+      'Dark streaks or discolouration on exterior siding near roof transitions',
+      'Soft or spongy trim boards around windows',
+      'Ice dams or water pooling at roof-to-wall intersections in winter',
+    ],
+    brandSlugs: ['tri-city-flashing', 'inter-globe', 'mac-metals'],
     body: [
       {
         heading: 'Why Flashing Is Critical in BC',
@@ -108,6 +139,14 @@ export const services: ServiceData[] = [
       {
         heading: 'Our Approach to Flashing',
         text: "Tomron Construction treats flashing as essential construction, not an afterthought. We custom-bend every piece of flashing on-site to ensure a precise fit for your specific window frames, door headers, roof-to-wall transitions, and wall penetrations. We use high-quality aluminum and galvanized steel rated for decades of exposure to the Pacific Northwest climate. When flashing is part of a larger siding or envelope project, we install it in the correct sequence within the wall assembly to ensure seamless integration with house wrap, moisture barriers, and cladding materials.",
+      },
+      {
+        heading: 'Types of Flashing We Install',
+        text: "Every junction on your home's exterior has a specific flashing requirement. Head flashing above windows and doors directs water outward over the cladding. Sill pan flashing beneath windows catches and drains any water that penetrates the frame. Kick-out flashing at roof-to-wall intersections redirects water away from the siding and into the gutter. Step flashing along rooflines provides a shingle-by-shingle seal. Drip cap flashing over horizontal trim prevents water from wicking behind boards. We assess each transition on your home and install the correct flashing type, in the correct sequence, with the correct overlaps to create a continuous water management system.",
+      },
+      {
+        heading: 'Flashing as Part of a Larger Project',
+        text: "Flashing is most effective and most cost-efficient when integrated into a siding replacement, window installation, or building envelope project. When you bundle flashing with a larger exterior project, we install everything in the correct construction sequence, which eliminates the coordination gaps that cause failures when work is done piecemeal. If your home needs only flashing repair or replacement, we can also handle that as a standalone service, selectively removing and reinstalling siding panels to access and correct problem areas without a full tear-off.",
       },
     ],
     faqs: [
@@ -142,6 +181,17 @@ export const services: ServiceData[] = [
       'Moisture management and ventilation solutions',
       'Integration with siding, flashing, and window systems',
     ],
+    warningSignals: [
+      'Drafts near windows, doors, or exterior walls even when closed',
+      'Condensation or fog on the inside surface of windows',
+      'Unexpectedly high heating or cooling bills',
+      'Mould or mildew on interior walls, especially near corners',
+      'Peeling exterior paint or stains under window sills',
+      'Musty smells in closets or rooms along exterior walls',
+      'Cold spots or noticeable temperature differences room to room',
+      'Previous leaky condo or water damage history',
+    ],
+    brandSlugs: ['inter-globe', 'james-hardie', 'tri-city-flashing'],
     body: [
       {
         heading: 'Why the Building Envelope Matters',
@@ -150,6 +200,14 @@ export const services: ServiceData[] = [
       {
         heading: 'Our Envelope Services',
         text: "Tomron Construction provides a full range of building envelope services. For existing homes, we start with a thorough assessment of your current envelope performance, identifying failures in air barriers, vapour barriers, insulation, and drainage planes. For new construction and major renovations, we design and install complete envelope systems that meet or exceed BC Building Code requirements and perform reliably for decades. Our work integrates seamlessly with our siding, flashing, and window services, allowing us to deliver a unified, properly sequenced installation that eliminates the coordination gaps that cause failures when multiple trades work independently.",
+      },
+      {
+        heading: 'The Leaky Condo Lesson',
+        text: "British Columbia's leaky condo crisis of the 1990s and 2000s exposed the devastating consequences of inadequate building envelopes. Thousands of Lower Mainland homes suffered catastrophic moisture damage because building practices at the time did not account for the region's extreme rainfall. Repairs cost billions across the province. The lesson was clear: a proper rain screen, correctly sequenced barriers, and adequate drainage are not optional in this climate, they are essential. Tomron Construction applies modern rain screen principles to every exterior project, ensuring your home benefits from decades of hard-learned building science.",
+      },
+      {
+        heading: 'Layers of Protection',
+        text: "A properly functioning building envelope in the Lower Mainland consists of multiple coordinated layers. The exterior cladding, whether siding, metal, or composite, is the first rain barrier. Behind it, a ventilated rain screen cavity allows drainage and evaporation. The weather-resistive barrier (house wrap) provides the critical second line of defence against bulk water. Air barriers control air movement, preventing warm moist interior air from reaching cold surfaces where it would condense. Vapour barriers manage moisture diffusion through the wall assembly. And insulation controls heat flow while maintaining appropriate temperatures throughout the wall cavity. Every layer must work together, a failure in any one layer compromises the entire system.",
       },
     ],
     faqs: [
@@ -184,6 +242,16 @@ export const services: ServiceData[] = [
       'Project management from permits to final walkthrough',
       'Clear timelines, honest pricing, and daily cleanup',
     ],
+    warningSignals: [
+      'Outdated layout that no longer suits how your family lives',
+      'Worn-out finishes, flooring, or fixtures throughout the home',
+      'Cramped kitchen or bathrooms that lack storage and counter space',
+      'Dark rooms that need better natural light or open floor plans',
+      'Structural concerns like sagging floors or cracked foundations',
+      'Planning to sell and want to maximize home value first',
+      'Growing family that needs more functional living space',
+    ],
+    brandSlugs: ['james-hardie', 'plygem', 'inter-globe'],
     body: [
       {
         heading: 'Renovation Done Right',
@@ -192,6 +260,14 @@ export const services: ServiceData[] = [
       {
         heading: 'From Small Updates to Major Transformations',
         text: "Not every renovation needs to be a full gut job. We handle projects of every scale, from refreshing a bathroom or updating a kitchen to opening up floor plans, adding living space, and modernizing older homes that need structural and cosmetic attention. Many of our renovation clients are homeowners who love their neighbourhood and their property but need their home to work better for how they live today. We specialize in finding smart solutions that maximize the value and functionality of your existing space without unnecessary scope creep.",
+      },
+      {
+        heading: 'What a Renovation Project Looks Like',
+        text: "Every renovation begins with a design conversation where we understand your goals, pain points, and budget. From there, we develop a scope of work with a detailed timeline and transparent pricing. Once permits are secured, work follows a logical sequence: demolition and structural modifications first, then mechanical rough-ins (electrical, plumbing, HVAC), insulation and drywall, followed by finishing work including flooring, cabinetry, trim, paint, and fixtures. Throughout the project, you receive regular progress updates and have direct access to your project lead. We coordinate all sub-trades so you deal with one point of contact, not five different contractors with conflicting schedules.",
+      },
+      {
+        heading: 'Combining Interior and Exterior Work',
+        text: "Many of our renovation clients are also upgrading their home's exterior, new siding, windows, or doors as part of a larger transformation. Bundling interior and exterior work under one contractor saves you money, simplifies coordination, and ensures the work is sequenced correctly. For example, if a kitchen renovation includes adding or enlarging a window, we handle the structural framing, exterior flashing, siding integration, and interior finishing as a single coordinated project rather than separate jobs that need to be patched together.",
       },
     ],
     faqs: [
@@ -230,6 +306,17 @@ export const services: ServiceData[] = [
       'Energy-efficient double and triple-pane glass options',
       'Seamless integration with new or existing siding',
     ],
+    warningSignals: [
+      'Condensation or fog trapped between glass panes (seal failure)',
+      'Noticeable drafts near closed windows',
+      'Difficulty opening, closing, or locking windows',
+      'Visible rot, warping, or damage in window frames',
+      'Rising energy bills without an obvious cause',
+      'Outside noise that should be blocked by closed windows',
+      'Single-pane windows that are 20+ years old',
+      'Water stains or mould on the sill or surrounding wall',
+    ],
+    brandSlugs: ['centra-windows', 'tyee-windows', 'plygem', 'vitrum-glass'],
     body: [
       {
         heading: 'When to Replace Your Windows',
@@ -242,6 +329,14 @@ export const services: ServiceData[] = [
       {
         heading: 'Window-to-Door Conversions',
         text: "Want to open up your living space with a new patio door or garden entrance where a window currently sits? Tomron Construction handles window-to-door conversions that require structural modification, including header installation, framing adjustments, and proper integration with your home's exterior. The result is a seamless transition that looks like the door was always part of the original design.",
+      },
+      {
+        heading: 'Energy Efficiency and Glass Performance',
+        text: "Modern windows are engineered for energy performance. Double-pane glass with argon gas fill and low-E coatings is the standard for new installations, blocking heat loss in winter and solar heat gain in summer. Triple-pane glass takes performance further, delivering R-values up to R-8 and significant noise reduction. The glass sealed unit is just as important as the frame: we work with Vitrum Glass, Western Canada's largest glass fabricator, to ensure every sealed unit meets the highest performance standards. During your consultation, we help you choose the right glass package for your home's orientation, climate exposure, and energy goals.",
+      },
+      {
+        heading: 'Rebates and Savings',
+        text: "Window replacement is one of the most eligible upgrades for BC and federal energy rebate programs. CleanBC, Canada Greener Homes, and utility-specific programs from FortisBC and BC Hydro offer rebates that can significantly reduce your project cost when you install qualifying energy-efficient windows. Tomron Construction is experienced with the rebate application process and can help you understand what you qualify for before you commit. Visit our BC Rebates & Incentives guide for current program details and estimated savings.",
       },
     ],
     faqs: [
@@ -280,6 +375,16 @@ export const services: ServiceData[] = [
       'Custom sizing and hardware selection',
       'Retrofit installations to accommodate new siding',
     ],
+    warningSignals: [
+      'Visible daylight or drafts around the door frame',
+      'Door sticks, binds, or is difficult to lock and unlock',
+      'Worn-out weatherstripping that no longer seals properly',
+      'Visible rust, rot, or warping in the door or frame',
+      'Condensation or fogging in door glass panels',
+      'Outdated design that hurts your home\'s curb appeal',
+      'Security concerns with an aging or damaged entry door',
+    ],
+    brandSlugs: ['centra-windows', 'tyee-windows', 'plygem'],
     body: [
       {
         heading: 'Entry Doors That Make a Statement',
@@ -288,6 +393,14 @@ export const services: ServiceData[] = [
       {
         heading: 'Patio Doors and Sliding Systems',
         text: "Sliding patio doors transform how you use your home by creating a seamless connection to your outdoor living space. Tomron Construction installs sliding glass doors, French-style patio doors, and multi-panel systems that maximize natural light and airflow while maintaining energy efficiency. We ensure proper structural support, threshold waterproofing, and track alignment so your doors glide smoothly for years. If you are replacing an existing patio door, we can also upgrade the opening size or convert a window into a new door location.",
+      },
+      {
+        heading: 'Choosing the Right Door Material',
+        text: "The right material depends on your priorities. Fiberglass doors are the most popular choice in the Lower Mainland because they resist moisture, never warp, require minimal maintenance, and can be finished to look like real wood at a lower price point. Steel doors offer maximum security and are the most affordable option, though they can dent and are more susceptible to condensation in cold weather. Solid wood doors provide unmatched beauty and character but require regular maintenance to protect against BC's moisture. We carry options from leading manufacturers and will help you weigh the trade-offs during your consultation.",
+      },
+      {
+        heading: 'Proper Installation Matters More Than the Door Itself',
+        text: "Even the best door will fail if it is not installed correctly. The door opening must be perfectly plumb, level, and square. The sill must be waterproofed with a proper pan flashing system to prevent water from pooling and entering the subfloor. Shims must be placed precisely to ensure smooth operation without binding. Exterior trim and flashing must integrate with the surrounding siding and moisture barriers. And the hardware, hinges, locks, and multi-point locking systems must be adjusted for smooth, secure operation. Tomron Construction handles every one of these details because we know that a door installation done right will perform flawlessly for 30+ years.",
       },
     ],
     faqs: [
