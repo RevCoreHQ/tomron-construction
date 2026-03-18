@@ -40,6 +40,34 @@ export default function ProductsPage() {
 
       {/* Hero */}
       <section className="relative py-16 lg:py-24 bg-charcoal-900 overflow-hidden">
+        {/* Partner logo grid background */}
+        {(() => {
+          const logoBrands = productBrands.filter((b) => b.logoUrl);
+          // Repeat logos to fill grid
+          const repeated = [...logoBrands, ...logoBrands, ...logoBrands];
+          return (
+            <div className="absolute inset-0 z-0" aria-hidden="true">
+              <div className="absolute inset-0 grid grid-cols-4 sm:grid-cols-5 lg:grid-cols-7 gap-8 p-8 opacity-[0.04]">
+                {repeated.map((brand, i) => (
+                  <div
+                    key={`${brand.slug}-${i}`}
+                    className="flex items-center justify-center"
+                  >
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={brand.logoUrl}
+                      alt=""
+                      className="w-16 h-16 object-contain grayscale invert brightness-200"
+                      loading="lazy"
+                    />
+                  </div>
+                ))}
+              </div>
+              {/* Gradient overlay for text readability */}
+              <div className="absolute inset-0 bg-gradient-to-r from-charcoal-900 via-charcoal-900/90 to-charcoal-900/70" />
+            </div>
+          );
+        })()}
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumbs items={[{ label: 'Products & Partners', href: '/products' }]} variant="dark" />
           <div className="max-w-3xl mt-4">
