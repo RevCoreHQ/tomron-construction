@@ -9,6 +9,7 @@ import { breadcrumbSchema } from '@/lib/schema';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { Button } from '@/components/ui/Button';
 import { CTASection } from '@/components/sections/CTASection';
+import { ServiceAreaMap } from '@/components/sections/ServiceAreaMap';
 
 export const metadata: Metadata = generatePageMetadata({
   title: 'Service Areas in the Lower Mainland | Tomron Construction',
@@ -50,22 +51,7 @@ export default function ServiceAreasPage() {
         </div>
       </section>
 
-      {/* Map */}
-      <section className="bg-neutral-100">
-        <div className="max-w-7xl mx-auto">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d334474!2d-122.7!3d49.22!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sca"
-            width="100%"
-            height="450"
-            style={{ border: 0 }}
-            allowFullScreen
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            title="Tomron Construction service areas in the Lower Mainland, BC"
-            className="w-full h-[300px] sm:h-[400px] lg:h-[450px]"
-          />
-        </div>
-      </section>
+      <ServiceAreaMap />
 
       {/* Primary Service Areas */}
       <section className="section-padding">
