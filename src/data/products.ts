@@ -194,6 +194,24 @@ export const productBrands: ProductBrand[] = [
     ],
   },
 
+  {
+    slug: 'vsa-enterprises',
+    name: 'VSA Enterprises',
+    category: 'building-products',
+    categoryLabel: 'Exterior Building Accessories',
+    description:
+      'A leading Canadian designer and manufacturer of exterior building construction products since 1987. VSA Enterprises specializes in handrail covers, ventilation accessories, and siding accessories, planning, assembling, and distributing their products for residential and commercial projects across Canada.',
+    website: 'https://vsaent.com/',
+    logoDomain: 'vsaent.com',
+    logoUrl: 'https://assets.cdn.filesafe.space/oyhdrza3SwoM8YuXOsja/media/69bb8235a37cc21290f7e7d2.png',
+    features: [
+      'Canadian manufacturer since 1987',
+      'Handrail covers for durable railing protection',
+      'Ventilation accessories for proper airflow management',
+      'Siding accessories for clean exterior installations',
+    ],
+  },
+
   // Flashing
   {
     slug: 'tri-city-flashing',
