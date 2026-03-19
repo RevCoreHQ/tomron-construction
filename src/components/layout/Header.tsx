@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Phone, Menu, X, ChevronDown } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
 import { siteConfig } from '@/data/site-config';
 import { mainNav } from '@/data/navigation';
 import { Button } from '@/components/ui/Button';
@@ -42,10 +41,6 @@ export function Header() {
   }, [mobileOpen]);
 
   const showBg = !isHome || scrolled || mobileOpen;
-
-  const toggleMobileExpand = (label: string) => {
-    setMobileExpanded((prev) => (prev === label ? null : label));
-  };
 
   return (
     <header
@@ -137,134 +132,114 @@ export function Header() {
         </div>
       </div>
 
-      {/* Mobile menu overlay */}
-      <AnimatePresence>
-        {mobileOpen && (
-          <>
-            {/* Backdrop */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.2 }}
-              className="lg:hidden fixed inset-0 bg-black/60 z-40"
-              onClick={() => setMobileOpen(false)}
-            />
-
-            {/* Panel */}
-            <motion.div
-              initial={{ x: '100%' }}
-              animate={{ x: 0 }}
-              exit={{ x: '100%' }}
-              transition={{ type: 'spring', damping: 30, stiffness: 300 }}
-              className="lg:hidden fixed inset-y-0 right-0 w-80 max-w-[85vw] bg-charcoal-950 z-50 flex flex-col"
-            >
-              {/* Header */}
-              <div className="flex items-center justify-between p-4 border-b border-white/10 shrink-0">
-                <span className="font-display text-lg font-bold text-white uppercase">Menu</span>
-                <button
-                  onClick={() => setMobileOpen(false)}
-                  className="p-2.5 text-white/60 hover:text-white transition-colors"
-                  aria-label="Close menu"
-                >
-                  <X className="w-5 h-5" />
-                </button>
-              </div>
-
-              {/* Nav items */}
-              <nav className="flex-1 overflow-y-auto px-4 py-4 space-y-1" aria-label="Mobile navigation">
-                {mainNav.map((item, i) => {
-                  const hasChildren = !!item.children;
-                  const isExpanded = mobileExpanded === item.label;
-
-                  return (
-                    <motion.div
-                      key={item.href}
-                      initial={{ opacity: 0, x: 20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.3, delay: 0.05 + i * 0.04 }}
-                    >
-                      {hasChildren ? (
-                        <>
-                          {/* Parent row: link + expand toggle */}
-                          <div className="flex items-center">
-                            <Link
-                              href={item.href}
-                              className="flex-1 px-3 py-3 text-base font-medium text-white/80 hover:text-white hover:bg-white/5 rounded-lg transition-colors"
-                              onClick={() => setMobileOpen(false)}
-                            >
-                              {item.label}
-                            </Link>
-                            <button
-                              onClick={() => toggleMobileExpand(item.label)}
-                              className="p-3 text-white/40 hover:text-white/80 transition-colors"
-                              aria-expanded={isExpanded}
-                              aria-label={`${isExpanded ? 'Collapse' : 'Expand'} ${item.label} submenu`}
-                            >
-                              <ChevronDown className={cn(
-                                'w-4 h-4 transition-transform duration-200',
-                                isExpanded && 'rotate-180'
-                              )} />
-                            </button>
-                          </div>
-
-                          {/* Children — collapsible */}
-                          <AnimatePresence>
-                            {isExpanded && (
-                              <motion.div
-                                initial={{ height: 0, opacity: 0 }}
-                                animate={{ height: 'auto', opacity: 1 }}
-                                exit={{ height: 0, opacity: 0 }}
-                                transition={{ duration: 0.2 }}
-                                className="overflow-hidden"
-                              >
-                                <div className="pl-4 pb-2 space-y-0.5">
-                                  {item.children!.map((child) => (
-                                    <Link
-                                      key={child.href}
-                                      href={child.href}
-                                      className="block px-3 py-2.5 text-sm text-white/50 hover:text-white hover:bg-white/5 rounded-lg transition-colors"
-                                      onClick={() => setMobileOpen(false)}
-                                    >
-                                      {child.label}
-                                    </Link>
-                                  ))}
-                                </div>
-                              </motion.div>
-                            )}
-                          </AnimatePresence>
-                        </>
-                      ) : (
-                        <Link
-                          href={item.href}
-                          className="block px-3 py-3 text-base font-medium text-white/80 hover:text-white hover:bg-white/5 rounded-lg transition-colors"
-                          onClick={() => setMobileOpen(false)}
-                        >
-                          {item.label}
-                        </Link>
-                      )}
-                    </motion.div>
-                  );
-                })}
-              </nav>
-
-              {/* Bottom CTA */}
-              <div className="shrink-0 p-4 border-t border-white/10 space-y-3">
-                <Button href="/contact" className="w-full" size="sm" onClick={() => setMobileOpen(false)}>
-                  Get a Quote
-                </Button>
-                <a
-                  href={`tel:${siteConfig.phoneRaw}`}
-                  className="flex items-center justify-center gap-2 w-full px-4 py-2.5 text-sm font-medium rounded-lg border border-white/20 text-white/80 hover:text-white hover:border-white/40 transition-colors"
-                >
-                  <Phone className="w-4 h-4" />
-                  Call Now
-                </a>
-              </div>
-            </motion.div>
-          </>
+      {/* Mobile slide-out panel */}
+      <div
+        className={cn(
+          'lg:hidden fixed inset-y-0 right-0 w-80 max-w-[85vw] bg-charcoal-950 z-50 flex flex-col transform transition-transform duration-300 ease-in-out',
+          mobileOpen ? 'translate-x-0' : 'translate-x-full'
         )}
-      </AnimatePresence>
+      >
+        {/* Panel header */}
+        <div className="flex items-center justify-between p-4 border-b border-white/10 shrink-0">
+          <span className="font-display text-lg font-bold text-white uppercase">Menu</span>
+          <button
+            onClick={() => setMobileOpen(false)}
+            className="p-2.5 text-white/60 hover:text-white transition-colors"
+            aria-label="Close menu"
+          >
+            <X className="w-5 h-5" />
+          </button>
+        </div>
+
+        {/* Nav items */}
+        <nav className="flex-1 overflow-y-auto px-4 py-4 space-y-1" aria-label="Mobile navigation">
+          {mainNav.map((item) => {
+            const hasChildren = !!item.children;
+            const isExpanded = mobileExpanded === item.label;
+
+            return (
+              <div key={item.href}>
+                {hasChildren ? (
+                  <>
+                    {/* Parent with expand toggle */}
+                    <div className="flex items-center">
+                      <Link
+                        href={item.href}
+                        className="flex-1 px-3 py-3 text-base font-medium text-white/80 hover:text-white hover:bg-white/5 rounded-lg transition-colors"
+                        onClick={() => setMobileOpen(false)}
+                      >
+                        {item.label}
+                      </Link>
+                      <button
+                        onClick={() => setMobileExpanded(isExpanded ? null : item.label)}
+                        className="p-3 text-white/40 hover:text-white/80 transition-colors"
+                        aria-expanded={isExpanded}
+                        aria-label={`${isExpanded ? 'Collapse' : 'Expand'} ${item.label}`}
+                      >
+                        <ChevronDown className={cn(
+                          'w-5 h-5 transition-transform duration-200',
+                          isExpanded && 'rotate-180'
+                        )} />
+                      </button>
+                    </div>
+
+                    {/* Collapsible children */}
+                    <div
+                      className={cn(
+                        'overflow-hidden transition-all duration-200',
+                        isExpanded ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
+                      )}
+                    >
+                      <div className="pl-4 pb-2 space-y-0.5">
+                        {item.children!.map((child) => (
+                          <Link
+                            key={child.href}
+                            href={child.href}
+                            className="block px-3 py-2.5 text-sm text-white/50 hover:text-white hover:bg-white/5 rounded-lg transition-colors"
+                            onClick={() => setMobileOpen(false)}
+                          >
+                            {child.label}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  </>
+                ) : (
+                  <Link
+                    href={item.href}
+                    className="block px-3 py-3 text-base font-medium text-white/80 hover:text-white hover:bg-white/5 rounded-lg transition-colors"
+                    onClick={() => setMobileOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+                )}
+              </div>
+            );
+          })}
+        </nav>
+
+        {/* Bottom CTA */}
+        <div className="shrink-0 p-4 border-t border-white/10 space-y-3">
+          <Button href="/contact" className="w-full" size="sm" onClick={() => setMobileOpen(false)}>
+            Get a Quote
+          </Button>
+          <a
+            href={`tel:${siteConfig.phoneRaw}`}
+            className="flex items-center justify-center gap-2 w-full px-4 py-2.5 text-sm font-medium rounded-lg border border-white/20 text-white/80 hover:text-white hover:border-white/40 transition-colors"
+          >
+            <Phone className="w-4 h-4" />
+            Call Now
+          </a>
+        </div>
+      </div>
+
+      {/* Backdrop */}
+      {mobileOpen && (
+        <div
+          className="lg:hidden fixed inset-0 bg-black/50 z-40"
+          onClick={() => setMobileOpen(false)}
+        />
+      )}
     </header>
   );
 }
