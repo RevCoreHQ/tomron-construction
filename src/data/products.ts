@@ -105,38 +105,6 @@ export const productBrands: ProductBrand[] = [
 
   // Windows & Doors
   {
-    slug: 'centra-windows',
-    name: 'Centra Windows',
-    category: 'windows',
-    categoryLabel: 'Vinyl Windows & Doors',
-    description:
-      'BC\'s #1 window manufacturer, 100% employee-owned and based in Langley, BC. Centra has 40 years of experience manufacturing custom vinyl windows and exterior doors designed for BC\'s climate. Every window is built to order at their Langley plant, backed by an industry-leading 30-year warranty.',
-    website: 'https://www.centrawindows.com/',
-    logoDomain: 'centrawindows.com',
-    features: [
-      '100% employee-owned, every team member is an owner',
-      'Custom manufactured in Langley, BC, built for local climate',
-      'Industry-leading 30-year warranty',
-      '40 years of experience, over 550 large-scale projects completed',
-    ],
-  },
-  {
-    slug: 'tyee-windows',
-    name: 'Tyee Windows',
-    category: 'windows',
-    categoryLabel: 'Vinyl Windows & Patio Doors',
-    description:
-      'Family-owned and operated vinyl window manufacturer based in Abbotsford, BC since 1991. Tyee manufactures 100% of their products in-house with strict quality inspections at every stage. All products meet Energy Star standards and feature low-e glass that reduces UV rays by up to 75%.',
-    website: 'https://www.tyeewindows.com/',
-    logoDomain: 'tyeewindows.com',
-    features: [
-      'Family-owned, manufacturing in Abbotsford since 1991',
-      '100% in-house manufacturing with strict quality inspections',
-      'Energy Star certified, reduce energy costs by up to 15%',
-      'Lifetime warranty on vinyl extrusions',
-    ],
-  },
-  {
     slug: 'plygem',
     name: 'Ply Gem Canada',
     category: 'windows',

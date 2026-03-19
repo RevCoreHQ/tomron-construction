@@ -20,7 +20,7 @@ export const metadata: Metadata = generatePageMetadata({
 const frameMaterials = [
   {
     name: 'Vinyl (PVC)',
-    brands: 'Centra, Tyee, Ply Gem',
+    brands: 'Ply Gem',
     costRange: '$600 – $1,200 per window',
     lifespan: '25 – 40 years',
     energyRating: 'Excellent',

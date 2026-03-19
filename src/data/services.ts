@@ -316,7 +316,7 @@ export const services: ServiceData[] = [
       'Single-pane windows that are 20+ years old',
       'Water stains or mould on the sill or surrounding wall',
     ],
-    brandSlugs: ['centra-windows', 'tyee-windows', 'plygem', 'vitrum-glass'],
+    brandSlugs: ['plygem', 'vitrum-glass'],
     body: [
       {
         heading: 'When to Replace Your Windows',
@@ -384,7 +384,7 @@ export const services: ServiceData[] = [
       'Outdated design that hurts your home\'s curb appeal',
       'Security concerns with an aging or damaged entry door',
     ],
-    brandSlugs: ['centra-windows', 'tyee-windows', 'plygem'],
+    brandSlugs: ['plygem'],
     body: [
       {
         heading: 'Entry Doors That Make a Statement',

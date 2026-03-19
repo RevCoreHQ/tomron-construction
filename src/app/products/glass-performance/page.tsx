@@ -290,7 +290,7 @@ export default function GlassPerformancePage() {
           </h2>
           <div className="prose prose-lg text-slate-600 max-w-none">
             <p>
-              When you work with Tomron Construction on a window replacement project, the glass performance is consistent and excellent across all the window brands we carry, <Link href="/products" className="text-brand-600 hover:text-brand-700 font-semibold">Centra, Tyee, and Ply Gem</Link>. The R-values and Low-E coating performance remain the same because they all source their sealed glass units from Vitrum.
+              When you work with Tomron Construction on a window replacement project, the glass performance is consistent and excellent across the window brands we carry, including <Link href="/products" className="text-brand-600 hover:text-brand-700 font-semibold">Ply Gem</Link>. The R-values and Low-E coating performance remain the same because they source their sealed glass units from Vitrum.
             </p>
             <p>
               This means your decision comes down to frame material preferences, hardware quality, aesthetics, and budget, not glass quality. Every option we offer delivers the same high-performance sealed units, ensuring your home is protected against BC&apos;s rain, cold winters, and warm summers.
