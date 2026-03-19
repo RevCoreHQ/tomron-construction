@@ -46,7 +46,7 @@ export default function AboutPage() {
             <ScrollReveal direction="up" delay={0.1}>
               <div className="prose prose-lg text-slate-600 space-y-4">
                 <p>
-                  Tomron Construction was founded by Brendan Prendergast on a simple principle: every homeowner deserves quality exterior work completed by people who take genuine pride in their craft. For over a decade, our family-run team has been installing siding, windows, doors, and building envelope systems across Maple Ridge and the Lower Mainland, BC.
+                  Tomron Construction was founded by Brendan Prendergast on a simple principle: every homeowner deserves quality exterior work completed by people who take genuine pride in their craft. For years, our family-run team has been installing siding, windows, doors, and building envelope systems across Maple Ridge and the Lower Mainland, BC.
                 </p>
                 <p>
                   As a locally owned and operated business based in Maple Ridge, we are deeply invested in the communities we serve. Our team understands the unique weather challenges of the Lower Mainland, from heavy rain and moisture to temperature swings, and we engineer every project to stand up to the conditions that BC homes face year-round.

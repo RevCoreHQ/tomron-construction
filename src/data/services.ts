@@ -255,7 +255,7 @@ export const services: ServiceData[] = [
     body: [
       {
         heading: 'Renovation Done Right',
-        text: "Renovation work demands a contractor who can manage complexity, coordinate trades, and maintain quality across every phase of the project. Tomron Construction brings over a decade of construction experience to every renovation, from the initial design conversation through permits, demolition, structural work, mechanical coordination, finishing, and final inspection. We do not disappear mid-project or leave you guessing about timelines and costs. Our approach is simple: clear communication from day one, honest pricing with no hidden extras, and disciplined execution that keeps the project moving toward completion.",
+        text: "Renovation work demands a contractor who can manage complexity, coordinate trades, and maintain quality across every phase of the project. Tomron Construction brings years of construction experience to every renovation, from the initial design conversation through permits, demolition, structural work, mechanical coordination, finishing, and final inspection. We do not disappear mid-project or leave you guessing about timelines and costs. Our approach is simple: clear communication from day one, honest pricing with no hidden extras, and disciplined execution that keeps the project moving toward completion.",
       },
       {
         heading: 'From Small Updates to Major Transformations',

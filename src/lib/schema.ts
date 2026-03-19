@@ -91,7 +91,7 @@ export function localBusinessSchema() {
       name: 'Brendan Prendergast',
       jobTitle: 'Owner',
     },
-    foundingDate: '2014',
+    foundingDate: '2018',
     aggregateRating: {
       '@type': 'AggregateRating',
       ratingValue: 5,
@@ -157,7 +157,7 @@ export function organizationSchema() {
       name: 'Brendan Prendergast',
       jobTitle: 'Owner',
     },
-    foundingDate: '2014',
+    foundingDate: '2018',
     numberOfEmployees: {
       '@type': 'QuantitativeValue',
       minValue: 2,

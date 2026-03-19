@@ -82,9 +82,9 @@ export default function HomePage() {
 
           <div className="grid md:grid-cols-2 gap-8 lg:gap-12 mb-16">
             <div className="bg-white rounded-lg p-6 lg:p-8 shadow-card">
-              <h3 className="text-xl font-display font-bold text-charcoal-900 mb-3">Family-Owned Since 2014</h3>
+              <h3 className="text-xl font-display font-bold text-charcoal-900 mb-3">Family-Owned Since 2018</h3>
               <p className="text-slate-600 leading-relaxed">
-                Tomron Construction is a family-owned siding and exterior contractor based in Maple Ridge, BC. Founded by Brendan Prendergast, we have spent over a decade building a reputation for quality craftsmanship, honest pricing, and reliable service. Every project, whether it is a complete siding replacement, new windows, or a full renovation, is treated with the same care and attention to detail.
+                Tomron Construction is a family-owned siding and exterior contractor based in Maple Ridge, BC. Founded by Brendan Prendergast, we have spent years building a reputation for quality craftsmanship, honest pricing, and reliable service. Every project, whether it is a complete siding replacement, new windows, or a full renovation, is treated with the same care and attention to detail.
               </p>
             </div>
             <div className="bg-white rounded-lg p-6 lg:p-8 shadow-card">

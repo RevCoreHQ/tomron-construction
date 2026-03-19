@@ -27,7 +27,7 @@ export const serviceAreas: ServiceAreaData[] = [
       'Siding, window, building envelope & renovation services in Maple Ridge, BC. Locally owned, 10+ years experience. Free quotes.',
     h1: 'Siding & Exterior Construction in Maple Ridge',
     intro:
-      'Tomron Construction is proudly based in Maple Ridge and has served this community for over a decade. As your neighbours, we understand the unique challenges that Maple Ridge homes face, from heavy rainfall and moisture exposure to the specific building styles and materials common in the area. Whether you need new siding, window replacements, building envelope repairs, or a complete renovation, our family-run team delivers the quality craftsmanship your home deserves.',
+      'Tomron Construction is proudly based in Maple Ridge and has served this community for years. As your neighbours, we understand the unique challenges that Maple Ridge homes face, from heavy rainfall and moisture exposure to the specific building styles and materials common in the area. Whether you need new siding, window replacements, building envelope repairs, or a complete renovation, our family-run team delivers the quality craftsmanship your home deserves.',
     isPrimary: true,
     body: [
       {
@@ -97,7 +97,7 @@ export const serviceAreas: ServiceAreaData[] = [
       'Siding installation, window replacement, and home renovation services in Delta, BC. Family-owned contractor, 10+ years experience. Free quotes.',
     h1: 'Siding & Exterior Construction in Delta',
     intro:
-      'Delta homeowners count on Tomron Construction for quality siding, window, and door installation, building envelope repairs, and home renovations. From Ladner and North Delta to the farming communities of East Delta, our team provides expert craftsmanship backed by over a decade of Lower Mainland experience.',
+      'Delta homeowners count on Tomron Construction for quality siding, window, and door installation, building envelope repairs, and home renovations. From Ladner and North Delta to the farming communities of East Delta, our team provides expert craftsmanship backed by years of Lower Mainland experience.',
     isPrimary: true,
     body: [
       {

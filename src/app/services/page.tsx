@@ -34,7 +34,7 @@ export default function ServicesPage() {
             </TextReveal>
             <ScrollReveal direction="up" delay={0.1}>
               <p className="text-lg text-slate-600 leading-relaxed">
-                From expert siding installation and building envelope protection to window and door replacement and full home renovations, Tomron Construction delivers every aspect of exterior and interior construction with over a decade of craftsmanship.
+                From expert siding installation and building envelope protection to window and door replacement and full home renovations, Tomron Construction delivers every aspect of exterior and interior construction with years of craftsmanship.
               </p>
             </ScrollReveal>
           </div>
