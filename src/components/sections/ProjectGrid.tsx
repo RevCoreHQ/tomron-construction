@@ -683,7 +683,8 @@ export function ProjectGrid() {
     <>
       <section className="section-padding">
         <div className="container-wide">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {/* Masonry layout using CSS columns */}
+          <div className="columns-1 sm:columns-2 lg:columns-3 gap-4">
             {projects.map((project) => (
               <motion.div
                 key={project.id}
@@ -691,23 +692,17 @@ export function ProjectGrid() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-40px' }}
                 transition={{ duration: 0.4 }}
-                className="group relative rounded-lg overflow-hidden shadow-card hover:shadow-lg transition-shadow duration-300 cursor-pointer"
+                className="mb-4 break-inside-avoid cursor-pointer"
                 onClick={() => setLightbox(project.image)}
               >
-                <div className="relative aspect-[4/3]">
-                  <Image
-                    src={project.image}
-                    alt={project.alt}
-                    fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-charcoal-950/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-2 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
-                  <p className="text-white font-semibold text-sm">{project.title}</p>
-                  <p className="text-white/60 text-xs mt-0.5">{project.location}</p>
-                </div>
+                <Image
+                  src={project.image}
+                  alt={project.alt}
+                  width={800}
+                  height={600}
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="w-full h-auto rounded-lg hover:opacity-90 transition-opacity duration-300"
+                />
               </motion.div>
             ))}
           </div>
@@ -737,14 +732,13 @@ export function ProjectGrid() {
               exit={{ scale: 0.9 }}
               transition={{ duration: 0.2 }}
               className="relative max-w-5xl w-full max-h-[85vh]"
+              onClick={(e) => e.stopPropagation()}
             >
-              <Image
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
                 src={lightbox}
                 alt="Project photo by Tomron Construction"
-                width={1600}
-                height={1200}
                 className="w-full h-auto max-h-[85vh] object-contain rounded-lg"
-                onClick={(e) => e.stopPropagation()}
               />
             </motion.div>
           </motion.div>
