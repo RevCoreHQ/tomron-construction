@@ -11,7 +11,7 @@ import { TextReveal } from '@/components/motion/TextReveal';
 
 export const metadata: Metadata = generatePageMetadata({
   title: 'Project Gallery | Tomron Construction',
-  description: 'Browse 60+ completed siding, window, door, flashing, and renovation projects across Maple Ridge & the Lower Mainland, BC. See our work firsthand.',
+  description: 'Browse 90+ completed siding, window, door, flashing, and renovation projects across Maple Ridge & the Lower Mainland, BC. See our work firsthand.',
   path: '/gallery',
 });
 
