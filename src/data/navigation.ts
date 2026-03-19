@@ -17,19 +17,21 @@ export const mainNav: NavItem[] = [
       { label: 'Door Replacement', href: '/services/door-replacement' },
     ],
   },
-  {
-    label: 'Products',
-    href: '/products',
-    children: [
-      { label: 'All Products & Partners', href: '/products' },
-      { label: 'Siding Comparison Guide', href: '/products/siding-comparison' },
-      { label: 'Window Buying Guide', href: '/products/window-buying-guide' },
-      { label: 'Glass Performance Guide', href: '/products/glass-performance' },
-      { label: 'Building Envelope Guide', href: '/products/building-envelope' },
-      { label: 'BC Rebates & Incentives', href: '/products/bc-rebates' },
-      { label: 'Cost Estimator', href: '/products/cost-estimator' },
-    ],
-  },
+  // NOTE: Products tab hidden from nav until pages are approved.
+  // To re-enable, uncomment the block below:
+  // {
+  //   label: 'Products',
+  //   href: '/products',
+  //   children: [
+  //     { label: 'All Products & Partners', href: '/products' },
+  //     { label: 'Siding Comparison Guide', href: '/products/siding-comparison' },
+  //     { label: 'Window Buying Guide', href: '/products/window-buying-guide' },
+  //     { label: 'Glass Performance Guide', href: '/products/glass-performance' },
+  //     { label: 'Building Envelope Guide', href: '/products/building-envelope' },
+  //     { label: 'BC Rebates & Incentives', href: '/products/bc-rebates' },
+  //     { label: 'Cost Estimator', href: '/products/cost-estimator' },
+  //   ],
+  // },
   { label: 'Gallery', href: '/gallery' },
   {
     label: 'Areas',
@@ -62,8 +64,8 @@ export const footerNav = {
   company: [
     { label: 'About Us', href: '/about' },
     { label: 'Our Process', href: '/process' },
-    { label: 'Products & Partners', href: '/products' },
-    { label: 'Cost Estimator', href: '/products/cost-estimator' },
+    // { label: 'Products & Partners', href: '/products' },
+    // { label: 'Cost Estimator', href: '/products/cost-estimator' },
     { label: 'Gallery', href: '/gallery' },
     { label: 'FAQ', href: '/faq' },
     { label: 'Contact', href: '/contact' },
