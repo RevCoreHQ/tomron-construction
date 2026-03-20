@@ -3,7 +3,6 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { X } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
 
 export const projects = [
   // --- Siding & Cladding ---
@@ -686,12 +685,8 @@ export function ProjectGrid() {
           {/* Masonry layout using CSS columns */}
           <div className="columns-1 sm:columns-2 lg:columns-3 gap-4">
             {projects.map((project) => (
-              <motion.div
+              <div
                 key={project.id}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-40px' }}
-                transition={{ duration: 0.4 }}
                 className="mb-4 break-inside-avoid cursor-pointer"
                 onClick={() => setLightbox(project.image)}
               >
@@ -703,47 +698,37 @@ export function ProjectGrid() {
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   className="w-full h-auto rounded-lg hover:opacity-90 transition-opacity duration-300"
                 />
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      <AnimatePresence>
-        {lightbox && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4"
+      {lightbox && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4"
+          onClick={() => setLightbox(null)}
+        >
+          <button
             onClick={() => setLightbox(null)}
+            className="absolute top-4 right-4 text-white/80 hover:text-white transition-colors z-10"
+            aria-label="Close"
           >
-            <button
-              onClick={() => setLightbox(null)}
-              className="absolute top-4 right-4 text-white/80 hover:text-white transition-colors z-10"
-              aria-label="Close"
-            >
-              <X className="w-8 h-8" />
-            </button>
-            <motion.div
-              initial={{ scale: 0.9 }}
-              animate={{ scale: 1 }}
-              exit={{ scale: 0.9 }}
-              transition={{ duration: 0.2 }}
-              className="relative max-w-5xl w-full max-h-[85vh]"
-              onClick={(e) => e.stopPropagation()}
-            >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={lightbox}
-                alt="Project photo by Tomron Construction"
-                className="w-full h-auto max-h-[85vh] object-contain rounded-lg"
-              />
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+            <X className="w-8 h-8" />
+          </button>
+          <div
+            className="relative max-w-5xl w-full max-h-[85vh]"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={lightbox}
+              alt="Project photo by Tomron Construction"
+              className="w-full h-auto max-h-[85vh] object-contain rounded-lg"
+            />
+          </div>
+        </div>
+      )}
     </>
   );
 }

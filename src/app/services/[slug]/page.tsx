@@ -1,6 +1,5 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight, AlertTriangle, CheckCircle } from 'lucide-react';
 import { services, getServiceBySlug, getRelatedServices } from '@/data/services';
@@ -62,22 +61,8 @@ export default async function ServicePage({ params }: Props) {
       />
 
       {/* Hero */}
-      <section className="relative py-16 lg:py-24 bg-charcoal-900 overflow-hidden">
-        {service.heroImage && (
-          <>
-            <Image
-              src={service.heroImage}
-              alt={service.heroAlt}
-              fill
-              priority
-              sizes="100vw"
-              quality={70}
-              className="object-cover object-[40%_50%] scale-110"
-            />
-            <div className="absolute inset-0 bg-charcoal-950/75" />
-          </>
-        )}
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-16 lg:py-24 bg-charcoal-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumbs
             items={[
               { label: 'Services', href: '/services' },

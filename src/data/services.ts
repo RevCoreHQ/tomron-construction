@@ -247,7 +247,7 @@ export const services: ServiceData[] = [
       'Worn-out finishes, flooring, or fixtures throughout the home',
       'Cramped kitchen or bathrooms that lack storage and counter space',
       'Dark rooms that need better natural light or open floor plans',
-      'Structural concerns like sagging floors or cracked foundations',
+      'Structural concerns like sagging floors or uneven settling',
       'Planning to sell and want to maximize home value first',
       'Growing family that needs more functional living space',
     ],

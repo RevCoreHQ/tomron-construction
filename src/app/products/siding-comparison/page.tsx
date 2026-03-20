@@ -260,7 +260,7 @@ export default function SidingComparisonPage() {
                   <div>
                     <p className={`text-sm font-semibold uppercase tracking-wider mb-2 ${isDark ? 'text-brand-400' : 'text-brand-600'}`}>{siding.brand}</p>
                     <h2 className={`text-3xl sm:text-4xl font-display font-extrabold ${isDark ? 'text-white' : 'text-charcoal-900'}`}>
-                      {siding.name} Siding
+                      {siding.name}{siding.name.includes('Siding') ? '' : ' Siding'}
                     </h2>
                   </div>
                   <Link
