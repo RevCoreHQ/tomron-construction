@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { generatePageMetadata } from '@/lib/metadata';
 import { Hero } from '@/components/sections/Hero';
-import { ProcessSteps } from '@/components/sections/ProcessSteps';
+
 import { CTASection } from '@/components/sections/CTASection';
 import { FAQAccordion } from '@/components/sections/FAQAccordion';
 import { HomeServiceCards } from '@/components/sections/HomeServiceCards';
@@ -61,8 +61,6 @@ export default function HomePage() {
       <StatsBar />
 
       <HomeServiceCards />
-
-      <ProcessSteps />
 
       <MeetOwner />
 
