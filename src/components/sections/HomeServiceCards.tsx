@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { ArrowRight, ArrowUpRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 const services = [
   {
@@ -46,7 +46,7 @@ export function HomeServiceCards() {
   return (
     <section className="section-padding">
       <div className="container-wide">
-        <div className="flex items-end justify-between mb-10">
+        <div className="flex items-end justify-between mb-12">
           <div>
             <p className="text-sm font-semibold text-brand-600 uppercase tracking-wider mb-2">What We Do</p>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-charcoal-900">
@@ -61,23 +61,25 @@ export function HomeServiceCards() {
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="divide-y divide-neutral-200 border-t border-neutral-200">
           {services.map((service) => (
-            <Link key={service.href} href={service.href} className="group block">
-              <div className="bg-white border border-neutral-200 rounded-lg p-6 h-full flex flex-col justify-between transition-colors duration-200 group-hover:border-brand-300">
-                <span className="text-4xl font-display font-extrabold text-neutral-100 mb-6">{service.number}</span>
-                <div>
-                  <h3 className="text-lg font-display font-bold text-charcoal-900 mb-2 group-hover:text-brand-600 transition-colors">
-                    {service.title}
-                  </h3>
-                  <p className="text-sm text-slate-500 leading-relaxed mb-4">
-                    {service.description}
-                  </p>
-                  <div className="flex items-center gap-2 text-sm font-semibold text-brand-600">
-                    Learn More <ArrowUpRight className="w-4 h-4" />
-                  </div>
-                </div>
+            <Link
+              key={service.href}
+              href={service.href}
+              className="group flex items-center gap-6 sm:gap-10 py-6 sm:py-8 transition-colors hover:bg-neutral-50 -mx-4 px-4 sm:-mx-6 sm:px-6"
+            >
+              <span className="text-3xl sm:text-4xl font-display font-extrabold text-neutral-200 group-hover:text-brand-200 transition-colors shrink-0 w-12 sm:w-16">
+                {service.number}
+              </span>
+              <div className="flex-1 min-w-0">
+                <h3 className="text-lg sm:text-xl font-display font-bold text-charcoal-900 group-hover:text-brand-600 transition-colors">
+                  {service.title}
+                </h3>
+                <p className="text-sm text-slate-500 mt-1 hidden sm:block">
+                  {service.description}
+                </p>
               </div>
+              <ArrowRight className="w-5 h-5 text-neutral-300 group-hover:text-brand-600 group-hover:translate-x-1 transition-all shrink-0" />
             </Link>
           ))}
         </div>
