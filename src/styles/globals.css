@@ -28,6 +28,12 @@
   body {
     @apply font-body text-slate-800 bg-white;
     font-feature-settings: 'kern' 1, 'liga' 1;
+    animation: bodyFadeIn 0.3s ease-in;
+  }
+
+  @keyframes bodyFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
   }
 
   h1, h2, h3, h4, h5, h6 {
