@@ -1,8 +1,6 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { services, ServiceData } from '@/data/services';
-import { ScrollReveal } from '@/components/motion/ScrollReveal';
 
 interface ServiceCardsProps {
   category?: ServiceData['category'];
@@ -19,51 +17,37 @@ export function ServiceCards({ category, limit, title, subtitle }: ServiceCardsP
     <section className="section-padding">
       <div className="container-wide">
         {title && (
-          <div className="text-center mb-12 lg:mb-16">
+          <div className="mb-8">
             {subtitle && (
               <p className="text-sm font-semibold text-brand-600 uppercase tracking-wider mb-2">
                 {subtitle}
               </p>
             )}
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-charcoal-900">
+            <h2 className="text-3xl sm:text-4xl font-display font-extrabold text-charcoal-900">
               {title}
             </h2>
           </div>
         )}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div className="divide-y divide-neutral-200 border-t border-neutral-200">
           {items.map((service, index) => (
-            <ScrollReveal key={service.slug} direction="up" delay={index * 0.08}>
             <Link
+              key={service.slug}
               href={`/services/${service.slug}`}
-              className="group relative block h-full bg-white rounded-lg border border-slate-100 p-6 lg:p-8 shadow-card hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+              className="group flex items-center gap-6 sm:gap-10 py-6 sm:py-8 transition-colors hover:bg-neutral-50 -mx-4 px-4 sm:-mx-6 sm:px-6"
             >
-              <div className="relative h-48 mb-6 rounded-lg overflow-hidden bg-slate-200">
-                {service.heroImage && (
-                  <Image
-                    src={service.heroImage}
-                    alt={service.heroAlt}
-                    fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    quality={75}
-                    priority={index < 3}
-                    className="object-cover object-[40%_50%] scale-110"
-                  />
-                )}
-              </div>
-              <div className="inline-block px-2.5 py-1 text-xs font-medium bg-brand-50 text-brand-700 rounded-full mb-3 capitalize">
-                {service.category}
-              </div>
-              <h3 className="text-xl font-display font-semibold text-slate-900 mb-3 group-hover:text-brand-600 transition-colors">
-                {service.title}
-              </h3>
-              <p className="text-sm text-slate-600 leading-relaxed mb-4 line-clamp-3">
-                {service.intro}
-              </p>
-              <span className="inline-flex items-center gap-1.5 text-sm font-medium text-brand-600 group-hover:gap-2.5 transition-all">
-                Learn More <ArrowRight className="w-4 h-4" />
+              <span className="text-3xl sm:text-4xl font-display font-extrabold text-neutral-200 group-hover:text-brand-200 transition-colors shrink-0 w-12 sm:w-16">
+                {String(index + 1).padStart(2, '0')}
               </span>
+              <div className="flex-1 min-w-0">
+                <h3 className="text-lg sm:text-xl font-display font-bold text-charcoal-900 group-hover:text-brand-600 transition-colors">
+                  {service.title}
+                </h3>
+                <p className="text-sm text-slate-500 mt-1 hidden sm:block line-clamp-2">
+                  {service.metaDescription}
+                </p>
+              </div>
+              <ArrowRight className="w-5 h-5 text-neutral-300 group-hover:text-brand-600 group-hover:translate-x-1 transition-all shrink-0" />
             </Link>
-            </ScrollReveal>
           ))}
         </div>
       </div>
