@@ -21,7 +21,6 @@ const nextConfig = {
       { source: '/doors', destination: '/services/door-replacement', permanent: true },
 
       // Google Ads old URL patterns
-      { source: '/exterior-siding/:path*', destination: '/services/exterior-siding-cladding', permanent: true },
       { source: '/services/exterior-siding-installation', destination: '/services/exterior-siding-cladding', permanent: true },
       { source: '/services/siding', destination: '/services/exterior-siding-cladding', permanent: true },
       { source: '/services/siding-installation', destination: '/services/exterior-siding-cladding', permanent: true },
