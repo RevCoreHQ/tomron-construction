@@ -14,10 +14,28 @@ const nextConfig = {
   },
   async redirects() {
     return [
+      // Old site slugs
       { source: '/exterior-siding-and-cladding', destination: '/services/exterior-siding-cladding', permanent: true },
       { source: '/siding', destination: '/services/exterior-siding-cladding', permanent: true },
       { source: '/windows', destination: '/services/window-replacement', permanent: true },
       { source: '/doors', destination: '/services/door-replacement', permanent: true },
+
+      // Google Ads old URL patterns
+      { source: '/exterior-siding/:path*', destination: '/services/exterior-siding-cladding', permanent: true },
+      { source: '/services/exterior-siding-installation', destination: '/services/exterior-siding-cladding', permanent: true },
+      { source: '/services/siding', destination: '/services/exterior-siding-cladding', permanent: true },
+      { source: '/services/siding-installation', destination: '/services/exterior-siding-cladding', permanent: true },
+      { source: '/services/windows', destination: '/services/window-replacement', permanent: true },
+      { source: '/services/window-installation', destination: '/services/window-replacement', permanent: true },
+      { source: '/services/doors', destination: '/services/door-replacement', permanent: true },
+      { source: '/services/door-installation', destination: '/services/door-replacement', permanent: true },
+      { source: '/services/renovation', destination: '/services/home-renovation', permanent: true },
+      { source: '/services/renovations', destination: '/services/home-renovation', permanent: true },
+      { source: '/services/home-renovations', destination: '/services/home-renovation', permanent: true },
+      { source: '/services/flashing', destination: '/services/metal-flashing', permanent: true },
+      { source: '/services/envelope', destination: '/services/building-envelope', permanent: true },
+      { source: '/renovation', destination: '/services/home-renovation', permanent: true },
+      { source: '/flashing', destination: '/services/metal-flashing', permanent: true },
     ];
   },
 };
