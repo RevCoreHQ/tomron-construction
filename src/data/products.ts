@@ -180,6 +180,24 @@ export const productBrands: ProductBrand[] = [
     ],
   },
 
+  {
+    slug: 'haney-builders',
+    name: 'Haney Builders Supplies',
+    category: 'building-products',
+    categoryLabel: 'Building Materials & Lumber',
+    description:
+      'Family-owned building materials supplier located in Maple Ridge, BC. Haney Builders carries a comprehensive range of construction materials including lumber, plywood, mouldings, sheet goods, hardware, concrete products, and power tools. A go-to local supplier for quality framing and finishing materials.',
+    website: 'https://www.haneybuilders.com/',
+    logoDomain: 'haneybuilders.com',
+    logoUrl: 'https://assets.cdn.filesafe.space/oyhdrza3SwoM8YuXOsja/media/69e64a5eed4bb7f4ed3546b0.jpeg',
+    features: [
+      'Family-owned, located in Maple Ridge on Dewdney Trunk Road',
+      'Full range of lumber, cedar, spruce, and pressure-treated',
+      'Extensive moulding, plywood, and sheet goods selection',
+      'Hardware, concrete, electrical, and plumbing supplies',
+    ],
+  },
+
   // Flashing
   {
     slug: 'tri-city-flashing',
