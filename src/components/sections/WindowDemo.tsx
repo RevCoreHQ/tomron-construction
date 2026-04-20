@@ -16,246 +16,257 @@ const slideVariants = {
   exit: (dir: number) => ({ x: dir > 0 ? -60 : 60, opacity: 0 }),
 };
 
-/* ────────────── Realistic Window Cross-Section (SVG) ────────────── */
+/* ────────────── Front-Facing Window (Realistic) ────────────── */
 
-function WindowCrossSection({ activeId }: { activeId: string | null }) {
+function WindowFrontView({ activeId }: { activeId: string | null }) {
   const isActive = (id: string) => activeId === id;
+  const glassActive = isActive('outer-pane') || isActive('inner-pane') || isActive('low-e-coating') || isActive('argon-gas');
 
   return (
-    <div className="relative w-full max-w-lg mx-auto">
-      <svg
-        viewBox="0 0 500 600"
-        className="w-full h-auto drop-shadow-xl"
-        aria-label="Window cross-section diagram showing components of a double-pane Low-E window"
-      >
-        <defs>
-          {/* Glass gradient */}
-          <linearGradient id="glassGrad" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#bfdbfe" stopOpacity="0.6" />
-            <stop offset="50%" stopColor="#93c5fd" stopOpacity="0.4" />
-            <stop offset="100%" stopColor="#bfdbfe" stopOpacity="0.5" />
-          </linearGradient>
-          {/* Frame gradient */}
-          <linearGradient id="frameGrad" x1="0" y1="0" x2="1" y2="0">
-            <stop offset="0%" stopColor="#f5f5f4" />
-            <stop offset="15%" stopColor="#ffffff" />
-            <stop offset="85%" stopColor="#e7e5e4" />
-            <stop offset="100%" stopColor="#d6d3d1" />
-          </linearGradient>
-          {/* Frame inner chambers */}
-          <pattern id="chambers" width="12" height="12" patternUnits="userSpaceOnUse">
-            <rect width="12" height="12" fill="#f5f5f4" />
-            <rect x="1" y="1" width="10" height="10" fill="#fafaf9" rx="1" />
-          </pattern>
-          {/* Low-E shimmer */}
-          <linearGradient id="loweGrad" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#fbbf24" stopOpacity="0.3" />
-            <stop offset="30%" stopColor="#f59e0b" stopOpacity="0.7" />
-            <stop offset="70%" stopColor="#fbbf24" stopOpacity="0.7" />
-            <stop offset="100%" stopColor="#f59e0b" stopOpacity="0.3" />
-          </linearGradient>
-          {/* Argon gas subtle */}
-          <linearGradient id="argonGrad" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#dbeafe" stopOpacity="0.2" />
-            <stop offset="50%" stopColor="#bfdbfe" stopOpacity="0.15" />
-            <stop offset="100%" stopColor="#dbeafe" stopOpacity="0.2" />
-          </linearGradient>
-        </defs>
+    <svg viewBox="0 0 380 480" className="w-full h-auto max-w-[320px] mx-auto" role="img" aria-label="Front view of a vinyl double-hung window installed in a home exterior wall">
+      <defs>
+        <linearGradient id="skyReflection" x1="0" y1="0" x2="0.3" y2="1">
+          <stop offset="0%" stopColor="#7dd3fc" stopOpacity="0.5" />
+          <stop offset="40%" stopColor="#bae6fd" stopOpacity="0.35" />
+          <stop offset="70%" stopColor="#e0f2fe" stopOpacity="0.25" />
+          <stop offset="100%" stopColor="#f0f9ff" stopOpacity="0.2" />
+        </linearGradient>
+        <linearGradient id="frameDepth" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="#ffffff" />
+          <stop offset="100%" stopColor="#f1f0ee" />
+        </linearGradient>
+        <linearGradient id="sillDepth" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="#ffffff" />
+          <stop offset="60%" stopColor="#f5f5f4" />
+          <stop offset="100%" stopColor="#e7e5e4" />
+        </linearGradient>
+        <filter id="frameShadow">
+          <feDropShadow dx="0" dy="2" stdDeviation="4" floodOpacity="0.12" />
+        </filter>
+        <filter id="windowGlow">
+          <feGaussianBlur stdDeviation="6" result="blur" />
+          <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+        </filter>
+      </defs>
 
-        {/* ── Background context ── */}
-        {/* Exterior side indicator */}
-        <rect x="0" y="0" width="140" height="600" fill="#f0f9ff" opacity="0.5" />
-        <text x="70" y="30" textAnchor="middle" className="text-[11px]" fill="#64748b" fontWeight="600" fontSize="11" letterSpacing="1">
-          EXTERIOR
-        </text>
-        {/* Interior side indicator */}
-        <rect x="360" y="0" width="140" height="600" fill="#fef3c7" opacity="0.3" />
-        <text x="430" y="30" textAnchor="middle" className="text-[11px]" fill="#64748b" fontWeight="600" fontSize="11" letterSpacing="1">
-          INTERIOR
-        </text>
-
-        {/* ── FRAME (outer) ── */}
-        <g opacity={isActive('frame') ? 1 : 0.95}>
-          {/* Left frame profile */}
-          <rect
-            x="60" y="50" width="55" height="500" rx="3"
-            fill="url(#frameGrad)"
-            stroke={isActive('frame') ? '#2563eb' : '#a8a29e'}
-            strokeWidth={isActive('frame') ? 2.5 : 1}
-          />
-          {/* Frame chamber lines */}
-          <line x1="75" y1="60" x2="75" y2="540" stroke="#d6d3d1" strokeWidth="0.5" />
-          <line x1="88" y1="60" x2="88" y2="540" stroke="#d6d3d1" strokeWidth="0.5" />
-          <line x1="100" y1="60" x2="100" y2="540" stroke="#d6d3d1" strokeWidth="0.5" />
-          {/* Right frame profile */}
-          <rect
-            x="385" y="50" width="55" height="500" rx="3"
-            fill="url(#frameGrad)"
-            stroke={isActive('frame') ? '#2563eb' : '#a8a29e'}
-            strokeWidth={isActive('frame') ? 2.5 : 1}
-          />
-          <line x1="400" y1="60" x2="400" y2="540" stroke="#d6d3d1" strokeWidth="0.5" />
-          <line x1="413" y1="60" x2="413" y2="540" stroke="#d6d3d1" strokeWidth="0.5" />
-          <line x1="425" y1="60" x2="425" y2="540" stroke="#d6d3d1" strokeWidth="0.5" />
-          {/* Top frame */}
-          <rect
-            x="60" y="50" width="380" height="35" rx="3"
-            fill="url(#frameGrad)"
-            stroke={isActive('frame') ? '#2563eb' : '#a8a29e'}
-            strokeWidth={isActive('frame') ? 2.5 : 1}
-          />
-          {/* Bottom frame */}
-          <rect
-            x="60" y="515" width="380" height="35" rx="3"
-            fill="url(#frameGrad)"
-            stroke={isActive('frame') ? '#2563eb' : '#a8a29e'}
-            strokeWidth={isActive('frame') ? 2.5 : 1}
-          />
+      {/* ── Exterior wall with lap siding ── */}
+      <rect width="380" height="480" fill="#d6cfc6" rx="6" />
+      {Array.from({ length: 19 }, (_, i) => (
+        <g key={i}>
+          <line x1="0" y1={i * 25 + 12} x2="380" y2={i * 25 + 12} stroke="#cac3b9" strokeWidth="0.8" />
+          <line x1="0" y1={i * 25 + 13} x2="380" y2={i * 25 + 13} stroke="#ddd7ce" strokeWidth="0.4" />
         </g>
+      ))}
 
-        {/* ── WEATHERSTRIPPING ── */}
-        <g opacity={isActive('weatherstrip') ? 1 : 0.8}>
-          <rect
-            x="112" y="82" width="6" height="436" rx="3"
-            fill={isActive('weatherstrip') ? '#4ade80' : '#6b7280'}
-            stroke={isActive('weatherstrip') ? '#16a34a' : 'none'}
-            strokeWidth="1.5"
-          />
-          <rect
-            x="382" y="82" width="6" height="436" rx="3"
-            fill={isActive('weatherstrip') ? '#4ade80' : '#6b7280'}
-            stroke={isActive('weatherstrip') ? '#16a34a' : 'none'}
-            strokeWidth="1.5"
-          />
-        </g>
+      {/* ── Window shadow on wall ── */}
+      <rect x="48" y="52" width="284" height="368" rx="2" fill="rgba(0,0,0,0.08)" />
 
-        {/* ── OUTER GLASS PANE ── */}
-        <g opacity={isActive('outer-pane') ? 1 : 0.9}>
-          <rect
-            x="130" y="88" width="14" height="424" rx="1"
-            fill="url(#glassGrad)"
-            stroke={isActive('outer-pane') ? '#2563eb' : '#7dd3fc'}
-            strokeWidth={isActive('outer-pane') ? 2.5 : 1.5}
-          />
-          {/* Glass reflection highlight */}
-          <rect x="132" y="100" width="3" height="380" rx="1" fill="white" opacity="0.4" />
-        </g>
+      {/* ── Exterior casing (brick mould) ── */}
+      <rect x="42" y="44" width="296" height="372" rx="3" fill="#e8e8e6" stroke="#c8c6c2" strokeWidth="1" />
 
-        {/* ── LOW-E COATING (on inner surface of outer pane) ── */}
+      {/* ── Main frame ── */}
+      <g filter="url(#frameShadow)">
         <rect
-          x="143" y="88" width="3" height="424" rx="0.5"
-          fill="url(#loweGrad)"
-          stroke={isActive('low-e-coating') ? '#f59e0b' : 'none'}
-          strokeWidth="1.5"
-          opacity={isActive('low-e-coating') ? 1 : 0.7}
+          x="50" y="52" width="280" height="356" rx="2"
+          fill="url(#frameDepth)"
+          stroke={isActive('frame') ? '#2563eb' : '#d4d4d8'}
+          strokeWidth={isActive('frame') ? 3 : 1.5}
         />
-        {isActive('low-e-coating') && (
-          <g>
-            {/* Shimmer effect */}
-            <rect x="143" y="88" width="3" height="424" fill="#fbbf24" opacity="0.3">
-              <animate attributeName="opacity" values="0.3;0.6;0.3" dur="2s" repeatCount="indefinite" />
-            </rect>
-          </g>
-        )}
+      </g>
 
-        {/* ── ARGON GAS CAVITY ── */}
-        <rect
-          x="148" y="88" width="200" height="424"
-          fill="url(#argonGrad)"
-          stroke={isActive('argon-gas') ? '#3b82f6' : 'none'}
-          strokeWidth="2"
-          strokeDasharray={isActive('argon-gas') ? '6 3' : 'none'}
-        />
-        {/* Gas molecule indicators */}
-        {isActive('argon-gas') && (
-          <g opacity="0.5">
-            <circle cx="200" cy="200" r="4" fill="#93c5fd"><animate attributeName="cy" values="200;210;200" dur="3s" repeatCount="indefinite" /></circle>
-            <circle cx="260" cy="300" r="3" fill="#93c5fd"><animate attributeName="cy" values="300;290;300" dur="2.5s" repeatCount="indefinite" /></circle>
-            <circle cx="230" cy="400" r="3.5" fill="#93c5fd"><animate attributeName="cy" values="400;408;400" dur="3.5s" repeatCount="indefinite" /></circle>
-            <circle cx="300" cy="250" r="3" fill="#93c5fd"><animate attributeName="cy" values="250;258;250" dur="2.8s" repeatCount="indefinite" /></circle>
-            <text x="248" y="160" textAnchor="middle" fill="#3b82f6" fontSize="14" fontWeight="600">Ar</text>
-          </g>
-        )}
-
-        {/* ── INNER GLASS PANE ── */}
-        <g opacity={isActive('inner-pane') ? 1 : 0.9}>
-          <rect
-            x="348" y="88" width="14" height="424" rx="1"
-            fill="url(#glassGrad)"
-            stroke={isActive('inner-pane') ? '#2563eb' : '#7dd3fc'}
-            strokeWidth={isActive('inner-pane') ? 2.5 : 1.5}
-          />
-          <rect x="350" y="100" width="3" height="380" rx="1" fill="white" opacity="0.4" />
-        </g>
-
-        {/* ── WARM-EDGE SPACER ── */}
-        <g opacity={isActive('spacer-bar') ? 1 : 0.9}>
-          {/* Top spacer */}
-          <rect
-            x="140" y="88" width="224" height="16" rx="2"
-            fill={isActive('spacer-bar') ? '#1e293b' : '#374151'}
-            stroke={isActive('spacer-bar') ? '#2563eb' : '#1f2937'}
-            strokeWidth={isActive('spacer-bar') ? 2 : 0.5}
-          />
-          {/* Bottom spacer */}
-          <rect
-            x="140" y="496" width="224" height="16" rx="2"
-            fill={isActive('spacer-bar') ? '#1e293b' : '#374151'}
-            stroke={isActive('spacer-bar') ? '#2563eb' : '#1f2937'}
-            strokeWidth={isActive('spacer-bar') ? 2 : 0.5}
-          />
-          {/* Desiccant dots on spacer */}
-          <circle cx="180" cy="96" r="2" fill="#6b7280" opacity="0.5" />
-          <circle cx="200" cy="96" r="2" fill="#6b7280" opacity="0.5" />
-          <circle cx="220" cy="96" r="2" fill="#6b7280" opacity="0.5" />
-          <circle cx="240" cy="96" r="2" fill="#6b7280" opacity="0.5" />
-          <circle cx="260" cy="96" r="2" fill="#6b7280" opacity="0.5" />
-          <circle cx="280" cy="96" r="2" fill="#6b7280" opacity="0.5" />
-          <circle cx="300" cy="96" r="2" fill="#6b7280" opacity="0.5" />
-          <circle cx="320" cy="96" r="2" fill="#6b7280" opacity="0.5" />
-        </g>
-
-        {/* ── HEAT FLOW ARROWS (exterior → blocked) ── */}
-        <g opacity="0.6">
-          {/* Cold arrows from exterior */}
-          <path d="M 20 200 L 55 200" stroke="#ef4444" strokeWidth="2" markerEnd="url(#arrowRed)" />
-          <path d="M 20 300 L 55 300" stroke="#ef4444" strokeWidth="2" markerEnd="url(#arrowRed)" />
-          <path d="M 20 400 L 55 400" stroke="#ef4444" strokeWidth="2" markerEnd="url(#arrowRed)" />
-          <text x="12" y="250" fill="#ef4444" fontSize="9" fontWeight="600" transform="rotate(-90, 12, 250)">COLD</text>
-        </g>
-
-        {/* Sun rays from top */}
-        <g opacity="0.5">
-          <path d="M 200 10 L 200 44" stroke="#f59e0b" strokeWidth="2" strokeDasharray="3 2" />
-          <path d="M 250 5 L 250 44" stroke="#f59e0b" strokeWidth="2" strokeDasharray="3 2" />
-          <path d="M 300 10 L 300 44" stroke="#f59e0b" strokeWidth="2" strokeDasharray="3 2" />
-          <circle cx="250" cy="5" r="8" fill="#fbbf24" opacity="0.4" />
-          <text x="250" y="9" textAnchor="middle" fill="#f59e0b" fontSize="10">☀</text>
-        </g>
-
-        {/* Warm interior indicator */}
-        <g opacity="0.5">
-          <text x="460" y="300" fill="#f59e0b" fontSize="9" fontWeight="600" transform="rotate(90, 460, 300)">WARM</text>
-        </g>
-
-        {/* Arrow marker definitions */}
-        <defs>
-          <marker id="arrowRed" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
-            <path d="M 0 0 L 8 4 L 0 8 Z" fill="#ef4444" />
-          </marker>
-        </defs>
-      </svg>
-
-      {/* Active component label overlay */}
-      {activeId && (
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          className="absolute top-4 left-1/2 -translate-x-1/2 bg-brand-600 text-white text-xs font-semibold px-3 py-1.5 rounded-full shadow-lg"
-        >
-          {tourSteps.find(s => s.componentId === activeId)?.title || activeId}
-        </motion.div>
+      {/* Frame glow when active */}
+      {isActive('frame') && (
+        <rect x="46" y="48" width="288" height="364" rx="4" fill="none" stroke="#3b82f6" strokeWidth="2" opacity="0.35" filter="url(#windowGlow)" />
       )}
+
+      {/* ── Upper sash ── */}
+      <rect x="58" y="60" width="264" height="162" rx="1.5" fill="url(#frameDepth)" stroke="#d4d4d8" strokeWidth="1" />
+
+      {/* Upper glass */}
+      <rect
+        x="68" y="70" width="244" height="142" rx="1"
+        fill="url(#skyReflection)"
+        stroke={glassActive ? '#2563eb' : '#a5d8ff'}
+        strokeWidth={glassActive ? 2 : 0.5}
+      />
+      {/* Glass highlights */}
+      <polygon points="68,70 180,70 68,160" fill="white" opacity="0.1" />
+      <rect x="280" y="80" width="1.5" height="120" rx="0.75" fill="white" opacity="0.15" />
+
+      {/* Low-E shimmer */}
+      {isActive('low-e-coating') && (
+        <rect x="68" y="70" width="244" height="142" rx="1" fill="#fbbf24" opacity="0.12">
+          <animate attributeName="opacity" values="0.06;0.15;0.06" dur="2.5s" repeatCount="indefinite" />
+        </rect>
+      )}
+
+      {/* Argon gas visualization */}
+      {isActive('argon-gas') && (
+        <g opacity="0.45">
+          <circle cx="140" cy="120" r="3" fill="#60a5fa"><animate attributeName="cy" values="120;130;120" dur="3s" repeatCount="indefinite" /></circle>
+          <circle cx="200" cy="150" r="2.5" fill="#60a5fa"><animate attributeName="cy" values="150;142;150" dur="2.5s" repeatCount="indefinite" /></circle>
+          <circle cx="260" cy="105" r="2" fill="#60a5fa"><animate attributeName="cy" values="105;112;105" dur="3.2s" repeatCount="indefinite" /></circle>
+          <text x="190" y="118" textAnchor="middle" fill="#2563eb" fontSize="11" fontWeight="700" opacity="0.7">Ar</text>
+        </g>
+      )}
+
+      {/* ── Meeting rail ── */}
+      <rect x="58" y="222" width="264" height="14" rx="1" fill="url(#frameDepth)" stroke="#d4d4d8" strokeWidth="1" />
+      {/* Lock hardware */}
+      <rect x="178" y="219" width="24" height="8" rx="3" fill="#a1a1aa" stroke="#8a8a8a" strokeWidth="0.5" />
+      <circle cx="190" cy="223" r="2.5" fill="#78716c" />
+
+      {/* ── Lower sash ── */}
+      <rect x="58" y="236" width="264" height="164" rx="1.5" fill="url(#frameDepth)" stroke="#d4d4d8" strokeWidth="1" />
+
+      {/* Lower glass */}
+      <rect
+        x="68" y="246" width="244" height="144" rx="1"
+        fill="url(#skyReflection)"
+        stroke={glassActive ? '#2563eb' : '#a5d8ff'}
+        strokeWidth={glassActive ? 2 : 0.5}
+      />
+      <polygon points="68,246 160,246 68,330" fill="white" opacity="0.08" />
+      <rect x="280" y="256" width="1.5" height="120" rx="0.75" fill="white" opacity="0.12" />
+
+      {/* Low-E shimmer lower */}
+      {isActive('low-e-coating') && (
+        <rect x="68" y="246" width="244" height="144" rx="1" fill="#fbbf24" opacity="0.12">
+          <animate attributeName="opacity" values="0.06;0.15;0.06" dur="2.5s" repeatCount="indefinite" />
+        </rect>
+      )}
+
+      {/* Argon lower */}
+      {isActive('argon-gas') && (
+        <g opacity="0.45">
+          <circle cx="150" cy="300" r="2.5" fill="#60a5fa"><animate attributeName="cy" values="300;308;300" dur="2.8s" repeatCount="indefinite" /></circle>
+          <circle cx="230" cy="340" r="3" fill="#60a5fa"><animate attributeName="cy" values="340;332;340" dur="3.5s" repeatCount="indefinite" /></circle>
+          <text x="190" y="320" textAnchor="middle" fill="#2563eb" fontSize="11" fontWeight="700" opacity="0.7">Ar</text>
+        </g>
+      )}
+
+      {/* Weatherstrip indicators */}
+      {isActive('weatherstrip') && (
+        <g>
+          <rect x="66" y="68" width="248" height="146" rx="2" fill="none" stroke="#22c55e" strokeWidth="2.5" strokeDasharray="8 4" opacity="0.7" />
+          <rect x="66" y="244" width="248" height="148" rx="2" fill="none" stroke="#22c55e" strokeWidth="2.5" strokeDasharray="8 4" opacity="0.7" />
+        </g>
+      )}
+
+      {/* Spacer bar indicators */}
+      {isActive('spacer-bar') && (
+        <g>
+          <rect x="68" y="69" width="244" height="3" fill="#1e293b" opacity="0.9" />
+          <rect x="68" y="209" width="244" height="3" fill="#1e293b" opacity="0.9" />
+          <rect x="68" y="246" width="244" height="3" fill="#1e293b" opacity="0.9" />
+          <rect x="68" y="387" width="244" height="3" fill="#1e293b" opacity="0.9" />
+        </g>
+      )}
+
+      {/* ── Window sill ── */}
+      <rect x="36" y="408" width="308" height="20" rx="2" fill="url(#sillDepth)" stroke="#d4d4d8" strokeWidth="1" />
+      {/* Sill nose / drip edge */}
+      <rect x="34" y="426" width="312" height="10" rx="3" fill="#f5f5f4" stroke="#d4d4d8" strokeWidth="0.5" />
+      {/* Sill shadow */}
+      <ellipse cx="190" cy="442" rx="140" ry="4" fill="rgba(0,0,0,0.04)" />
+
+      {/* ── Decorative elements ── */}
+      {/* Small plant shadow on sill for realism */}
+      <rect x="125" y="400" width="30" height="8" rx="2" fill="rgba(0,0,0,0.03)" />
+    </svg>
+  );
+}
+
+/* ────────────── Cross-Section Strip (Educational Layer Diagram) ────────────── */
+
+function CrossSectionStrip({ activeId }: { activeId: string | null }) {
+  const isActive = (id: string) => activeId === id;
+
+  const layers = [
+    { id: 'frame', label: 'Frame', width: 44, color: '#f5f5f4', activeColor: '#dbeafe', border: '#d1d5db' },
+    { id: 'weatherstrip', label: 'Seal', width: 10, color: '#6b7280', activeColor: '#4ade80', border: '#4b5563' },
+    { id: 'outer-pane', label: 'Outer Glass', width: 12, color: '#93c5fd', activeColor: '#60a5fa', border: '#3b82f6' },
+    { id: 'low-e-coating', label: 'Low-E', width: 5, color: '#fcd34d', activeColor: '#f59e0b', border: '#d97706' },
+    { id: 'argon-gas', label: 'Argon Gas Fill', width: 70, color: '#eff6ff', activeColor: '#dbeafe', border: '#93c5fd' },
+    { id: 'inner-pane', label: 'Inner Glass', width: 12, color: '#93c5fd', activeColor: '#60a5fa', border: '#3b82f6' },
+    { id: 'weatherstrip', label: 'Seal', width: 10, color: '#6b7280', activeColor: '#4ade80', border: '#4b5563' },
+    { id: 'frame', label: 'Frame', width: 44, color: '#f5f5f4', activeColor: '#dbeafe', border: '#d1d5db' },
+  ];
+
+  let x = 0;
+  const totalWidth = layers.reduce((sum, l) => sum + l.width, 0);
+
+  return (
+    <div className="mt-5">
+      {/* Labels */}
+      <div className="flex items-center justify-between mb-1.5 px-1">
+        <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Outside</span>
+        <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Inside</span>
+      </div>
+
+      {/* Layer bar */}
+      <div className="relative rounded-lg overflow-hidden border border-neutral-200 shadow-sm" style={{ height: '56px' }}>
+        <svg viewBox={`0 0 ${totalWidth} 56`} className="w-full h-full" preserveAspectRatio="none">
+          {layers.map((layer, i) => {
+            const xPos = x;
+            x += layer.width;
+            const active = isActive(layer.id);
+            return (
+              <g key={`${layer.id}-${i}`}>
+                <rect
+                  x={xPos} y="0" width={layer.width} height="56"
+                  fill={active ? layer.activeColor : layer.color}
+                  stroke={active ? layer.border : '#e5e5e5'}
+                  strokeWidth={active ? 2 : 0.5}
+                />
+                {active && (
+                  <rect x={xPos} y="0" width={layer.width} height="56" fill={layer.border} opacity="0.15">
+                    <animate attributeName="opacity" values="0.1;0.2;0.1" dur="1.5s" repeatCount="indefinite" />
+                  </rect>
+                )}
+              </g>
+            );
+          })}
+          {/* Chamber lines in frame sections */}
+          <line x1="11" y1="0" x2="11" y2="56" stroke="#d6d3d1" strokeWidth="0.5" />
+          <line x1="22" y1="0" x2="22" y2="56" stroke="#d6d3d1" strokeWidth="0.5" />
+          <line x1="33" y1="0" x2="33" y2="56" stroke="#d6d3d1" strokeWidth="0.5" />
+          <line x1="174" y1="0" x2="174" y2="56" stroke="#d6d3d1" strokeWidth="0.5" />
+          <line x1="185" y1="0" x2="185" y2="56" stroke="#d6d3d1" strokeWidth="0.5" />
+          <line x1="196" y1="0" x2="196" y2="56" stroke="#d6d3d1" strokeWidth="0.5" />
+        </svg>
+      </div>
+
+      {/* Bottom labels */}
+      <div className="flex mt-2" style={{ fontSize: '9px' }}>
+        {(() => {
+          let pos = 0;
+          return layers.map((layer, i) => {
+            const left = pos;
+            pos += layer.width;
+            const active = isActive(layer.id);
+            // Skip duplicate labels (second weatherstrip and frame)
+            if (i === 6 || i === 7) return null;
+            return (
+              <span
+                key={`label-${i}`}
+                className={cn(
+                  'text-center leading-tight',
+                  active ? 'font-bold text-brand-700' : 'text-slate-400'
+                )}
+                style={{ width: `${(layer.width / totalWidth) * 100}%` }}
+              >
+                {layer.label}
+              </span>
+            );
+          });
+        })()}
+      </div>
+
+      {/* Caption */}
+      <p className="text-[10px] text-center text-slate-400 mt-3">
+        Cross-section — the layers inside your window from outside to inside
+      </p>
     </div>
   );
 }
@@ -281,10 +292,11 @@ function TourSection() {
   };
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-      {/* Diagram */}
-      <div className="flex justify-center">
-        <WindowCrossSection activeId={currentStep.componentId} />
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
+      {/* Illustration side */}
+      <div className="lg:sticky lg:top-24">
+        <WindowFrontView activeId={currentStep.componentId} />
+        <CrossSectionStrip activeId={currentStep.componentId} />
       </div>
 
       {/* Tour Content */}
@@ -313,7 +325,7 @@ function TourSection() {
             animate="center"
             exit="exit"
             transition={{ duration: 0.25, ease: [0.25, 0.1, 0.25, 1] }}
-            className="min-h-[180px]"
+            className="min-h-[200px]"
           >
             <h3 className="text-2xl sm:text-3xl font-display font-extrabold text-charcoal-900 mb-4">
               {currentStep.title}
@@ -323,7 +335,7 @@ function TourSection() {
             </p>
             {currentStep.stat && (
               <div className="inline-flex items-center gap-3 bg-brand-50 border border-brand-100 rounded-lg px-5 py-3">
-                <div className="w-2 h-2 rounded-full bg-brand-600" />
+                <div className="w-2.5 h-2.5 rounded-full bg-brand-600 shrink-0" />
                 <div>
                   <span className="text-xs font-semibold text-brand-700 uppercase tracking-wider block">
                     {currentStep.stat.label}
@@ -387,7 +399,6 @@ function CompareSection() {
 
   return (
     <div className="space-y-10">
-      {/* Heading */}
       <div className="text-center max-w-2xl mx-auto">
         <h3 className="text-2xl sm:text-3xl font-display font-extrabold text-charcoal-900 mb-3">
           Compare Window Configurations
@@ -417,7 +428,6 @@ function CompareSection() {
 
       {/* Stats Grid */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
-        {/* U-Factor */}
         <div className="bg-white border border-neutral-200 rounded-xl p-5 shadow-sm">
           <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">U-Factor</span>
           <div className="mt-2 text-3xl font-display font-extrabold text-charcoal-900">
@@ -435,7 +445,6 @@ function CompareSection() {
           <p className="text-[10px] text-slate-400 mt-1.5">Lower = Better insulation</p>
         </div>
 
-        {/* SHGC */}
         <div className="bg-white border border-neutral-200 rounded-xl p-5 shadow-sm">
           <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">SHGC</span>
           <div className="mt-2 text-3xl font-display font-extrabold text-charcoal-900">
@@ -452,7 +461,6 @@ function CompareSection() {
           <p className="text-[10px] text-slate-400 mt-1.5">Depends on orientation</p>
         </div>
 
-        {/* VT */}
         <div className="bg-white border border-neutral-200 rounded-xl p-5 shadow-sm">
           <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">VT</span>
           <div className="mt-2 text-3xl font-display font-extrabold text-charcoal-900">
@@ -469,7 +477,6 @@ function CompareSection() {
           <p className="text-[10px] text-slate-400 mt-1.5">Higher = Brighter</p>
         </div>
 
-        {/* ER */}
         <div className="bg-white border border-neutral-200 rounded-xl p-5 shadow-sm">
           <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">Energy Rating</span>
           <div className="mt-2 text-3xl font-display font-extrabold text-charcoal-900">
