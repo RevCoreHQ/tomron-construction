@@ -25,6 +25,7 @@ export const mainNav: NavItem[] = [
       { label: 'Siding Comparison Guide', href: '/products/siding-comparison' },
       { label: 'Window Buying Guide', href: '/products/window-buying-guide' },
       { label: 'Glass Performance Guide', href: '/products/glass-performance' },
+      { label: 'Window Technology Demo', href: '/products/window-demo' },
       { label: 'BC Rebates & Incentives', href: '/products/bc-rebates' },
       { label: 'Cost Estimator', href: '/products/cost-estimator' },
     ],
