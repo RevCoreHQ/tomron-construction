@@ -8,6 +8,8 @@ import { breadcrumbSchema } from '@/lib/schema';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { Button } from '@/components/ui/Button';
 import { CTASection } from '@/components/sections/CTASection';
+import { FAQAccordion } from '@/components/sections/FAQAccordion';
+import type { FAQ } from '@/data/services';
 
 export const metadata: Metadata = generatePageMetadata({
   title: 'Siding Comparison Guide | Tomron Construction',
@@ -149,6 +151,41 @@ const sidingTypes = [
     ],
     bestFor: 'Homeowners who love the look and workability of real wood but want engineered durability. Great value for Craftsman, farmhouse, and traditional-style homes.',
     highlight: false,
+  },
+];
+
+const sidingFaqs: FAQ[] = [
+  {
+    question: 'How long does a full siding replacement take?',
+    answer: 'A typical full-home siding replacement takes 1–3 weeks depending on the size of the home, the material chosen, and weather conditions. Fiber cement and steel take slightly longer due to heavier material handling and more detailed flashing work. We provide a project timeline before work begins.',
+  },
+  {
+    question: 'Can new siding be installed over existing siding?',
+    answer: 'In some cases, yes — but we generally recommend removing old siding first. This allows us to inspect the sheathing and house wrap underneath for moisture damage, replace any deteriorated material, and install a proper weather-resistive barrier. Installing over old siding can trap moisture and void manufacturer warranties.',
+  },
+  {
+    question: 'What is the most cost-effective siding for the Lower Mainland?',
+    answer: 'Vinyl siding offers the lowest upfront cost at $5–$8/sq ft installed and requires virtually zero maintenance. However, fiber cement (James Hardie) offers the best long-term value when you factor in lifespan (30–50 years), fire resistance, and the home value increase it provides. The right choice depends on your budget and how long you plan to stay.',
+  },
+  {
+    question: 'Does new siding increase home value?',
+    answer: 'Yes. Siding replacement consistently ranks among the highest ROI home improvement projects in Canada. Fiber cement siding typically recoups 75–85% of its cost at resale, while vinyl recoups 70–75%. Beyond resale value, new siding dramatically improves curb appeal and can reduce energy costs.',
+  },
+  {
+    question: 'How do I know if my siding needs replacing vs. repair?',
+    answer: 'Signs you need full replacement include: widespread rot or moisture damage, warping or buckling across multiple areas, persistent mould growth behind the siding, significantly faded or chalking colour, or energy bills that keep climbing. If damage is limited to one small area, a repair may suffice. We offer free inspections to assess your specific situation.',
+  },
+  {
+    question: 'What happens to my house wrap during siding replacement?',
+    answer: 'During a full siding replacement, we remove the old siding and inspect the existing house wrap (weather-resistive barrier). If it is damaged, deteriorated, or does not meet current code, we replace it with new house wrap before installing the new siding. This is critical for long-term moisture management in BC\'s wet climate.',
+  },
+  {
+    question: 'Do you handle permits for siding work?',
+    answer: 'Most siding replacement projects in the Lower Mainland do not require a building permit if the work is like-for-like replacement without structural changes. However, if we are changing the cladding system, adding rain screen, or making structural modifications, a permit may be required. We will advise you during the quoting process and handle any necessary permits.',
+  },
+  {
+    question: 'What warranty do I get with new siding?',
+    answer: 'Warranty coverage depends on the material chosen. James Hardie offers a 30-year non-prorated product warranty. Mitten vinyl offers a lifetime limited warranty with their No Fade Promise. LP SmartSide offers a 5/50 warranty (5-year labour, 50-year substrate). On top of manufacturer warranties, Tomron Construction provides our own workmanship warranty covering installation quality.',
   },
 ];
 
@@ -338,6 +375,8 @@ export default function SidingComparisonPage() {
           </Button>
         </div>
       </section>
+
+      <FAQAccordion faqs={sidingFaqs} title="Siding FAQ" subtitle="Common Questions" />
 
       <CTASection headline="Ready to Choose the Right Siding?" description="Contact us for a free on-site consultation. We'll assess your home and recommend the best siding material for your needs and budget." />
     </>

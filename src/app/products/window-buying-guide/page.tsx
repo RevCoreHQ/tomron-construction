@@ -8,6 +8,8 @@ import { breadcrumbSchema } from '@/lib/schema';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { Button } from '@/components/ui/Button';
 import { CTASection } from '@/components/sections/CTASection';
+import { FAQAccordion } from '@/components/sections/FAQAccordion';
+import type { FAQ } from '@/data/services';
 
 export const metadata: Metadata = generatePageMetadata({
   title: 'Window Buying Guide for BC | Tomron Construction',
@@ -138,6 +140,41 @@ const commonMistakes = [
   {
     mistake: 'Skipping Low-E glass',
     reality: 'Low-E glass costs only 5–10% more but reduces energy transfer by up to 48%. There is no reason to skip it in BC\'s climate. It is the single best upgrade per dollar.',
+  },
+];
+
+const windowFaqs: FAQ[] = [
+  {
+    question: 'How long does a full window replacement take?',
+    answer: 'A typical home with 10–15 windows takes 2–4 days to complete. Each window takes approximately 1–2 hours to remove, prep, install, insulate, and flash properly. We protect your interior with drop cloths and clean up daily. Larger projects or custom orders may take longer.',
+  },
+  {
+    question: 'Should I replace all windows at once or one at a time?',
+    answer: 'Replacing all windows at once is more cost-effective because of reduced setup, scaffolding, and trip charges. You also get consistent aesthetics and a single warranty start date. However, if budget is a concern, we can phase the project — typically starting with the most damaged or least energy-efficient windows first.',
+  },
+  {
+    question: 'What is the difference between retrofit and full-frame replacement?',
+    answer: 'Retrofit (insert) installation keeps your existing window frame and slides a new window inside it. Full-frame replacement removes everything down to the rough opening, allowing inspection of the structure and proper flashing. Full-frame costs more but is recommended when frames are rotted, when you want to change window sizes, or when proper integration with your building envelope is critical.',
+  },
+  {
+    question: 'Are triple-pane windows worth it in BC?',
+    answer: 'For most Lower Mainland homes, high-quality double-pane with Low-E and argon gas provides excellent performance at a reasonable cost. Triple-pane makes sense for north-facing walls with significant heat loss, homes in colder BC regions (Fraser Valley highlands), or premium builds where maximum energy efficiency is the goal. The additional cost is typically 25–40% more than double-pane.',
+  },
+  {
+    question: 'How do I know if my windows need replacing?',
+    answer: 'Common signs include: condensation or fog between glass panes (sealed unit failure), drafts around closed windows, difficulty opening or closing, visible rot or deterioration in frames, significantly higher energy bills, and outside noise that seems louder than it should be. If your windows are 20+ years old, they likely no longer meet current energy standards.',
+  },
+  {
+    question: 'What is Low-E glass and do I need it?',
+    answer: 'Low-E (low emissivity) glass has a microscopic metallic coating that reflects infrared heat while allowing visible light through. In winter, it keeps heat inside; in summer, it reduces solar heat gain. In BC, Low-E glass reduces energy transfer by up to 48% compared to standard glass. We recommend it on every project — the 5–10% cost increase pays for itself within 2–3 years through energy savings.',
+  },
+  {
+    question: 'Do new windows qualify for rebates in BC?',
+    answer: 'Yes. Energy Star certified windows may qualify for provincial and federal rebate programs including the CleanBC Better Homes program and the Canada Greener Homes Grant. Eligibility depends on the specific product\'s energy rating and whether you get a pre-retrofit EnerGuide evaluation. We can advise you on which products qualify during your consultation.',
+  },
+  {
+    question: 'What warranty should I expect on new windows?',
+    answer: 'Quality windows should come with at least a 20-year frame warranty and a 15-year sealed unit warranty. Our Ply Gem windows offer lifetime frame warranties and 20-year sealed unit coverage. Beyond the manufacturer warranty, Tomron Construction provides our own workmanship warranty covering installation quality, flashing, and sealing.',
   },
 ];
 
@@ -340,6 +377,8 @@ export default function WindowBuyingGuidePage() {
           </div>
         </div>
       </section>
+
+      <FAQAccordion faqs={windowFaqs} title="Window FAQ" subtitle="Common Questions" />
 
       <CTASection headline="Ready to Replace Your Windows?" description="Contact us for a free on-site window assessment. We'll measure, assess your existing windows, and recommend the right replacement option for your home and budget." />
     </>
