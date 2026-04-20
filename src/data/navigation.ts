@@ -23,6 +23,7 @@ export const mainNav: NavItem[] = [
     children: [
       { label: 'All Products & Partners', href: '/products' },
       { label: 'Siding Comparison Guide', href: '/products/siding-comparison' },
+      { label: 'Window Buying Guide', href: '/products/window-buying-guide' },
       { label: 'Glass Performance Guide', href: '/products/glass-performance' },
     ],
   },
