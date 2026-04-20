@@ -165,12 +165,24 @@ const windowFaqs: FAQ[] = [
     answer: 'Common signs include: condensation or fog between glass panes (sealed unit failure), drafts around closed windows, difficulty opening or closing, visible rot or deterioration in frames, significantly higher energy bills, and outside noise that seems louder than it should be. If your windows are 20+ years old, they likely no longer meet current energy standards.',
   },
   {
-    question: 'What is Low-E glass and do I need it?',
-    answer: 'Low-E (low emissivity) glass has a microscopic metallic coating that reflects infrared heat while allowing visible light through. In winter, it keeps heat inside; in summer, it reduces solar heat gain. In BC, Low-E glass reduces energy transfer by up to 48% compared to standard glass. We recommend it on every project — the 5–10% cost increase pays for itself within 2–3 years through energy savings.',
+    question: 'What is U-factor and what number should I look for?',
+    answer: 'U-factor measures how much heat passes through a window — the lower the number, the better the insulation. It is measured in W/m²·K (watts per square metre per degree Kelvin). A single-pane window has a U-factor around 5.0, meaning it loses heat rapidly. A standard double-pane window sits around 2.7. A double-pane with Low-E and argon gas drops to 1.4–1.6. A triple-pane with Low-E and argon can reach 0.8–1.0. For BC\'s Lower Mainland (Energy Star Zone 2), you want a U-factor of 1.40 or lower to meet Energy Star certification. The lower you go, the less heat escapes your home in winter and the less cooling you lose in summer.',
+  },
+  {
+    question: 'What is Solar Heat Gain Coefficient (SHGC) and why does it matter?',
+    answer: 'SHGC measures how much solar radiation (heat from sunlight) passes through the glass, on a scale from 0 to 1. A higher SHGC means more solar heat enters your home — which is beneficial in winter (free heating) but can cause overheating in summer on south and west-facing windows. A lower SHGC blocks more solar heat, keeping rooms cooler. In BC, a balanced SHGC between 0.20 and 0.35 works well for most homes. South-facing windows may benefit from a slightly higher SHGC (0.30–0.40) to capture winter sun, while west-facing windows that get intense afternoon sun should lean lower (0.20–0.25) to prevent overheating.',
+  },
+  {
+    question: 'What is the difference between Low-E 270 and Low-E 366?',
+    answer: 'Low-E 270 and Low-E 366 refer to different coatings made by Cardinal Glass (the most common in North American windows). Low-E 270 is a "passive" or "hard coat" Low-E — it lets more solar heat through (higher SHGC around 0.34) while still reflecting interior heat back inside. It is ideal for north-facing or east-facing windows where you want maximum natural warmth from the sun without overheating. Low-E 366 is a "solar control" triple-silver coating — it blocks significantly more solar heat (SHGC around 0.22) while still allowing plenty of visible light through. It is ideal for south-facing and west-facing windows where afternoon sun would otherwise overheat rooms. In simple terms: Low-E 270 = lets more sun warmth in (good for cold sides), Low-E 366 = blocks more sun heat (good for hot sides). Many homes benefit from using both — 270 on north/east walls and 366 on south/west walls.',
+  },
+  {
+    question: 'What do the numbers on a window energy label mean?',
+    answer: 'A window energy rating label shows several key numbers: U-factor (heat loss, lower is better), SHGC (solar heat gain, context-dependent), Visible Transmittance or VT (how much daylight comes through, higher means brighter rooms, typically 0.40–0.70), and Energy Rating or ER (a Canadian metric that balances heat loss, solar gain, and air leakage into a single number — higher is better, look for ER 25+ minimum). These numbers together tell you how the window performs thermally. Two windows can look identical but perform very differently depending on the glass coatings, gas fill, and spacer technology used in the sealed unit.',
   },
   {
     question: 'Do new windows qualify for rebates in BC?',
-    answer: 'Yes. Energy Star certified windows may qualify for provincial and federal rebate programs including the CleanBC Better Homes program and the Canada Greener Homes Grant. Eligibility depends on the specific product\'s energy rating and whether you get a pre-retrofit EnerGuide evaluation. We can advise you on which products qualify during your consultation.',
+    answer: 'Yes. Energy Star certified windows may qualify for provincial and federal rebate programs including the CleanBC Better Homes program and the Canada Greener Homes Grant. Eligibility depends on the specific product\'s energy rating (U-factor must meet program thresholds) and whether you get a pre-retrofit EnerGuide evaluation. We can advise you on which products qualify during your consultation.',
   },
   {
     question: 'What warranty should I expect on new windows?',
