@@ -6,6 +6,8 @@ import { Footer } from '@/components/layout/Footer';
 import { MobileBottomBar } from '@/components/layout/MobileBottomBar';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { localBusinessSchema, webSiteSchema, organizationSchema } from '@/lib/schema';
+import { ScrollProgress } from '@/components/motion/ScrollProgress';
+import { LoadingScreen } from '@/components/layout/LoadingScreen';
 import { ScrollToTop } from '@/components/layout/ScrollToTop';
 import '@/styles/globals.css';
 
@@ -61,6 +63,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <JsonLd data={[localBusinessSchema(), webSiteSchema(), organizationSchema()]} />
       </head>
       <body className="min-h-screen flex flex-col overflow-x-hidden">
+        <LoadingScreen />
+        <ScrollProgress />
         <Header />
         <main className="flex-1 pb-16 lg:pb-0">{children}</main>
         <Footer />
