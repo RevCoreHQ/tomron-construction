@@ -65,7 +65,8 @@ export default function WindowDemoPage() {
         ])}
       />
 
-      <section className="section-padding pb-0">
+      {/* Hero */}
+      <section className="relative py-16 lg:py-24 bg-gradient-to-b from-neutral-50 to-white overflow-hidden">
         <div className="container-wide">
           <Breadcrumbs
             items={[
@@ -75,21 +76,21 @@ export default function WindowDemoPage() {
           />
 
           <div className="max-w-3xl mt-8">
-            <p className="text-sm font-semibold text-brand-600 uppercase tracking-wider mb-2">
-              Interactive Learning
+            <p className="text-sm font-bold text-brand-600 uppercase tracking-wider mb-3">
+              Interactive Learning Tool
             </p>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-charcoal-900 mb-4">
-              How Modern Windows Work
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-extrabold text-charcoal-900 mb-6 leading-tight">
+              How Modern Windows <span className="text-brand-600">Actually</span> Work
             </h1>
-            <p className="text-lg text-slate-500 leading-relaxed">
-              Explore the anatomy of a high-performance window. Click components to learn what they do,
-              take a guided tour, or compare different glass configurations side by side.
+            <p className="text-lg sm:text-xl text-slate-500 leading-relaxed max-w-2xl">
+              Take a guided tour through a high-performance window cross-section. Understand what each component does, why it matters, and how different glass configurations compare for your BC home.
             </p>
           </div>
         </div>
       </section>
 
-      <section className="section-padding">
+      {/* Demo Section */}
+      <section className="section-padding pt-0">
         <div className="container-wide">
           <WindowDemo />
         </div>
